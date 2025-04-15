@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers - Join Our Team</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-red': '#ff0022',
+            'brand-blue': '#D6F0FF',
+            'text-primary': '#333333',
+            'text-secondary': '#555555',
+            'job-title': '#0056B3'
+          },
+          fontFamily: {
+            'poppins': ['Poppins', 'sans-serif']
+          }
+        }
+      
+        
+        }
+      }
+    
+  
+  </script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333333;
+    }
+    .job-card {
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .job-description {
+      flex-grow: 1;
+    }
+    @media (max-width: 768px) {
+      .job-card {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white font-poppins">
+  <!-- Hero Section -->
+  <section class="py-12 md:py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-5xl text-center">
+      <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight text-text-primary">
+        We're more than just a workplace.<br>
+        We're a family.
+      </h1>
+      <p class="text-lg md:text-xl text-text-secondary mb-10 max-w-4xl mx-auto">
+        We know that finding a meaningful and rewarding career can be a long journey. Our
+        goal is to make that process easy for you and to create a work environment that's
+        enriching—one that you'll look forward to every day.
+      </p>
+      <a href="#open-roles" class="inline-flex items-center bg-brand-red hover:bg-red-700 text-white font-medium py-3 px-8 rounded-md transition-colors">
+        VIEW OPEN ROLES
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+    <div class="container mx-auto px-4 mt-8 md:mt-16">
+      <!-- SVG Banner positioned between button and opportunities section -->
+      <img src="./assets//zh-cw-career-banner.svg" alt="Career opportunities illustration" class="max-w-full mx-auto">
+    </div>
+  </section>
+
+  <!-- Job Listings Section -->
+  <section id="open-roles" class="py-12 md:py-20 bg-brand-blue">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl md:text-5xl font-bold text-center mb-10 md:mb-20 text-text-primary">
+        Some opportunities for<br class="hidden md:block">
+        you to explore
+      </h2>
+
+      <!-- Job Cards Grid - Responsive for all devices -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <!-- Job Card 1 -->
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 job-card">
+          <h3 class="text-xl font-bold text-job-title mb-4">CONTENT/TECHNICAL WRITERS</h3>
+          <p class="text-text-secondary mb-6 job-description">
+            Ideate and create content for blogs, articles, social media copies, and other formats on a regular basis. Stay up to date with content in the market t...
+          </p>
+          <div class="text-green-600 font-medium">Full time</div>
+        </div>
+
+        <!-- Job Card 2 -->
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 job-card">
+          <h3 class="text-xl font-bold text-job-title mb-4">SOFTWARE DEVELOPERS</h3>
+          <p class="text-text-secondary mb-6 job-description">
+            Design and develop high-volume, low-latency applications for mission-critical systems, ensuring top-tier availability and performance. Contribute to a...
+          </p>
+          <div class="text-green-600 font-medium">Full time</div>
+        </div>
+
+        <!-- Job Card 3 -->
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 job-card">
+          <h3 class="text-xl font-bold text-job-title mb-4">DESIGNERS-UI/UX/VISUAL/GRAPHIC</h3>
+          <p class="text-text-secondary mb-6 job-description">
+            Help build design work across multiple mediums on various projects, from small pieces to multi-channel campaigns. Build digital assets for marketing c...
+          </p>
+          <div class="text-green-600 font-medium">Full time</div>
+        </div>
+
+        <!-- Job Card 4 -->
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 job-card">
+          <h3 class="text-xl font-bold text-job-title mb-4">QA ENGINEERS</h3>
+          <p class="text-text-secondary mb-6 job-description">
+            Experience in manual and automation testing. Knowledge of Java Programming (data types, variables, operators, flow control statements, methods (built-...
+          </p>
+          <div class="text-green-600 font-medium">Full time</div>
+        </div>
+
+        <!-- Job Card 5 -->
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 job-card">
+          <h3 class="text-xl font-bold text-job-title mb-4">WEB DEVELOPERS</h3>
+          <p class="text-text-secondary mb-6 job-description">
+            Develop new components based on design specs. Work independently and write maintainable code. Understand existing code and suggest optimization in ter...
+          </p>
+          <div class="text-green-600 font-medium">Full time</div>
+        </div>
+
+        <!-- Job Card 6 -->
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 job-card">
+          <h3 class="text-xl font-bold text-job-title mb-4">TECHNICAL SUPPORT ENGINEERS</h3>
+          <p class="text-text-secondary mb-6 job-description">
+            Provide voice-based support to international/domestic customers over the phone (Inbound and Outbound). Build a rapport with customers with clear and c...
+          </p>
+          <div class="text-green-600 font-medium">Full time</div>
+        </div>
+
+        <!-- Job Card 7 -->
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 job-card">
+          <h3 class="text-xl font-bold text-job-title mb-4">DIGITAL MARKETING ANALYST</h3>
+          <p class="text-text-secondary mb-6 job-description">
+            Manage Google Adwords Campaigns to improve Return on Investment and generate reports Develop performance metrics to provide recommendations and contin...
+          </p>
+          <div class="text-green-600 font-medium">Full time</div>
+        </div>
+
+        <!-- Job Card 8 -->
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 job-card">
+          <h3 class="text-xl font-bold text-job-title mb-4">SALES EXECUTIVES</h3>
+          <p class="text-text-secondary mb-6 job-description">
+            Build rapport with contacts and understand where the prospect is in the buying process. Identify opportunities that meet a minimum qualification crite...
+          </p>
+          <div class="text-green-600 font-medium">Full time</div>
+        </div>
+
+        <!-- Job Card 9 -->
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 job-card">
+          <h3 class="text-xl font-bold text-job-title mb-4">PRODUCT MARKETERS</h3>
+          <p class="text-text-secondary mb-6 job-description">
+            Write, rewrite, test, and maintain website and landing pages. Create and maintain accurate comparison documents. Write briefs for ads, landing pages, ...
+          </p>
+          <div class="text-green-600 font-medium">Full time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Register Section -->
+  <section class="py-12 md:py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-text-primary">Can't find what you're looking for?</h2>
+      <p class="text-lg md:text-xl text-text-secondary mb-10">
+        Register on our Candidate Portal and get notified when new roles that match your skills open up.
+      </p>
+      <a href="#" class="inline-flex items-center bg-brand-red hover:bg-red-700 text-white font-medium py-3 px-8 rounded-md transition-colors">
+        REGISTER HERE
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Job card click functionality
+      const jobCards = document.querySelectorAll('.job-card');
+      
+      jobCards.forEach(card => {
+        card.addEventListener('click', () => {
+          // This would typically navigate to a job details page
+          console.log('Job card clicked');
+        });
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const headerOffset = 100;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // Make job cards equal height in each row
+      function equalizeCardHeights() {
+        // Reset heights first
+        document.querySelectorAll('.job-card').forEach(card => {
+          card.style.height = 'auto';
+        });
+        
+        // Only equalize on larger screens
+        if (window.innerWidth >= 768) {
+          const rows = {};
+          
+          // Group cards by their top position (row)
+          document.querySelectorAll('.job-card').forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const top = Math.round(rect.top);
+            
+            if (!rows[top]) rows[top] = [];
+            rows[top].push(card);
+          });
+          
+          // Set equal height for each row
+          Object.values(rows).forEach(cards => {
+            const maxHeight = Math.max(...cards.map(card => card.offsetHeight));
+            cards.forEach(card => {
+              card.style.height = `${maxHeight}px`;
+            });
+          });
+        }
+      }
+      
+      // Run on load and resize
+      window.addEventListener('load', equalizeCardHeights);
+      window.addEventListener('resize', equalizeCardHeights);
+    });
+  </script>
+</body>
+</html>

@@ -6,12 +6,18 @@
     <title>Bridge Group Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                     boli: ['"MV Boli"', 'cursive'],
+                     mulish: ['Mulish', 'sans-serif'],
+
+                    },
                     colors: {
-                        // primary: '#0066CC',  
+                        primary: '#1B9CE3',  
                         // secondary: '#F97316',
                     },
                     container: {
@@ -89,36 +95,38 @@
                 <div class="flex items-center">
                     <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-12">
                     <div class="ml-3">
-                        <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-2xl">BRIDGE GROUP</h1>
-                        <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-lg">SOLUTIONS</p>
+                        <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-3xl">BRIDGE GROUP</h1>
+                        <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl">SOLUTIONS</p>
                     </div>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="text-gray-700 hover:text-[#1B9CE3] transition-colors">Home</a>
-                    <a href="#" class="text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
-                    <a href="#" class="text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
-                    <a href="#" class="text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                <div class="hidden md:flex items-center space-x-8 text-[#000000]">
+                    <a href="index.html" class=" hover:text-[#1B9CE3] transition-colors">Home</a>
+                    <a href="#" class="hover:text-[#1B9CE3] transition-colors">About</a>
+                    <a href="form.html" class=" hover:text-[#1B9CE3] transition-colors">Services</a>
+                    <a href="carrerPage.html" class=" hover:text-[#1B9CE3] transition-colors">Careers</a>
                     <a href="#" class="border border-[#1B9CE3] text-[#1B9CE3] px-6 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden text-gray-700 hover:text-[#1B9CE3]">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                  </div>
+              
+                  <!-- Mobile Menu Button -->
+                  <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#1B9CE3] focus:outline-none">
+                    <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                </button>
-            </div>
-
-            <!-- Mobile Menu (Hidden by default) -->
-            <div class="md:hidden hidden py-4">
-                <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Home</a>
-                <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
-                <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
-                <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
-                <a href="#" class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
-            </div>
+                  </button>
+                </div>
+              
+                <!-- Mobile Menu -->
+                <div id="mobileMenu" class="md:hidden hidden px-4">
+                  <div class="py-4 space-y-4">
+                    <a href="index.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Home</a>
+                    <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
+                    <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
+                    <a href="carrerPage.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                    <a href="#" class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
+                  </div>
         </div>
     </nav>
 
@@ -127,28 +135,36 @@
         <div class="section-content site-container">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <!-- Left Content -->
-                <div class="space-y-6">
-                    <p class="text-transparent bg-clip-text bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-lg">WE KNOT SPACE...</p>
-                    <h1 class="text-4xl md:text-6xl bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-4xl">
-                        BRIDGE GROUP<br/>
-                        <span class="font-xl">SOLUTION</span>
+                <div class="space-y-2">
+                        <p class=" bottom-0 bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-transparent bg-clip-text font-medium md:text-2xl">WE KNOT SPACE...</p>
+                   
+                        <h1  class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-medium">
+                            BRIDGE GROUP
+                          </h1>
+                          
+                          <p class="text-xl sm:text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish mt-2">
+                            SOLUTIONS
+                          </p>
+                          <div class="h-1 w-10 border-b-2 bg-[#4977A0] "></div>
+                        
                     </h1>
-                    <h2 class="text-2xl  text-blue-900">DIGITAL PRODUCTS.</h2>
-                    <div>
-                        <a href="#" class="inline-block bg-[#1B9CE3] text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors">
-                            Connect With Us
-                        </a>
-                    </div>
-                    <p class="text-gray-600 text-lg">
-                        BRIDGE GROUP SOLUTION - LEADERS IN WEB & MOBILE<br/>
-                        DESIGN AND DEVELOPMENT INDUSTRY.
-                    </p>
                     
-                </div>
+                    <h2 class="text-2xl  text-blue-900">DIGITAL PRODUCTS.</h2>
+                        <div>
+                            <a href="#" class="inline-block bg-[#1B9CE3] text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors">
+                                Connect With Us
+                            </a>
+                        </div>
+                        <p class="text-gray-600 text-lg">
+                            BRIDGE GROUP SOLUTION - LEADERS IN WEB & MOBILE<br/>
+                            DESIGN AND DEVELOPMENT INDUSTRY.
+                        </p>
+                        
+                    </div>
 
-                <!-- Right Content - Services Box -->
-                <div class="relative">
-                    <!-- Services Box -->
+                    <!-- Right Content - Services Box -->
+                    <div class="relative">
+                        <!-- Services Box -->
                     <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
                         <h3 class="text-lg font-semibold mb-4">OUR SERVICES</h3>
                         <div class="grid grid-cols-2 gap-4">
@@ -198,7 +214,7 @@
     <!-- Main Features Section -->
     <section class="py-16 gradient-white-to-blue section-overlay">
         <div class="section-content site-container">
-            <h2 class="text-3xl font-bold text-blue-900 mb-12">Our Main Features</h2>
+            <h2 class="text-3xl font-semibold font-Mulish text-[#00076A] mb-12">Our Main Features</h2>
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
                 <!-- Left Side Cards -->
                 <div class="md:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -208,8 +224,8 @@
                         <div class="text-[#1B9CE3] mb-4">
                             <i class="fas fa-users text-3xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-[#1B1B1B]">Personalized Solutions</h3>
-                        <p class="text-gray-600">We give our customers an unmatched personalized solutions as per their needs.</p>
+                        <h3 class="text-xl font-semibold font-Mulish mb-3 text-[#00076A]">Personalized Solutions</h3>
+                        <p class="text-black">We give our customers an unmatched personalized solutions as per their needs.</p>
                     </div>
 
                     <!-- Premium Customer Support Card -->
@@ -218,18 +234,18 @@
                         <div class="text-[#1B9CE3] mb-4">
                             <i class="fas fa-headset text-3xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-[#1B1B1B]">Premium Customer Support</h3>
-                        <p class="text-gray-600">We provide premium 24x7 support to our customers.</p>
+                        <h3 class="text-xl font-semibold font-Mulish mb-3 text-[#00076A]">Premium Customer Support</h3>
+                        <p class="text-black">We provide premium 24x7 support to our customers.</p>
                     </div>
 
                     <!-- Best Service Card -->
-                    <div class="bg-[#1B9CE3] text-white rounded-lg shadow-lg p-6 relative overflow-hidden">
-                        <div class="absolute bottom-0 right-0 w-20 h-20 bg-white opacity-10 rounded-tl-full"></div>
-                        <div class="text-white mb-4">
+                    <div class="bg-white text-black rounded-lg shadow-lg p-6 relative overflow-hidden">
+                        <div class="absolute bottom-0 right-0 w-20 h-20 bg-[#1B9CE3] opacity-10 rounded-tl-full"></div>
+                        <div class="text-[#1B9CE3] mb-4">
                             <i class="fas fa-star text-3xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3">Best Service @ Low Cost</h3>
-                        <p class="text-white/90">We believe in customers delight rather than in number of customers.</p>
+                        <h3 class="text-xl font-semibold font-Mulish mb-3 text-[#00076A]">Best Service @ Low Cost</h3>
+                        <p class="text-black">We believe in customers delight rather than in number of customers.</p>
                     </div>
 
                     <!-- Innovation Card -->
@@ -238,8 +254,8 @@
                         <div class="text-[#1B9CE3] mb-4">
                             <i class="fas fa-lightbulb text-3xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-[#1B1B1B]">Innovation & Implementations</h3>
-                        <p class="text-gray-600">As a team of talented and young members we believe in fresh ideas.</p>
+                        <h3 class="text-xl font-semibold font-Mulish mb-3 text-[#00076A]">Innovation & Implementations</h3>
+                        <p class="text-black">As a team of talented and young members we believe in fresh ideas.</p>
                     </div>
                 </div>
 
@@ -247,8 +263,8 @@
                 <div class="md:col-span-5">
                     <div class="bg-white rounded-lg shadow-lg p-6">
                         <img src="assets/Shared workspace-amico 1.png" alt="Team Collaboration" class="w-full">
-                        <h3 class="text-xl font-bold text-[#1B1B1B] mt-4">Be a part of success story building Team</h3>
-                        <p class="text-gray-600 mt-2">
+                        <h3 class="text-xl  font-semibold font-Mulish mb-3 text-[#00076A] mt-4">Be a part of success story building Team</h3>
+                        <p class="text-black mt-2">
                             Good News is that we are hiring for various profiles and for various locations. We are also looking for interns for winter internship and live projects.
                         </p>
                     </div>
@@ -320,7 +336,7 @@
               <div class="text-[#1B9CE3] text-3xl mb-4">
                 <i class="fas fa-shield-alt"></i>
               </div>
-              <h3 class="text-[#00076A] font-bold text-lg mb-2">Risk Management</h3>
+              <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Risk Management</h3>
               <p class="text-gray-600 text-sm">
                 Risk management is the identification, evaluation, and prioritization of risks followed by coordinated and economical application of resources to minimize, monitor, and control the probability or impact of unfortunate events or to maximize the realization of opportunities.
               </p>
@@ -332,11 +348,11 @@
               <div class="text-[#1B9CE3] text-3xl mb-4">
                 <i class="fas fa-cogs"></i>
               </div>
-              <h3 class="text-[#00076A] font-bold text-lg mb-2">ERP & Customized Software</h3>
+              <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">ERP & Customized Software</h3>
               <p class="text-gray-600 text-sm">
                 Enterprise resource planning (ERP) is business management software that allows an organization to use a system of integrated applications to manage the business and automate many back office functions related to technology, services and human resources.
               </p>
-              <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-md"></div>
+              <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
             </div>
       
             <!-- Card 3 -->
@@ -344,11 +360,11 @@
               <div class="text-[#1B9CE3] text-3xl mb-4">
                 <i class="fas fa-piggy-bank"></i>
               </div>
-              <h3 class="text-[#00076A] font-bold text-lg mb-2">Wealth Management</h3>
+              <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Wealth Management</h3>
               <p class="text-gray-600 text-sm">
                 Wealth management is an investment-advisory discipline which incorporates financial planning, investment portfolio management and a number of aggregated financial services offered by a complex mix of asset managers, custodial banks, retail banks, financial planners and others.
               </p>
-              <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-md"></div>
+              <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
             </div>
       
             <!-- Card 4 -->
@@ -356,11 +372,11 @@
               <div class="text-[#1B9CE3] text-3xl mb-4">
                 <i class="fas fa-project-diagram"></i>
               </div>
-              <h3 class="text-[#00076A] font-bold text-lg mb-2">Project Outsourcing</h3>
+              <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Project Outsourcing</h3>
               <p class="text-gray-600 text-sm">
                 Outsourcing allows a company to subcontract a particular area within the organization. A company may outsource project management or any other task or department for one or more reasons.
               </p>
-              <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-md"></div>
+              <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
             </div>
       
             <!-- Card 5 -->
@@ -368,11 +384,11 @@
               <div class="text-[#1B9CE3] text-3xl mb-4">
                 <i class="fas fa-chart-line"></i>
               </div>
-              <h3 class="text-[#00076A] font-bold text-lg mb-2">Portfolio Management</h3>
+              <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Portfolio Management</h3>
               <p class="text-gray-600 text-sm">
                 Portfolio management is the art and science of making decisions about investment mix and policy, matching investments to objectives, asset allocation for individuals and institutions, and balancing risk against performance.
               </p>
-              <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-md"></div>
+              <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
             </div>
           </div>
         </div>
@@ -380,9 +396,9 @@
       
 
     <!-- Testimonials Section -->
-    <section class=" py-16  gradient-blue-to-white section-overlay">
+    <section class=" py-16  gradient-blue-to-white  section-overlay">
         <div class="text-center mb-10">
-          <h2 class="text-3xl font-bold text-blue-900">Our Clients Says</h2>
+          <h2 class="text-3xl font-semibold font-Mulish text-[#00076A]">Our Clients Says</h2>
           <p class="text-gray-600 mt-2 max-w-2xl mx-auto">
             We owe our growth to the trust of our customers and partners. The journey ahead is long, but we’re confident in shaping the future of work across nations.
           </p>
@@ -448,7 +464,7 @@
                             <p class="text-[#00076A] font-Mulish font-semibold">SOLUTIONS</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">WE KNOT SPACE...</p>
+                    <p class=" mb-4 bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0]  text-transparent bg-clip-text font-small text-accent">WE KNOT SPACE...</p>
                     <div class="flex space-x-4">
                         <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
                             <i class="fab fa-twitter"></i>
@@ -467,7 +483,7 @@
                 
                 <!-- Links -->
                 <div>
-                    <h3 class="text-xl font-bold text-[#00076A] mb-6">Links</h3>
+                    <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
                     <ul class="space-y-4">
                         <li class="flex items-center">
                             <span class="text-[#1B9CE3] mr-2">→</span>
@@ -498,7 +514,7 @@
 
                 <!-- Services -->
                 <div>
-                    <h3 class="text-xl font-bold text-[#00076A] mb-6">Services</h3>
+                    <h3 class="text-xl font-semibold text-[#000000]">Services</h3>
                     <ul class="space-y-4">
                         <li class="flex items-center">
                             <span class="text-[#1B9CE3] mr-2">→</span>
@@ -529,10 +545,12 @@
 
                 <!-- Subscribe Form -->
                 <div>
-                    <h3 class="text-xl font-bold text-[#00076A] mb-6">Subscribe Us!</h3>
+                    <h3 class="text-xl font-semibold text-[#000000] mb-6">Subscribe Us!</h3>
                     <form class="space-y-4">
-                        <input type="email" placeholder="Enter Email Address" class="w-full px-4 py-3 rounded-lg border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
-                        <button type="submit" class="w-full bg-[#1B9CE3] text-white py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                        <input type="email" placeholder="Enter Email Address" class=" px-4 py-3 w-48 rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
+                        <button type="submit" class="px-4 py-3 w-48  bg-[#1B9CE3] text-white  rounded-lg shadow-lg 
+                         transition duration-150 
+                        active:scale-95 active:shadow-sm transition-colors">
                             Subscribe
                         </button>
                     </form>
@@ -544,10 +562,14 @@
             </div>
         </div>
 
-        <!-- Scroll to Top Button -->
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class=" relative bottom-8 right-8 left-hidden [#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-colors shadow-lg">
-            <i class="fas fa-arrow-up"></i>
-        </button>
+        <button 
+  id="scrollToTopBtn"
+  onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" 
+  class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-all duration-300 shadow-lg z-50 opacity-0 pointer-events-none"
+>
+  <i class="fas fa-arrow-up"></i>
+</button>  <!-- Scroll to Top Button -->
+       
     </footer>
 
     <script src="script.js"></script>

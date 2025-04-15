@@ -18,154 +18,54 @@ function initMobileMenu() {
 // Testimonials Data
 const testimonials = [
     {
-        image: './assets/Rectangle 64.png',
-        quote: 'BGS is solving problems for us we didn\'t even know we had.',
-        name: 'John Smith',
-        designation: 'CEO, Tech Solutions',
-        rating: 5
+      image: "./assests/Rectangle.png",
+      text: "“BGS is solving problems for us we didn’t even know we had.”",
+      name: "Rohan Kumar,",
+      designation: "CTO, FutureTech",
+      stars: 5
     },
     {
-        image: './assets/Rectangle 64.png',
-        quote: 'Outstanding service and professional team. They delivered beyond our expectations.',
-        name: 'Sarah Johnson',
-        designation: 'Director, Innovation Labs',
-        rating: 5
+      image: "https://randomuser.me/api/portraits/women/45.jpg",
+      text: "“Excellent service and support, they helped us scale seamlessly.”",
+      name: "Ayesha Malik,",
+      designation: "Product Head, NovaApps",
+      stars: 4
     },
     {
-        image: './assets/Rectangle 64.png',
-        quote: 'Their expertise in digital transformation has been invaluable to our growth.',
-        name: 'Michael Brown',
-        designation: 'CTO, Digital Ventures',
-        rating: 5
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+      text: "“Truly a partner in innovation, not just a service provider.”",
+      name: "Ankit Singh,",
+      designation: "Founder, DevCraft",
+      stars: 5
     }
-];
+  ];
 
-let currentTestimonial = 0;
-const testimonialSlider = document.querySelector('.testimonials-slider');
+  let current = 0;
 
-// Initialize Testimonials
-function initTestimonials() {
-    testimonials.forEach((testimonial, index) => {
-        const card = createTestimonialCard(testimonial);
-        testimonialSlider.appendChild(card);
-    });
-    updateSliderPosition();
-}
+  const image = document.getElementById("testimonialImage");
+  const text = document.getElementById("testimonialText");
+  const name = document.getElementById("testimonialName");
+  const designation = document.getElementById("testimonialDesignation");
+  const stars = document.getElementById("testimonialStars");
 
-// Create Testimonial Card
-function createTestimonialCard(testimonial) {
-    const card = document.createElement('div');
-    card.className = 'testimonial-card flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4';
-    
-    const stars = '★'.repeat(testimonial.rating) + '☆'.repeat(5 - testimonial.rating);
-    
-    card.innerHTML = `
-        <div class="bg-white p-8 rounded-lg shadow-lg">
-            <div class="flex items-center mb-6">
-                <img src="${testimonial.image}" alt="${testimonial.name}" 
-                     class="w-16 h-16 rounded-full object-cover mr-4">
-                <div>
-                    <h4 class="font-bold text-[#00076A]">${testimonial.name}</h4>
-                    <p class="text-gray-600">${testimonial.designation}</p>
-                </div>
-            </div>
-            <p class="text-gray-700 mb-4">${testimonial.quote}</p>
-            <div class="text-yellow-400">${stars}</div>
-        </div>
-    `;
-    
-    return card;
-}
+  function updateTestimonial(index) {
+    const t = testimonials[index];
+    image.src = t.image;
+    text.textContent = t.text;
+    name.textContent = t.name;
+    designation.textContent = t.designation;
+    stars.textContent = "⭐".repeat(t.stars);
+  }
 
-// Update Slider Position
-function updateSliderPosition() {
-    const cardWidth = document.querySelector('.testimonial-card').offsetWidth;
-    testimonialSlider.style.transform = `translateX(-${currentTestimonial * cardWidth}px)`;
-}
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    current = (current - 1 + testimonials.length) % testimonials.length;
+    updateTestimonial(current);
+  });
 
-// Navigation Functions
-function nextTestimonial() {
-    const maxSlides = testimonials.length - 1;
-    currentTestimonial = currentTestimonial >= maxSlides ? 0 : currentTestimonial + 1;
-    updateSliderPosition();
-}
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    current = (current + 1) % testimonials.length;
+    updateTestimonial(current);
+  });
 
-function prevTestimonial() {
-    const maxSlides = testimonials.length - 1;
-    currentTestimonial = currentTestimonial <= 0 ? maxSlides : currentTestimonial - 1;
-    updateSliderPosition();
-}
-
-// Auto Rotate Testimonials
-function startAutoRotate() {
-    setInterval(nextTestimonial, 5000); // Rotate every 5 seconds
-}
-
-// Scroll to Top Button
-function initScrollToTop() {
-    const scrollBtn = document.createElement('div');
-    scrollBtn.className = 'scroll-to-top';
-    scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    document.body.appendChild(scrollBtn);
-
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollBtn.classList.add('visible');
-        } else {
-            scrollBtn.classList.remove('visible');
-        }
-    });
-
-    scrollBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-// Animate elements on scroll
-function initScrollAnimation() {
-    const elements = document.querySelectorAll('.animate-slide-in');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, { threshold: 0.1 });
-
-    elements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        observer.observe(element);
-    });
-}
-
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    initTestimonials();
-    startAutoRotate();
-
-    // Update slider position on window resize
-    window.addEventListener('resize', updateSliderPosition);
-
-    initMobileMenu();
-    initScrollToTop();
-    initScrollAnimation();
-});
-
-// Add smooth scrolling to all links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-}); 
+  // Initialize first testimonial
+  updateTestimonial(current);

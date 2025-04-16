@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Details - Join Our Team</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-red': '#ff0022',
+            'brand-blue': '#D6F0FF',
+            'text-primary': '#333333',
+            'text-secondary': '#555555',
+            'job-title': '#0056B3'
+          },
+          fontFamily: {
+            'poppins': ['Poppins', 'sans-serif']
+          },
+          backgroundImage: {
+            'blue-gradient': 'linear-gradient(to bottom, #c1e7ff, #e6f5ff)',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333333;
+      background-color: #f9fafb;
+    }
+    .breadcrumb-item {
+      display: inline-flex;
+      align-items: center;
+    }
+    .breadcrumb-item:not(:last-child)::after {
+      content: '>';
+      margin: 0 0.5rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Breadcrumb -->
+  <header class="bg-white border-b border-gray-200">
+    <div class="container mx-auto px-4 py-4">
+      <div class="breadcrumb text-sm">
+        <div class="breadcrumb-item">
+          <a href="index.html" class="text-job-title hover:underline">JOB LISTING</a>
+        </div>
+        <div class="breadcrumb-item text-gray-600">
+          JOB DETAILS
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8 md:py-12">
+    <div class="bg-white rounded-lg shadow-md p-8 md:p-10 max-w-4xl mx-auto">
+      <!-- Job Title -->
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8">
+        <h1 class="md:text-2xl sm:text-2xl font-bold text-job-title" id="job-title">Job Description</h1>
+        <span class="text-green-600 font-medium px-4 py-1 bg-green-50 rounded-full text-sm sm:text-base" id="job-type">
+          Full time
+        </span>
+      </div>
+      
+      
+      <!-- Job Description -->
+      <div id="job-description-content" class="mb-10">
+        <!-- Job description content will be dynamically inserted here -->
+      </div>
+      
+      <!-- Apply Button -->
+      <div class="mt-8">
+        <a href="#" class="inline-flex items-center bg-brand-red hover:bg-red-700 text-white font-medium py-3 px-8 rounded-md transition-colors justify-center">
+          APPLY NOW
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get job ID from URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const jobId = urlParams.get('job');
+      
+      // Job data (in a real application, this would come from a database)
+      const jobData = {
+        'designer': {
+          title: 'DESIGNERS-UI/UX/VISUAL/GRAPHIC',
+          description: [
+            'Help build design work across multiple mediums on various projects, from small pieces to multi-channel campaigns.',
+            'Build digital assets for marketing campaigns that align with the look and feel of those campaigns across other touch points.',
+            'Assist in the planning and creation of designs for marketing automation campaigns to include email, social media, and PPC.',
+            'Design templates for landing pages and emails using custom CSS and styling to help support brand messages.',
+            'Design onsite creatives, including A/B testing and better UX design to help drive user engagement.',
+            'Design dynamic and static banners for Google Display Network and other 3rd party networks.'
+          ],
+          type: 'Full time'
+        },
+        'software-developer': {
+          title: 'SOFTWARE DEVELOPERS',
+          description: [
+            'Design and develop high-volume, low-latency applications for mission-critical systems, ensuring top-tier availability and performance.',
+            'Contribute to all phases of the development lifecycle.',
+            'Write well-designed, testable, efficient code.',
+            'Ensure designs comply with specifications.',
+            'Prepare and produce releases of software components.',
+            'Support continuous improvement by investigating alternatives and technologies and presenting these for architectural review.'
+          ],
+          type: 'Full time'
+        },
+        'web-developer': {
+          title: 'WEB DEVELOPERS',
+          description: [
+            'Develop new components based on design specs.',
+            'Work independently and write maintainable code.',
+            'Understand existing code and suggest optimization in terms of performance and security.',
+            'Implement responsive design for mobile sites.',
+            'Create website layout/user interfaces using standard HTML/CSS practices.',
+            'Integrate data from various back-end services and databases.'
+          ],
+          type: 'Full time'
+        },
+        'content-writer': {
+          title: 'CONTENT/TECHNICAL WRITERS',
+          description: [
+            'Ideate and create content for blogs, articles, social media copies, and other formats on a regular basis.',
+            'Stay up to date with content in the market to ensure our content is unique and valuable.',
+            'Research industry-related topics to develop original content.',
+            'Edit and proofread written pieces before publication.',
+            'Conduct keyword research and use SEO guidelines to increase web traffic.',
+            'Identify customers needs and recommend new content to address gaps in the existing content.'
+          ],
+          type: 'Full time'
+        },
+        'qa-engineer': {
+          title: 'QA ENGINEERS',
+          description: [
+            'Experience in manual and automation testing.',
+            'Knowledge of Java Programming (data types, variables, operators, flow control statements, methods, etc.).',
+            'Create detailed, comprehensive test plans and test cases.',
+            'Estimate, prioritize, plan and coordinate testing activities.',
+            'Design, develop and execute automation scripts using open source tools.',
+            'Identify, record, document thoroughly and track bugs.'
+          ],
+          type: 'Full time'
+        },
+        'technical-support': {
+          title: 'TECHNICAL SUPPORT ENGINEERS',
+          description: [
+            'Provide voice-based support to international/domestic customers over the phone (Inbound and Outbound).',
+            'Build a rapport with customers with clear and concise communication.',
+            'Troubleshoot and resolve customer issues in a timely manner.',
+            'Document all call information according to standard operating procedures.',
+            'Follow up with customers to ensure complete resolution of issues.',
+            'Escalate unresolved issues to the appropriate internal teams.'
+          ],
+          type: 'Full time'
+        },
+        'digital-marketing': {
+          title: 'DIGITAL MARKETING ANALYST',
+          description: [
+            'Manage Google Adwords Campaigns to improve Return on Investment and generate reports.',
+            'Develop performance metrics to provide recommendations and continuous improvement.',
+            'Analyze campaign data to drive optimization and understand market trends.',
+            'Collaborate with the marketing team to manage and optimize digital marketing campaigns.',
+            'Monitor and analyze website traffic flow and provide regular internal reports.',
+            'Attain key performance indicators such as reducing the website bounce rate, increasing dwell time or improving conversion.'
+          ],
+          type: 'Full time'
+        },
+        'sales-executive': {
+          title: 'SALES EXECUTIVES',
+          description: [
+            'Build rapport with contacts and understand where the prospect is in the buying process.',
+            'Identify opportunities that meet a minimum qualification criteria.',
+            'Develop and maintain a pipeline of qualified opportunities.',
+            'Conduct product demonstrations to prospects.',
+            'Negotiate and close deals to achieve sales targets.',
+            'Maintain accurate records in CRM system.'
+          ],
+          type: 'Full time'
+        },
+        'product-marketer': {
+          title: 'PRODUCT MARKETERS',
+          description: [
+            'Write, rewrite, test, and maintain website and landing pages.',
+            'Create and maintain accurate comparison documents.',
+            'Write briefs for ads, landing pages, and other marketing materials.',
+            'Develop messaging and positioning for products.',
+            'Work with product management to define product value propositions.',
+            'Create sales enablement materials such as battle cards, competitor analysis, and product training.'
+          ],
+          type: 'Full time'
+        }
+      };
+      
+      // Default to designer if no job ID is provided or if job ID doesn't exist
+      const job = jobData[jobId] || jobData['designer'];
+      
+      // Update page title
+      document.title = job.title + ' - Job Details';
+      
+      // Update job title
+      document.getElementById('job-title').textContent = job.title;
+      
+      // Update job type
+      document.getElementById('job-type').textContent = job.type;
+      
+      // Update job description
+      const descriptionContainer = document.getElementById('job-description-content');
+      
+      // Add job description paragraph
+      const descriptionIntro = document.createElement('p');
+      descriptionIntro.className = 'text-lg text-text-secondary mb-6';
+      descriptionIntro.textContent = 'We are looking for a talented professional to join our team. The ideal candidate will have the following responsibilities:';
+      descriptionContainer.appendChild(descriptionIntro);
+      
+      // Add job description list
+      const descriptionList = document.createElement('ul');
+      descriptionList.className = 'space-y-4';
+      
+      job.description.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.className = 'flex items-start';
+        
+        const bullet = document.createElement('span');
+        bullet.className = 'text-job-title mr-3 mt-1.5';
+        bullet.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>';
+        
+        const text = document.createElement('span');
+        text.className = 'text-text-secondary';
+        text.textContent = item;
+        
+        listItem.appendChild(bullet);
+        listItem.appendChild(text);
+        descriptionList.appendChild(listItem);
+      });
+      
+      descriptionContainer.appendChild(descriptionList);
+    });
+  </script>
+</body>
+</html>

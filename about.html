@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us Section</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // tailwind.config = {
+    //     theme: {
+    //         extend: {
+    //             fontFamily: {
+    //              boli: ['"MV Boli"', 'cursive'],
+    //              mulish: ['Mulish', 'sans-serif'],
+
+    //             },
+    //             colors: {
+    //                 primary: '#1B9CE3',  
+    //                 // secondary: '#F97316',
+    //             },
+    //             container: {
+    //                 padding: {
+    //                     DEFAULT: '2rem',
+    //                     sm: '4rem',
+    //                     lg: '6rem',
+    //                     xl: '8rem',
+    //                     '2xl': '10rem',
+    //                 },
+    //             },
+    //         }
+    //     }
+    // }
+</script>
+<style>
+    .site-container {
+        width: 98%;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    @media (min-width: 768px) {
+        .site-container {
+            width: 96%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .site-container {
+            width: 95%;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+</style>
+</head>
+<body class="font-sans">
+
+  <!-- navbar -->
+  <nav class="bg-white border-2 border-[#000000] ">
+    <div class="site-container">
+        <div class="flex justify-between items-center py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-12">
+                <div class="ml-3">
+                    <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-3xl">BRIDGE GROUP</h1>
+                    <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-bold text-xl">SOLUTIONS</p>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8 text-[#000000]">
+                <a href="index.html" class=" hover:text-[#1B9CE3] transition-colors">Home</a>
+                <a href="about.html" class="hover:text-[#1B9CE3] transition-colors">About</a>
+                <a href="#" class=" hover:text-[#1B9CE3] transition-colors">Services</a>
+                <a href="carrerPage.html" class=" hover:text-[#1B9CE3] transition-colors">Careers</a>
+                <a href="form.html" class="border border-[#1B9CE3] text-[#1B9CE3] px-6 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
+              </div>
+          
+              <!-- Mobile Menu Button -->
+              <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#1B9CE3] focus:outline-none">
+                <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden px-4">
+              <div class="py-4 space-y-4">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Home</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
+                <a href="carrerPage.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                <a href="#" class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
+              </div>
+    </div>
+</nav>
+
+  <!-- Hero Section -->
+  <section class="relative">
+    <!-- Background Image -->
+    <img src="./assets/photo.png" alt="Background" class="w-full h-[600px] object-cover" />
+  
+    <!-- Overlay Content -->
+    <div class="absolute inset-0 bg-blue-900 bg-opacity-70 flex items-center">
+      <div class="max-w-6xl w-full px-6 md:px-12 lg:px-20 text-white text-left">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">About Us</h2>
+        <div class="w-6 h-[2px] bg-yellow-500 mb-4"></div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-snug md:leading-tight">
+          10+ Years of Excellence <br class="hidden sm:block" />
+          in Outsourcing and <br class="hidden md:block" />
+          Innovation
+        </h1>
+      </div>
+    </div>
+  </section>
+  
+  <section class="relative text-center py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
+
+    <!-- Top Gradient -->
+    <div class="absolute top-0 left-0 right-0 h-[50px] bg-gradient-to-b from-[#D2EFFF] to-transparent pointer-events-none z-0"></div>
+  
+    <!-- Bottom Gradient -->
+    <div class="absolute bottom-0 left-0 right-0 h-[50px] bg-gradient-to-t from-[#D2EFFF] to-transparent pointer-events-none z-0"></div>
+  
+    <!-- Text Content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-base sm:text-lg md:text-2xl lg:text-3xl font-medium leading-relaxed mb-6">
+        At B.G.S, we turn aspirations into innovations,<br class="hidden sm:block" />
+        challenges into opportunities, and partnerships into<br class="hidden sm:block" />
+        lasting success –
+      </p>
+      <p class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-snug">
+        Championing bold ambitions with integrity.
+      </p>
+    </div>
+  </section>
+  
+
+ <!-- Main Section -->
+<section class="relative bg-[#D2EFFF] pt-20 pb-32 overflow-hidden">
+
+    <!-- White Box Banner -->
+    <div class="bg-white w-[90%] max-w-6xl h-[300px] mx-auto rounded-sm px-6 sm:px-10 md:px-16 lg:px-20"></div>
+  
+    <!-- Floating Card -->
+    <div class="absolute top-[250px] right-4 sm:right-8 md:right-16 lg:right-24 bg-white border border-blue-500 rounded-md shadow-md p-4 sm:p-6 w-[90%] sm:w-96 mx-auto sm:mx-0">
+      <h3 class="text-blue-900 font-semibold text-sm sm:text-base mb-2">
+        Be a part of success story building Team
+      </h3>
+      <p class="text-gray-700 text-sm sm:text-base mb-4">
+        Good News is that we are hiring for various profiles and for various locations.
+        We are also looking for interns for winter internship and live projects.
+      </p>
+      <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 text-sm rounded">
+        Join Us
+      </button>
+    </div>
+  
+    <!-- Overview Section -->
+    <section class="px-4 sm:px-6 md:px-10 lg:px-20 pt-48 pb-16 max-w-7xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-1">Overview</h2>
+      <div class="w-6 h-[2px] bg-yellow-500 mb-6"></div>
+  
+      <!-- Two-column Text -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-justify text-base sm:text-[18px] leading-relaxed">
+        <p>
+          Founded in 2014, B.G.S is one of India's original project outsourcing start-ups, created to bridge gaps in process management and outsourcing.
+          Starting as a project outsourcing firm, we quickly expanded into technology, wealth management, and talent management solutions — always with a focus on delivering high-quality, cost-effective, and practical interventions.
+  
+          Our strength lies in building experienced teams, developing technological enablers, and institutionalizing standardized processes.
+          Strong research, consistent outperformance, and high standards of client service are testaments to our robust model.
+        </p>
+  
+        <p>
+          In less than two years, B.G.S has expanded to over five cities and continues to grow at an impressive pace.
+          Here, aspiration meets innovation, candor fuels collaboration, and teamwork makes the impossible possible.
+  
+          We are proud of our exceptional client retention rate, built through referrals and enduring partnerships.
+          Guided by our "True North" — an unwavering commitment to doing the right thing — we work hand-in-hand with clients,
+          turning bold ambitions into extraordinary results.
+  
+          At B.G.S, we don’t just meet standards — we set new ones.
+        </p>
+      </div>
+    </section>
+  </section>
+  
+  <section class="bg-[#fefefe] py-12 max-w-9xl">
+    
+    <h2 class="text-center text-3xl font-bold text-blue-900 mb-8">Our History</h2>
+  
+    <div class="relative max-w-4xl mx-auto border-l-2 border-orange-400">
+      <!-- Timeline Item -->
+      <div class="flex items-start mb-10">
+        <div class="w-14 -ml-10 text-sm font-semibold text-gray-700">2014</div>
+        <div class="relative">
+          <div class="w-6 h-6 bg-white border-2 border-orange-400 rounded-full absolute -left-10 top-1.5 flex items-center justify-center z-10">
+            <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+          </div>
+          <div class="ml-4 bg-blue-100 rounded-md px-6 py-3 flex items-center relative">
+            <div class="w-2 h-2 bg-orange-300 rotate-45 absolute left-0 -ml-1.5 top-1/2 -translate-y-1/2"></div>
+            <span class="ml-4 text-sm font-medium text-gray-800">Company Foundation</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Timeline Item -->
+      <div class="flex items-start mb-10">
+        <div class="w-14 -ml-10 text-sm font-semibold text-gray-700">2015</div>
+        <div class="relative">
+          <div class="w-6 h-6 bg-white border-2 border-orange-400 rounded-full absolute -left-10 top-1.5 flex items-center justify-center z-10">
+            <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+          </div>
+          <div class="ml-4 bg-blue-100 rounded-md px-6 py-3 flex items-center relative">
+            <div class="w-2 h-2 bg-orange-300 rotate-45 absolute left-0 -ml-1.5 top-1/2 -translate-y-1/2"></div>
+            <span class="ml-4 text-sm font-medium text-gray-800">Business Growth Milestone</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Timeline Item -->
+      <div class="flex items-start mb-10">
+        <div class="w-14 -ml-10 text-sm font-semibold text-gray-700">2016</div>
+        <div class="relative">
+          <div class="w-6 h-6 bg-white border-2 border-orange-400 rounded-full absolute -left-10 top-1.5 flex items-center justify-center z-10">
+            <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+          </div>
+          <div class="ml-4 bg-blue-100 rounded-md px-6 py-3 flex items-center relative">
+            <div class="w-2 h-2 bg-orange-300 rotate-45 absolute left-0 -ml-1.5 top-1/2 -translate-y-1/2"></div>
+            <span class="ml-4 text-sm font-medium text-gray-800">Enhanced Microsoft Partnership</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Timeline Item -->
+      <div class="flex items-start mb-10">
+        <div class="w-14 -ml-10 text-sm font-semibold text-gray-700">2018</div>
+        <div class="relative">
+          <div class="w-6 h-6 bg-white border-2 border-orange-400 rounded-full absolute -left-10 top-1.5 flex items-center justify-center z-10">
+            <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+          </div>
+          <div class="ml-4 bg-blue-100 rounded-md px-6 py-3 flex items-center relative">
+            <div class="w-2 h-2 bg-orange-300 rotate-45 absolute left-0 -ml-1.5 top-1/2 -translate-y-1/2"></div>
+            <span class="ml-4 text-sm font-medium text-gray-800">Digital Transformation Initiative</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Timeline Item -->
+      <div class="flex items-start mb-10">
+        <div class="w-14 -ml-10 text-sm font-semibold text-gray-700">2021</div>
+        <div class="relative">
+          <div class="w-6 h-6 bg-white border-2 border-orange-400 rounded-full absolute -left-10 top-1.5 flex items-center justify-center z-10">
+            <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+          </div>
+          <div class="ml-4 bg-blue-100 rounded-md px-6 py-3 flex items-center relative">
+            <div class="w-2 h-2 bg-orange-300 rotate-45 absolute left-0 -ml-1.5 top-1/2 -translate-y-1/2"></div>
+            <span class="ml-4 text-sm font-medium text-gray-800">Expanded Cloud Services</span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Timeline Item -->
+      <div class="flex items-start mb-12">
+        <div class="w-14 -ml-10 text-sm font-semibold text-gray-700">2022</div>
+        <div class="relative">
+          <div class="w-6 h-6 bg-white border-2 border-orange-400 rounded-full absolute -left-10 top-1.5 flex items-center justify-center z-10">
+            <div class="w-2 h-2 bg-orange-400 rounded-full"></div>
+          </div>
+          <div class="ml-4 bg-blue-100 rounded-md px-6 py-3 flex items-center relative">
+            <div class="w-2 h-2 bg-orange-300 rotate-45 absolute left-0 -ml-1.5 top-1/2 -translate-y-1/2"></div>
+            <span class="ml-4 text-sm font-medium text-gray-800">The only Microsoft</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  
+      <section class="h-90 bg-gradient-to-b from-[#D2EFFF] 200 to-[#D2EFFF] 200 py-16 px-4 sm:px-8 lg:px-20">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+          <!-- Text Content -->
+          <div class="max-w-xl">
+            <p class="text-sky-600 font-medium text-lg mb-1 border-b-2 border-sky-400 inline-block">Partners</p>
+            <h2 class="text-3xl font-bold text-blue-900 mb-4">Strategic Technology Partners</h2>
+            <p class="text-gray-700 text-base">
+              We collaborate with industry-leading technology providers to deliver cutting-edge solutions that drive innovation and digital transformation for our clients.
+            </p>
+          </div>
+      
+          <!-- Logos -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-12 items-center justify-items-center">
+            <img src="./assets/1_logo.png" alt="Aditya Birla Capital" class="h-12 object-contain">
+            <img src="./assets/2_logo.png" alt="Big Bazaar" class="h-12 object-contain">
+            <img src="./assets/3_logo.png" alt="IndiaFirst" class="h-12 object-contain">
+            <img src="./assets/4_logo.png" alt="Max Life" class="h-12 object-contain">
+            <img src="./assets/5_logo.png" alt="Drishti" class="h-12 object-contain">
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white py-16 px-4 sm:px-8 lg:px-24 relative">
+        <!-- Top Gradient -->
+        <div class="absolute top-0 left-0 right-0 h-[40px] bg-gradient-to-b from-[#D2EFFF] to-transparent z-0"></div>
+      
+        <!-- Section Heading -->
+        <div class="max-w-7xl mx-auto text-center mb-12 relative z-10">
+          <h2 class="text-3xl sm:text-4xl font-bold text-blue-900">Our Core Values</h2>
+          <p class="text-gray-700 max-w-3xl mx-auto mt-4 text-sm sm:text-base">
+            At Bridge Group Solutions, we value our associates, customers, employees, and community,
+            blending the needs of our company with the demands of an ever-changing world. Our core values are the
+            foundation of our culture and drive our vision forward.
+          </p>
+        </div>
+      
+        <!-- Core Values Content -->
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start justify-between max-w-7xl mx-auto relative z-10">
+          
+          <!-- Left - List of Values -->
+          <div class="relative pl-6 space-y-6 text-left text-gray-800 font-medium w-full lg:w-1/3">
+            <div class="absolute left-0 top-5 h-full w-[2px] flex flex-col">
+              <div class="h-[25px] bg-orange-400 rounded-t"></div>
+              <div class="flex-1 bg-black rounded-b"></div>
+            </div>
+            <div>People</div>
+            <div>Integrity</div>
+            <div>Customer Delight</div>
+            <div>Excellence</div>
+            <div>Trust</div>
+          </div>
+      
+          <!-- Right - Descriptions -->
+          <div class="space-y-10 w-full lg:w-2/3">
+            <div>
+              <h3 class="text-lg sm:text-xl font-semibold text-blue-800 mb-1">People</h3>
+              <p class="text-gray-700 text-sm sm:text-base">
+                We must be caring, show respect, compassion and humanity for our colleagues, associates and customers
+                around the world, and always work for the benefit of the communities we serve.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-semibold text-blue-800 mb-1">Integrity</h3>
+              <p class="text-gray-700 text-sm sm:text-base">
+                Conducting our operations with integrity and with the respect for each person and business associate whom
+                we touch in different junctures of our business journey.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-semibold text-blue-800 mb-1">Customer Delight</h3>
+              <p class="text-gray-700 text-sm sm:text-base">
+                We are committed to foster customer-centric culture where our processes, services and innovations are aligned
+                around customer/franchisee/business associate expectations.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-semibold text-blue-800 mb-1">Excellence</h3>
+              <p class="text-gray-700 text-sm sm:text-base">
+                We must constantly strive to achieve the highest possible standards in our execution and in the quality of the
+                services we provide at affordable cost and need-based solutions.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-semibold text-blue-800 mb-1">Trust</h3>
+              <p class="text-gray-700 text-sm sm:text-base">
+                We believe that trust is the foundation of our relationship with associates, franchisees,
+                customers and employees — and we cultivate it every day by being accountable for every single property transaction
+                we offer.
+              </p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Bottom Gradient -->
+        <div class="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#D2EFFF] to-transparent z-0"></div>
+      </section>
+      
+      
+      <section>
+      <div class="bg-[#d4edff] py-10 px-4 md:px-20 lg:px-28">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+      
+          <!-- Left Illustration -->
+          <div class="w-full md:w-1/2 flex justify-center">
+            <img src="./assets/Marriage.png" alt="Guidance Image" class="max-w-[450px] w-full">
+          </div>
+      
+          <!-- Right Content -->
+          <div class="w-full md:w-1/2 text-center md:text-left text-[#06156D]">
+            <h2 class="text-[28px] md:text-[32px] font-semibold mb-6 leading-snug">
+              You Always Get the Best Guidance
+            </h2>
+      
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 gap-y-8 gap-x-10 text-[16px] md:text-[17px] font-medium">
+      
+              <div>
+                <p class="text-[28px] font-bold">10,000</p>
+                <p class="mt-1 leading-tight">Satisfied<br />Customers</p>
+              </div>
+      
+              <div>
+                <p class="text-[28px] font-bold">259</p>
+                <p class="mt-1 leading-tight">Minimum Projects<br />Completed</p>
+              </div>
+      
+              <div>
+                <p class="text-[28px] font-bold">32</p>
+                <p class="mt-1 leading-tight">Awards<br />Received</p>
+              </div>
+      
+              <div>
+                <p class="text-[28px] font-bold">10</p>
+                <p class="mt-1 leading-tight">Years of<br />Experience</p>
+              </div>
+            </div>
+      
+            <!-- Button -->
+            <div class="mt-6">
+              <button class="bg-[#2196F3] text-white px-5 py-2 rounded font-medium hover:bg-blue-700 transition-all">
+                More About Us
+              </button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>      
+
+      <section class=" py-16  gradient-blue-to-white  section-overlay">
+        <div class="absolute top-0 left-0 right-0 h-[40px] bg-gradient-to-b from-[#D2EFFF] to-transparent z-0"></div>
+        
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-semibold font-Mulish text-[#00076A]">Our Clients Says</h2>
+          <p class="text-gray-600 mt-2 max-w-2xl mx-auto">
+            We owe our growth to the trust of our customers and partners. The journey ahead is long, but we're confident in shaping the future of work across nations.
+          </p>
+        </div>
+      
+        <div class="flex items-center justify-center space-x-8 relative max-w-5xl mx-auto">
+          <!-- Left Arrow -->
+          <button id="prevBtn" class="text-3xl text-gray-500 hover:text-gray-700 focus:outline-none">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+      
+          <!-- Testimonial Content -->
+          <div class=" rounded-lg shadow-md flex items-center px-6 py-6 space-x-6 w-full max-w-4xl transition duration-500" id="testimonialCard">
+            <!-- Image & Video -->
+            <div class="flex flex-col items-center">
+              <div class="border-2 border-orange-300 p-1 rounded-full">
+                <img id="testimonialImage" src="./assests/Rectangle.pngg" alt="Client" class="w-32 h-32 rounded-full object-cover" />
+              </div>
+              <button class="mt-2 text-sm text-red-600 flex items-center gap-1">
+                <i class="fab fa-youtube text-xl"></i> Watch Videos
+              </button>
+            </div>
+      
+            <!-- Text -->
+            <div class="border-l-2 border-orange-300 pl-6">
+              <p id="testimonialText" class="text-gray-700 mb-3">"BGS is solving problems for us we didn't even know we had."</p>
+              <p class="font-bold text-gray-800" id="testimonialName">Name,</p>
+              <p class="text-gray-600 text-sm mb-2" id="testimonialDesignation">Designation, organization</p>
+              <div class="text-yellow-400" id="testimonialStars">
+                ⭐⭐⭐⭐⭐
+              </div>
+            </div>
+          </div>
+      
+          <!-- Right Arrow -->
+          <button id="nextBtn" class="text-3xl text-gray-500 hover:text-gray-700 focus:outline-none">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        
+      </section>
+
+
+    <footer class="bg-[#D6F0FF] py-16">
+      <div class="site-container">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <!-- Logo and Social Links -->
+              <div>
+                  <div class="flex items-center mb-4">
+                      <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-12">
+                      <div class="ml-3">
+                          <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">BRIDGE GROUP</h1>
+                          <p class="text-[#00076A] font-Mulish font-semibold">SOLUTIONS</p>
+                      </div>
+                  </div>
+                  <p class=" mb-4 bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0]  text-transparent bg-clip-text font-small text-accent">WE KNOT SPACE...</p>
+                  <div class="flex space-x-4">
+                      <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                          <i class="fab fa-twitter"></i>
+                      </a>
+                      <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                          <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                          <i class="fab fa-instagram"></i>
+                      </a>
+                      <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                          <i class="fab fa-linkedin-in"></i>
+                      </a>
+                  </div>
+              </div>
+              
+              <!-- Links -->
+              <div>
+                  <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
+                  <ul class="space-y-4">
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Gallery</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Service</a>
+                      </li>
+                  </ul>
+              </div>
+
+              <!-- Services -->
+              <div>
+                  <h3 class="text-xl font-semibold text-[#000000]">Services</h3>
+                  <ul class="space-y-4">
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Mutual Funds</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Wealth Management</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Portfolio Management</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Pension Funds</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp & Customized Software</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software Testing</a>
+                      </li>
+                  </ul>
+              </div>
+
+              <!-- Subscribe Form -->
+              <div>
+                  <h3 class="text-xl font-semibold text-[#000000] mb-6">Subscribe Us!</h3>
+                  <form class="space-y-4">
+                      <input type="email" placeholder="Enter Email Address" class=" px-4 py-3 w-48 rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
+                      <button type="submit" class="px-4 py-3 w-48  bg-[#1B9CE3] text-white  rounded-lg shadow-lg 
+                       transition duration-150 
+                      active:scale-95 active:shadow-sm transition-colors">
+                          Subscribe
+                      </button>
+                  </form>
+              </div>
+          </div>
+
+          <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
+              <p>Copyright © 2025 All rights reserved | This template is made with by Techbuddies@bgs</p>
+          </div>
+      </div>
+
+      <button 
+       id="scrollToTopBtn"
+       onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" 
+      class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-all duration-300 shadow-lg z-50 opacity-0 pointer-events-none"
+       >
+        <i class="fas fa-arrow-up"></i>
+         </button>  <!-- Scroll to Top Button -->
+     
+  </footer>
+  <!-- Testimonial Script -->
+  <script>
+    const testimonials = [
+  {
+    image: "https://randomuser.me/api/portraits/men/65.jpg",
+    text: "“BGS is solving problems for us we didn't even know we had.”",
+    name: "Rohan Kumar,",
+    designation: "CTO, FutureTech",
+    stars: 5
+  },
+  {
+    image: "https://randomuser.me/api/portraits/women/45.jpg",
+    text: "“Excellent service and support, they helped us scale seamlessly.”",
+    name: "Ayesha Malik,",
+    designation: "Product Head, NovaApps",
+    stars: 4
+  },
+  {
+    image: "https://randomuser.me/api/portraits/men/65.jpg",
+    text: "“Truly a partner in innovation, not just a service provider.”",
+    name: "Ankit Singh,",
+    designation: "Founder, DevCraft",
+    stars: 5
+  }
+];
+
+let current = 0;
+
+const image = document.getElementById("testimonialImage");
+const text = document.getElementById("testimonialText");
+const name = document.getElementById("testimonialName");
+const designation = document.getElementById("testimonialDesignation");
+const stars = document.getElementById("testimonialStars");
+
+function updateTestimonial(index) {
+  const t = testimonials[index];
+  image.src = t.image;
+  text.textContent = t.text;
+  name.textContent = t.name;
+  designation.textContent = t.designation;
+  stars.textContent = "⭐".repeat(t.stars);
+}
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+  current = (current - 1 + testimonials.length) % testimonials.length;
+  updateTestimonial(current);
+});
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  current = (current + 1) % testimonials.length;
+  updateTestimonial(current);
+});
+
+// Initialize first testimonial
+updateTestimonial(current);
+
+// Scroll to top button functionality
+const scrollBtn = document.getElementById('scrollToTopBtn');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  if (scrollY > 100) {
+    // Show button
+    scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
+    scrollBtn.classList.add('opacity-100');
+  } else {
+    // Hide button
+    scrollBtn.classList.add('opacity-0', 'pointer-events-none');
+    scrollBtn.classList.remove('opacity-100');
+  }
+});
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function () {
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    mobileMenu.classList.toggle('hidden');
+
+    // Switch icon
+    if (isMenuOpen) {
+      menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`;
+    } else {
+      menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+    }
+  }
+
+  mobileMenuBtn.addEventListener('click', toggleMenu);
+
+  // Optional: Close menu on outside click
+  document.addEventListener('click', function (event) {
+    if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target) && isMenuOpen) {
+      toggleMenu();
+    }
+  });
+
+  // Optional: Close menu on window resize to desktop
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 768 && isMenuOpen) {
+      toggleMenu();
+    }
+  });
+});
+  </script>
+    
+        
+    <script src="script.js"></script>
+      
+  
+</body>
+</html>

@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Careers - Join Our Team</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -29,6 +28,31 @@
       }
     }
   </script>
+  <style>
+    .site-container {
+        width: 98%;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    @media (min-width: 768px) {
+        .site-container {
+            width: 96%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .site-container {
+            width: 95%;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+</style>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -66,33 +90,10 @@
         margin-bottom: 1rem;
       }
     }
-    .site-container {
-        width: 98%;
-        max-width: 1400px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-    @media (min-width: 768px) {
-        .site-container {
-            width: 96%;
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .site-container {
-            width: 95%;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
-    }
   </style>
 </head>
 <body class="bg-white font-poppins">
-  <nav class="bg-white border-2 border-[#00076A] shadow-md">
+  <nav class="bg-white border-2 border-[#000000] ">
     <div class="site-container">
         <div class="flex justify-between items-center py-4">
             <!-- Logo -->
@@ -106,35 +107,33 @@
 
             <!-- Navigation Links -->
             <div class="hidden md:flex items-center space-x-8 text-[#000000]">
-                <a href="index.html" class="hover:text-[#1B9CE3] transition-colors">Home</a>
+                <a href="index.html" class=" hover:text-[#1B9CE3] transition-colors">Home</a>
                 <a href="about.html" class="hover:text-[#1B9CE3] transition-colors">About</a>
-                <a href="#" class="hover:text-[#1B9CE3] transition-colors">Services</a>
-                <a href="carrerPage.html" class="hover:text-[#1B9CE3] transition-colors">Careers</a>
-                <a href="form.html" class="border border-[#1B9CE3] text-[#1B9CE3] px-6 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#1B9CE3] focus:outline-none">
+                <a href="#" class=" hover:text-[#1B9CE3] transition-colors">Services</a>
+                <a href="carrerPage.html" class=" hover:text-[#1B9CE3] transition-colors">Careers</a>
+                <a href="contact.html" class="border border-[#1B9CE3] text-[#1B9CE3] px-6 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
+              </div>
+          
+              <!-- Mobile Menu Button -->
+              <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#1B9CE3] focus:outline-none">
                 <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="md:hidden hidden px-4">
-            <div class="py-4 space-y-4">
+              </button>
+            </div>
+          
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden px-4">
+              <div class="py-4 space-y-4">
                 <a href="index.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Home</a>
                 <a href="about.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
                 <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
                 <a href="carrerPage.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
-                <a href="form.html" class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
-            </div>
-        </div>
+                <a href="contact.html" class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
+              </div>
     </div>
 </nav>
-
-  
   <!-- Hero Section -->
   <section class="py-12 md:py-20 bg-white">
     <div class="container mx-auto px-4 max-w-5xl text-center">
@@ -332,128 +331,188 @@
       </a>
     </div>
   </section>
-  <footer class="bg-[#D6F0FF] py-16">
-    <div class="site-container">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- Logo and Social Links -->
-            <div>
-                <div class="flex items-center mb-4">
-                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-12">
-                    <div class="ml-3">
-                        <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">BRIDGE GROUP</h1>
-                        <p class="text-[#00076A] font-Mulish font-semibold">SOLUTIONS</p>
-                    </div>
-                </div>
-                <p class=" mb-4 bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0]  text-transparent bg-clip-text font-small text-accent">WE KNOT SPACE...</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Links -->
-            <div>
-                <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-center">
-                        <span class="text-[#1B9CE3] mr-2">→</span>
-                        <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-[#1B9CE3] mr-2">→</span>
-                        <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-[#1B9CE3] mr-2">→</span>
-                        <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-[#1B9CE3] mr-2">→</span>
-                        <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Gallery</a>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-[#1B9CE3] mr-2">→</span>
-                        <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-[#1B9CE3] mr-2">→</span>
-                        <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Service</a>
-                    </li>
-                </ul>
-            </div>
 
-            <!-- Services -->
-            <div>
-                <h3 class="text-xl font-semibold text-[#000000]">Services</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-center">
-                        <span class="text-[#1B9CE3] mr-2">→</span>
-                        <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Mutual Funds</a>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-[#1B9CE3] mr-2">→</span>
-                        <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Wealth Management</a>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-[#1B9CE3] mr-2">→</span>
-                        <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Portfolio Management</a>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-[#1B9CE3] mr-2">→</span>
-                        <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Pension Funds</a>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-[#1B9CE3] mr-2">→</span>
-                        <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp & Customized Software</a>
-                    </li>
-                    <li class="flex items-center">
-                        <span class="text-[#1B9CE3] mr-2">→</span>
-                        <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software Testing</a>
-                    </li>
-                </ul>
-            </div>
+     <!-- Footer -->
 
-            <!-- Subscribe Form -->
-            <div>
-                <h3 class="text-xl font-semibold text-[#000000] mb-6">Subscribe Us!</h3>
-                <form class="space-y-4">
-                    <input type="email" placeholder="Enter Email Address" class=" px-4 py-3 w-48 rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
-                    <button type="submit" class="px-4 py-3 w-48  bg-[#1B9CE3] text-white  rounded-lg shadow-lg 
-                     transition duration-150 
-                    active:scale-95 active:shadow-sm transition-colors">
-                        Subscribe
-                    </button>
-                </form>
-            </div>
-        </div>
+     <footer class="bg-[#D2F0FF] py-16 px-16">
+      <div class="site-container">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <!-- Logo and Social Links -->
+              <div>
+                  <div class="flex items-center mb-4">
+                      <img src="./assets/logo.png" alt="Bridge Group Solutions" class="h-12">
+                      <div class="ml-3">
+                          <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">BRIDGE GROUP</h1>
+                          <p class="text-[#00076A] font-Mulish font-semibold">SOLUTIONS</p>
+                      </div>
+                  </div>
+                  <p class=" bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0]  text-transparent bg-clip-text font-small text-accent mb-4">WE KNOT SPACE...</p>
+                  <div class="flex space-x-4">
+                      <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                          <i class="fab fa-twitter"></i>
+                      </a>
+                      <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                          <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                          <i class="fab fa-instagram"></i>
+                      </a>
+                      <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                          <i class="fab fa-linkedin-in"></i>
+                      </a>
+                  </div>
+              </div>
+              
+              <!-- Links -->
+              <div>
+                  <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
+                  <ul class="space-y-4">
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Gallery</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Service</a>
+                      </li>
+                  </ul>
+              </div>
 
-        <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
-            <p>Copyright © 2025 All rights reserved | This template is made with by Techbuddies@bgs</p>
-        </div>
-    </div>
+              <!-- Services -->
+              <div>
+                  <h3 class="text-xl font-semibold text-[#000000]] mb-6">Services</h3>
+                  <ul class="space-y-4">
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Mutual Funds</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Wealth Management</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Portfolio Management</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Pension Funds</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp & Customized Software</a>
+                      </li>
+                      <li class="flex items-center">
+                          <span class="text-[#1B9CE3] mr-2">→</span>
+                          <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software Testing</a>
+                      </li>
+                  </ul>
+              </div>
 
-    <button 
+              <!-- Subscribe Form -->
+              <div>
+                  <h3 class="text-xl font-semibold text-[#000000] mb-6">Subscribe Us!</h3>
+                  <form class="space-y-4">
+                      <input type="email" placeholder="Enter Email Address" class=" px-4 py-3 w-48 rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
+                      <button type="submit" class="px-4 py-3 w-48  bg-[#1B9CE3] text-white  rounded-lg shadow-lg 
+                       transition duration-150 
+                      active:scale-95 active:shadow-sm transition-colors">
+                          Subscribe
+                      </button>
+                  </form>
+              </div>
+          </div>
+
+          <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
+              <p>Copyright © 2025 All rights reserved | This template is made with by Techbuddies@bgs</p>
+          </div>
+      </div>
+
+      <button 
 id="scrollToTopBtn"
 onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" 
 class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-all duration-300 shadow-lg z-50 opacity-0 pointer-events-none"
 >
 <i class="fas fa-arrow-up"></i>
 </button>  <!-- Scroll to Top Button -->
-   
-</footer>
+     
+  </footer>
 
   <!-- JavaScript -->
   <script>
+
+
+
+// Scroll to top button functionality
+const scrollBtn = document.getElementById('scrollToTopBtn');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  if (scrollY > 100) {
+    // Show button
+    scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
+    scrollBtn.classList.add('opacity-100');
+  } else {
+    // Hide button
+    scrollBtn.classList.add('opacity-0', 'pointer-events-none');
+    scrollBtn.classList.remove('opacity-100');
+  }
+});
+
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function () {
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    mobileMenu.classList.toggle('hidden');
+
+    // Switch icon
+    if (isMenuOpen) {
+      menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`;
+    } else {
+      menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+    }
+  }
+
+  mobileMenuBtn.addEventListener('click', toggleMenu);
+
+  // Optional: Close menu on outside click
+  document.addEventListener('click', function (event) {
+    if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target) && isMenuOpen) {
+      toggleMenu();
+    }
+  });
+
+  // Optional: Close menu on window resize to desktop
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 768 && isMenuOpen) {
+      toggleMenu();
+    }
+  });
+});
+
+
     document.addEventListener('DOMContentLoaded', function() {
       // Make job cards equal height in each row
       function equalizeCardHeights() {
@@ -512,7 +571,5 @@ class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex 
       window.addEventListener('resize', equalizeCardHeights);
     });
   </script>
-
-  <script src="script.js"></script>
 </body>
 </html>

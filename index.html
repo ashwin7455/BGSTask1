@@ -20,6 +20,7 @@
                         primary: '#1B9CE3',  
                         // secondary: '#F97316',
                     },
+            
                     container: {
                         padding: {
                             DEFAULT: '2rem',
@@ -106,7 +107,7 @@
                     <a href="about.html" class="hover:text-[#1B9CE3] transition-colors">About</a>
                     <a href="#" class="hover:text-[#1B9CE3] transition-colors">Services</a>
                     <a href="carrerPage.html" class="hover:text-[#1B9CE3] transition-colors">Careers</a>
-                    <a href="form.html" class="border border-[#1B9CE3] text-[#1B9CE3] px-6 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
+                    <a href="contact.html" class="border border-[#1B9CE3] text-[#1B9CE3] px-6 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -124,7 +125,7 @@
                     <a href="about.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
                     <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
                     <a href="carrerPage.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
-                    <a href="form.html" class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
+                    <a href="contact.html" class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -150,11 +151,11 @@
                     </h1>
                     
                     <h2 class="text-2xl  text-blue-900">DIGITAL PRODUCTS.</h2>
-                        <div>
-                            <a href="#" class="inline-block bg-[#1B9CE3] text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors">
+                        
+                            <a href="contact.html" class="inline-block bg-[#1B9CE3] text-white px-6 py-3 rounded-lg text-lg  transition-colors duration-300">
                                 Connect With Us
                             </a>
-                        </div>
+                        
                         <p class="text-gray-600 text-lg">
                             BRIDGE GROUP SOLUTION - LEADERS IN WEB & MOBILE<br/>
                             DESIGN AND DEVELOPMENT INDUSTRY.
@@ -420,26 +421,29 @@
           </button>
       
           <!-- Testimonial Content -->
-          <div class=" rounded-lg shadow-md flex items-center bg-white px-6 py-6 space-x-6 w-full max-w-4xl transition duration-500" id="testimonialCard">
+          <div class="rounded-lg shadow-md flex flex-col md:flex-row items-center bg-white px-6 py-6 w-full max-w-4xl transition duration-500" id="testimonialCard">
+
             <!-- Image & Video -->
             <div class="flex flex-col items-center">
               <div class="border-2 border-orange-300 p-1 rounded-full">
-                <img id="testimonialImage" src="./assests/Rectangle.pngg" alt="Client" class="w-32 h-32 rounded-full object-cover" />
+                <img id="testimonialImage" src="./assets/Rectangle.png" alt="Client" class="w-32 h-32 rounded-full object-cover" />
               </div>
               <button class="mt-2 text-sm text-red-600 flex items-center gap-1">
                 <i class="fab fa-youtube text-xl"></i> Watch Videos
               </button>
             </div>
-      
-            <!-- Text -->
-            <div class="border-l-2 border-orange-300 pl-6 sm:hide lg:hide">
+          
+            <!-- Divider -->
+            <div class="my-4 md:my-0 md:mx-6 w-full md:w-px h-px md:h-40 bg-red-500"></div>
+          
+            <!-- Text Content -->
+            <div class="text-center md:text-left">
               <p id="testimonialText" class="text-gray-700 mb-3">"BGS is solving problems for us we didn't even know we had."</p>
               <p class="font-bold text-gray-800" id="testimonialName">Name,</p>
               <p class="text-gray-600 text-sm mb-2" id="testimonialDesignation">Designation, organization</p>
-              <div class="text-yellow-400" id="testimonialStars">
-                ⭐⭐⭐⭐⭐
-              </div>
+              <div class="text-yellow-400" id="testimonialStars">⭐⭐⭐⭐⭐</div>
             </div>
+          
           </div>
       
           <!-- Right Arrow -->
@@ -456,27 +460,28 @@
         <div class="section-content site-container text-center">
             <h2 class="text-5xl font-semibold font-Mulish text-[#00076A] mb-6 font-Mulish">Let's build something great together</h2>
             <p class="text-lg text-gray-700 mb-10 max-w-3xl mx-auto">Get in touch to explore how we can help your business reach its full potential.</p>
-            <a href="#contact" class="inline-block bg-[#1B9CE3] text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">
+            <a href="contact.html" class="inline-block bg-[#1B9CE3] text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">
                 Get Started Today
             </a>
         </div>
         <div class="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#D2EFFF] to-transparent z-0"></div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#D6F0FF] py-16">
+       <!-- Footer -->
+
+       <footer class="bg-[#D2F0FF] py-16 px-16">
         <div class="site-container">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Logo and Social Links -->
                 <div>
                     <div class="flex items-center mb-4">
-                        <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-12">
+                        <img src="./assets/logo.png" alt="Bridge Group Solutions" class="h-12">
                         <div class="ml-3">
                             <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">BRIDGE GROUP</h1>
                             <p class="text-[#00076A] font-Mulish font-semibold">SOLUTIONS</p>
                         </div>
                     </div>
-                    <p class=" mb-4 bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0]  text-transparent bg-clip-text font-small text-accent">WE KNOT SPACE...</p>
+                    <p class=" bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0]  text-transparent bg-clip-text font-small text-accent mb-4">WE KNOT SPACE...</p>
                     <div class="flex space-x-4">
                         <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
                             <i class="fab fa-twitter"></i>
@@ -499,15 +504,15 @@
                     <ul class="space-y-4">
                         <li class="flex items-center">
                             <span class="text-[#1B9CE3] mr-2">→</span>
-                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
+                            <a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
                         </li>
                         <li class="flex items-center">
                             <span class="text-[#1B9CE3] mr-2">→</span>
-                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
+                            <a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
                         </li>
                         <li class="flex items-center">
                             <span class="text-[#1B9CE3] mr-2">→</span>
-                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                            <a href="carrerPage.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a>
                         </li>
                         <li class="flex items-center">
                             <span class="text-[#1B9CE3] mr-2">→</span>
@@ -515,7 +520,7 @@
                         </li>
                         <li class="flex items-center">
                             <span class="text-[#1B9CE3] mr-2">→</span>
-                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a>
+                            <a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a>
                         </li>
                         <li class="flex items-center">
                             <span class="text-[#1B9CE3] mr-2">→</span>
@@ -523,10 +528,10 @@
                         </li>
                     </ul>
                 </div>
-
+  
                 <!-- Services -->
                 <div>
-                    <h3 class="text-xl font-semibold text-[#000000]">Services</h3>
+                    <h3 class="text-xl font-semibold text-[#000000]] mb-6">Services</h3>
                     <ul class="space-y-4">
                         <li class="flex items-center">
                             <span class="text-[#1B9CE3] mr-2">→</span>
@@ -554,7 +559,7 @@
                         </li>
                     </ul>
                 </div>
-
+  
                 <!-- Subscribe Form -->
                 <div>
                     <h3 class="text-xl font-semibold text-[#000000] mb-6">Subscribe Us!</h3>
@@ -568,19 +573,19 @@
                     </form>
                 </div>
             </div>
-
+  
             <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
                 <p>Copyright © 2025 All rights reserved | This template is made with by Techbuddies@bgs</p>
             </div>
         </div>
-
+  
         <button 
   id="scrollToTopBtn"
   onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" 
   class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-all duration-300 shadow-lg z-50 opacity-0 pointer-events-none"
->
+  >
   <i class="fas fa-arrow-up"></i>
-</button>  <!-- Scroll to Top Button -->
+  </button>  <!-- Scroll to Top Button -->
        
     </footer>
 

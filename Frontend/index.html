@@ -98,54 +98,58 @@
     <!-- Navbar -->
     <nav class="sticky top-0 z-50 bg-white border-2 border-[#00076A] shadow-md">
         <div class="site-container">
-          <div class="flex justify-between items-center py-4">
-            <!-- Logo -->
-            <div class="flex items-center">
-              <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-12">
-              <div class="ml-3">
-                <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-3xl">
-                  BRIDGE GROUP
-                </h1>
-                <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-bold text-xl">
-                  SOLUTIONS
-                </p>
-              </div>
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-12">
+                    <div class="ml-3">
+                        <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-3xl">
+                            BRIDGE GROUP
+                        </h1>
+                        <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-bold text-xl">
+                            SOLUTIONS
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8 text-[#000000]">
+                    <a href="index.html" class="hover:text-[#1B9CE3] transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-[#1B9CE3] transition-colors">About</a>
+                    <a href="#" class="hover:text-[#1B9CE3] transition-colors">Services</a>
+                    <a href="carrerPage.html" class="hover:text-[#1B9CE3] transition-colors">Careers</a>
+                    <a href="contact.html"
+                        class="border border-[#1B9CE3] text-[#1B9CE3] px-6 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact
+                        Us</a>
+                </div>
+    
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#1B9CE3] focus:outline-none">
+                    <svg id="menuIcon" class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
-      
-            <!-- Navigation Links -->
-           <!-- Desktop Navigation -->
-<div class="hidden md:flex items-center space-x-8 text-[#000000]">
-    <a href="index.html" class="hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">Home</a>
-    <a href="about.html" class="hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">About</a>
-    <a href="#" class="hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">Services</a>
-    <a href="carrerPage.html" class="hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">Careers</a>
-    <a href="contact.html"
-       class="border border-[#1B9CE3] text-[#1B9CE3] px-6 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transform transition duration-300 hover:scale-105">
-      Contact Us
-    </a>
-  </div>
-  
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="md:hidden hidden px-4">
-    <div class="py-4 space-y-4">
-      <a href="index.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">Home</a>
-      <a href="about.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">About</a>
-      <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">Services</a>
-      <a href="carrerPage.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">Careers</a>
-      <a href="contact.html"
-         class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transform transition duration-300 hover:scale-105">
-        Contact Us
-      </a>
-    </div>
-  </div>
-  
+    
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden px-4">
+                <div class="py-4 space-y-4">
+                    <a href="index.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Home</a>
+                    <a href="about.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
+                    <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
+                    <a href="carrerPage.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                    <a href="contact.html"
+                        class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact
+                        Us</a>
+                </div>
+            </div>
         </div>
-      </nav>
-      
+    </nav>
 
     <!-- Hero Section -->
     <section
-        class="py-16 md:py-24 bg-gradient-to-b from-[#FFFFFF] to-transparent pointer-events-none z-0  section-overlay">
+        class="py-16 md:py-24 bg-gradient-to-b from-[#FFFFFF] to-transparent  z-0  section-overlay">
         <div class="section-content site-container">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <!-- Left Content -->
@@ -154,12 +158,12 @@
                         class=" bottom-0 bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-transparent bg-clip-text font-medium md:text-2xl">
                         WE KNOT SPACE...</p>
 
-                    <h1 data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    <h1 data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400"
                         class=" text-3xl sm:text-4xl md:text-6xl lg:text-7xl bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-medium">
                         BRIDGE GROUP
                     </h1>
 
-                    <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400"
                         class="text-xl sm:text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish mt-2">
                         SOLUTIONS
                     </p>
@@ -172,12 +176,12 @@
                         DIGITAL PRODUCTS.</h2>
 
 
-                    <a href="form.html" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300" class="inline-block px-6 py-3 cursor-pointer text-lg bg-[#1B9CE3] text-white rounded-lg shadow-lg 
+                    <a href="form.html" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300" class="inline-block px-6 py-3 text-lg bg-[#1B9CE3] text-white rounded-lg shadow-lg 
                            transition duration-150 active:scale-95 active:shadow-sm transition-colors duration-300">
                         Connect With Us
                     </a>
 
-                    <p data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200" class="text-gray-600 text-lg">
+                    <p data-aos="zoom" data-aos-duration="600" data-aos-delay="200" class="text-gray-600 text-lg">
                         BRIDGE GROUP SOLUTION - LEADERS IN WEB & MOBILE<br />
                         DESIGN AND DEVELOPMENT INDUSTRY.
                     </p>

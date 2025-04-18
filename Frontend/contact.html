@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <style>
   .site-container {
@@ -39,50 +40,54 @@
        <!-- navbar -->
        <nav class="sticky top-0 z-50 bg-white border-2 border-[#00076A] shadow-md">
         <div class="site-container">
-          <div class="flex justify-between items-center py-4">
-            <!-- Logo -->
-            <div class="flex items-center">
-              <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-12">
-              <div class="ml-3">
-                <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-3xl">
-                  BRIDGE GROUP
-                </h1>
-                <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-bold text-xl">
-                  SOLUTIONS
-                </p>
-              </div>
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-12">
+                    <div class="ml-3">
+                        <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-3xl">
+                            BRIDGE GROUP
+                        </h1>
+                        <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-bold text-xl">
+                            SOLUTIONS
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8 text-[#000000]">
+                    <a href="index.html" class="hover:text-[#1B9CE3] transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-[#1B9CE3] transition-colors">About</a>
+                    <a href="#" class="hover:text-[#1B9CE3] transition-colors">Services</a>
+                    <a href="carrerPage.html" class="hover:text-[#1B9CE3] transition-colors">Careers</a>
+                    <a href="contact.html"
+                        class="border border-[#1B9CE3] text-[#1B9CE3] px-6 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact
+                        Us</a>
+                </div>
+    
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#1B9CE3] focus:outline-none">
+                    <svg id="menuIcon" class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
-      
-            <!-- Navigation Links -->
-          <!-- Desktop Navigation -->
-<div class="hidden md:flex items-center space-x-8 text-[#000000]">
-  <a href="index.html" class="hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">Home</a>
-  <a href="about.html" class="hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">About</a>
-  <a href="#" class="hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">Services</a>
-  <a href="carrerPage.html" class="hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">Careers</a>
-  <a href="contact.html"
-     class="border border-[#1B9CE3] text-[#1B9CE3] px-6 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transform transition duration-300 hover:scale-105">
-    Contact Us
-  </a>
-</div>
-
-<!-- Mobile Menu -->
-<div id="mobileMenu" class="md:hidden hidden px-4">
-  <div class="py-4 space-y-4">
-    <a href="index.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">Home</a>
-    <a href="about.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">About</a>
-    <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">Services</a>
-    <a href="carrerPage.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transform transition duration-300 hover:scale-105">Careers</a>
-    <a href="contact.html"
-       class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transform transition duration-300 hover:scale-105">
-      Contact Us
-    </a>
-  </div>
-</div>
-
+    
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden px-4">
+                <div class="py-4 space-y-4">
+                    <a href="index.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Home</a>
+                    <a href="about.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
+                    <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
+                    <a href="carrerPage.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                    <a href="contact.html"
+                        class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact
+                        Us</a>
+                </div>
+            </div>
         </div>
-      </nav>
-      
+    </nav>
 
 
     <div class="relative bg-white">
@@ -92,7 +97,7 @@
         <!-- Bottom Gradient -->
         <div class="absolute bottom-0 left-0 w-full h-[30px] sm:h-[40px] md:h-[50px] bg-gradient-to-t from-[#C9ECFF] to-transparent z-10"></div>
       
-        <div class="relative z-20 max-w-6xl mx-auto px-4 py-12 sm:py-16 text-center">
+        <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="relative z-20 max-w-6xl mx-auto px-4 py-12 sm:py-16 text-center">
           <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-900 mb-2">
             Looking for something in particular?
           </h2>
@@ -103,21 +108,21 @@
 <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md border border-blue-200 grid grid-cols-1 md:grid-cols-3 gap-4 relative">
 
   <!-- I'M NEW HERE CARD -->
-  <div class="relative bg-[#D4F0FF] p-4 sm:p-5 pt-10 rounded-lg flex flex-col justify-center text-left">
+  <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="relative bg-[#D4F0FF] p-4 sm:p-5 pt-10 rounded-lg flex flex-col justify-center text-left">
     <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
       <span class="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded shadow">I'M NEW HERE</span>
     </div>
-    <div class="text-3xl sm:text-4xl mb-5 mt-2">
+    <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-3xl sm:text-4xl mb-5 mt-2">
       <img src="./assets/Mask group (2).png" alt="" class="w-16 h-11 sm:w-20 mx-auto md:mx-0" />
     </div>
-    <p class="mb-2 text-sm sm:text-base">Looking for a demo, or have questions about our products and pricing?</p>
+    <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="mb-2 text-sm sm:text-base">Looking for a demo, or have questions about our products and pricing?</p>
     <a href="mailto:contactus@bridgegroupsolutions.com" class="text-blue-600 underline text-sm sm:text-base">contactus@bridgegroupsolutions.com</a>
   </div>
 
   <!-- EXISTING CUSTOMER GROUP (takes 2 columns) -->
-  <div class="relative md:col-span-2">
+  <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="relative md:col-span-2">
     <!-- Label -->
-    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+    <div  class="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
       <span class="bg-orange-500 text-white text-[10px] sm:text-xs font-semibold px-4 py-1 rounded shadow whitespace-nowrap">
         EXISTING CUSTOMER
       </span>
@@ -129,19 +134,19 @@
       
       <!-- Help with Plans -->
       <div class="pt-12 p-4 sm:p-5 flex flex-col justify-center text-left">
-        <div class="text-3xl sm:text-4xl mb-3">
+        <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-3xl sm:text-4xl mb-3">
           <img src="./assets/existing1.png" alt="" class="w-16 sm:w-20 mx-auto md:mx-0" />
         </div>
-        <p class="mb-2 text-sm sm:text-base">Need help with changing plans, or additional services?</p>
+        <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="mb-2 text-sm sm:text-base">Need help with changing plans, or additional services?</p>
         <a href="mailto:contactus@bridgegroupsolutions.com" class="text-blue-600 underline text-sm sm:text-base">contactus@bridgegroupsolutions.com</a>
       </div>
 
       <!-- Renew Plan -->
       <div class="p-4 sm:p-5 flex flex-col justify-center text-left">
-        <div class="text-3xl sm:text-4xl mb-3">
+        <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-3xl sm:text-4xl mb-3">
           <img src="./assets/Mask group (1).png" alt="" class="w-16 sm:w-20 mx-auto md:mx-0" />
         </div>
-        <p class="mb-2 text-sm sm:text-base">Want to renew your subscription or need details about your current plan?</p>
+        <pdata-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="mb-2 text-sm sm:text-base">Want to renew your subscription or need details about your current plan?</p>
         <a href="mailto:contactus@bridgegroupsolutions.com" class="text-blue-600 underline text-sm sm:text-base">contactus@bridgegroupsolutions.com</a>
       </div>
 
@@ -160,7 +165,7 @@
 
     <main class="bg-[#C9ECFF]">
         <div class="container mx-auto px-4 py-8">
-            <div class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto gap-8">
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto gap-8">
                 <div class="w-full md:w-1/2">
                     <img 
                         src="./assets/Contact us-pana 1.png" 
@@ -169,21 +174,21 @@
                     />
                 </div>
                 
-                <div class="w-full md:w-1/2 text-center md:text-left">
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="w-full md:w-1/2 text-center md:text-left">
                     <span class="inline-block text-green-500 font-medium mb-2 uppercase tracking-wide text-sm">
                         I'm new here
                     </span>
                     
-                    <h1 class="text-3xl md:text-4xl font-bold text-black-900 mb-4 leading-tight">
+                    <h1 data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-3xl md:text-4xl font-bold text-black-900 mb-4 leading-tight">
                         Find your way around<br>
                         BGS with Concierge
                     </h1>
                     
-                    <p class="text-black-700 mb-6 max-w-lg mx-auto md:mx-0">
+                    <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-black-700 mb-6 max-w-lg mx-auto md:mx-0">
                         Not sure which Zoho product is the right fit for your company? No worries. We'll work with you to determine what solutions will best suit your business.
                     </p>
                     
-                    <a 
+                    <a  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
                         href="form.html" 
                         class="inline-block bg-[#0096FF] text-white px-6 py-2.5 rounded hover:bg-blue-600 transition-colors duration-200 font-medium"
                     >
@@ -206,23 +211,23 @@
         <div class="relative z-10 container mx-auto pt-20 px-4 py-12">
           <div class="flex flex-col md:flex-row items-start justify-between max-w-6xl mx-auto gap-12">
             <!-- Left Column -->
-            <div class="w-full md:w-1/2">
+            <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="w-full md:w-1/2">
               <span class="inline-block text-[#00BE03] 600 font-medium mb-2 uppercase tracking-wide text-sm">
                 I'M NEW HERE
               </span>
       
-              <h1 class="text-4xl md:text-5xl font-bold text-black-600 mb-6 leading-tight">
+              <h1  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-4xl md:text-5xl font-bold text-black-600 mb-6 leading-tight">
                 Interested in a product?<br>
                 Talk to our sales team
               </h1>
       
-              <p class="text-black-400 mb-6 text-lg max-w-lg">
+              <p  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-black-400 mb-6 text-lg max-w-lg">
                 From questions about pricing to one-on-one personalized demos, we'd love to connect and help get you started.
               </p>
             </div>
       
             <!-- Right Column -->
-            <div class="w-full md:w-1/2 bg-white rounded-lg p-6"  style="box-shadow: 0 8px 10px #FFDBC0;">
+            <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="w-full md:w-1/2 bg-white rounded-lg p-6"  style="box-shadow: 0 8px 10px #FFDBC0;">
               <div class="flex items-center gap-3 mb-4">
                 <img src="https://flagcdn.com/w20/in.png" alt="India flag" class="w-6">
                 <span class="font-medium">India</span>
@@ -262,11 +267,11 @@
         <div class="max-w-7xl mx-auto">
           
           <!-- Header -->
-          <div class="text-center mb-12 px-4">
+          <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-center mb-12 px-4">
             <h1 class="text-[#1A237E] text-2xl sm:text-3xl md:text-4xl font-bold mb-2 leading-snug">
               General Inquiries
             </h1>
-            <p class="text-[#00076A] 600 text-sm sm:text-base">
+            <p  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-[#00076A] 600 text-sm sm:text-base">
               Want to get in touch? Drop us a line.
             </p>
           </div>
@@ -275,12 +280,12 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 sm:px-0">
             
             <!-- Development Team Card -->
-            <div class="bg-white rounded-xl p-6 sm:p-8 text-center shadow-md" style="box-shadow: 0 8px 10px #FFDBC0;">
-              <div class="flex justify-center mb-6">
+            <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="bg-white rounded-xl p-6 sm:p-8 text-center shadow-md" style="box-shadow: 0 8px 10px #FFDBC0;">
+              <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="flex justify-center mb-6">
                 <img src="./assets/Mask group (3).png" alt="Development Team" class="w-16 h-16">
               </div>
               <h2 class="text-lg sm:text-xl font-semibold mb-4 text-black-900">Development Team</h2>
-              <div class="space-y-2 text-sm sm:text-base">
+              <div  class="space-y-2 text-sm sm:text-base">
                 <p class="text-black-900">Name</p>
                 <p class="text-black-900">E-Mail ID</p>
                 <p class="text-black-900">Contact Number</p>
@@ -288,8 +293,8 @@
             </div>
       
             <!-- Analyst Relations Card -->
-            <div class="bg-white rounded-xl p-6 sm:p-8 text-center shadow-md" style="box-shadow: 0 8px 10px #FFDBC0;">
-              <div class="flex justify-center mb-6">
+            <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="bg-white rounded-xl p-6 sm:p-8 text-center shadow-md" style="box-shadow: 0 8px 10px #FFDBC0;">
+              <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="flex justify-center mb-6">
                 <img src="./assets/image1.jpg" alt="Analyst Relations" class="w-16 h-16">
               </div>
               <h2 class="text-lg sm:text-xl font-semibold mb-4 text-black-900">Analyst Relations</h2>
@@ -301,8 +306,8 @@
             </div>
       
             <!-- Customer Relations Card -->
-            <div class="bg-white rounded-xl p-6 sm:p-8 text-center shadow-md" style="box-shadow: 0 8px 10px #FFDBC0;">
-              <div class="flex justify-center mb-6">
+            <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="bg-white rounded-xl p-6 sm:p-8 text-center shadow-md" style="box-shadow: 0 8px 10px #FFDBC0;">
+              <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="flex justify-center mb-6">
                 <img src="./assets/image3.jpg" alt="Customer Relations" class="w-16 h-16">
               </div>
               <h2 class="text-lg sm:text-xl font-semibold mb-4 text-black-900">Customer Relations</h2>
@@ -327,7 +332,7 @@
     <div class="absolute bottom-0 left-0 w-full h-[45px] bg-gradient-to-t from-[#C9ECFF] to-transparent z-0"></div>
   
     <!-- Main Content -->
-    <div class="relative z-10 px-4 sm:px-8 md:px-16 lg:px-24">
+    <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="relative z-10 px-4 sm:px-8 md:px-16 lg:px-24">
       <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#00076A] 600 mb-4 leading-snug">
         Let's build something great together
       </h1>
@@ -520,6 +525,10 @@ window.addEventListener('scroll', () => {
     scrollBtn.classList.remove('opacity-100');
   }
 });
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
 </script>
   
 </body>

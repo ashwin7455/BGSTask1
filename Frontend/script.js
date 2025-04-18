@@ -113,8 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll('[data-target]');
   counters.forEach(counter => {
     const target = +counter.getAttribute('data-target');
-    const duration = 800; // duration in ms
-    const stepTime = Math.max(Math.floor(duration / target), 1);
+    const duration = 1000; // duration in ms
+    const stepTime = Math.max(Math.floor(duration / target),1);
     let current = 0;
 
     const increment = () => {

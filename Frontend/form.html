@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bridge Group Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                     boli: ['"MV Boli"', 'cursive'],
+                     mulish: ['Mulish', 'sans-serif'],
+
+                    },
+                    colors: {
+                        primary: '#1B9CE3',  
+                        // secondary: '#F97316',
+                    },
+                    container: {
+                        padding: {
+                            DEFAULT: '2rem',
+                            sm: '4rem',
+                            lg: '6rem',
+                            xl: '8rem',
+                            '2xl': '10rem',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .site-container {
+            width: 98%;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        @media (min-width: 768px) {
+            .site-container {
+                width: 96%;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .site-container {
+                width: 95%;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+    </style>
+    
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-white ">
+    <!-- Navbar -->
+    <nav class="bg-white border-2 border-[#00076A] shadow-md">
+        <div class="site-container">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-12">
+                    <div class="ml-3">
+                        <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-3xl">BRIDGE GROUP</h1>
+                        <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-bold text-xl">SOLUTIONS</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8 text-[#000000]">
+                    <a href="index.html" class=" hover:text-[#1B9CE3] transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-[#1B9CE3] transition-colors">About</a>
+                    <a href="#" class=" hover:text-[#1B9CE3] transition-colors">Services</a>
+                    <a href="carrerPage.html" class=" hover:text-[#1B9CE3] transition-colors">Careers</a>
+                    <a href="form.html" class="border border-[#1B9CE3] text-[#1B9CE3] px-6 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
+                  </div>
+              
+                  <!-- Mobile Menu Button -->
+                  <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#1B9CE3] focus:outline-none">
+                    <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </button>
+                </div>
+              
+                <!-- Mobile Menu -->
+                <div id="mobileMenu" class="md:hidden hidden px-4">
+                  <div class="py-4 space-y-4">
+                    <a href="index.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Home</a>
+                    <a href="about.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
+                    <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
+                    <a href="carrerPage.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                    <a href="#" class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact Us</a>
+                  </div>
+        </div>
+    </nav>
+
+    <!-- Contact Form Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Left Side - Text and Image -->
+            <div class="space-y-6">
+                <h1 class="text-4xl md:text-5xl font-semibold font-Mulish text-[#00076A]">Finding your way around Bridge Group Solution?</h1>
+                <p style="font-family: 'MV Boli', cursive;" class="text-3xl font-medium  text-[#000000] ">Let us help!</p>
+                <img src="./assets/Fill out-bro 1.png" alt="Contact Illustration" class="w-full max-w-md mx-auto">
+            </div>
+
+            <!-- Right Side - Form -->
+            <div class="bg-white rounded-lg shadow-md shadow-[#1B9CE3] p-8">
+                <h2 class="text-3xl font-semibold text-[#1B9CE3] mb-6">Send us a message</h2>
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <input type="text" id="name" name="name" placeholder="Name*" 
+                            class="w-full px-4 py-3  border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-0 focus:outline-none transition-colors">
+                        <p class="text-red-500 text-sm mt-1 hidden" id="nameError"></p>
+                    </div>
+
+                    <div>
+                        <input type="email" id="email" name="email" placeholder="Email*"
+                            class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors">
+                        <p class="text-red-500 text-sm mt-1 hidden" id="emailError"></p>
+                    </div>
+
+                    <div>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone*"
+                            class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors">
+                        <p class="text-red-500 text-sm mt-1 hidden" id="phoneError"></p>
+                    </div>
+
+                    <div>
+                        <input type="text" id="subject" name="subject" placeholder="Subject*"
+                            class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors">
+                        <p class="text-red-500 text-sm mt-1 hidden" id="subjectError"></p>
+                    </div>
+
+                    <div>
+                        <textarea id="message" name="message" rows="4" placeholder="Message*"
+                            class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors resize-none"></textarea>
+                        <p class="text-red-500 text-sm mt-1 hidden" id="messageError"></p>
+                    </div>
+
+                    <button type="submit"
+                        class=" bg-[#1B9CE3] text-2xl text-white py-3 px-6 rounded-md shadow-lg 
+                         transition duration-150 
+                        active:scale-95 active:shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="bg-[#D2F0FF] py-16 px-16">
+        <div class="site-container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo and Social Links -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-12">
+                        <div class="ml-3">
+                            <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">BRIDGE GROUP</h1>
+                            <p class="text-[#00076A] font-Mulish font-semibold">SOLUTIONS</p>
+                        </div>
+                    </div>
+                    <p class=" bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0]  text-transparent bg-clip-text font-small text-accent mb-4">WE KNOT SPACE...</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <span class="text-[#1B9CE3] mr-2">→</span>
+                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#1B9CE3] mr-2">→</span>
+                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#1B9CE3] mr-2">→</span>
+                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#1B9CE3] mr-2">→</span>
+                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Gallery</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#1B9CE3] mr-2">→</span>
+                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#1B9CE3] mr-2">→</span>
+                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Service</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-semibold text-[#000000]] mb-6">Services</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <span class="text-[#1B9CE3] mr-2">→</span>
+                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Mutual Funds</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#1B9CE3] mr-2">→</span>
+                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Wealth Management</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#1B9CE3] mr-2">→</span>
+                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Portfolio Management</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#1B9CE3] mr-2">→</span>
+                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Pension Funds</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#1B9CE3] mr-2">→</span>
+                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp & Customized Software</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#1B9CE3] mr-2">→</span>
+                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software Testing</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Subscribe Form -->
+                <div>
+                    <h3 class="text-xl font-semibold text-[#000000] mb-6">Subscribe Us!</h3>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Enter Email Address" class=" px-4 py-3 w-48 rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
+                        <button type="submit" class="px-4 py-3 w-48  bg-[#1B9CE3] text-white  rounded-lg shadow-lg 
+                         transition duration-150 
+                        active:scale-95 active:shadow-sm transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
+                <p>Copyright © 2025 All rights reserved | This template is made with by Techbuddies@bgs</p>
+            </div>
+        </div>
+
+        <button 
+  id="scrollToTopBtn"
+  onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" 
+  class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-all duration-300 shadow-lg z-50 opacity-0 pointer-events-none"
+>
+  <i class="fas fa-arrow-up"></i>
+</button>  <!-- Scroll to Top Button -->
+       
+    </footer>
+
+    <script src="form.js"></script>
+</body>
+</html>

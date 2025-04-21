@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us Section</title>
+  <title>About Us</title>
+  <link rel="icon" type="image/png" href="./assets/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -430,22 +431,22 @@
             class="grid grid-cols-2 gap-y-8 gap-x-10 text-[16px] md:text-[17px] font-medium">
 
             <div>
-              <p class="text-[28px] font-bold">10,000</p>
+              <p class="text-[28px] font-bold"  data-target="10000">0</p>
               <p class="mt-1 leading-tight">Satisfied<br />Customers</p>
             </div>
 
             <div>
-              <p class="text-[28px] font-bold">259</p>
+              <p class="text-[28px] font-bold"  data-target="259">0</p>
               <p class="mt-1 leading-tight">Minimum Projects<br />Completed</p>
             </div>
 
             <div>
-              <p class="text-[28px] font-bold">32</p>
+              <p class="text-[28px] font-bold"  data-target="32">0</p>
               <p class="mt-1 leading-tight">Awards<br />Received</p>
             </div>
 
             <div>
-              <p class="text-[28px] font-bold">10</p>
+              <p class="text-[28px] font-bold"  data-target="10" >0</p>
               <p class="mt-1 leading-tight">Years of<br />Experience</p>
             </div>
           </div>
@@ -750,7 +751,37 @@
         }
       });
     });
+
+  /*counter*/
+
+   document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll('[data-target]');
+
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const duration = 2000; // total duration in ms
+    const frameRate = 60; // frames per second
+    const totalSteps = Math.round((duration / 1000) * frameRate); // e.g., 120 steps for 2s
+    const increment = target / totalSteps;
+
+    let current = 0;
+
+    const updateCounter = () => {
+      current += increment;
+      if (current >= target) {
+        counter.innerText = target.toLocaleString();
+      } else {
+        counter.innerText = Math.floor(current).toLocaleString();
+        requestAnimationFrame(updateCounter);
+      }
+    };
+
+    updateCounter();
+  });
+});
+
   </script>
+
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>

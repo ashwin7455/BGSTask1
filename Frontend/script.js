@@ -111,22 +111,26 @@ window.addEventListener('scroll', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll('[data-target]');
+
   counters.forEach(counter => {
     const target = +counter.getAttribute('data-target');
-    const duration = 1000; // duration in ms
-    const stepTime = Math.max(Math.floor(duration / target),1);
+    const duration = 3000; // total duration in ms
+    const frameRate = 60; // frames per second
+    const totalSteps = Math.round((duration / 1000) * frameRate); // e.g., 120 steps for 2s
+    const increment = target / totalSteps;
+
     let current = 0;
 
-    const increment = () => {
-      current += Math.ceil(target / (duration / stepTime));
+    const updateCounter = () => {
+      current += increment;
       if (current >= target) {
-        counter.innerText = target.toLocaleString(); // adds comma
+        counter.innerText = target.toLocaleString();
       } else {
-        counter.innerText = current.toLocaleString();
-        setTimeout(increment, stepTime);
+        counter.innerText = Math.floor(current).toLocaleString();
+        requestAnimationFrame(updateCounter);
       }
     };
 
-    increment();
+    updateCounter();
   });
 });

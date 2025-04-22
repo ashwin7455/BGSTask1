@@ -114,8 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   counters.forEach(counter => {
     const target = +counter.getAttribute('data-target');
-    const duration = 3000; // total duration in ms
-    const frameRate = 60; // frames per second
+    const duration = 4000; // total duration in ms
+    const frameRate = 100; // frames per second
     const totalSteps = Math.round((duration / 1000) * frameRate); // e.g., 120 steps for 2s
     const increment = target / totalSteps;
 

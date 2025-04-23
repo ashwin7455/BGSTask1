@@ -3,21 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Details - Join Our Team</title>
+  <title>I'm Interested - Technical Support Engineers</title>
   <link rel="icon" type="image/png" href="./assets/logo.png">
-  <!-- Tailwind CSS via CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            'brand-red': '#ff0022',
             'brand-blue': '#D6F0FF',
             'text-primary': '#333333',
             'text-secondary': '#555555',
-            'job-title': '#0056B3',
             'orange': {
               500: '#FF8C00',
             },
@@ -44,7 +42,79 @@
     body {
       font-family: 'Poppins', sans-serif;
       color: #333333;
-      background-color: #ffffff;
+      background-color: #c1e7ff;
+      background-image: linear-gradient(to bottom, #c1e7ff, #e6f5ff);
+      min-height: 100vh;
+    }
+    
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #FFD7B5;
+      border-radius: 0.25rem;
+      font-size: 14px;
+    }
+    
+    .form-label {
+      display: block;
+      font-size: 14px;
+      color: #333333; /* Changed to black as requested */
+      margin-bottom: 0.25rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    .btn-cancel {
+      background-color: white;
+      color: #0099FF;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.25rem;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid #0099FF;
+    }
+    
+    .btn-submit {
+      background-color: #FF8C00;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.25rem;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .vertical-divider {
+      width: 1px;
+      height: 20px;
+      background-color: #e5e7eb;
+      margin: 0 12px;
+    }
+    
+    .footer-divider {
+      height: 1px;
+      background-color: #e5e7eb;
+      width: 100%;
+    }
+    
+    .footer-link {
+      color: #FF8C00;
+      text-decoration: none;
+    }
+    
+    .footer-dot {
+      display: inline-block;
+      margin: 0 8px;
+      color: #ccc;
     }
     .site-container {
             width: 98%;
@@ -70,44 +140,9 @@
                 padding-right: 1.5rem;
             }
         }
-    .breadcrumb-item {
-      display: inline-flex;
-      align-items: center;
-    }
-    .breadcrumb-item:not(:last-child)::after {
-      content: '>';
-      margin: 0 0.5rem;
-      color: #9ca3af;
-    }
-    
-    /* Additional styles to match the image */
-    .bg-blue-gradient {
-      background: linear-gradient(to bottom, #c1e7ff, #e6f5ff);
-    }
-    .bg-blue-100 {
-      background-color: #D6F0FF;
-    }
-    .text-blue-500 {
-      color: #0099FF;
-    }
-    .bg-orange-500 {
-      background-color: #FF8C00;
-    }
-    .vertical-divider {
-      width: 1px;
-      height: 20px;
-      background-color: #e5e7eb;
-      margin: 0 12px;
-    }
-    .job-content-divider {
-      width: 1px;
-      background-color: rgba(0, 0, 0, 0.1);
-      margin: 0 20px;
-    }
   </style>
 </head>
-<body>
-
+<body >
 
      <!-- Navbar -->
      <nav class="sticky top-0 z-50 bg-white border-b-2 border-[#00076A] shadow-md">
@@ -161,97 +196,141 @@
       </div>
   </nav>
 
-  <!-- White background for the entire page -->
-  <div class="w-full bg-white">
-    <!-- Header Section - Centered with max width -->
-    <div class="max-w-4xl mx-auto px-8 pt-12 pb-8">
-      <div class="flex justify-center items-center mb-4">
-        <div class="text-sm font-medium text-gray-500" id="company-name">BGS</div>
+  <div class="py-8 px-4 bg-gradient-to-br from-[#BEE8FF] to-[#FFDBC0]" >
+    <div class="form-container">
+      <!-- Header -->
+      <div class="p-4 border-b flex items-center justify-center">
+        <!-- <a href="carrerPage.html" onclick="goBack()" class="back-button text-orange-500 hover:text-gray-800">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back
+      </a> -->
+        <div class="text-sm font-medium text-gray-500">BGS</div>
         <div class="vertical-divider"></div>
-        <div class="text-sm font-medium text-gray-500" id="job-type-header">Full Time</div>
+        <div class="text-sm font-medium text-gray-500">Full Time</div>
       </div>
       
-      <h1 class="text-4xl font-bold mb-8 text-center" id="job-title-header">Technical Support Engineers</h1>
-      
-      <div class="flex justify-center gap-4 mb-8">
-        <a href="#" class="border border-blue-400 text-blue-500 px-6 py-2 rounded text-sm font-medium flex items-center">
-          SHARE JOB VIA EMAIL
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-          </svg>
-        </a>
-        <a href="/frontend/I'M Intrested.html" id="top-interested-btn" class="bg-orange-500 text-white px-6 py-2 rounded text-sm font-medium flex items-center">
-          I'M INTERESTED
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-          </svg>
-        </a>
+      <!-- Job Title -->
+      <div class="p-4 border-b">
+        <h1 class="text-2xl font-bold text-center" id="job-title">Technical Support Engineers</h1>
       </div>
-    </div>
-    
-    <!-- Blue Gradient Background Section -->
-    <div class="w-full bg-blue-gradient py-10">
-      <div class="max-w-4xl mx-auto px-8">
-        <!-- Breadcrumb -->
-        <div class="flex text-sm mb-8">
-          <a href="#" class="text-orange-500 font-medium">JOB LISTING</a>
-          <span class="mx-2 text-gray-400">></span>
-          <span class="text-gray-500">JOB DETAILS</span>
-        </div>
+      
+      <!-- Form -->
+      <div class="p-6 border-b">
+        <h2 class="text-orange-500 font-medium mb-4">Personal Details</h2>
         
-        <!-- Two Column Layout -->
-        <div class="flex flex-col md:flex-row">
-          <!-- Left Column - Job Description -->
-          <div class="flex-1 pr-8">
-            <h2 class="text-2xl font-bold mb-6">Job Description</h2>
-            <ul class="space-y-6" id="job-description-list">
-              <!-- Job description will be dynamically inserted here -->
-            </ul>
-            
-            <p class="mt-6 text-sm" id="job-location">Please note that we have requirements for this role in Chennai, Salem, Coimbatore, Tirunelveli, and Madurai.</p>
-            
-            <div class="mt-6">
-              <a href="/frontend/I'M Intrested.html" id="bottom-interested-btn" class="bg-orange-500 text-white px-6 py-2 rounded text-sm font-medium inline-flex items-center">
-                I'M INTERESTED
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-            </div>
+        <form id="interestForm">
+          <div class="form-group">
+            <label class="form-label" for="firstName">First Name*</label>
+            <input type="text" id="firstName" name="firstName" class="form-input" required>
           </div>
           
-          <!-- Vertical Divider -->
-          <div class="job-content-divider hidden md:block"></div>
+          <div class="form-group">
+            <label class="form-label" for="lastName">Last Name*</label>
+            <input type="text" id="lastName" name="lastName" class="form-input" required>
+          </div>
           
-          <!-- Right Column - Job Information -->
-          <div class="md:w-1/3 mt-8 md:mt-0">
-            <h2 class="text-2xl font-bold mb-6">Job Information</h2>
-            
-            <div class="mb-6">
-              <h3 class="text-gray-500 mb-1">Country</h3>
-              <p class="font-medium" id="job-country">India</p>
-            </div>
-            
-            <div>
-              <h3 class="text-gray-500 mb-1">Industry</h3>
-              <p class="font-medium" id="job-industry">Technology</p>
+          <div class="form-group">
+            <label class="form-label" for="contact">Contact*</label>
+            <input type="text" id="contact" name="contact" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="yearOfGraduation">Year of Graduation*</label>
+            <input type="text" id="yearOfGraduation" name="yearOfGraduation" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="gender">Gender*</label>
+            <input type="text" id="gender" name="gender" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="experienceInYears">Experience In Years*</label>
+            <input type="text" id="experienceInYears" name="experienceInYears" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="currentEmployer">Current Employer*</label>
+            <input type="text" id="currentEmployer" name="currentEmployer" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="currentCTC">Current CTC (in Lakhs Per Annum)*</label>
+            <input type="text" id="currentCTC" name="currentCTC" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="expectedCTC">Expected CTC (in Lakhs Per Annum)*</label>
+            <input type="text" id="expectedCTC" name="expectedCTC" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="noticePeriod">Notice Period*</label>
+            <input type="text" id="noticePeriod" name="noticePeriod" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="skillSet">Skill Set*</label>
+            <input type="text" id="skillSet" name="skillSet" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="howDidYouCome">How did you come across this vacancy?*</label>
+            <input type="text" id="howDidYouCome" name="howDidYouCome" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="currentLocation">Current Location*</label>
+            <input type="text" id="currentLocation" name="currentLocation" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="preferredLocation">Preferred Location*</label>
+            <input type="text" id="preferredLocation" name="preferredLocation" class="form-input" required>
+          </div>
+          
+          <!-- Resume Upload Section - Exactly as in the image -->
+          <div class="mt-6">
+            <h3 class="text-orange-500 font-medium mb-2">Upload Your Resume</h3>
+            <div class="form-group">
+              <label class="form-label" for="resume">Resume*</label>
+              <input type="file" id="resume" name="resume" class="form-input border-orange-300" required>
             </div>
           </div>
-        </div>
-        
-        <!-- View All Jobs Link -->
-        <div class="flex justify-center mt-16">
-          <a href="#" class="border border-blue-400 text-blue-500 px-6 py-2 rounded text-sm font-medium inline-flex items-center">
-            VIEW ALL JOBS
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </a>
-        </div>
+        </form>
+      </div>
+      
+      <!-- Buttons - Exactly as in the image -->
+      <div class="p-4 flex justify-center gap-4">
+        <button type="button" id="cancelBtn" class="px-6 py-2 border border-blue-400 text-blue-500 rounded">Cancel</button>
+        <button type="submit" form="interestForm" class="px-6 py-2 bg-orange-500 text-white rounded">Submit Application</button>
+      </div>
+      
+      <!-- Footer - Exactly as in the image -->
+      <div class="footer-divider"></div>
+      <div class="p-4 text-center text-sm">
+        <a href="#" class="text-orange-500 hover:underline">View all jobs</a>
+        <span class="text-gray-400 mx-2">•</span>
+        <a href="#" class="text-orange-500 hover:underline">Visit website</a>
+      </div>
+      
+      <!-- Logo - Exactly as in the image -->
+      <div class="footer-divider"></div>
+      <div class="p-3 flex justify-center items-center">
+        <img src="./assets/logo.png" alt="Bridge Group Solutions" class="w-18 mr-2">
+        <div class="ml-3">
+          <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-2xl">
+              BRIDGE GROUP
+          </h1>
+          <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-bold text-xl">
+              SOLUTIONS
+          </p>
+      </div>
       </div>
     </div>
   </div>
-
     <!-- Footer -->
 
     <footer class="bg-[#D2F0FF] py-16 px-16">
@@ -395,180 +474,80 @@
       const jobData = {
         'designer': {
           title: 'DESIGNERS-UI/UX/VISUAL/GRAPHIC',
-          description: [
-            'Help build design work across multiple mediums on various projects, from small pieces to multi-channel campaigns.',
-            'Build digital assets for marketing campaigns that align with the look and feel of those campaigns across other touch points.',
-            'Assist in the planning and creation of designs for marketing automation campaigns to include email, social media, and PPC.',
-            'Design templates for landing pages and emails using custom CSS and styling to help support brand messages.',
-            'Design onsite creatives, including A/B testing and better UX design to help drive user engagement.',
-            'Design dynamic and static banners for Google Display Network and other 3rd party networks.'
-          ],
-          type: 'Full time',
-          country: 'India',
-          industry: 'Design'
+          type: 'Full time'
         },
         'software-developer': {
           title: 'SOFTWARE DEVELOPERS',
-          description: [
-            'Design and develop high-volume, low-latency applications for mission-critical systems, ensuring top-tier availability and performance.',
-            'Contribute to all phases of the development lifecycle.',
-            'Write well-designed, testable, efficient code.',
-            'Ensure designs comply with specifications.',
-            'Prepare and produce releases of software components.',
-            'Support continuous improvement by investigating alternatives and technologies and presenting these for architectural review.'
-          ],
-          type: 'Full time',
-          country: 'India',
-          industry: 'Technology'
+          type: 'Full time'
         },
         'web-developer': {
           title: 'WEB DEVELOPERS',
-          description: [
-            'Develop new components based on design specs.',
-            'Work independently and write maintainable code.',
-            'Understand existing code and suggest optimization in terms of performance and security.',
-            'Implement responsive design for mobile sites.',
-            'Create website layout/user interfaces using standard HTML/CSS practices.',
-            'Integrate data from various back-end services and databases.'
-          ],
-          type: 'Full time',
-          country: 'India',
-          industry: 'Technology'
+          type: 'Full time'
         },
         'content-writer': {
           title: 'CONTENT/TECHNICAL WRITERS',
-          description: [
-            'Ideate and create content for blogs, articles, social media copies, and other formats on a regular basis.',
-            'Stay up to date with content in the market to ensure our content is unique and valuable.',
-            'Research industry-related topics to develop original content.',
-            'Edit and proofread written pieces before publication.',
-            'Conduct keyword research and use SEO guidelines to increase web traffic.',
-            'Identify customers needs and recommend new content to address gaps in the existing content.'
-          ],
-          type: 'Full time',
-          country: 'India',
-          industry: 'Content'
+          type: 'Full time'
         },
         'qa-engineer': {
           title: 'QA ENGINEERS',
-          description: [
-            'Experience in manual and automation testing.',
-            'Knowledge of Java Programming (data types, variables, operators, flow control statements, methods, etc.).',
-            'Create detailed, comprehensive test plans and test cases.',
-            'Estimate, prioritize, plan and coordinate testing activities.',
-            'Design, develop and execute automation scripts using open source tools.',
-            'Identify, record, document thoroughly and track bugs.'
-          ],
-          type: 'Full time',
-          country: 'India',
-          industry: 'Technology'
+          type: 'Full time'
         },
         'technical-support': {
           title: 'TECHNICAL SUPPORT ENGINEERS',
-          description: [
-            'Provide voice-based support to international/domestic customers over the phone (Inbound and Outbound).',
-            'Build a rapport with customers with clear and confident communication.',
-            'Focus on customer satisfaction and first-time resolution.',
-            'Engage with the technical team to provide faster resolutions to technical issues.',
-            'Work closely with the technical content team to identify gaps in the help module.',
-            'Should be willing to work night shifts.'
-          ],
-          type: 'Full time',
-          country: 'India',
-          industry: 'Technology'
+          type: 'Full time'
         },
         'digital-marketing': {
           title: 'DIGITAL MARKETING ANALYST',
-          description: [
-            'Manage Google Adwords Campaigns to improve Return on Investment and generate reports.',
-            'Develop performance metrics to provide recommendations and continuous improvement.',
-            'Analyze campaign data to drive optimization and understand market trends.',
-            'Collaborate with the marketing team to manage and optimize digital marketing campaigns.',
-            'Monitor and analyze website traffic flow and provide regular internal reports.',
-            'Attain key performance indicators such as reducing the website bounce rate, increasing dwell time or improving conversion.'
-          ],
-          type: 'Full time',
-          country: 'India',
-          industry: 'Marketing'
+          type: 'Full time'
         },
         'sales-executive': {
           title: 'SALES EXECUTIVES',
-          description: [
-            'Build rapport with contacts and understand where the prospect is in the buying process.',
-            'Identify opportunities that meet a minimum qualification criteria.',
-            'Develop and maintain a pipeline of qualified opportunities.',
-            'Conduct product demonstrations to prospects.',
-            'Negotiate and close deals to achieve sales targets.',
-            'Maintain accurate records in CRM system.'
-          ],
-          type: 'Full time',
-          country: 'India',
-          industry: 'Sales'
+          type: 'Full time'
         },
         'product-marketer': {
           title: 'PRODUCT MARKETERS',
-          description: [
-            'Write, rewrite, test, and maintain website and landing pages.',
-            'Create and maintain accurate comparison documents.',
-            'Write briefs for ads, landing pages, and other marketing materials.',
-            'Develop messaging and positioning for products.',
-            'Work with product management to define product value propositions.',
-            'Create sales enablement materials such as battle cards, competitor analysis, and product training.'
-          ],
-          type: 'Full time',
-          country: 'India',
-          industry: 'Marketing'
+          type: 'Full time'
         }
       };
       
       // Default to technical-support if no job ID is provided or if job ID doesn't exist
       const job = jobData[jobId] || jobData['technical-support'];
-      const jobTitle = job.title;
       
       // Update page title
-      document.title = jobTitle + ' - Job Details';
+      document.title = "I'm Interested - " + job.title;
       
       // Update job title in header
-      document.getElementById('job-title-header').textContent = jobTitle;
+      document.getElementById('job-title').textContent = job.title;
       
-      // Update job type in header
-      document.getElementById('job-type-header').textContent = job.type;
-      
-      // Update job description list
-      const descriptionList = document.getElementById('job-description-list');
-      descriptionList.innerHTML = ''; // Clear existing content
-      
-      job.description.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.className = 'flex items-start';
+      // Form submission
+      const interestForm = document.getElementById('interestForm');
+      interestForm.addEventListener('submit', function(e) {
+        e.preventDefault();
         
-        const bullet = document.createElement('span');
-        bullet.className = 'text-black mr-2 mt-1';
-        bullet.textContent = '•';
+        // Create FormData object
+        const formData = new FormData(interestForm);
         
-        const text = document.createElement('span');
-        text.textContent = item;
+        // Add job title to form data
+        formData.append('jobTitle', job.title);
         
-        listItem.appendChild(bullet);
-        listItem.appendChild(text);
-        descriptionList.appendChild(listItem);
+        // Log form data (in a real application, you would send this to a server)
+        console.log('Form submitted for job:', job.title);
+        for (let [key, value] of formData.entries()) {
+          console.log(key + ': ' + value);
+        }
+        
+        // Show success message (you can customize this)
+        alert('Application submitted successfully!');
+        
+        // Reset form
+        interestForm.reset();
       });
       
-      // Update job country and industry
-      document.getElementById('job-country').textContent = job.country;
-      document.getElementById('job-industry').textContent = job.industry;
-      
-      // Update company name (could be dynamic in a real application)
-      document.getElementById('company-name').textContent = 'BGS';
-      
-      // Update "I'M INTERESTED" buttons to link to the form with the correct job ID
-      const topInterestedBtn = document.getElementById('top-interested-btn');
-      const bottomInterestedBtn = document.getElementById('bottom-interested-btn');
-      
-      // Set the href for both buttons to link to the interested form with the job ID
-      const formUrl = `/frontend/I'M Intrested.html?job=${jobId || 'technical-support'}`;
-      topInterestedBtn.href = formUrl;
-      bottomInterestedBtn.href = formUrl;
+      // Cancel button functionality
+      document.getElementById('cancelBtn').addEventListener('click', function() {
+        // In a real application, you might want to redirect back to the job listing page
+        window.history.back();
+      });
     });
   </script>
   <script src="script.js"></script>

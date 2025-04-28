@@ -126,7 +126,7 @@
     .mobile-nav {
       display: none;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 780px) {
       .mobile-nav {
         display: flex;
         justify-content: center;
@@ -146,7 +146,7 @@
     }
     .site-container {
         width: 98%;
-        max-width: 1400px;
+        /* max-width: 1400px; */
         margin-left: auto;
         margin-right: auto;
         padding-left: 0.5rem;
@@ -162,7 +162,7 @@
 
     @media (min-width: 1024px) {
         .site-container {
-            width: 95%;
+            width: 100%;
             padding-left: 1.5rem;
             padding-right: 1.5rem;
         }
@@ -174,36 +174,37 @@
 
   <main class="">
     <!-- navbar -->
-    <nav class="sticky top-0 z-50 bg-white border-2 border-[#00076A] shadow-md">
-      <div class="site-container">
+    <nav class="sticky top-0 z-50 bg-white border-b-2 border-[#00076A] shadow-md w-full">
+      <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center py-4">
               <!-- Logo -->
               <div class="flex items-center">
-                  <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-12">
-                  <div class="ml-3">
-                      <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-3xl">
+                  <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-12">
+                  <div class="ml-2 sm:ml-3">
+                      <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-lg sm:text-2xl">
                           BRIDGE GROUP
                       </h1>
-                      <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-bold text-xl">
+                      <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-medium text-md sm:text-xl">
                           SOLUTIONS
                       </p>
                   </div>
               </div>
   
               <!-- Desktop Navigation -->
-              <div class="hidden md:flex items-center space-x-8 text-[#000000]">
+              <div class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[#000000]">
                   <a href="index.html" class="hover:text-[#1B9CE3] transition-colors">Home</a>
                   <a href="about.html" class="hover:text-[#1B9CE3] transition-colors">About</a>
-                  <a href="#" class="hover:text-[#1B9CE3] transition-colors">Services</a>
+                  <a href="services.html" class="hover:text-[#1B9CE3] transition-colors">Services</a>
                   <a href="carrerPage.html" class="hover:text-[#1B9CE3] transition-colors">Careers</a>
                   <a href="contact.html"
-                      class="border border-[#1B9CE3] text-[#1B9CE3] px-6 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact
-                      Us</a>
+                      class="border border-[#1B9CE3] text-[#1B9CE3] px-4 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-all">
+                      Contact Us
+                  </a>
               </div>
   
               <!-- Mobile Menu Button -->
               <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#1B9CE3] focus:outline-none">
-                  <svg id="menuIcon" class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
@@ -211,15 +212,16 @@
           </div>
   
           <!-- Mobile Menu -->
-          <div id="mobileMenu" class="md:hidden hidden px-4">
-              <div class="py-4 space-y-4">
+          <div id="mobileMenu" class="md:hidden hidden">
+              <div class="py-4 space-y-2">
                   <a href="index.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Home</a>
                   <a href="about.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
-                  <a href="#" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
+                  <a href="services.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
                   <a href="carrerPage.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
                   <a href="contact.html"
-                      class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transition-colors">Contact
-                      Us</a>
+                      class="block py-2 text-[#1B9CE3] font-semibold hover:bg-[#1B9CE3] hover:text-white transition-all rounded-md text-center">
+                      Contact Us
+                  </a>
               </div>
           </div>
       </div>
@@ -803,20 +805,22 @@
     </section>
        <!-- Footer -->
 
-       <footer class="bg-[#D2F0FF] py-16 px-16">
+       <footer class="bg-[#D2F0FF] py-10">
         <div class="site-container">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Logo and Social Links -->
-                <div>
-                    <div class="flex items-center mb-4">
+                <div class="text-center md:text-left">
+                    <div class="flex justify-center md:justify-start items-center gap-4 mb-4">
                         <img src="./assets/logo.png" alt="Bridge Group Solutions" class="h-12">
-                        <div class="ml-3">
+                        <div>
                             <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">BRIDGE GROUP</h1>
                             <p class="text-[#00076A] font-Mulish font-semibold">SOLUTIONS</p>
                         </div>
                     </div>
-                    <p class=" bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0]  text-transparent bg-clip-text font-small text-accent mb-4">WE KNOT SPACE...</p>
-                    <div class="flex space-x-4">
+                    <p class="bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-transparent bg-clip-text font-small text-accent mb-4">
+                        WE KNOT SPACE...
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4">
                         <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
                             <i class="fab fa-twitter"></i>
                         </a>
@@ -831,96 +835,54 @@
                         </a>
                     </div>
                 </div>
-                
+    
                 <!-- Links -->
-                <div>
+                <div class="text-center md:text-left">
                     <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-center">
-                            <!-- <span class="text-[#1B9CE3] mr-2">→</span> -->
-                            <a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
-                        </li>
-                        <li class="flex items-center">
-                            <!-- <span class="text-[#1B9CE3] mr-2">→</span> -->
-                            <a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
-                        </li>
-                        <li class="flex items-center">
-                            <!-- <span class="text-[#1B9CE3] mr-2">→</span> -->
-                            <a href="carrerPage.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a>
-                        </li>
-                        <li class="flex items-center">
-                            <!-- <span class="text-[#1B9CE3] mr-2">→</span> -->
-                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Gallery</a>
-                        </li>
-                        <li class="flex items-center">
-                            <!-- <span class="text-[#1B9CE3] mr-2">→</span> -->
-                            <a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a>
-                        </li>
-                        <li class="flex items-center">
-                            <!-- <span class="text-[#1B9CE3] mr-2">→</span> -->
-                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Service</a>
-                        </li>
+                        <li><a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a></li>
+                        <li><a href="carrerPage.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Service</a></li>
                     </ul>
                 </div>
-
+    
                 <!-- Services -->
-                <div>
-                    <h3 class="text-xl font-semibold text-[#000000]] mb-6">Services</h3>
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-semibold text-[#000000] mb-6">Services</h3>
                     <ul class="space-y-4">
-                        <li class="flex items-center">
-                            <!-- <span class="text-[#1B9CE3] mr-2">→</span> -->
-                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Mutual Funds</a>
-                        </li>
-                        <li class="flex items-center">
-                            <!-- <span class="text-[#1B9CE3] mr-2">→</span> -->
-                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Wealth Management</a>
-                        </li>
-                        <li class="flex items-center">
-                            <!-- <span class="text-[#1B9CE3] mr-2">→</span> -->
-                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Portfolio Management</a>
-                        </li>
-                        <li class="flex items-center">
-                            <!-- <span class="text-[#1B9CE3] mr-2">→</span> -->
-                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Pension Funds</a>
-                        </li>
-                        <li class="flex items-center">
-                            <!-- <span class="text-[#1B9CE3] mr-2">→</span> -->
-                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp & Customized Software</a>
-                        </li>
-                        <li class="flex items-center">
-                            <!-- <span class="text-[#1B9CE3] mr-2">→</span> -->
-                            <a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software Testing</a>
-                        </li>
+                        <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Mutual Funds</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Wealth Management</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Portfolio Management</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Pension Funds</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp & Customized Software</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software Testing</a></li>
                     </ul>
                 </div>
-
+    
                 <!-- Subscribe Form -->
-                <div>
+                <div class="text-center md:text-left">
                     <h3 class="text-xl font-semibold text-[#000000] mb-6">Subscribe Us!</h3>
                     <form class="space-y-4">
-                        <input type="email" placeholder="Enter Email Address" class=" px-4 py-3 w-48 rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
-                        <button type="submit" class="px-4 py-3 w-48  bg-[#1B9CE3] text-white  rounded-lg shadow-lg 
-                         transition duration-150 
-                        active:scale-95 active:shadow-sm transition-colors">
+                        <input type="email" placeholder="Enter Email Address" class="px-4 py-3 w-full rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
+                        <button type="submit" class="px-3 py-3 w-full bg-[#1B9CE3] text-white rounded-lg shadow-lg transition duration-150 active:scale-95 active:shadow-sm transition-colors">
                             Subscribe
                         </button>
                     </form>
                 </div>
             </div>
-
+    
             <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
                 <p>Copyright © 2025 All rights reserved | This template is made with by Techbuddies@bgs</p>
             </div>
         </div>
-
-        <button 
-  id="scrollToTopBtn"
-  onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" 
-  class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-all duration-300 shadow-lg z-50 opacity-0 pointer-events-none"
->
-  <i class="fas fa-arrow-up"></i>
-</button>  <!-- Scroll to Top Button -->
-       
+    
+        <button id="scrollToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600">
+            <i class="fas fa-arrow-up"></i>
+        </button> <!-- Scroll to Top Button -->
+    </footer>
     </footer>
   </main>
 
@@ -957,7 +919,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Optional: Close menu on window resize to desktop
   window.addEventListener('resize', function () {
-    if (window.innerWidth >= 768 && isMenuOpen) {
+    if (window.innerWidth >= 780 && isMenuOpen) {
       toggleMenu();
     }
   });
@@ -977,7 +939,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let currentSlide = 0;
       let totalSlides = carouselCards.length;
       let autoPlayInterval;
-      let isMobile = window.innerWidth < 768;
+      let isMobile = window.innerWidth < 780;
       
       // Ensure all carousel cards have equal height
       function equalizeCardHeights() {

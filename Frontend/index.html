@@ -46,6 +46,7 @@
             margin-right: auto;
             padding-left: 0.5rem;
             padding-right: 0.5rem;
+            /* text-align: center; */
         }
 
         @media (min-width: 768px) {
@@ -53,6 +54,7 @@
                 width: 96%;
                 padding-left: 1rem;
                 padding-right: 1rem;
+
             }
         }
 
@@ -105,7 +107,7 @@
                 <div class="flex items-center">
                     <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-12">
                     <div class="ml-2 sm:ml-3">
-                        <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-3xl">
+                        <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-2xl sm:text-3xl md:text-3xl lg:text-3xl">
                             BRIDGE GROUP
                         </h1>
                         <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-xl">
@@ -158,22 +160,22 @@
         <div class="section-content site-container">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <!-- Left Content -->
-                <div class="space-y-2">
+                <div class="space-y-2 text-center md:text-left flex flex-col items-center md:items-start">
                     <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
-                        class=" bottom-0 bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-transparent bg-clip-text font-medium md:text-2xl">
+                        class=" bottom-0 bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0]  text-transparent bg-clip-text font-medium md:text-2xl">
                         WE KNOT SPACE...</p>
 
-                    <h1 data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400"
-                        class=" text-3xl sm:text-4xl md:text-6xl lg:text-7xl bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-medium">
+                        <h1 data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400"
+                        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-medium">
                         BRIDGE GROUP
                     </h1>
 
                     <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400"
-                        class="text-xl sm:text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish mt-2">
+                        class="text-2gxl sm:text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish mt-2">
                         SOLUTIONS
                     </p>
-                    <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
-                        class="h-1 w-10 border-b-2 bg-[#4977A0] "></div>
+                    <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                        class="h-1 w-10 border-b-2 bg-[#4977A0] sm:text-center "></div>
 
                     </h1>
 
@@ -194,10 +196,10 @@
                 </div>
 
                 <!-- Right Content - Services Box -->
-                <div class="relative">
+                <div class="relative flex sm:flex-col   flex-col-reverse">
                     <!-- Services Box -->
                     <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
-                        class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                        class="bg-white rounded-lg shadow-lg p-6 mb-8 mt-8 md:mt-0  ">
                         <h3 class="text-lg font-semibold mb-4">OUR SERVICES</h3>
                         <div class="grid grid-cols-2 gap-4">
                             <div class="flex items-center space-x-2">
@@ -222,12 +224,13 @@
                             </div>
                         </div>
                     </div>
-
+                
                     <!-- Illustration -->
                     <div class="mt-8">
                         <img src="assets/Discussion-bro (2) 1.png" alt="Team Meeting" class="w-full">
                     </div>
                 </div>
+                
             </div>
         </div>
         <div class="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#D2EFFF] to-transparent z-0"></div>

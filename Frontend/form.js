@@ -157,4 +157,11 @@ document.addEventListener('DOMContentLoaded', function () {
             toggleMenu();
         }
     });
+<<<<<<< HEAD
 });
+=======
+}); 
+
+
+
+>>>>>>> 8cd88e0a7d1934297830c58bd6221496ba65c7b2

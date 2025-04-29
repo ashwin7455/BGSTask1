@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .custom-orange-btn {
+        background-color: #f47c20;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 0.5rem 1.2rem;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background 0.2s;
+      }
+      .custom-orange-btn:hover {
+        background-color: #d96500;
+      }
+      .custom-orange-outline-btn {
+        background: #fff;
+        color: #f47c20;
+        border: 2px solid #f47c20;
+        border-radius: 6px;
+        padding: 0.5rem 1.2rem;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background 0.2s, color 0.2s;
+      }
+      .custom-orange-outline-btn:hover {
+        background: #ffe5cc;
+        color: #d96500;
+        border-color: #d96500;
+      }
+    </style>
+  </head>
+  <body class="bg-blue-100 min-h-screen flex items-center justify-center">
+    <div
+      class="container mx-auto flex flex-col md:flex-row items-center justify-center px-4"
+    >
+      <!-- Left Section -->
+      <div class="md:w-1/2 w-full mb-10 md:mb-0">
+        <h1 class="text-5xl md:text-6xl font-bold text-blue-900 mb-4 ml-10">
+          Coming Soon
+        </h1>
+        <h2 class="text-lg font-semibold text-blue-900 mb-2 ml-10">
+          We're getting ready to launch (Product Name) soon!
+        </h2>
+        <p class="text-blue-900 mb-6 ml-10">
+          Drop your email below and be among the first to get exclusive updates
+          and early access when we officially go live.
+        </p>
+        <form class="flex mb-4 ml-10">
+          <input
+            type="email"
+            placeholder="Enter Your Email Address"
+            class="px-4 py-2 rounded-l border border-orange-400 focus:outline-none w-2/3"
+            required
+          />
+          <button type="submit" class="custom-orange-btn rounded-r">
+            SUBMIT
+          </button>
+        </form>
+        <div class="flex space-x-4 ml-10">
+          <a href="#" class="custom-orange-outline-btn">Home</a>
+          <a href="#" class="custom-orange-btn">Service</a>
+        </div>
+      </div>
+      <!-- Right Section (Illustration) -->
+      <div class="md:w-1/2 w-full flex justify-center">
+        <img
+          src="./assets/coming_soon.png"
+          alt="Coming Soon Illustration"
+          class="w-97 h-97 object-contain"
+        />
+        <!-- Replace the src above with your own SVG/PNG/illustration as needed -->
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <nav class="sticky top-0 z-50 bg-white border-b-2 border-[#00076A] shadow-md w-full">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-12">
+                    <div class="ml-2 sm:ml-3">
+                        <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-3xl">
+                            BRIDGE GROUP
+                        </h1>
+                        <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-xl">
+                            SOLUTIONS
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[#000000]">
+                    <a href="index.html" class="hover:text-[#1B9CE3] transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-[#1B9CE3] transition-colors">About</a>
+                    <a href="services.html" class="hover:text-[#1B9CE3] transition-colors">Services</a>
+                    <a href="carrerPage.html" class="hover:text-[#1B9CE3] transition-colors">Careers</a>
+                    <a href="contact.html"
+                        class="border border-[#1B9CE3] text-[#1B9CE3] px-4 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-all">
+                        Contact Us
+                    </a>
+                </div>
+    
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#1B9CE3] focus:outline-none">
+                    <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+    
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden">
+                <div class="py-4 space-y-2">
+                    <a href="index.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Home</a>
+                    <a href="about.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
+                    <a href="services.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
+                    <a href="carrerPage.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                    <a href="contact.html"
+                        class="block py-2 text-gray-700  hover:text-[#1B9CE3] hover:text-white transition-all rounded-md">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            let isMenuOpen = false;
+
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.classList.toggle('hidden');
+
+                // Switch icon
+                if (isMenuOpen) {
+                    menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`;
+                } else {
+                    menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+
+            // Optional: Close menu on outside click
+            document.addEventListener('click', function (event) {
+                if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target) && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+
+            // Optional: Close menu on window resize to desktop
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 768 && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

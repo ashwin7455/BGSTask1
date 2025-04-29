@@ -183,7 +183,7 @@
             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
           </svg>
         </a>
-        <a href="/frontend/I'M Intrested.html" id="top-interested-btn" class="bg-orange-500 text-white px-6 py-2 rounded text-sm font-medium flex items-center">
+        <a href="/interested.html" id="top-interested-btn" class="bg-orange-500 text-white px-6 py-2 rounded text-sm font-medium flex items-center">
           I'M INTERESTED
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -212,9 +212,9 @@
             </ul>
             
             <p class="mt-6 text-sm" id="job-location">Please note that we have requirements for this role in Chennai, Salem, Coimbatore, Tirunelveli, and Madurai.</p>
-            
+                                
             <div class="mt-6">
-              <a href="/frontend/I'M Intrested.html" id="bottom-interested-btn" class="bg-orange-500 text-white px-6 py-2 rounded text-sm font-medium inline-flex items-center">
+              <a href="/interested.html" id="bottom-interested-btn" class="bg-orange-500 text-white px-6 py-2 rounded text-sm font-medium inline-flex items-center">
                 I'M INTERESTED
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -518,7 +518,7 @@
       const bottomInterestedBtn = document.getElementById('bottom-interested-btn');
       
       // Set the href for both buttons to link to the interested form with the job ID
-      const formUrl = `/frontend/I'M Intrested.html?job=${jobId || 'technical-support'}`;
+      const formUrl = `interested.html?job=${jobId || 'technical-support'}`;
       topInterestedBtn.href = formUrl;
       bottomInterestedBtn.href = formUrl;
     });

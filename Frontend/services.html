@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Services</title>
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .scrolling-wrapper {
+      animation: scrollLeft 25s linear infinite;
+    }
+
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+
+    .site-container {
+      width: 100%;
+      /* max-width: 1400px; */
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .site-container {
+        width: 96%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .site-container {
+        width: 95%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+
+
+    /* Custom scrollbar styling */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+      height: 100%;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #6366f1;
+      border-radius: 0;
+    }
+
+    /* Hide default scrollbar for Firefox */
+    .custom-scrollbar {
+      scrollbar-width: none;
+      scrollbar-color: #6366f1 transparent;
+    }
+
+    /* Custom scroll line container */
+    .scroll-line-container {
+      width: 2px;
+      position: relative;
+      background-color: #e5e7eb;
+      margin-right: 16px;
+    }
+
+    .custom-scroll-thumb {
+      position: absolute;
+      left: 0;
+      width: 4px;
+      height: 300px;
+      background-color: black;
+      cursor: pointer;
+    }
+
+    @media (min-width: 2400px) {
+      .custom-width-2400 {
+        width: 2000px !important;
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body class="">
+  <nav class="sticky top-0 z-50 bg-white border-b-2 border-[#00076A] shadow-md w-full">
+    <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-12">
+                <div class="ml-2 sm:ml-3">
+                    <h1 class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-3xl">
+                        BRIDGE GROUP
+                    </h1>
+                    <p class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-xl">
+                        SOLUTIONS
+                    </p>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[#000000]">
+                <a href="index.html" class="hover:text-[#1B9CE3] transition-colors">Home</a>
+                <a href="about.html" class="hover:text-[#1B9CE3] transition-colors">About</a>
+                <a href="services.html" class="hover:text-[#1B9CE3] transition-colors">Services</a>
+                <a href="carrerPage.html" class="hover:text-[#1B9CE3] transition-colors">Careers</a>
+                <a href="contact.html"
+                    class="border border-[#1B9CE3] text-[#1B9CE3] px-4 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-all">
+                    Contact Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#1B9CE3] focus:outline-none">
+                <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden">
+            <div class="py-4 space-y-2">
+                <a href="index.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Home</a>
+                <a href="about.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
+                <a href="services.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
+                <a href="carrerPage.html" class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                <a href="contact.html"
+                    class="block py-2 text-gray-700  hover:text-[#1B9CE3] hover:text-white transition-all rounded-md">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('hidden');
+
+            // Switch icon
+            if (isMenuOpen) {
+                menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`;
+            } else {
+                menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        // Optional: Close menu on outside click
+        document.addEventListener('click', function (event) {
+            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target) && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+
+        // Optional: Close menu on window resize to desktop
+        window.addEventListener('resize', function () {
+            if (window.innerWidth >= 768 && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    });
+</script>
+
+  <div class="border-t border-[#2c2c74] bg-[#CDE9F8] text-center py-12 px-4 max-w-9xl mx-auto">
+    <h2 class="text-[#00076A] text-3xl md:text-5xl font-medium leading-snug">
+      All the software you need to<br>
+      run your business reframe
+    </h2>
+    <div class="w-12 h-1 bg-orange-400 mt-4 mx-auto"></div>
+  </div>
+
+  <div class="h-[200px] bg-gradient-to-b from-[#CDE9F8] 900 to-white w-full">
+    <div class="flex flex-col justify-center items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+      <!-- Search Bar -->
+      <div
+        class="flex items-center w-full max-w-xl sm:max-w-2xl md:max-w-3xl h-[60px] px-4 py-2 border-[1.5px] border-[#1B9CE3] rounded-full shadow bg-white mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 mr-3" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-4.35-4.35M10.5 17a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13z" />
+        </svg>
+        <input type="text" placeholder="I’m looking for..."
+          class="w-full bg-transparent outline-none text-gray-600 text-lg" />
+      </div>
+
+      <!-- Top Services Heading -->
+      <h2 class="items-center text-center text-[40px] 600 text-[#00076A] font-semibold">Top Services</h2>
+    </div>
+
+  </div>
+
+
+
+  <!-- Infinite Scroll Container -->
+  <div class="overflow-hidden whitespace-nowrap">
+    <div class="flex gap-3 scrolling-wrapper w-max">
+
+
+      <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-[350px] sm:w-[60%] lg:w-[30%] lg:">
+        <div class="bg-[#EEF9FF] rounded-lg p-4">
+          <div class="text-[#f59e0b] text-3xl mb-2">
+            <img src="./assets/Mask group (5).png" alt="">
+          </div>
+          <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+          <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d love.</p>
+          <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+            TRY NOW &gt;
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-[350px] sm:w-[60%] lg:w-[30%] lg:">
+        <div class="bg-[#EEF9FF] rounded-lg p-4">
+          <div class="text-[#f59e0b] text-3xl mb-2">
+            <img src="./assets/Mask group (5).png" alt="">
+          </div>
+          <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">HRMS</h3>
+          <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d love.</p>
+          <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+            TRY NOW &gt;
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-[350px] sm:w-[60%] lg:w-[30%] lg:">
+        <div class="bg-[#EEF9FF] rounded-lg p-4">
+          <div class="text-[#f59e0b] text-3xl mb-2">
+            <img src="./assets/Mask group (5).png" alt="">
+          </div>
+          <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">Bookings</h3>
+          <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d love.</p>
+          <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+            TRY NOW &gt;
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-[350px] sm:w-[60%] lg:w-[30%] lg:">
+        <div class="bg-[#EEF9FF] rounded-lg p-4">
+          <div class="text-[#f59e0b] text-3xl mb-2">
+            <img src="./assets/Mask group (5).png" alt="">
+          </div>
+          <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">Webinar</h3>
+          <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d love.</p>
+          <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+            TRY NOW &gt;
+          </p>
+        </div>
+      </div>
+
+      <!-- <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-[350px] sm:w-[60%] lg:w-[30%] lg:">
+        <div class="bg-[#EEF9FF] rounded-lg p-4">
+          <div class="text-[#f59e0b] text-3xl mb-2">
+            <img src="./assets/Mask group (5).png" alt="">
+          </div>
+          <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+          <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d love.</p>
+          <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+            TRY NOW &gt;
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-[350px] sm:w-[60%] lg:w-[30%] lg:">
+        <div class="bg-[#EEF9FF] rounded-lg p-4">
+          <div class="text-[#f59e0b] text-3xl mb-2">
+            <img src="./assets/Mask group (5).png" alt="">
+          </div>
+          <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+          <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d love.</p>
+          <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+            TRY NOW &gt;
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-[350px] sm:w-[60%] lg:w-[30%] lg:">
+        <div class="bg-[#EEF9FF] rounded-lg p-4">
+          <div class="text-[#f59e0b] text-3xl mb-2">
+            <img src="./assets/Mask group (5).png" alt="">
+          </div>
+          <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+          <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d love.</p>
+          <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+            TRY NOW &gt;
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-[350px] sm:w-[60%] lg:w-[30%] lg:">
+        <div class="bg-[#EEF9FF] rounded-lg p-4">
+          <div class="text-[#f59e0b] text-3xl mb-2">
+            <img src="./assets/Mask group (5).png" alt="">
+          </div>
+          <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+          <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d love.</p>
+          <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+            TRY NOW &gt;
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-[350px] sm:w-[60%] lg:w-[30%] lg:">
+        <div class="bg-[#EEF9FF] rounded-lg p-4">
+          <div class="text-[#f59e0b] text-3xl mb-2">
+            <img src="./assets/Mask group (5).png" alt="">
+          </div>
+          <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+          <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d love.</p>
+          <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+            TRY NOW &gt;
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-[350px] sm:w-[60%] lg:w-[30%] lg:">
+        <div class="bg-[#EEF9FF] rounded-lg p-4">
+          <div class="text-[#f59e0b] text-3xl mb-2">
+            <img src="./assets/Mask group (5).png" alt="">
+          </div>
+          <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+          <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d love.</p>
+          <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+            TRY NOW &gt;
+          </p>
+        </div>
+      </div> -->
+
+
+      <script>
+        const wrapper = document.querySelector('.scrolling-wrapper');
+        const template = document.getElementById('card-template');
+
+        // for (let i = 0; i < 14; i++) {
+        //   const clone = template.content.cloneNode(true);
+        //   wrapper.appendChild(clone);
+        // }
+      </script>
+    </div>
+  </div>
+
+
+  <br><br>
+
+  <div class=" Container w-full mx-auto py-8 px-10">
+
+    <div class="flex h-[calc(150vh-4rem)]">
+      <!-- Sidebar Navigation -->
+      <nav class="w-32 md:w-48 flex-shrink-0 pr-4">
+        <div class="sticky top-0 space-y-2">
+          <h2 class="text-2xl font-bold mb-6">Projects</h2>
+          <a href="#sales" class="block px-4 py-2 text-2xl sm:text-[22px] text-black-700">Sales</a>
+
+          <a href="#marketing" class="block px-4 py-2 text-2xl sm:text-[20px] text-black-700">Marketing</a>
+          <a href="#finance" class="block px-4 py-2 text-2xl sm:text-[20px] text-black-700">Finance</a>
+          <a href="#hr" class="block px-4 py-2 text-2xl sm:text-[20px] text-black-700">Human Resources</a>
+          <a href="#legal" class="block px-4 py-2 text-2xl sm:text-[20px] text-black-700">Legal</a>
+          <a href="#security" class="block px-4 py-2 text-2xl sm:text-[20px] text-black-700">Security and IT</a>
+          <h2 class="text-2xl font-bold mb-6">Outsource</h2>
+          <a href="#outsourcing" class="block px-4 py-2 text-2xl sm:text-[20px] text-black-700">ERP & Customized
+            Software</a>
+          <a href="#outsourcing" class="block px-4 py-2 text-2xl sm:text-[20px] text-black-700">Software Testing</a>
+          <h2 class="text-2xl font-bold mb-6">Investing</h2>
+          <a href="#investing" class="block px-4 py-2 text-2xl sm:text-[20px] text-black-700">Management</a>
+          <a href="#investing" class="block px-4 py-2 text-2xl sm:text-[20px] text-black-700">Mutual Fund</a>
+          <a href="#investing" class="block px-4 py-2 text-2xl sm:text-[20px] text-black-700">Pension</a>
+        </div>
+      </nav>
+
+
+
+      <!-- Custom Scroll Line -->
+      <div class="scroll-line-container">
+        <div class="custom-scroll-thumb" id="scrollThumb"></div>
+      </div>
+
+      <!-- Main Content -->
+      <main class="flex-1 overflow-y-auto custom-scrollbar" id="mainContent">
+        <div class="space-y-12 px-4">
+          <!-- Sales Section -->
+          <section id="sales" class="scroll-mt-16">
+            <h2 class="text-2xl font-bold mb-6">Sales</h2>
+            <div class="flex flex-col sm:flex-row sm:flex-wrap gap-6">
+              <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (5).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+<!-- 
+              <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (6).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (5).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+
+            </div> -->
+          </section>
+
+          <!-- Marketing Section -->
+          <section id="marketing" class="scroll-mt-16">
+            <h2 class="text-2xl font-bold mb-6">Marketing</h2>
+            <div class="flex flex-col sm:flex-row sm:flex-wrap gap-6">
+              <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (5).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">HRMS</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+              <!-- <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (6).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (5).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+            </div> -->
+          </section>
+
+          <!-- Finance Section -->
+          <section id="finance" class="scroll-mt-16">
+            <h2 class="text-2xl font-bold mb-6">Finance</h2>
+            <div class="flex flex-col sm:flex-row sm:flex-wrap gap-6">
+              <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (5).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">Books</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+              <!-- <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (6).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (5).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div> -->
+            </div>
+          </section>
+
+          <!-- HR Section -->
+          <section id="hr" class="scroll-mt-16">
+            <h2 class="text-2xl font-bold mb-6">Human Resources</h2>
+            <div class="flex flex-col sm:flex-row sm:flex-wrap gap-6">
+              <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (5).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">People</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+              <!-- <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (6).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (5).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div> -->
+            </div>
+          </section>
+
+          <!-- Legal Section -->
+          <section id="legal" class="scroll-mt-16">
+            <h2 class="text-2xl font-bold mb-6">Legal</h2>
+            <div class="flex flex-col sm:flex-row sm:flex-wrap gap-6">
+              <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (5).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">Contracts</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+              <!-- <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (6).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div> -->
+
+            </div>
+          </section>
+
+          <!-- Security and IT Section -->
+          <section id="security" class="scroll-mt-16">
+            <h2 class="text-2xl font-bold mb-6">Security and IT Management</h2>
+
+            <div class="flex flex-col sm:flex-row sm:flex-wrap gap-6">
+
+              <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (5).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">Creator</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+              <!-- <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (6).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div>
+              <div class="bg-[white] border-[2px] border-[#f59e0b] rounded-xl p-4 w-full sm:w-[90%] lg:w-[30%] lg:">
+                <div class="bg-[#EEF9FF] rounded-lg p-4">
+                  <div class="text-[#f59e0b] text-3xl mb-2">
+                    <img src="./assets/Mask group (5).png" alt="">
+                  </div>
+                  <h3 class="font-semibold text-black lg:text-[16px] sm:text-[22px]">CRM</h3>
+                  <p class="text-4xl text-black-700 lg:text-[16px] sm:text-[20px]">Help your&nbsp;&nbsp;tools they’d
+                    love.</p>
+                  <p class="text-4xl text-[#f59e0b] mt-6 font-semibold cursor-pointer lg:text-[16px] sm:text-[20px]">
+                    TRY NOW &gt;
+                  </p>
+                </div>
+              </div> -->
+            </div>
+          </section>
+
+
+
+        </div>
+        </section>
+    </div>
+    </main>
+  </div>
+  </div>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Custom scrollbar functionality
+    const mainContent = document.getElementById('mainContent');
+    const scrollThumb = document.getElementById('scrollThumb');
+
+    function updateScrollThumb() {
+      const contentHeight = mainContent.scrollHeight;
+      const viewportHeight = mainContent.clientHeight;
+      const scrollPercentage = (mainContent.scrollTop / (contentHeight - viewportHeight));
+      const thumbHeight = Math.max(20, (viewportHeight / contentHeight) * viewportHeight);
+
+      scrollThumb.style.height = `${thumbHeight}px`;
+      scrollThumb.style.top = `${scrollPercentage * (viewportHeight - thumbHeight)}px`;
+    }
+
+    mainContent.addEventListener('scroll', updateScrollThumb);
+    window.addEventListener('resize', updateScrollThumb);
+
+    // Initial update
+    setTimeout(updateScrollThumb, 100);
+  </script>
+  <br><br><br><br>
+
+
+  <section class="w-full max-w-[1000px] 2xl:max-w-[2400px] px-6 md:px-20 py-10 mx-auto">
+
+
+    <h1 id="outsourcing" class="text-2xl font-bold mb-2 -mt-10 text-left">Outsourcing</h1>
+    <p class="text-[20px] mb-10 text-left">Focus on what you do best. Let us handle the rest.</p>
+    <div class="flex justify-center px-4">
+      <div class="w-full max-w-[1200px] flex flex-col items-center border-b-[1px] border-[#1B9CE3] mb-8">
+
+        <div class="flex justify-center space-x-4">
+
+          <!-- ERP Tab -->
+          <div id="erpTab" onclick="switchTab('erp')"
+            class="text-lg md:text-2xl font-semibold px-6 py-2 cursor-pointer bg-[#1B9CE3] text-white text-center transition-all">
+            ERP & Customized Software
+          </div>
+
+          <!-- Testing Tab -->
+          <div id="testingTab" onclick="switchTab('testing')"
+            class="text-lg md:text-2xl font-semibold px-6 py-2 cursor-pointer text-[#1B9CE3] bg-white text-center transition-all">
+            Software Testing
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ERP Content -->
+    <div id="erpContent" class="w-full mx-auto">
+      <h2 class="text-3xl font-semibold mb-4 text-center">Our expertise in ERP solutions</h2>
+      <p class="text-black-600 mb-10 sm:text-[21px] mx-auto text-center">
+        Our seasoned team excels in ERP system implementation and optimization, enhancing operational efficiency and
+        fostering business expansion through tailored solutions.
+      </p>
+
+      <div class="max-w-9xl mx-auto">
+        <div class="relative overflow-hidden">
+          <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+
+            <!-- Slide 1 -->
+            <div class="min-w-full flex flex-col md:flex-row items-left p-8 space-y-6 md:space-y-0">
+              <div class="flex-1 space-y-4">
+                <h2 class="text-2xl font-bold">Enterprise Solutions</h2>
+                <p class="sm:text-[22px]">Transform your business with our comprehensive ERP solutions that integrate
+                  finance, inventory, HR, and operations into a single platform.</p>
+                <p class="sm:text-[22px]">Our ERP systems are designed to enhance productivity, reduce costs, and
+                  provide real-time insights for better decision-making.</p>
+              </div>
+              <div class="flex-1 flex justify-center">
+                <img src="./assets/Business solution-bro 1.png" alt="Enterprise Solutions"
+                  class="max-w-[400px] h-[300px]">
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="min-w-full flex flex-col md:flex-row items-left p-8 space-y-6 md:space-y-0">
+              <div class="flex-1 space-y-4">
+                <h2 class="text-2xl font-bold">Smart Integration</h2>
+                <p class="sm:text-[22px]">Experience seamless data flow across departments with our intelligent ERP
+                  integration services, featuring automated workflows and advanced analytics</p>
+                <p class="sm:text-[22px]">From supply chain management to customer relationship management, our ERP
+                  solutions ensure every aspect of your business works in perfect harmony.</p>
+              </div>
+              <div class="flex-1 flex justify-center">
+                <img src="/assets/04f48a61084b5b40296ac7354495c944a6148adf.png" alt="Cloud Services"
+                  class="max-w-[400px] h-[300px]">
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="min-w-full flex flex-col md:flex-row items-left p-8 space-y-6 md:space-y-0">
+              <div class="flex-1 space-y-4">
+                <h2 class="text-2xl font-bold">24/7 Support</h2>
+                <p class="sm:text-[22px]">Get uninterrupted assistance from our certified ERP specialists who understand
+                  both technical requirements and business processes.</p>
+                <p class="sm:text-[22px]">We provide comprehensive training, maintenance, and troubleshooting to ensure
+                  your ERP system operates at peak efficiency around the clock.</p>
+              </div>
+              <div class="flex-1 flex justify-center">
+                <img src="./assets//8a636f01a7696d8fb24152b4ae44b1da424a1ab5.png" alt="Data Analytics"
+                  class="max-w-[400px] h-[300px]">
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="flex justify-center space-x-4">
+            <button id="prevBtn"
+              class="w-12 h-12 flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white rounded-full text-2xl">
+              &#8592;
+            </button>
+            <button id="nextBtn"
+              class="w-12 h-12 flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white rounded-full text-2xl">
+              &#8594;
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        const slider = document.getElementById('slider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        let slideIndex = 0;
+
+        function showSlide(index) {
+          const slideWidth = slider.clientWidth;
+          slider.style.transform = `translateX(${-index * slideWidth}px)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+          slideIndex = (slideIndex > 0) ? slideIndex - 1 : 2;
+          showSlide(slideIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+          slideIndex = (slideIndex < 2) ? slideIndex + 1 : 0;
+          showSlide(slideIndex);
+        });
+
+        window.addEventListener('resize', () => {
+          showSlide(slideIndex);
+        });
+      </script>
+
+
+
+      <div class="max-w-9xl mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+
+          <!-- Text Section -->
+          <div class="flex-1 space-y-4">
+            <h2 class="text-2xl font-bold">A Brief History of ERP</h2>
+            <p class="text-[21px] leading-relaxed">
+              The term ERP was coined in 1990 by Gartner, but its roots date to the 1960s. Back then, the concept
+              applied to inventory management and control in the manufacturing sector.
+            </p>
+            <p class="text-[21px] leading-relaxed">
+              Software engineers created programs to monitor inventory, reconcile balances, and report on status. By the
+              1970s, this had evolved into Material Requirements Planning (MRP) systems for scheduling production
+              processes.
+            </p>
+            <p class="text-[21px] leading-relaxed">
+              In the 1980s, MRP grew to encompass more manufacturing processes, prompting many to call it MRP-II or
+              Manufacturing Resource Planning. By 1990, these systems had expanded beyond inventory control to other
+              back-office functions like accounting and human resources.
+            </p>
+          </div>
+
+          <!-- Image Section -->
+          <div class="flex-1 flex justify-center">
+            <img src="./assets/Software code testing-rafiki 1.png" alt="History of ERP" class="max-w-[400px] h-auto">
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+    </div>
+    </div>
+
+
+
+
+    <!-- Software Testing Content (Hidden by default) -->
+    <div id="testingContent" class="hidden max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-2">Software Testing Excellence</h2>
+      <p class="text-black-600 mb-8 sm:text-[21px]">Elevate your software quality with our comprehensive testing
+        solutions. We ensure reliability, security, and optimal performance across all platforms.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6 text-left">
+        <div class="border p-4 rounded-lg border-[#1B9CE3]">
+          <div class="flex items-center gap-2 mb-2">
+            <img src="./assets/e167e2215efb2625a7049d52912d040ef4804fa8.png" alt="Manual Testing" class="w-6 h-6" />
+            <h3 class="text-3xl lg:text-lg font-bold leading-none">Manual Testing</h3>
+          </div>
+          <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+            <li>Functional Testing</li>
+            <li>User Interface Testing</li>
+            <li>Usability Testing</li>
+            <li>Cross-browser Testing</li>
+            <li>Regression Testing</li>
+          </ul>
+        </div>
+        <div class="border p-4 rounded-lg border-[#1B9CE3]">
+          <div class="flex items-center gap-2 mb-2">
+            <img src="./assets//4eb57d7b074d390df4d6e4e5791d5ce3ffe647ab.png" alt="Manual Testing" class="w-6 h-6" />
+            <h3 class="text-3xl lg:text-lg font-bold leading-none">Automation Testing</h3>
+          </div>
+          <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+            <li>Test Script Development</li>
+            <li>Continuous Integration</li>
+            <li>Regression Automation</li>
+            <li>Cross-platform Testing</li>
+            <li>Test Framework Design</li>
+          </ul>
+        </div>
+        <div class="border p-4 rounded-lg border-[#1B9CE3]">
+          <div class="flex items-center gap-2 mb-2">
+            <img src="./assets//14e7eeb8e6f4d5ad6640402286c39f959800282d.png" alt="Manual Testing" class="w-6 h-6" />
+            <h3 class="text-3xl lg:text-lg font-bold leading-none">Performance Testing</h3>
+          </div>
+          <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+            <li>Load Testing</li>
+            <li>Stress Testing</li>
+            <li>Scalability Testing</li>
+            <li>Endurance Testing</li>
+            <li>Peak Performance Analysis</li>
+          </ul>
+        </div>
+        <div class="border p-4 rounded-lg border-[#1B9CE3]">
+          <div class="flex items-center gap-2 mb-2">
+            <img src="./assets/813a7c03bbd40c99d236d28b0ab720eed8d41a89.png" alt="Manual Testing" class="w-6 h-6" />
+            <h3 class="text-3xl lg:text-lg font-bold leading-none">Security Testing</h3>
+          </div>
+          <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+            <li>Vulnerability Scanning</li>
+            <li>Penetration Testing</li>
+            <li>Security Audit</li>
+            <li>Compliance Testing</li>
+            <li>Risk Assessment</li>
+          </ul>
+        </div>
+        <div class="border p-4 rounded-lg border-[#1B9CE3]">
+          <div class="flex items-center gap-2 mb-2">
+            <img src="./assets/2c972318e79de773b78854fb7a8b770f63b05706.png" alt="Manual Testing" class="w-6 h-6" />
+            <h3 class="text-3xl lg:text-lg font-bold leading-none">Mobile Testing</h3>
+          </div>
+          <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+            <li>Device Compatibility</li>
+            <li>OS Version Testing</li>
+            <li>Mobile UI/UX Testing</li>
+            <li>Performance Optimization</li>
+            <li>Network Condition Testing</li>
+          </ul>
+        </div>
+        <div class="border p-4 rounded-lg border-[#1B9CE3]">
+          <div class="flex items-center gap-2 mb-2">
+            <img src="./assets/fa6774cc0c266ed2c16d3cc9996bd980c9e4bbfa.png" alt="Manual Testing" class="w-6 h-6" />
+            <h3 class="text-3xl lg:text-lg font-bold leading-none">API Testing</h3>
+          </div>
+          <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+            <li>Endpoint Testing</li>
+            <li>Integration Testing</li>
+            <li>Response Validation</li>
+            <li>Error Handling</li>
+            <li>Performance Monitoring</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="text-[32px] 700 font-semibold mt-10 mb-4">Our Testing Process</h3>
+      <div class="flex flex-wrap justify-center gap-4">
+        <div class="rounded-full px-4 py-2 border border-[#1B9CE3] lg:text-[20px] sm:text-[22px]">1. Requirements
+          Analysis</div>
+        <div class="rounded-full px-4 py-2 border border-[#1B9CE3] lg:text-[20px] sm:text-[22px]">2. Test Planning</div>
+        <div class="rounded-full px-4 py-2 border border-[#1B9CE3] lg:text-[20px] sm:text-[22px]">3. Test Case Design
+        </div>
+        <div class="rounded-full px-4 py-2 border border-[#1B9CE3] lg:text-[20px] sm:text-[22px]">4. Test Environment
+          Setup</div>
+        <div class="rounded-full px-4 py-2 border border-[#1B9CE3] lg:text-[20px] sm:text-[22px]">5. Test Execution
+        </div>
+        <div class="rounded-full px-4 py-2 border border-[#1B9CE3] lg:text-[20px] sm:text-[22px]">6. Defect Reporting
+        </div>
+        <div class="rounded-full px-4 py-2 border border-[#1B9CE3] lg:text-[20px] sm:text-[22px]">7. Regression Testing
+        </div>
+      </div>
+
+      <div class="mt-10 w-[895px] mx-auto text-center">
+        <h4 class="text-8xl text-[47px] font-bold mb-2">Ready to Ensure Your Software Quality?</h4>
+        <p class="text-black-800 mb-4 sm:text-[22px]">Let's discuss how our testing expertise can help you deliver
+          reliable and high-performance software.</p>
+        <button class="bg-[#1B9CE3] 500 text-white px-6 py-2 hover:bg-[#1B9Cf9] 600">START YOUR TESTING JOURNEY</button>
+      </div>
+
+    </div>
+
+
+    <section class="px-4 py-12 mx-auto">
+      <!-- Heading -->
+      <h2 id="investing" class="text-2xl font-bold mb-2 -mt-10 text-left">Investing</h2>
+      <p class="text-black-600 text-[20px] mb-6">Plant your money today. Watch your wealth grow tomorrow.</p>
+
+      <!-- Tabs -->
+      <div id="second" class="flex justify-center text-center pl-[80px]">
+        <div class="w-[566px] flex items-center border-b border-[#1B9CE3] 300 mb-12 pl-[40px]">
+          <div id="managementTab" onclick="showContent('management')"
+            class="text-[24px] font-semibold px-4 py-1 cursor-pointer border-b-0 bg-[#1B9CE3] 500 text-white">
+            Management
+          </div>
+          <div id="mutualFundTab" onclick="showContent('mutualFund')"
+            class="text-[24px] font-semibold px-4 py-1 cursor-pointer text-[#1B9CE3] 600 bg-white border-b-0">
+            Mutual Fund
+          </div>
+          <div id="pensionTab" onclick="showContent('pension')"
+            class="text-[24px] font-semibold px-4 py-1 cursor-pointer text-[#1B9CE3] 600 bg-white border-b-0">
+            Pension
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Wealth Management -->
+      <div id="management" class="tab-content hidden">
+
+        <h3 class="text-3xl font-semibold text-center mb-2">Wealth Management</h3>
+        <p class="text-center text-2xl sm:text-[22px] text-black-600 mb-5">
+          Expert wealth management services tailored to your financial goals and needs.<br>
+          We provide comprehensive solutions to protect and grow your wealth.
+        </p>
+        <div class="flex flex-col lg:flex-row justify-center items-start gap-4 py-8 mx-auto max-w-[2200px]">
+
+          <!-- Card -->
+          <div class="border border-blue-300 p-4 rounded-md shadow-sm w-full lg:w-[300px] xl:w-[350px] 2xl:w-[400px]">
+            <div class="flex items-center gap-1 whitespace-nowrap">
+              <img src="./assets/e167e2215efb2625a7049d52912d040ef4804fa8.png" alt="Manual Testing"
+                class="w-6 h-6 object-contain" />
+              <h2 class="text-3xl lg:text-lg font-bold leading-none">Manual Testing</h2>
+
+            </div>
+            <p class="mt-2 text-2xl lg:text-sm text-black-600">
+              Meticulous testing processes to ensure optimal software performance
+            </p>
+            <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+
+              <li>Functional Testing</li>
+              <li>User Interface Testing</li>
+              <li>Usability Testing</li>
+              <li>Cross-browser Testing</li>
+              <li>Regression Testing</li>
+            </ul>
+          </div>
+
+
+          <div class="border border-blue-300 p-4 rounded-md shadow-sm w-full lg:w-[300px] xl:w-[350px] 2xl:w-[400px]">
+            <div class="flex items-center gap-1 whitespace-nowrap">
+              <img src="./assets/e167e2215efb2625a7049d52912d040ef4804fa8.png" alt="Manual Testing"
+                class="w-6 h-6 object-contain" />
+              <h2 class="text-3xl lg:text-lg font-bold leading-none">Manual Testing</h2>
+            </div>
+            <p class="mt-2 text-2xl lg:text-sm text-black-600">
+              Meticulous testing processes to ensure optimal software performance
+            </p>
+            <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+
+              <li>Functional Testing</li>
+              <li>User Interface Testing</li>
+              <li>Usability Testing</li>
+              <li>Cross-browser Testing</li>
+              <li>Regression Testing</li>
+            </ul>
+          </div>
+
+          <div class="border border-blue-300 p-4 rounded-md shadow-sm w-full lg:w-[300px] xl:w-[350px] 2xl:w-[400px]">
+            <div class="flex items-center gap-1 whitespace-nowrap">
+              <img src="./assets/e167e2215efb2625a7049d52912d040ef4804fa8.png" alt="Manual Testing"
+                class="w-6 h-6 object-contain" />
+              <h2 class="text-3xl lg:text-lg font-bold leading-none">Manual Testing</h2>
+            </div>
+            <p class="mt-2 text-2xl lg:text-sm text-black-600">
+              Meticulous testing processes to ensure optimal software performance
+            </p>
+            <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+
+              <li>Functional Testing</li>
+              <li>User Interface Testing</li>
+              <li>Usability Testing</li>
+              <li>Cross-browser Testing</li>
+              <li>Regression Testing</li>
+            </ul>
+          </div>
+
+          <div class="border border-blue-300 p-4 rounded-md shadow-sm w-full lg:w-[300px] xl:w-[350px] 2xl:w-[400px]">
+            <div class="flex items-center gap-1 whitespace-nowrap">
+              <img src="./assets/e167e2215efb2625a7049d52912d040ef4804fa8.png" alt="Manual Testing"
+                class="w-6 h-6 object-contain" />
+              <h2 class="text-3xl lg:text-lg font-bold leading-none">Manual Testing</h2>
+            </div>
+            <p class="mt-2 text-2xl lg:text-sm text-black-600">
+              Meticulous testing processes to ensure optimal software performance
+            </p>
+            <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+
+              <li>Functional Testing</li>
+              <li>User Interface Testing</li>
+              <li>Usability Testing</li>
+              <li>Cross-browser Testing</li>
+              <li>Regression Testing</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Portfolio Management -->
+        <h3 class="text-3xl font-semibold text-center mb-2">Portfolio Management</h3>
+        <p class="text-center text-2xl sm:text-[22px] text-black-600 mb-5">
+          Professional portfolio management services to optimize your investment returns<br>
+          while managing risk through diversification and strategic asset allocation.
+        </p>
+
+        <div class="flex flex-col lg:flex-row justify-center items-start gap-4 py-8 mx-auto max-w-[2200px]">
+
+          <!-- Card -->
+          <div class="border border-blue-300 p-4 rounded-md shadow-sm w-full lg:w-[300px] xl:w-[350px] 2xl:w-[400px]">
+            <div class="flex items-center gap-1 whitespace-nowrap">
+              <img src="./assets/e167e2215efb2625a7049d52912d040ef4804fa8.png" alt="Manual Testing"
+                class="w-6 h-6 object-contain" />
+              <h2 class="text-3xl lg:text-lg font-bold leading-none">Manual Testing</h2>
+
+            </div>
+            <p class="mt-2 text-2xl lg:text-sm text-black-600">
+              Meticulous testing processes to ensure optimal software performance
+            </p>
+            <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+
+              <li>Functional Testing</li>
+              <li>User Interface Testing</li>
+              <li>Usability Testing</li>
+              <li>Cross-browser Testing</li>
+              <li>Regression Testing</li>
+            </ul>
+          </div>
+
+
+          <div class="border border-blue-300 p-4 rounded-md shadow-sm w-full lg:w-[300px] xl:w-[350px] 2xl:w-[400px]">
+            <div class="flex items-center gap-1 whitespace-nowrap">
+              <img src="./assets/e167e2215efb2625a7049d52912d040ef4804fa8.png" alt="Manual Testing"
+                class="w-6 h-6 object-contain" />
+              <h2 class="text-3xl lg:text-lg font-bold leading-none">Manual Testing</h2>
+            </div>
+            <p class="mt-2 text-2xl lg:text-sm text-black-600">
+              Meticulous testing processes to ensure optimal software performance
+            </p>
+            <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+
+              <li>Functional Testing</li>
+              <li>User Interface Testing</li>
+              <li>Usability Testing</li>
+              <li>Cross-browser Testing</li>
+              <li>Regression Testing</li>
+            </ul>
+          </div>
+
+          <div class="border border-blue-300 p-4 rounded-md shadow-sm w-full lg:w-[300px] xl:w-[350px] 2xl:w-[400px]">
+            <div class="flex items-center gap-1 whitespace-nowrap">
+              <img src="./assets/e167e2215efb2625a7049d52912d040ef4804fa8.png" alt="Manual Testing"
+                class="w-6 h-6 object-contain" />
+              <h2 class="text-3xl lg:text-lg font-bold leading-none">Manual Testing</h2>
+            </div>
+            <p class="mt-2 text-2xl lg:text-sm text-black-600">
+              Meticulous testing processes to ensure optimal software performance
+            </p>
+            <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+
+              <li>Functional Testing</li>
+              <li>User Interface Testing</li>
+              <li>Usability Testing</li>
+              <li>Cross-browser Testing</li>
+              <li>Regression Testing</li>
+            </ul>
+          </div>
+
+          <div class="border border-blue-300 p-4 rounded-md shadow-sm w-full lg:w-[300px] xl:w-[350px] 2xl:w-[400px]">
+            <div class="flex items-center gap-1 whitespace-nowrap">
+              <img src="./assets/e167e2215efb2625a7049d52912d040ef4804fa8.png" alt="Manual Testing"
+                class="w-6 h-6 object-contain" />
+              <h2 class="text-3xl lg:text-lg font-bold leading-none">Manual Testing</h2>
+            </div>
+            <p class="mt-2 text-2xl lg:text-sm text-black-600">
+              Meticulous testing processes to ensure optimal software performance
+            </p>
+            <ul class="list-disc pl-5 mt-3 text-2xl lg:text-sm text-black-700">
+
+              <li>Functional Testing</li>
+              <li>User Interface Testing</li>
+              <li>Usability Testing</li>
+              <li>Cross-browser Testing</li>
+              <li>Regression Testing</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <br>
+        <!-- Call to Action -->
+        <div class="text-center">
+          <h3
+            class="text-[47px] font-bold mb-2 -ml-10 sm:text-4xl lg:text-xl xl:text-4xl 2xl:text-6xl 3xl:text-8xl 4xl:text-[10xl] mx-auto">
+            Ready to Start Your Investment Journey?
+          </h3>
+
+          <br>
+          <p class="text-black-600 lg:text-[20px] mb-6 sm:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
+            Let’s discuss how our wealth and portfolio management expertise can help<br>
+            you achieve your financial goals.
+          </p>
+          <br>
+          <button
+            class="bg-[#1B9CE3] 500 text-white px-6 py-3 rounded-md hover:bg-[#1B9Cf9] 600 transition sm:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl">
+            SCHEDULE A CONSULTATION
+          </button>
+        </div>
+
+    </section>
+    </div>
+
+    <!-- Mutual Fund -->
+    <div id="mutualFund" class="tab-content hidden">
+      <h1 class="text-3xl font-bold text-center mb-2">Grow Your Wealth with Mutual Funds</h1>
+      <p class="text-center text-[black] 600 mb-8 lg:text-[20px] sm:text-[22px]">
+        Mutual funds provide a simple way to invest with professional management.<br>
+        They offer diversification and suit various risk levels.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-2">Mutual Funds</h2>
+      <p class="mb-6 lg:text-[20px] sm:text-[22px]">
+        To many people, Mutual Funds can seem complicated or intimidating. We are going to try and simplify it for you
+        at its very basic level. Essentially, the money pooled in by a large number of people (or investors) is what
+        makes up a Mutual Fund. This fund is managed by a professional fund manager.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-2">Benefits of Mutual Funds</h2>
+      <p class="lg:text-[20px] sm:text-[22px]">Many of us dread the thought of managing our own investments. With a
+        professional fund management company, people are put in charge of various functions based on their education,
+        experience, and skills.</p><br>
+      <ul class="list-disc pl-6 mb-6 space-y-1 lg:text-[20px] sm:text-[22px]">
+        <li>You do not know how to do the job best.</li>
+        <li>You do not have enough time or inclination.</li>
+        <li>You are likely to save money by outsourcing.</li>
+        <li>You can spend your time on other activities of your choice.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mb-2">Why invest through Mutual Funds?</h2>
+      <ul class="list-disc pl-6 mb-6 space-y-1 lg:text-[20px] sm:text-[22px]">
+        <li>Professional Money Management - Fund managers implement strategies that reflect goals.</li>
+        <li>Diversification - Reduces risk by spreading investments.</li>
+        <li>Liquidity - Sell your units anytime.</li>
+        <li>Affordability - Start with as low as ₹500.</li>
+        <li>Convenience - Automated reinvestment & withdrawals.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mb-2">Tax benefits on Investment in Mutual Funds</h2>
+      <ul class="list-disc pl-6 mb-6 space-y-1 lg:text-[20px] sm:text-[22px]">
+        <li>100% Income Tax exemption on all Mutual Fund dividends.</li>
+        <li>Equity Funds: Short-term capital gains taxed at 15%.</li>
+        <li>Debt Funds: Short-term capital gains taxed per slab rates.</li>
+        <li>Long-term capital gains tax: 10% without indexation or 20% with indexation.</li>
+        <li>Open-end funds with equity exposure of more than 65% are exempt from dividend tax.</li>
+      </ul>
+
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-bold mb-2">Important Note</h3>
+        <p class="text-[black] 600 lg:text-[20px] sm:text-[22px]">
+          Equity Funds are those where the investible funds are invested in domestic companies to the extent of more
+          than 65% of the total proceeds of such funds.
+        </p>
+      </div>
+
+      <br>
+      <div class="text-center mt-6">
+        <h2 class="w-[900px] text-8xl text-[47px] font-bold mb-2 -ml-10">Ready to Start Investing?</h2>
+        <br>
+        <p class="mb-4 text-[black] 600 lg:text-[20px] sm:text-[22px]">Take the first step towards financial freedom
+          with our expert-managed mutual funds.</p>
+        <br>
+        <button class="bg-[#1B9CE3] text-white font-bold px-6 py-2 rounded hover:bg-blue-600">
+          GET STARTED TODAY
+        </button>
+      </div>
+    </div>
+
+    <!-- Pension -->
+    <div id="pension" class="tab-content hidden">
+      <div class="flex justify-center items-center gap-6 mb-6">
+        <img src="./assets/98984a70973424bda9a8a6b54b2b2c0dc5bc9d2c.png" alt="Pension Image 1"
+          class="w-1/4 rounded w-[312px] h-[312px]">
+        <img src="./assets/e230ba6b6d10a2b3899fc7e3f2506b2789613c20.png" alt="Pension Image 2"
+          class="w-1/4 rounded w-[312px] h-[312px]">
+        <img src="./assets/0703a17ab56e6f86f5465f6946647e7f9a7e07c4.png" alt="Pension Image 3"
+          class="w-1/4 rounded w-[312px] h-[312px]">
+      </div>
+
+      <h1 class="text-3xl font-bold text-center mb-4">Pension Funds</h1>
+      <p class="text-left text-2xl sm:text-[20px] text-black mb-4">
+        Pension Funds are pooled-contributions from pension plans set up by employers, unions, or other organizations to
+        provide for the employees' or members' retirement benefits. As the largest investment blocks in most countries,
+        they dominate stock markets and play a crucial role in institutional investing alongside insurance companies and
+        investment trusts.
+      </p>
+      <p class="text-left text-2xl sm:text-[20px] text-black mb-8">
+        A key advantage of pension funds is their tax treatment - they're typically exempt from capital gains tax, and
+        their investment portfolio earnings are either tax deferred or tax exempt.
+      </p>
+
+      <h2 class="text-[32px] font-semibold mb-4 text-center">Pension Fund Classifications</h2>
+      <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-6 mb-8">
+        <div class="border border-[#1B9CE3] 300 p-4 rounded shadow">
+          <h3 class="font-bold mb-2 text-[24px]">Open vs. Closed Pension Funds</h3>
+          <p class="mb-2 lg:text-[20px] sm:text-[22px]">Open pension funds support at least one pension plan with no
+            restriction on membership.</p>
+          <p class="font-bold lg:text-[20px] sm:text-[22px]">Closed Pension Fund Types:</p>
+          <ul class="list-disc list-inside lg:text-[20px] sm:text-[22px]">
+            <li>Single-employer pension funds</li>
+            <li>Multi-employer pension funds</li>
+            <li>Related member pension funds</li>
+            <li>Individual pension funds</li>
+          </ul>
+        </div>
+        <div class="border border-[#1B9CE3] 300 p-4 rounded shadow">
+          <h3 class="text-[24px] font-bold mb-2">Public vs. Private Pension Funds</h3>
+          <p class="text-left lg:text-[20px] sm:text-[22px] text-black mb-4">
+            Public pension funds are regulated under public sector law, while private pension funds fall under private
+            sector law regulation.
+          </p><br>
+          <p class="text-left lg:text-[20px] sm:text-[22px] text-black mb-4">The distinction between public and private
+            funds varies by country, with some having very specific requirements for administration and investment. For
+            example, U.S. local governmental bodies must follow state-specific laws regarding permitted investments and
+            minimum municipal obligations.</p>
+        </div>
+      </div>
+
+      <h2 class="text-[32px] font-semibold mb-4 text-center">Key Features of Pension Funds</h2>
+      <div class="grid lg:grid-cols-3 sm:grid-cols-1 gap-6 text-left">
+        <div class="border border-[#1B9CE3] 300 p-4 rounded shadow">
+          <h3 class="font-bold mb-2 sm:text-[22px]">Professional Management</h3>
+          <p class="left text-2xl sm:text-[22px] text-black mb-4">Managed by experienced fund managers to make strategic
+            investment decisions.</p>
+        </div>
+
+        <div class="border border-[#1B9CE3] 300 p-4 rounded shadow">
+          <h3 class="font-bold mb-2 sm:text-[22px]">Market Influence</h3>
+          <p class="text-left text-2xl sm:text-[22px] text-black mb-4">Pension funds significantly influence market
+            trends and corporate governance.</p>
+        </div>
+        <div class="border border-[#1B9CE3] 300 p-4 rounded shadow">
+          <h3 class="font-bold mb-2 sm:text-[22px]">Tax Benefits</h3>
+          <p class="text-left text-2xl sm:text-[22px] text-black mb-4">Enjoy capital gains tax advantages and
+            tax-deferred or tax-exempt earnings.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <footer class="bg-[#D2F0FF] py-10">
+    <div class="site-container">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Logo and Social Links -->
+        <div class="text-center md:text-left">
+          <div class="flex justify-center md:justify-start items-center gap-4 mb-4">
+            <img src="./assets/logo.png" alt="Bridge Group Solutions" class="h-12">
+            <div>
+              <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">BRIDGE GROUP</h1>
+              <p class="text-[#00076A] font-Mulish font-semibold">SOLUTIONS</p>
+            </div>
+          </div>
+          <p
+            class="bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-transparent bg-clip-text font-small text-accent mb-4">
+            WE KNOT SPACE...
+          </p>
+          <div class="flex justify-center md:justify-start space-x-4">
+            <a href="#"
+              class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#"
+              class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#"
+              class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#"
+              class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
+          <ul class="space-y-4">
+            <li><a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a></li>
+            <li><a href="carrerPage.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Gallery</a></li>
+            <li><a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold text-[#000000] mb-6">Services</h3>
+          <ul class="space-y-4">
+            <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Mutual Funds</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Wealth Management</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Portfolio Management</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Pension Funds</a></li>
+            <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp & Customized Software</a>
+            </li>
+            <li><a href="#" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software Testing</a></li>
+          </ul>
+        </div>
+
+        <!-- Subscribe Form -->
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold text-[#000000] mb-6">Subscribe Us!</h3>
+          <form class="space-y-4">
+            <input type="email" placeholder="Enter Email Address"
+              class="px-4 py-3 w-full rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
+            <button type="submit"
+              class="px-3 py-3 w-full bg-[#1B9CE3] text-white rounded-lg shadow-lg transition duration-150 active:scale-95 active:shadow-sm transition-colors">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
+        <p>Copyright © 2025 All rights reserved | This template is made with by Techbuddies@bgs</p>
+      </div>
+    </div>
+
+    <button id="scrollToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600">
+      <i class="fas fa-arrow-up"></i>
+    </button> <!-- Scroll to Top Button -->
+  </footer>
+
+
+  <script>
+    function showContent(tabName) {
+      // Hide all content sections
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.add('hidden');
+      });
+
+      // Show the selected tab content
+      document.getElementById(tabName).classList.remove('hidden');
+
+      // Reset all tabs to inactive style
+      document.querySelectorAll('[id$="Tab"]').forEach(tab => {
+        tab.classList.remove('bg-[#1B9CE3]', 'text-white');
+        tab.classList.add('bg-white', 'text-[#1B9CE3]');
+      });
+
+      // Set the clicked tab as active
+      const activeTab = document.getElementById(tabName + 'Tab');
+      activeTab.classList.remove('bg-white', 'text-[#1B9CE3]');
+      activeTab.classList.add('bg-[#1B9CE3]', 'text-white');
+    }
+
+    // Show the default tab on page load
+    showContent('management');
+  </script>
+
+
+  <script>
+    function switchTab(tab) {
+      const erpTab = document.getElementById('erpTab');
+      const testingTab = document.getElementById('testingTab');
+      const erpContent = document.getElementById('erpContent');
+      const testingContent = document.getElementById('testingContent');
+
+      // Reset all tabs to inactive
+      erpTab.className = "text-[20px] font-semibold px-4 py-1 cursor-pointer text-[#1B9CE3] bg-white border-b-0";
+      testingTab.className = "text-[20px] font-semibold px-4 py-1 cursor-pointer text-[#1B9CE3] bg-white border-b-0";
+
+      // Hide all content
+      erpContent.style.display = 'none';
+      testingContent.style.display = 'none';
+
+      // Activate selected tab and show content
+      if (tab === 'erp') {
+        erpTab.className = "text-[20px] font-semibold px-4 py-1 cursor-pointer text-white bg-[#1B9CE3] border-b-0";
+        erpContent.style.display = 'block';
+      } else if (tab === 'testing') {
+        testingTab.className = "text-[20px] font-semibold px-4 py-1 cursor-pointer text-white bg-[#1B9CE3] border-b-0";
+        testingContent.style.display = 'block';
+      }
+    }
+
+    // Optional: Set default tab on page load
+    window.onload = () => {
+      switchTab('erp');
+    };
+  </script>
+
+  <!-- <script src="script.js"></script> -->
+
+</body>
+
+</html>

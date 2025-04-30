@@ -1,8 +1,6 @@
-document.addEventListener('DOMContentLoaded', function () {
+// Form Validation
+document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
-    const result = document.getElementById('result');
-
-    // Validation rules
     const fields = {
         name: {
             regex: /^[a-zA-Z\s]{2,50}$/,
@@ -31,11 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const input = document.getElementById(fieldName);
         const errorElement = document.getElementById(`${fieldName}Error`);
 
-        input.addEventListener('input', function () {
+        input.addEventListener('input', function() {
             validateField(fieldName, input, errorElement);
         });
 
-        input.addEventListener('blur', function () {
+        input.addEventListener('blur', function() {
             validateField(fieldName, input, errorElement);
         });
     });
@@ -43,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateField(fieldName, input, errorElement) {
         const field = fields[fieldName];
         const value = input.value.trim();
-
+        
         if (!value) {
             showError(errorElement, `${fieldName.charAt(0).toUpperCase() + fieldName.slice(1)} is required`);
             input.classList.add('border-red-500');
@@ -71,11 +69,12 @@ document.addEventListener('DOMContentLoaded', function () {
         element.classList.add('hidden');
     }
 
-    // Form Submission
-    form.addEventListener('submit', async function (e) {
+    // Form submission
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
         let isValid = true;
 
+        // Validate all fields
         Object.keys(fields).forEach(fieldName => {
             const input = document.getElementById(fieldName);
             const errorElement = document.getElementById(`${fieldName}Error`);
@@ -84,52 +83,31 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        if (!isValid) return;
+        if (isValid) {
+            // Create form data object
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
 
-        const submitButton = this.querySelector('button[type="submit"]');
-        const originalButtonText = submitButton.innerHTML;
-        submitButton.innerHTML = 'Sending...';
-        submitButton.disabled = true;
-
-        try {
-            const formData = new FormData(this);
+            // Show success message
+            alert('Form submitted successfully! We will contact you soon.');
             
-            // Submit to Web3Forms
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
+            // Reset form
+            form.reset();
+            
+            // Remove success indicators
+            Object.keys(fields).forEach(fieldName => {
+                const input = document.getElementById(fieldName);
+                input.classList.remove('border-green-500');
             });
-
-            const data = await response.json();
-
-            if (data.success) {
-                // Show success message
-                result.textContent = 'Message sent successfully!';
-                result.className = 'text-base text-center text-green-500';
-                
-                // Clear form data
-                form.reset();
-                
-                // Remove validation styling
-                Object.keys(fields).forEach(fieldName => {
-                    const input = document.getElementById(fieldName);
-                    input.classList.remove('border-green-500');
-                });
-            } else {
-                throw new Error(data.message || 'Failed to send message');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            result.textContent = 'Error sending message. Please try again.';
-            result.className = 'text-base text-center text-red-500';
-        } finally {
-            // Reset button state
-            submitButton.innerHTML = originalButtonText;
-            submitButton.disabled = false;
         }
     });
 
-    // Mobile Menu
+    // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     const menuIcon = document.getElementById('menuIcon');
@@ -139,29 +117,30 @@ document.addEventListener('DOMContentLoaded', function () {
         isMenuOpen = !isMenuOpen;
         mobileMenu.classList.toggle('hidden');
 
-        menuIcon.innerHTML = isMenuOpen
-            ? `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`
-            : `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+        // Switch icon
+        if (isMenuOpen) {
+            menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`;
+        } else {
+            menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+        }
     }
 
     mobileMenuBtn.addEventListener('click', toggleMenu);
 
-    document.addEventListener('click', function (event) {
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
         if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target) && isMenuOpen) {
             toggleMenu();
         }
     });
 
-    window.addEventListener('resize', function () {
+    // Close menu when window is resized to desktop view
+    window.addEventListener('resize', function() {
         if (window.innerWidth >= 768 && isMenuOpen) {
             toggleMenu();
         }
     });
-<<<<<<< HEAD
-});
-=======
 }); 
 
 
 
->>>>>>> 8cd88e0a7d1934297830c58bd6221496ba65c7b2

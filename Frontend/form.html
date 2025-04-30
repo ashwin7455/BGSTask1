@@ -176,62 +176,129 @@
 
     <!-- Contact Form Section -->
     <div class="max-w-9xl mx-auto px-4 md:px-6 :px-8 py-16">
-        <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <!-- Left Side - Text and Image -->
-            <div class="space-y-6">
-                <h1 class="text-4xl md:text-5xl font-semibold font-Mulish text-[#00076A]">Finding your way around Bridge Group Solution?</h1>
-                <p style="font-family: 'MV Boli', cursive;" class="text-3xl font-medium  text-[#000000] ">Let us help!</p>
-                <img src="./assets/Fill out-bro 1.png" alt="Contact Illustration" class="w-full max-w-md mx-auto">
+      <div
+        data-aos="zoom-in"
+        data-aos-duration="800"
+        data-aos-delay="200"
+        class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+      >
+        <!-- Left Side - Text and Image -->
+        <div class="space-y-6">
+          <h1
+            class="text-4xl md:text-5xl font-semibold font-Mulish text-[#00076A]"
+          >
+            Finding your way around Bridge Group Solution?
+          </h1>
+          <p
+            style="font-family: 'MV Boli', cursive"
+            class="text-3xl font-medium text-[#000000]"
+          >
+            Let us help!
+          </p>
+          <img
+            src="./assets/Fill out-bro 1.png"
+            alt="Contact Illustration"
+            class="w-full max-w-md mx-auto"
+          />
+        </div>
+
+        <!-- Right Side - Form -->
+        <div
+          data-aos="zoom-in"
+          data-aos-duration="800"
+          data-aos-delay="200"
+          class="bg-white rounded-lg shadow-md shadow-[#1B9CE3] p-8"
+        >
+          <h2 class="text-3xl font-semibold text-[#1B9CE3] mb-6">
+            Send us a message
+          </h2>
+          <form
+            data-aos="zoom-in"
+            data-aos-duration="800"
+            data-aos-delay="200"
+            id="contactForm"
+            class="space-y-6"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="1043e2fc-3eed-4c29-9b81-db0628674964"
+              id="form"
+            />
+            <input
+              type="hidden"
+              name="subject"
+              value="New Submission from your Website"
+            />
+
+            <div>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name*"
+                class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-0 focus:outline-none transition-colors"
+              />
+              <p class="text-red-500 text-sm mt-1 hidden" id="nameError"></p>
             </div>
 
-            <!-- Right Side - Form -->
-            <div  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="bg-white rounded-lg shadow-md shadow-[#1B9CE3] p-8">
-                <h2 class="text-3xl font-semibold text-[#1B9CE3] mb-6">Send us a message</h2>
-                <form  data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" id="contactForm" class="space-y-6"
-                action="https://api.web3forms.com/submit" method="POST">
-                  
-                     <input type="hidden" name="access_key" value="eee33a9a-5ca3-49a6-9711-a83f35a284f2" id="form">
-
-                    <div>
-                        <input type="text" id="name" name="name" placeholder="Name*" 
-                            class="w-full px-4 py-3  border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-0 focus:outline-none transition-colors">
-                        <p class="text-red-500 text-sm mt-1 hidden" id="nameError"></p>
-                    </div>
-
-                    <div>
-                        <input type="email" id="email" name="email" placeholder="Email*"
-                            class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors">
-                        <p class="text-red-500 text-sm mt-1 hidden" id="emailError"></p>
-                    </div>
-
-                    <div>
-                        <input type="tel" id="phone" name="phone" placeholder="Phone*"
-                            class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors">
-                        <p class="text-red-500 text-sm mt-1 hidden" id="phoneError"></p>
-                    </div>
-
-                    <div>
-                        <input type="text" id="subject" name="subject" placeholder="Subject*"
-                            class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors">
-                        <p class="text-red-500 text-sm mt-1 hidden" id="subjectError"></p>
-                    </div>
-
-                    <div>
-                        <textarea id="message" name="message" rows="4" placeholder="Message*"
-                            class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors resize-none"></textarea>
-                        <p class="text-red-500 text-sm mt-1 hidden" id="messageError"></p>
-                    </div>
-
-                    <button type="submit"
-                        class=" bg-[#1B9CE3] text-2xl text-white py-3 px-6 rounded-md shadow-lg 
-                         transition duration-150 
-                        active:scale-95 active:shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                        Send Message
-                    </button>
-                </form>
+            <div>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email*"
+                class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors"
+              />
+              <p class="text-red-500 text-sm mt-1 hidden" id="emailError"></p>
             </div>
+
+            <div>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Phone*"
+                class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors"
+              />
+              <p class="text-red-500 text-sm mt-1 hidden" id="phoneError"></p>
+            </div>
+
+            <div>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Subject*"
+                class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors"
+              />
+              <p class="text-red-500 text-sm mt-1 hidden" id="subjectError"></p>
+            </div>
+
+            <div>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Message*"
+                class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors resize-none"
+              ></textarea>
+              <p class="text-red-500 text-sm mt-1 hidden" id="messageError"></p>
+            </div>
+
+            <button
+              type="submit"
+              class="bg-[#1B9CE3] text-2xl text-white py-3 px-6 rounded-md shadow-lg transition duration-150 active:scale-95 active:shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              Send Message
+            </button>
+            <p class="text-base text-center text-gray-500" id="result"></p>
+          </form>
         </div>
-        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
 
@@ -432,7 +499,6 @@
     <script>
       AOS.init();
     </script>
-    
 
     <script src="form.js"></script>
   </body>

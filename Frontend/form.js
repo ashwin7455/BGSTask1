@@ -1,6 +1,7 @@
-// Form Validation
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contactForm');
+    const result = document.getElementById('result');
+
     const fields = {
         name: {
             regex: /^[a-zA-Z\s]{2,50}$/,
@@ -24,24 +25,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Real-time validation
+    // Real-time field validation
     Object.keys(fields).forEach(fieldName => {
         const input = document.getElementById(fieldName);
         const errorElement = document.getElementById(`${fieldName}Error`);
 
-        input.addEventListener('input', function() {
-            validateField(fieldName, input, errorElement);
-        });
-
-        input.addEventListener('blur', function() {
-            validateField(fieldName, input, errorElement);
-        });
+        input.addEventListener('input', () => validateField(fieldName, input, errorElement));
+        input.addEventListener('blur', () => validateField(fieldName, input, errorElement));
     });
 
     function validateField(fieldName, input, errorElement) {
         const field = fields[fieldName];
         const value = input.value.trim();
-        
+
         if (!value) {
             showError(errorElement, `${fieldName.charAt(0).toUpperCase() + fieldName.slice(1)} is required`);
             input.classList.add('border-red-500');
@@ -67,14 +63,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function hideError(element) {
         element.classList.add('hidden');
+        element.textContent = '';
     }
 
-    // Form submission
-    form.addEventListener('submit', function(e) {
+    // Final form submit handler
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
         let isValid = true;
 
-        // Validate all fields
         Object.keys(fields).forEach(fieldName => {
             const input = document.getElementById(fieldName);
             const errorElement = document.getElementById(`${fieldName}Error`);
@@ -84,63 +80,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (isValid) {
-            // Create form data object
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
+            const formData = new FormData(form);
+            formData.append('access_key', '1043e2fc-3eed-4c29-9b81-db0628674964'); // ✅ Replace with your Web3Forms access key
 
-            // Show success message
-            alert('Form submitted successfully! We will contact you soon.');
-            
-            // Reset form
-            form.reset();
-            
-            // Remove success indicators
-            Object.keys(fields).forEach(fieldName => {
-                const input = document.getElementById(fieldName);
-                input.classList.remove('border-green-500');
-            });
+            result.innerHTML = "Submitting...";
+            result.className = "text-gray-500";
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+                .then(async (response) => {
+                    const json = await response.json();
+                    if (response.status === 200) {
+                        result.innerHTML = json.message;
+                        result.className = "text-green-500";
+                        form.reset();
+                        Object.keys(fields).forEach(fieldName => {
+                            document.getElementById(fieldName).classList.remove('border-green-500');
+                        });
+                    } else {
+                        result.innerHTML = json.message;
+                        result.className = "text-red-500";
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                    result.innerHTML = "Something went wrong!";
+                    result.className = "text-red-500";
+                })
+                .finally(() => {
+                    setTimeout(() => {
+                        result.innerHTML = '';
+                    }, 4000);
+                });
         }
     });
-
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuIcon = document.getElementById('menuIcon');
-    let isMenuOpen = false;
-
-    function toggleMenu() {
-        isMenuOpen = !isMenuOpen;
-        mobileMenu.classList.toggle('hidden');
-
-        // Switch icon
-        if (isMenuOpen) {
-            menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`;
-        } else {
-            menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
-        }
-    }
-
-    mobileMenuBtn.addEventListener('click', toggleMenu);
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target) && isMenuOpen) {
-            toggleMenu();
-        }
-    });
-
-    // Close menu when window is resized to desktop view
-    window.addEventListener('resize', function() {
-        if (window.innerWidth >= 768 && isMenuOpen) {
-            toggleMenu();
-        }
-    });
-}); 
-
-
-
+});

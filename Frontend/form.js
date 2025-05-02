@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 .finally(() => {
                     setTimeout(() => {
                         result.innerHTML = '';
-                    }, 4000);
+                    }, 6000);
                 });
         }
     });

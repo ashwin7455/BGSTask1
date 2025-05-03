@@ -37,21 +37,21 @@ document.addEventListener('DOMContentLoaded', function () {
 // Testimonials Data
 const testimonials = [
   {
-    image: "https://randomuser.me/api/portraits/men/65.jpg",
+    image: "./assets/dummy.png",
     text: "“BGS is solving problems for us we didn't even know we had.”",
     name: "Rohan Kumar,",
     designation: "CTO, FutureTech",
     stars: 5
   },
   {
-    image: "https://randomuser.me/api/portraits/women/45.jpg",
+    image: "./assets/dummy.png",
     text: "“Excellent service and support, they helped us scale seamlessly.”",
     name: "Ayesha Malik,",
     designation: "Product Head, NovaApps",
     stars: 4
   },
   {
-    image: "https://randomuser.me/api/portraits/men/65.jpg",
+    image: "./assets/dummy.png",
     text: "“Truly a partner in innovation, not just a service provider.”",
     name: "Ankit Singh,",
     designation: "Founder, DevCraft",
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   counters.forEach(counter => {
     const target = +counter.getAttribute('data-target');
-    const duration = 4000; // total duration in ms
+    const duration = 8000; // total duration in ms
     const frameRate = 100; // frames per second
     const totalSteps = Math.round((duration / 1000) * frameRate); // e.g., 120 steps for 2s
     const increment = target / totalSteps;

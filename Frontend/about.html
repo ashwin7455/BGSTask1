@@ -214,7 +214,7 @@
         <div class="space-y-16 relative z-10">
   
           <!-- 2014 -->
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
             <div class="w-1/2 text-right pr-5">
               <div class="text-sm font-semibold text-black mb-2">2014</div>
               <div class="bg-blue-100 text-center rounded-md inline-block px-4 py-2 border-t-4 border-orange-400 shadow-md">
@@ -228,7 +228,7 @@
           </div>
   
           <!-- 2015 -->
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
             <div class="w-1/2"></div>
             <div class="w-0 relative">
               <div class="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-4 border-orange-500 rounded-full"></div>
@@ -242,7 +242,7 @@
           </div>
   
           <!-- 2016 -->
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
             <div class="w-1/2 text-right pr-5">
               <div class="text-sm font-semibold text-black mb-2">2016</div>
               <div class="bg-blue-100 text-center rounded-md inline-block px-4 py-2 border-t-4 border-orange-400 shadow-md">
@@ -256,7 +256,7 @@
           </div>
   
           <!-- 2018 -->
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
             <div class="w-1/2"></div>
             <div class="w-0 relative">
               <div class="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-4 border-orange-500 rounded-full"></div>
@@ -270,7 +270,7 @@
           </div>
   
           <!-- 2021 -->
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
             <div class="w-1/2 text-right pr-5">
               <div class="text-sm font-semibold text-black mb-2">2021</div>
               <div class="bg-blue-100 text-center rounded-md inline-block px-4 py-2 border-t-4 border-orange-400 shadow-md">
@@ -284,7 +284,7 @@
           </div>
   
           <!-- 2022 -->
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
             <div class="w-1/2"></div>
             <div class="w-0 relative">
               <div class="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-4 border-orange-500 rounded-full"></div>
@@ -298,7 +298,7 @@
           </div>
 
 
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
             <div class="w-1/2 text-right pr-5">
               <div class="text-sm font-semibold text-black mb-2">2024</div>
               <div class="bg-blue-100 text-center rounded-md inline-block px-4 py-2 border-t-4 border-orange-400 shadow-md">
@@ -312,7 +312,7 @@
           </div>  
   
           <!-- Continue -->
-          <div class="flex justify-center pt-6">
+          <div class="flex justify-center pt-6" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
             <a id="continue" class="bg-blue-100 rounded-md inline-block px-6 py-2 border-t-4 border-orange-400 shadow-md text-blue-900 font-medium">
               Continue...
             </a>
@@ -508,7 +508,7 @@
         <!-- Image & Video -->
         <div class="flex flex-col items-center">
           <div class="border-2 border-orange-300 p-1 rounded-full">
-            <img id="testimonialImage" src="./assets/Rectangle.png" alt="Client"
+            <img id="testimonialImage" src="./assets/dummy.png" alt="Client"
               class="w-32 h-32 rounded-full object-cover" />
           </div>
           <button class="mt-2 text-sm text-red-600 flex items-center gap-1">
@@ -733,7 +733,7 @@
 
   counters.forEach(counter => {
     const target = +counter.getAttribute('data-target');
-    const duration = 2000; // total duration in ms
+    const duration = 8000; // total duration in ms
     const frameRate = 60; // frames per second
     const totalSteps = Math.round((duration / 1000) * frameRate); // e.g., 120 steps for 2s
     const increment = target / totalSteps;

@@ -152,6 +152,37 @@
             </div>
         </div>
     </nav>
+
+    <!-- popup -->
+
+     <div id="crmModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+    <!-- Modal Box -->
+    <div class="bg-white rounded-lg p-8 max-w-md mx-auto shadow-lg relative text-center ">
+      <h1 class="text-3xl font-bold  mb-2  text-[#00076A]  font-Mulish ">🚀 Our CRM is Coming Soon!</h1>
+      <h2 class="text-gray-600 mb-4">We're thrilled to introduce our brand-new CRM, designed to revolutionize how you manage your customers and 
+        business operations.</h2>
+      <h1 class="text-3xl font-bold  mb-2  text-[#00076A] font-Mulish " >🗓️  Launching Soon! </h1>
+      <p class="text-gray-600 mb-4">
+       Get ready to experience the future of CRM. Stay tuned for updates, and be the first to try it out!
+      </p>
+      <!-- <a href="comingSoon.html" onclick="closeModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">
+        Explore Now
+      </a> -->
+ <!-- <a href="comingSoon.html" onclick="closeModal()" class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
+    <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
+        <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
+    </span>
+    <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
+    <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">Button Text</span>
+</a> -->
+
+
+      <button onclick="closeModal()" class="absolute top-2  right-4 text-gray-500 hover:text-red-500 text-xl">
+        &times;
+      </button>
+      
+    </div>
+  </div>
     
 
     <!-- Hero Section -->
@@ -205,15 +236,15 @@
                         <div class="grid grid-cols-2 gap-4">
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-shield-alt text-primary"></i>
-                                <span>RISK MANAGEMENT</span>
+                                <span>WEB DEVELOPMENT</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-chart-line text-primary"></i>
-                                <span>PORTFOLIO MANAGEMENT</span>
+                                <span>APPLICATION DEVELOPMENT</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-wallet text-primary"></i>
-                                <span>WEALTH MANAGEMENT</span>
+                                <span>DATA ANALYTICS</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-project-diagram text-primary"></i>
@@ -396,7 +427,7 @@
                     <div class="text-[#1B9CE3] text-3xl mb-4">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Risk Management</h3>
+                    <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Web Development</h3>
                     <p class="text-gray-600 text-sm">
                         Risk management is the identification, evaluation, and prioritization of risks followed by
                         coordinated and economical application of resources to minimize, monitor, and control the
@@ -426,7 +457,7 @@
                     <div class="text-[#1B9CE3] text-3xl mb-4">
                         <i class="fas fa-piggy-bank"></i>
                     </div>
-                    <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Wealth Management</h3>
+                    <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Data Analytics</h3>
                     <p class="text-gray-600 text-sm">
                         Wealth management is an investment-advisory discipline which incorporates financial planning,
                         investment portfolio management and a number of aggregated financial services offered by a
@@ -455,7 +486,7 @@
                     <div class="text-[#1B9CE3] text-3xl mb-4">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Portfolio Management</h3>
+                    <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Application Development</h3>
                     <p class="text-gray-600 text-sm">
                         Portfolio management is the art and science of making decisions about investment mix and policy,
                         matching investments to objectives, asset allocation for individuals and institutions, and
@@ -465,20 +496,6 @@
                 </div>
 
                   <!-- Card 6 -->
-                  <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
-                  class="bg-white shadow-md border-2 border-[#1B9CE3] shadow-xl ease-in-out overflow-hidden rounded-b-3xl p-6 relative transition-transform duration-300 hover:-translate-y-4">
-                  <div class="text-[#1B9CE3] text-3xl mb-4">
-                      <i class="fas fa-chart-line"></i>
-                  </div>
-                  <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Portfolio Management</h3>
-                  <p class="text-gray-600 text-sm">
-                      Portfolio management is the art and science of making decisions about investment mix and policy,
-                      matching investments to objectives, asset allocation for individuals and institutions, and
-                      balancing risk against performance.
-                  </p>
-                  <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
-              </div>
-
                 <!-- Optional gradient background at bottom -->
                 <div
                     class="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#D2EFFF] to-transparent z-0">

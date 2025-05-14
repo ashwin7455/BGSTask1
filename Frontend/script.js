@@ -134,3 +134,12 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCounter();
   });
 });
+//  popup
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('crmModal').classList.remove('hidden');
+  });
+
+  function closeModal() {
+    document.getElementById('crmModal').classList.add('hidden');
+  }

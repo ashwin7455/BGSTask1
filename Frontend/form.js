@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (isValid) {
             const formData = new FormData(form);
-            formData.append('access_key', '1043e2fc-3eed-4c29-9b81-db0628674964'); // ✅ Replace with your Web3Forms access key
+            formData.append('access_key', '6e178480-bc43-4d6c-8186-be4b232fc770'); // ✅ Replace with your Web3Forms access key
 
             result.innerHTML = "Submitting...";
             result.className = "text-gray-500";

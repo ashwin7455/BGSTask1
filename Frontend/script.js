@@ -146,4 +146,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+  // landing corosal
+
+        // Example slides data
+        const slides = [
+            {
+                img: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&w=800&q=80",
+                title: "Web Development",
+                desc: "Proactive Risk Solutions for a Safer Tomorrow.",
+                link: "#"
+            },
+            {
+                img: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&w=800&q=80",
+                title: "App Development",
+                desc: "Grow and manage your portfolio with expert guidance.",
+                link: "#"
+            },
+            {
+                img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
+                title: "Data Analytics",
+                desc: "Tailored software solutions for your business needs.",
+                link: "#"
+            },
+            {
+                img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
+                title: "Project Outsourcing",
+                desc: "Tailored software solutions for your business needs.",
+                link: "#"
+            },
+            {
+                img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
+                title: "ERP & Customize Software",
+                desc: "Tailored software solutions for your business needs.",
+                link: "#"
+            }
+
+        ];
+        let curr = 0;
+
+        function renderSlide(idx) {
+            document.querySelector("#slide-content img").src = slides[idx].img;
+            document.getElementById("slide-title").textContent = slides[idx].title;
+            document.getElementById("slide-desc").textContent = slides[idx].desc;
+            document.getElementById("slide-link").href = slides[idx].link;
+        }
+
+        document.getElementById("prevBtn").onclick = function () {
+            curr = (curr - 1 + slides.length) % slides.length;
+            renderSlide(curr);
+        };
+        document.getElementById("nextBtn").onclick = function () {
+            curr = (curr + 1) % slides.length;
+            renderSlide(curr);
+        };
+
+        // Initial render
+        renderSlide(curr);
+  
   

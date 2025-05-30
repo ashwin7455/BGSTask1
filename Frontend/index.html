@@ -13,6 +13,9 @@
     <meta name="google-adsense-account" content="ca-pub-4467563478630338">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4467563478630338"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/4a2e3e6c8b.js" crossorigin="anonymous"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -102,69 +105,186 @@
 </head>
 
 <body class="">
+    <!-- Navbar starts -->
+    <!-- Top Bar -->
+    <div class="bg-[#1B9CE3] text-white text-sm">
+        <div
+            class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm px-4 py-1 space-y-2 md:space-y-0">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center space-x-1">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+91556735515" class="hover:underline">+91 55-673-5515</a>
+                </span>
+
+                <span class="flex items-center space-x-1">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:contact@bridgegroup.com" class="hover:underline">contact@bridgegroup.com</a>
+                </span>
+
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-white p-2 hover:text-black hover:-translate-y-1 transition transform">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+
+                <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
     <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-white border-b-2 border-[#00076A] shadow-md w-full">
-        <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <!-- Logo -->
+    <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
+        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
                 <div class="flex items-center">
-                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-12">
+                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
                     <a href="index.html" class="ml-2 sm:ml-3">
                         <h1
-                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-2xl sm:text-3xl md:text-3xl lg:text-3xl">
+                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
                             BRIDGE GROUP
                         </h1>
                         <p
-                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-xl">
+                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
                             SOLUTIONS
                         </p>
                     </a>
                 </div>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-6 lg:space-x-8 text-[#000000]">
-                    <a href="index.html" class="hover:text-[#1B9CE3] transition-colors">Home</a>
-                    <a href="about.html" class="hover:text-[#1B9CE3] transition-colors">About</a>
-                    <a href="services.html" class="hover:text-[#1B9CE3] transition-colors">Services</a>
-                    <a href="carrerPage.html" class="hover:text-[#1B9CE3] transition-colors">Careers</a>
-                    <a href="contact.html"
-                        class="border border-[#1B9CE3] text-[#1B9CE3] px-4 py-2 rounded-md hover:bg-[#1B9CE3] hover:text-white transition-all">
-                        Contact Us
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-[#1B9CE3] focus:outline-none">
-                    <svg id="menuIcon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
             </div>
 
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="md:hidden hidden">
-                <div class="py-4 space-y-2">
-                    <a href="index.html"
-                        class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Home</a>
-                    <a href="about.html"
-                        class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">About</a>
-                    <a href="services.html"
-                        class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Services</a>
-                    <a href="carrerPage.html"
-                        class="block py-2 text-gray-700 hover:text-[#1B9CE3] transition-colors">Careers</a>
-                    <a href="contact.html"
-                        class="block py-2 text-gray-700  hover:text-[#1B9CE3] hover:text-white transition-all rounded-md">
-                        Contact Us
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-cente space-x-6">
+                <!-- Dropdowns -->
+                <div class="relative group p-3 hover:bg-[#1B9CE3] ">
+                    <a class="flex items-center space-x-1 text-black  focus:outline-none">
+                        <span class="text-lg">Company</span>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
                     </a>
+                    <div
+                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
+                    </div>
+                </div>
+
+                <div class="relative group p-3 hover:bg-[#1B9CE3]">
+                    <a class="flex items-center space-x-1 text-black  focus:outline-none">
+                        <span class="text-lg">Services</span>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">CRM</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">All Services</a>
+                    </div>
+                </div>
+
+                <div class="relative group p-3 hover:bg-[#1B9CE3]">
+                    <a href="carrerPage.html" class="flex items-center space-x-1 text-black  focus:outline-none">
+                        <span class="text-lg">Careers</span>
+                        <!-- <i class="fa-solid fa-chevron-down text-xs"></i> -->
+                    </a>
+                    <!-- <div
+                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Openings</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Internships</a>
+                    </div> -->
+                </div>
+
+                <!-- Contact -->
+                <div class="flex justify-start items-center px-2 ">
+                    <button
+                        class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-2 rounded flex items-center hover:bg-blue-50 text-sm">
+                        LOGIN
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hamburger (mobile only) -->
+            <div class="md:hidden">
+                <button @click="mobileMenu = !mobileMenu" class="text-gray-700 focus:outline-none">
+                    <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden" x-show="mobileMenu" x-transition>
+            <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
+
+                <!-- About -->
+                <div x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+                        <span>Company</span>
+                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
+                            class="fa-solid text-sm transition-transform"></i>
+                    </button>
+                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+                        <a href="#" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">About Us</a>
+                        <a href="#" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Gallery</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+                        <span>Services</span>
+                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
+                            class="fa-solid text-sm transition-transform"></i>
+                    </button>
+                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+                        <a href="#" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Consulting</a>
+                        <a href="#" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Support</a>
+                    </div>
+                </div>
+
+                <!-- Careers -->
+                <div x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+                        <span>Careers</span>
+                        <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
+                    </button>
+                    <!-- <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+        <a href="#" class="block text-sm text-gray-600 hover:bg-gray-100 rounded px-2 py-1">Openings</a>
+        <a href="#" class="block text-sm text-gray-600 hover:bg-gray-100 rounded px-2 py-1">Internships</a>
+      </div> -->
+                </div>
+
+                <!-- Contact -->
+                <div class="flex justify-start items-center space-x-4 px-2 pt-2 border-t">
+                    <button
+                        class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-1 rounded flex items-center hover:bg-blue-50 text-sm">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                        LOGIN
+                    </button>
                 </div>
             </div>
         </div>
+
     </nav>
 
     <!-- popup -->
 
-    <div id="crmModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+    <div id="crmModl" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
         <!-- Modal Box -->
         <div class="bg-white rounded-lg p-8 max-w-md mx-auto shadow-lg relative text-center ">
             <h1 class="text-3xl font-bold  mb-2  text-[#00076A]  font-Mulish ">🚀 Our CRM is Coming Soon!</h1>
@@ -196,20 +316,22 @@
 
 
     <!-- Hero Section -->
-    <section class="py-16 md:py-24 bg-gradient-to-b from-[#FFFFFF] to-transparent z-0 -mt-10  section-overlay">
+    <section class=" md:py-24 md:-mt-16  bg-gradient-to-b from-[#FFFFFF] to-transparent z-0   section-overlay">
         <div class="section-content site-container">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
                 <!-- Left Content -->
-                <div class="space-y-2 text-center md:text-left flex flex-col items-center md:items-start md:-mt-16">
+                <div class="space-y-2 text-center md:text-left flex flex-col items-center md:items-start   ">
 
                     <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
-                        class=" bottom-0 bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0]  text-transparent bg-clip-text font-medium md:text-2xl">
-                        WE KNOT SPACE...</p>
+                        class=" sm:-mb-2 -mb-2 bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-transparent bg-clip-text font-medium md:text-2xl">
+                        WE KNOT SPACE...
+                    </p>
 
                     <h1 data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400"
-                        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl  bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-medium">
+                        class=" text-4xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-medium">
                         BRIDGE GROUP
                     </h1>
+
 
                     <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400"
                         class="text-2xl sm:text-2xl md:text-4xl lg:text-5xl  bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish mt-2">
@@ -220,56 +342,145 @@
 
                     </h1>
 
-                    <h2 data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-2xl  text-blue-900">
+                    <h2 class="text-2xl  text-blue-900">
                         DIGITAL PRODUCTS.</h2>
 
+                    <!-- services container -->
+                    <div class=" w-full">
+                        <h2 class="text-lg font-semibold mb-2 p">Our Services</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+                            <!-- Service Card 1 -->
+                            <div class="flex items-center bg-[#FFEDE4] rounded-lg px-4 py-1 space-x-3">
+                                <span class="text-orange-400 text-2xl">
+                                    <i class="fas fa-shield-alt"></i>
+                                </span>
+                                <span class="flex-1 text-sm font-medium">Web <br>Development</span>
+                                <span class="ml-2 text-orange-400">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </div>
 
-                    <a href="form.html" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="300" class="inline-block px-6 py-3 text-lg bg-[#1B9CE3] text-white rounded-lg shadow-lg 
+                            <!-- Service Card 2 -->
+                            <div class="flex items-center bg-[#FFEDE4] rounded-lg px-4 py-1 space-x-3">
+                                <span class="text-orange-400 text-2xl">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                </span>
+                                <span class="flex-1 text-sm font-medium">Application<br>Development</span>
+                                <span class="ml-2 text-orange-400">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </div>
+
+                            <!-- Service Card 3 -->
+                            <div class="flex items-center bg-[#FFEDE4] rounded-lg px-4 py-1 space-x-3">
+                                <span class="text-orange-400 text-2xl">
+                                    <i class="fas fa-wallet"></i>
+                                </span>
+                                <span class="flex-1 text-sm font-medium">Data<br>Analytics</span>
+                                <span class="ml-2 text-orange-400">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </div>
+
+                            <!-- Service Card 4 -->
+                            <div class="flex items-center bg-[#FFEDE4] rounded-lg px-4 py-1 space-x-3">
+                                <span class="text-orange-400 text-2xl">
+                                    <i class="fa-solid fa-diagram-project"></i>
+                                </span>
+                                <span class="flex-1 text-sm font-medium">Project<br>Outsourcing</span>
+                                <span class="ml-2 text-orange-400">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </div>
+
+                            <!-- Service Card 5 -->
+                            <div class="flex items-center bg-[#FFEDE4] rounded-lg px-4 py-1 space-x-3 sm:col-span-2">
+                                <span class="text-orange-400 text-2xl">
+                                    <i class="fa-solid fa-gears"></i>
+                                </span>
+                                <span class="flex-1 text-sm font-medium">ERP &amp; Customize<br>Software</span>
+                                <span class="ml-2 text-orange-400">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+                    <p class="text-gray-600 text-lg">
+                        BRIDGE GROUP SOLUTION - LEADERS IN WEB & MOBILE<br />
+                        DESIGN AND DEVELOPMENT INDUSTRY.
+                    </p>
+                    <a href="form.html" class="inline-block px-6 py-2 text-lg bg-[#1B9CE3] text-white rounded-lg shadow-lg 
                            transition duration-150 active:scale-95 active:shadow-sm transition-colors duration-300">
                         Connect With Us
                     </a>
 
-                    <p data-aos="zoom" data-aos-duration="600" data-aos-delay="200" class="text-gray-600 text-lg">
-                        BRIDGE GROUP SOLUTION - LEADERS IN WEB & MOBILE<br />
-                        DESIGN AND DEVELOPMENT INDUSTRY.
-                    </p>
-
                 </div>
 
                 <!-- Right Content - Services Box -->
-                <div class="relative flex sm:flex-col    flex-col-reverse">
+                <div class="relative flex sm:flex-col flex-col-reverse">
                     <!-- Services Box -->
-                    <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
-                        class="bg-white rounded-lg shadow-md shadow-[#EC7620] p-6 mb-8 mt-8 md:mt-0  ">
-                        <h3 class="text-lg font-semibold mb-4">OUR SERVICES</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-shield-alt text-primary"></i>
-                                <span>WEB DEVELOPMENT</span>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-chart-line text-primary"></i>
-                                <span>APPLICATION DEVELOPMENT</span>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-wallet text-primary"></i>
-                                <span>DATA ANALYTICS</span>
-                            </div>
-                            <div class="flex items-center space-x-2">
-                                <i class="fas fa-project-diagram text-primary"></i>
-                                <span>PROJECT OUTSOURCING</span>
-                            </div>
-                            <div class="flex items-center space-x-2 col-span-2">
-                                <i class="fas fa-cogs text-primary"></i>
-                                <span>ERP & CUSTOMIZE SOFTWARE</span>
+
+                    <div id="carousel"
+                        class="  overflow-hidden relative h-[500px] flex flex-col">
+
+                        <!-- Slide Content -->
+                        <div id="slide-content" class="flex flex-col h-full ">
+
+                            <!-- Image: Top Half -->
+                            <div class="h-3/4 w-full rounded-t-3xl overflow-hidden ">
+    <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&w=800&q=80"
+        alt="Risk Management" class="w-full h-full object-cover rounded-t-3xl" />
+</div>
+
+
+                            <!-- Text Content: Bottom Half -->
+                            <div
+                                class=" md:-mt-10 -mt-16 bg-[#E3F5FF]  rounded-3xl h-1/2 flex flex-col md:flex-row items-center justify-between w-full  px-8 py-4 ">
+
+                                <!-- Text Section -->
+                                <div class="flex-1 text-center md:mb-2 md:text-left rounded-t-3xl">
+                                    <h2 class="text-2xl font-bold font-poppins text-gray-800 mb-1" id="slide-title">Web
+                                        Development
+                                    </h2>
+                                    <p class="text-gray-600 mb-2" id="slide-desc">Proactive Risk Solutions for a Safer
+                                        Tomorrow.</p>
+                                        <div> <a href="#" id="slide-link"
+                                        class="inline-block bg-orange-400 hover:bg-orange-500 text-white px-4 py-1 rounded transition text-sm">
+                                        Learn More
+                                    </a></div>
+                                   
+                                </div>
+
+
+                                <!-- Arrows -->
+                                <div class="flex justify-center items-center  md:mt-0">
+                                    <button id="prevBtn"
+                                        class="bg-orange-200 hover:bg-orange-300 text-orange-600 rounded-full w-8 h-8 flex items-center justify-center mr-4">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <button id="nextBtn"
+                                        class="bg-orange-200 hover:bg-orange-300 text-orange-600 rounded-full w-8 h-8 flex items-center justify-center ml-4">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Illustration -->
-                    <div class="mt-8">
-                        <img src="assets/Discussion-bro (2) 1.png" alt="Team Meeting" class="w-full">
-                    </div>
+
+
                 </div>
 
             </div>
@@ -374,6 +585,10 @@
                             We’re growing fast and looking for driven people—whether you’re a pro or just starting out,
                             there’s a place for you to make an impact.
                             “Join us. Build your future.”
+                            We believe in nurturing talent and empowering individuals to lead with creativity and
+                            confidence.
+                            Be part of a collaborative environment where your ideas shape real-world solutions.
+                            Together, we turn ambition into action and potential into progress.
 
                         </p>
                     </div>
@@ -656,7 +871,8 @@
                         </li>
                         <li><a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
                         </li>
-                         <li><a href="gallery.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Gallery</a>
+                        <li><a href="gallery.html"
+                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Gallery</a>
                         </li>
                         <li><a href="carrerPage.html"
                                 class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a></li>
@@ -941,13 +1157,6 @@ compliance, or service delivery. We ensure that all data collection practices ar
     <script>
         AOS.init();
     </script>
-
-
-
-
-
-
-
 
 
     <script src="script.js"></script>

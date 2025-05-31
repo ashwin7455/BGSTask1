@@ -203,4 +203,3 @@ document.addEventListener("DOMContentLoaded", () => {
         // Initial render
         renderSlide(curr);
   
-  

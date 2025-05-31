@@ -15,6 +15,17 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="https://kit.fontawesome.com/4a2e3e6c8b.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+<style>
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #1e3a8a; /* Tailwind blue-800 */
+    }
+    .swiper-pagination-bullet-active {
+      background: #1e40af;
+    }
+  </style>
 
     <script>
         tailwind.config = {
@@ -598,8 +609,57 @@
             </div>
 
         </div>
-        <div class="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#D2EFFF] to-transparent z-0"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#D2EFFF] to-transparent z-0"></div>    
     </section>
+
+    
+    <!-- certificates -->
+
+ <section class="w-full max-w-8xl mx-auto py-10 px-6 md:px-12   bg-[#D6F0FF]">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+    <!-- Left Side (Text) -->
+    <div class="w-full h-full flex items-center lg:items-cente  md:py-8 px-6 md:px-6">
+      <div>
+        <h2 class="text-4xl sm:text-3xl lg:text-6xl md:text-5xl font-bold font-Mulish text-[#00076A] leading-tight">
+          Awards &<br class="hidden md:block" /> Certifications
+        </h2>
+        <p class="mt-6 text-gray-600 text-base md:text-lg">
+          A showcase of my achievements, honors, and completed certifications in tech and leadership.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Side (Carousel) -->
+    <div class="w-full h-full flex flex-grow px-4 md:px-0">
+  <div class="swiper mySwiper rounded-xl shadow-lg overflow-hidden h-64 md:h-80 lg:h-96 bg-white flex items-center justify-center">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide flex items-center justify-center bg-white">
+        <img src="assets/certificates/1.jpg" alt="Certificate 1" class="w-full h-full object-fit" />
+      </div>
+      <!-- Slide 2 -->
+      <div class="swiper-slide flex items-center justify-center bg-white">
+        <img src="assets/certificates/2.jpg" alt="Certificate 2" class="w-full h-full object-fit" />
+      </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide flex items-center justify-center bg-white">
+        <img src="assets/certificates/3.jpg" alt="Award 1" class="w-full h-full  object-fit" />
+      </div>
+    </div>
+
+    <!-- Swiper Controls -->
+    <div class="swiper-pagination mt-2"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+
 
     <!-- Stats Section -->
     <section class="py-16 bg-[#D6F0FF] section-overlay">
@@ -1158,7 +1218,28 @@ compliance, or service delivery. We ensure that all data collection practices ar
     <script>
         AOS.init();
     </script>
+  <!-- Swiper JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
+  <!-- Swiper Initialization -->
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 20,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 
     <script src="script.js"></script>
 </body>

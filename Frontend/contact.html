@@ -6,12 +6,15 @@
     <title>BGS Concierge</title>
     <link rel="icon" type="image/png" href="./assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta name="google-adsense-account" content="ca-pub-4467563478630338">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4467563478630338"
-     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/4a2e3e6c8b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 </head>
 <style>
   .site-container {
@@ -80,6 +83,7 @@
     </div>
 
     <!-- Navbar -->
+  <!-- Navbar -->
     <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
         <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
             <!-- Logo -->
@@ -173,8 +177,9 @@
                             class="fa-solid text-sm transition-transform"></i>
                     </button>
                     <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="#" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">About Us</a>
-                        <a href="#" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Gallery</a>
+                        <a href="about.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">About Us</a>
+                        <a href="gallery.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Gallery</a>
+                        <a href="contact.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Contact Us</a>
                     </div>
                 </div>
 
@@ -187,18 +192,18 @@
                             class="fa-solid text-sm transition-transform"></i>
                     </button>
                     <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="#" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Consulting</a>
-                        <a href="#" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Support</a>
+                        <a href="comingSoon.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">CRM</a>
+                        <a href="services.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">All Services</a>
                     </div>
                 </div>
 
                 <!-- Careers -->
                 <div x-data="{ open: false }">
-                    <button @click="open = !open"
+                    <a @click="open = !open" href="carrerPage.html"
                         class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
                         <span>Careers</span>
                         <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
-                    </button>
+                </a>
                     <!-- <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
         <a href="#" class="block text-sm text-gray-600 hover:bg-gray-100 rounded px-2 py-1">Openings</a>
         <a href="#" class="block text-sm text-gray-600 hover:bg-gray-100 rounded px-2 py-1">Internships</a>

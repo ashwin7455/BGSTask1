@@ -154,31 +154,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 img: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&w=800&q=80",
                 title: "Web Development",
                 desc: "Proactive Risk Solutions for a Safer Tomorrow.",
-                link: "#"
+                link: "services.html"
             },
             {
                 img: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&w=800&q=80",
                 title: "App Development",
                 desc: "Grow and manage your portfolio with expert guidance.",
-                link: "#"
+                link: "services.html"
             },
             {
                 img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
                 title: "Data Analytics",
                 desc: "Tailored software solutions for your business needs.",
-                link: "#"
+                link: "services.html"
             },
             {
                 img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
                 title: "Project Outsourcing",
                 desc: "Tailored software solutions for your business needs.",
-                link: "#"
+                link: "services.html"
             },
             {
                 img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
                 title: "ERP & Customize Software",
                 desc: "Tailored software solutions for your business needs.",
-                link: "#"
+                link: "services.html"
             }
 
         ];

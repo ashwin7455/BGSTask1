@@ -179,6 +179,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "ERP & Customize Software",
                 desc: "Tailored software solutions for your business needs.",
                 link: "services.html"
+            },
+             {
+                img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
+                title: "CRM",
+                desc: "Tailored software solutions for your business needs.",
+                link: "services.html"
             }
 
         ];

@@ -113,6 +113,23 @@
             position: relative;
             z-index: 1;
         }
+
+        /* connect us button */
+        @keyframes bulgeInOut {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .animate-bulge-in-out {
+            animation: bulgeInOut 1.5s ease-in-out infinite;
+        }
     </style>
 
 </head>
@@ -122,7 +139,7 @@
     <!-- Top Bar -->
     <div class="bg-[#1B9CE3] text-white text-sm">
         <div
-            class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm px-4 py-1 space-y-2 md:space-y-0">
+            class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm px-4 space-y-2 md:space-y-0">
             <div class="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-2 md:space-y-0">
                 <span class="flex items-center space-x-1">
                     <i class="fa-solid fa-phone"></i>
@@ -304,35 +321,33 @@
 
     <!-- popup -->
 
-    <div id="crmModl" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+    <div id="crmModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
         <!-- Modal Box -->
-        <div class="bg-white rounded-lg p-8 max-w-md mx-auto shadow-lg relative text-center ">
-            <h1 class="text-3xl font-bold  mb-2  text-[#00076A]  font-Mulish ">🚀 Our CRM is Coming Soon!</h1>
-            <h2 class="text-gray-600 mb-4">We're thrilled to introduce our brand-new CRM, designed to revolutionize how
-                you manage your customers and
-                business operations.</h2>
-            <h1 class="text-3xl font-bold  mb-2  text-[#00076A] font-Mulish ">🗓️ Launching Soon! </h1>
-            <p class="text-gray-600 mb-4">
+        <div
+            class="bg-orange-100 bg-opacity-60 backdrop-blur-md rounded-xl p-6 sm:p-8 w-[90%] sm:max-w-md mx-auto shadow-[0_8px_32px_rgba(255,165,0,0.3)] relative text-center">
+            <h1 class="text-3xl font-bold mb-2 text-[#00076A] font-Mulish">
+                <span class="inline-block animate-bounce">🚀</span> Our CRM is Coming Soon!
+            </h1>
+            <h2 class="text-gray-700 mb-4">
+                We're thrilled to introduce our brand-new CRM, designed to revolutionize how you manage your customers
+                and
+                business operations.
+            </h2>
+            <h1 class="text-3xl font-bold mb-2 text-[#00076A] font-Mulish">
+                <span class="inline-block animate-bounce">🗓️</span> Launching Soon!
+            </h1>
+            <p class="text-gray-700 mb-4">
                 Get ready to experience the future of CRM. Stay tuned for updates, and be the first to try it out!
             </p>
-            <!-- <a href="comingSoon.html" onclick="closeModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">
-        Explore Now
-      </a> -->
-            <!-- <a href="comingSoon.html" onclick="closeModal()" class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
-    <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
-        <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
-    </span>
-    <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
-    <span class="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">Button Text</span>
-</a> -->
 
-
-            <button onclick="closeModal()" class="absolute top-2  right-4 text-gray-500 hover:text-red-500 text-xl">
+            <button onclick="closeModal()" class="absolute top-2 right-4 text-gray-500 hover:text-red-500 text-xl">
                 &times;
             </button>
-
         </div>
     </div>
+
+
+
 
 
     <!-- Hero Section -->
@@ -386,7 +401,7 @@
                                 <!-- Icon -->
                                 <span
                                     class="text-orange-400 text-2xl z-10 transition-colors duration-300 group-hover:text-[#00076A]">
-                                    <i class="fas fa-shield-alt"></i>
+                                    <i class="fas fa-shield-alt inline-block animate-bounce"></i>
                                 </span>
 
                                 <!-- Text -->
@@ -397,7 +412,7 @@
                                 <!-- Arrow Icon -->
                                 <span
                                     class="ml-2 text-orange-400 z-10 transition-colors duration-300 group-hover:text-[#00076A]">
-                                    <i class="fa-solid fa-arrow-right"></i>
+                                    <i class="fa-solid fa-arrow-right inline-block animate-bounce"></i>
                                 </span>
                             </a>
 
@@ -419,7 +434,7 @@
                                 <!-- Icon -->
                                 <span
                                     class="text-orange-400 text-2xl z-10 transition-colors duration-300 group-hover:text-[#00076A]">
-                                    <i class="fa-solid fa-briefcase"></i>
+                                    <i class="fa-solid fa-briefcase inline-block animate-bounce"></i>
                                 </span>
 
                                 <!-- Text -->
@@ -430,7 +445,7 @@
                                 <!-- Arrow Icon -->
                                 <span
                                     class="ml-2 text-orange-400 z-10 transition-colors duration-300 group-hover:text-[#00076A]">
-                                    <i class="fa-solid fa-arrow-right"></i>
+                                    <i class="fa-solid fa-arrow-right inline-block animate-bounce"></i>
                                 </span>
                             </a>
 
@@ -452,7 +467,7 @@
                                 <!-- Icon -->
                                 <span
                                     class="text-orange-400 text-2xl z-10 transition-colors duration-300 group-hover:text-[#00076A]">
-                                    <i class="fas fa-wallet"></i>
+                                    <i class="fas fa-wallet inline-block animate-bounce"></i>
                                 </span>
 
                                 <!-- Text -->
@@ -463,7 +478,7 @@
                                 <!-- Arrow Icon -->
                                 <span
                                     class="ml-2 text-orange-400 z-10 transition-colors duration-300 group-hover:text-[#00076A]">
-                                    <i class="fa-solid fa-arrow-right"></i>
+                                    <i class="fa-solid fa-arrow-right inline-block animate-bounce"></i>
                                 </span>
                             </a>
 
@@ -484,7 +499,7 @@
                                 <!-- Icon -->
                                 <span
                                     class="text-orange-400 text-2xl z-10 transition-colors duration-300 group-hover:text-[#00076A]">
-                                    <i class="fa-solid fa-diagram-project"></i>
+                                    <i class="fa-solid fa-diagram-project inline-block animate-bounce"></i>
                                 </span>
 
                                 <!-- Text -->
@@ -495,7 +510,7 @@
                                 <!-- Arrow Icon -->
                                 <span
                                     class="ml-2 text-orange-400 z-10 transition-colors duration-300 group-hover:text-[#00076A]">
-                                    <i class="fa-solid fa-arrow-right"></i>
+                                    <i class="fa-solid fa-arrow-right inline-block animate-bounce "></i>
                                 </span>
                             </a>
 
@@ -518,7 +533,7 @@
                                 <!-- Icon -->
                                 <span
                                     class="text-orange-400 text-2xl z-10 transition-colors duration-300 group-hover:text-[#00076A]">
-                                    <i class="fa-solid fa-gears"></i>
+                                    <i class="fa-solid fa-gears inline-block animate-bounce"></i>
                                 </span>
 
                                 <!-- Text -->
@@ -529,7 +544,7 @@
                                 <!-- Arrow Icon -->
                                 <span
                                     class="ml-2 text-orange-400 z-10 transition-colors duration-300 group-hover:text-[#00076A]">
-                                    <i class="fa-solid fa-arrow-right"></i>
+                                    <i class="fa-solid fa-arrow-right inline-block animate-bounce"></i>
                                 </span>
                             </a>
 
@@ -551,7 +566,7 @@
                                 <!-- Icon -->
                                 <span
                                     class="text-orange-400 text-2xl z-10 transition-colors duration-300 group-hover:text-[#00076A]">
-                                    <i class="fas fa-user-cog"></i>
+                                    <i class="fas fa-user-cog inline-block animate-bounce"></i>
                                 </span>
 
                                 <!-- Text -->
@@ -562,7 +577,7 @@
                                 <!-- Arrow Icon -->
                                 <span
                                     class="ml-2 text-orange-400 z-10 transition-colors duration-300 group-hover:text-[#00076A]">
-                                    <i class="fa-solid fa-arrow-right"></i>
+                                    <i class="fa-solid fa-arrow-right inline-block animate-bounce"></i>
                                 </span>
                             </a>
 
@@ -578,9 +593,11 @@
                         DESIGN AND DEVELOPMENT INDUSTRY.
                     </p>
                     <a href="form.html" class="inline-block px-6 py-2 text-lg bg-[#1B9CE3] text-white rounded-lg shadow-lg 
-                           transition duration-150 active:scale-95 active:shadow-sm transition-colors duration-300">
+          transition duration-150 active:scale-95 active:shadow-sm transition-colors duration-300
+          animate-bulge-in-out">
                         Connect With Us
                     </a>
+
 
                 </div>
 
@@ -613,8 +630,9 @@
                                         tomorrow.
                                     </p>
                                     <div class="mt-2 md:mt-3">
-                                        <a href="services.html" id="slide-link" class="inline-block text-orange-500 bg-white border border-orange-500 shadow-md shadow-orange-300 px-4 py-1 rounded transition-all duration-300 text-sm
-                            hover:bg-orange-500 hover:text-white hover:scale-105 hover:shadow-orange-500">
+                                        <a href="services.html" id="slide-link"
+                                            class="inline-block text-orange-500 bg-white border border-orange-500 shadow-md shadow-orange-300 px-4 py-1 rounded transition-all duration-300 text-sm
+                            hover:bg-orange-500 hover:text-white hover:scale-105 hover:shadow-orange-500 animate-bulge-in-out transition duration-150 active:scale-95">
                                             Learn More
                                         </a>
                                     </div>

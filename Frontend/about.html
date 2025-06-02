@@ -66,7 +66,7 @@
 
                 <span class="flex items-center space-x-1">
                     <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto:contact@bridgegroup.com" class="hover:underline">contact@bridgegroup.com</a>
+                    <a href="mailto: contact@bridgegroupsolutions.com" class="hover:underline"> contact@bridgegroupsolutions.com</a>
                 </span>
 
             </div>
@@ -1008,29 +1008,30 @@ compliance, or service delivery. We ensure that all data collection practices ar
   <!-- Testimonial Script -->
   <script>
     const testimonials = [
-      {
-        image: "./assets/dummy.png",
-        text: "“Customer centric approach. Innovative solutions tailored as per the requirement of the customers. Great experience!”",
-        name: "Shubham Khampariya",
-        designation: "CTO, FutureTech",
-        stars: 5
-      },
-      {
-        image: "./assets/dummy.png",
-        text: "“Excellent service and support, they helped us scale seamlessly.”",
-        name: "Ayesha Malik,",
-        designation: "Product Head, NovaApps",
-        stars: 4
-      },
-      {
-        image: "./assets/dummy.png",
-        text: "“Truly a partner in innovation, not just a service provider.”",
-        name: "Ankit Singh,",
-        designation: "Founder, DevCraft",
-        stars: 5
-      }
-    ];
+    {
+      image: "./assets/dummy.png",
+      text: "“Customer centric approach. Innovative solutions tailored as per the requirement of the customers. Great experience!”",
+      name: "Shubham Khampariya",
+      designation: "CTO, FutureTech",
+      stars: 5
+    },
+    {
+      image: "./assets/dummy.png",
+      text: "“Excellent service and support, they helped us scale seamlessly.”",
+      name: "Ayesha Malik",
+      designation: "Product Head, NovaApps",
+      stars: 4
+    },
+    {
+      image: "./assets/dummy.png",
+      text: "“Truly a partner in innovation, not just a service provider.”",
+      name: "Ankit Singh",
+      designation: "Founder, DevCraft",
+      stars: 5
+    }
+  ];
 
+  function initTestimonials() {
     let current = 0;
 
     const image = document.getElementById("testimonialImage");
@@ -1048,18 +1049,28 @@ compliance, or service delivery. We ensure that all data collection practices ar
       stars.textContent = "⭐".repeat(t.stars);
     }
 
-    document.getElementById("prevBtn").addEventListener("click", () => {
-      current = (current - 1 + testimonials.length) % testimonials.length;
-      updateTestimonial(current);
-    });
-
-    document.getElementById("nextBtn").addEventListener("click", () => {
+    function showNext() {
       current = (current + 1) % testimonials.length;
       updateTestimonial(current);
-    });
+    }
 
-    // Initialize first testimonial
+    function showPrev() {
+      current = (current - 1 + testimonials.length) % testimonials.length;
+      updateTestimonial(current);
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", showNext);
+    document.getElementById("prevBtn").addEventListener("click", showPrev);
+
     updateTestimonial(current);
+
+    // Auto play every 5 seconds
+    setInterval(showNext, 1500);
+  }
+
+  document.addEventListener("DOMContentLoaded", initTestimonials);
+
+
 
     // Scroll to top button functionality
     const scrollBtn = document.getElementById('scrollToTopBtn');

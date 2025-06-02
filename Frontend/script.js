@@ -34,60 +34,78 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+
+
+
+
 // Testimonials Data
-const testimonials = [
-  {
-    image: "./assets/dummy.png",
-    text: "“BGS is solving problems for us we didn't even know we had.”",
-    name: "Rohan Kumar,",
-    designation: "CTO, FutureTech",
-    stars: 5
-  },
-  {
-    image: "./assets/dummy.png",
-    text: "“Excellent service and support, they helped us scale seamlessly.”",
-    name: "Ayesha Malik,",
-    designation: "Product Head, NovaApps",
-    stars: 4
-  },
-  {
-    image: "./assets/dummy.png",
-    text: "“Truly a partner in innovation, not just a service provider.”",
-    name: "Ankit Singh,",
-    designation: "Founder, DevCraft",
-    stars: 5
+  const testimonials = [
+    {
+      image: "./assets/dummy.png",
+      text: "“Customer centric approach. Innovative solutions tailored as per the requirement of the customers. Great experience!”",
+      name: "Shubham Khampariya",
+      designation: "CTO, FutureTech",
+      stars: 5
+    },
+    {
+      image: "./assets/dummy.png",
+      text: "“Excellent service and support, they helped us scale seamlessly.”",
+      name: "Ayesha Malik",
+      designation: "Product Head, NovaApps",
+      stars: 4
+    },
+    {
+      image: "./assets/dummy.png",
+      text: "“Truly a partner in innovation, not just a service provider.”",
+      name: "Ankit Singh",
+      designation: "Founder, DevCraft",
+      stars: 5
+    }
+  ];
+
+  function initTestimonials() {
+    let current = 0;
+
+    const image = document.getElementById("testimonialImage");
+    const text = document.getElementById("testimonialText");
+    const name = document.getElementById("testimonialName");
+    const designation = document.getElementById("testimonialDesignation");
+    const stars = document.getElementById("testimonialStars");
+
+    function updateTestimonial(index) {
+      const t = testimonials[index];
+      image.src = t.image;
+      text.textContent = t.text;
+      name.textContent = t.name;
+      designation.textContent = t.designation;
+      stars.textContent = "⭐".repeat(t.stars);
+    }
+
+    function showNext() {
+      current = (current + 1) % testimonials.length;
+      updateTestimonial(current);
+    }
+
+    function showPrev() {
+      current = (current - 1 + testimonials.length) % testimonials.length;
+      updateTestimonial(current);
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", showNext);
+    document.getElementById("prevBtn").addEventListener("click", showPrev);
+
+    updateTestimonial(current);
+
+    // Auto play every 5 seconds
+    setInterval(showNext, 1500);
   }
-];
 
-let current = 0;
+  document.addEventListener("DOMContentLoaded", initTestimonials);
 
-const image = document.getElementById("testimonialImage");
-const text = document.getElementById("testimonialText");
-const name = document.getElementById("testimonialName");
-const designation = document.getElementById("testimonialDesignation");
-const stars = document.getElementById("testimonialStars");
 
-function updateTestimonial(index) {
-  const t = testimonials[index];
-  image.src = t.image;
-  text.textContent = t.text;
-  name.textContent = t.name;
-  designation.textContent = t.designation;
-  stars.textContent = "⭐".repeat(t.stars);
-}
 
-document.getElementById("prevBtn").addEventListener("click", () => {
-  current = (current - 1 + testimonials.length) % testimonials.length;
-  updateTestimonial(current);
-});
 
-document.getElementById("nextBtn").addEventListener("click", () => {
-  current = (current + 1) % testimonials.length;
-  updateTestimonial(current);
-});
 
-// Initialize first testimonial
-updateTestimonial(current);
 
 // Scroll to top button functionality
 const scrollBtn = document.getElementById('scrollToTopBtn');
@@ -149,63 +167,88 @@ document.addEventListener("DOMContentLoaded", () => {
   // landing corosal
 
         // Example slides data
-        const slides = [
-            {
-                img: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&w=800&q=80",
-                title: "Web Development",
-                desc: "Proactive Risk Solutions for a Safer Tomorrow.",
-                link: "services.html"
-            },
-            {
-                img: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&w=800&q=80",
-                title: "App Development",
-                desc: "Grow and manage your portfolio with expert guidance.",
-                link: "services.html"
-            },
-            {
-                img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
-                title: "Data Analytics",
-                desc: "Tailored software solutions for your business needs.",
-                link: "services.html"
-            },
-            {
-                img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
-                title: "Project Outsourcing",
-                desc: "Tailored software solutions for your business needs.",
-                link: "services.html"
-            },
-            {
-                img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
-                title: "ERP & Customize Software",
-                desc: "Tailored software solutions for your business needs.",
-                link: "services.html"
-            },
-             {
-                img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
-                title: "CRM",
-                desc: "Tailored software solutions for your business needs.",
-                link: "services.html"
-            }
-
-        ];
-        let curr = 0;
-
-        function renderSlide(idx) {
-            document.querySelector("#slide-content img").src = slides[idx].img;
-            document.getElementById("slide-title").textContent = slides[idx].title;
-            document.getElementById("slide-desc").textContent = slides[idx].desc;
-            document.getElementById("slide-link").href = slides[idx].link;
+    const slides = [
+        {
+            img: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&w=800&q=80",
+            title: "Web Development",
+            desc: "Proactive Risk Solutions for a Safer Tomorrow.",
+            link: "services.html"
+        },
+        {
+            img: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&w=800&q=80",
+            title: "App Development",
+            desc: "Grow and manage your portfolio with expert guidance.",
+            link: "services.html"
+        },
+        {
+            img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
+            title: "Data Analytics",
+            desc: "Tailored software solutions for your business needs.",
+            link: "services.html"
+        },
+        {
+            img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
+            title: "Project Outsourcing",
+            desc: "Tailored software solutions for your business needs.",
+            link: "services.html"
+        },
+        {
+            img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
+            title: "ERP & Customize Software",
+            desc: "Tailored software solutions for your business needs.",
+            link: "services.html"
+        },
+        {
+            img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
+            title: "CRM",
+            desc: "Tailored software solutions for your business needs.",
+            link: "services.html"
         }
+    ];
 
-        document.getElementById("prevBtn").onclick = function () {
-            curr = (curr - 1 + slides.length) % slides.length;
-            renderSlide(curr);
-        };
-        document.getElementById("nextBtn").onclick = function () {
-            curr = (curr + 1) % slides.length;
-            renderSlide(curr);
-        };
+    let curr = 0;
+    let autoSlide;
 
-        // Initial render
+    function renderSlide(idx) {
+        document.querySelector("#slide-content img").src = slides[idx].img;
+        document.getElementById("slide-title").textContent = slides[idx].title;
+        document.getElementById("slide-desc").textContent = slides[idx].desc;
+        document.getElementById("slide-link").href = slides[idx].link;
+    }
+
+    function showNext() {
+        curr = (curr + 1) % slides.length;
         renderSlide(curr);
+    }
+
+    function showPrev() {
+        curr = (curr - 1 + slides.length) % slides.length;
+        renderSlide(curr);
+    }
+
+    document.getElementById("prevBtn").onclick = function () {
+        showPrev();
+        resetAutoSlide();
+    };
+
+    document.getElementById("nextBtn").onclick = function () {
+        showNext();
+        resetAutoSlide();
+    };
+
+    function startAutoSlide() {
+        autoSlide = setInterval(showNext, 1500); // change speed here
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        renderSlide(curr);
+        startAutoSlide();
+    });
+
+
   

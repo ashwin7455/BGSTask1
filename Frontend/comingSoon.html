@@ -113,10 +113,10 @@
 
     <!-- Navbar -->
       <!-- Navbar -->
-    <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
-        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+        <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
+        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-8 justify-between">
+
             <!-- Logo -->
-            <div class="flex items-center space-x-2">
                 <div class="flex items-center">
                     <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
                     <a href="index.html" class="ml-2 sm:ml-3">
@@ -130,11 +130,23 @@
                         </p>
                     </a>
                 </div>
-            </div>
 
             <!-- Desktop Nav -->
-            <div class="hidden md:flex items-cente space-x-6">
+            <div class="hidden md:flex items-cente  sm:space-x-2  lg:space-x-4 xl:space-x-6">
                 <!-- Dropdowns -->
+
+                  <div class="relative group p-3 hover:bg-[#1B9CE3] ">
+                    <a class="flex items-center space-x-1 text-black  focus:outline-none">
+                        <span class="text-lg">Sales</span>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+                        <a href="b2b.html" class="block px-4 py-2 hover:bg-gray-100">B2B Sales</a>
+                        <a href="b2c.html" class="block px-4 py-2 hover:bg-gray-100">B2C Sales</a>
+                    </div>
+                </div>
+
                 <div class="relative group p-3 hover:bg-[#1B9CE3] ">
                     <a class="flex items-center space-x-1 text-black  focus:outline-none">
                         <span class="text-lg">Company</span>
@@ -165,11 +177,13 @@
                         <span class="text-lg">Careers</span>
                         <!-- <i class="fa-solid fa-chevron-down text-xs"></i> -->
                     </a>
-                    <!-- <div
-                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Openings</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Internships</a>
-                    </div> -->
+                </div>
+
+                <div class="relative group p-3 hover:bg-[#1B9CE3]">
+                    <a href="partners.html" class="flex items-center space-x-1 text-black  focus:outline-none">
+                        <span class="text-lg">Our Partners</span>
+                        <!-- <i class="fa-solid fa-chevron-down text-xs"></i> -->
+                    </a>
                 </div>
 
                 <!-- Contact -->
@@ -197,6 +211,21 @@
         <div class="md:hidden" x-show="mobileMenu" x-transition>
             <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
 
+
+                  <div x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+                        <span>Sales</span>
+                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
+                            class="fa-solid text-sm transition-transform"></i>
+                    </button>
+                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+                        <a href="about.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2B Sales</a>
+                        <a href="gallery.html"
+                            class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2C Sales</a>
+                       
+                    </div>
+                </div>
                 <!-- About -->
                 <div x-data="{ open: false }">
                     <button @click="open = !open"
@@ -207,8 +236,10 @@
                     </button>
                     <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
                         <a href="about.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">About Us</a>
-                        <a href="gallery.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Gallery</a>
-                        <a href="contact.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Contact Us</a>
+                        <a href="gallery.html"
+                            class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Gallery</a>
+                        <a href="contact.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Contact
+                            Us</a>
                     </div>
                 </div>
 
@@ -222,7 +253,8 @@
                     </button>
                     <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
                         <a href="comingSoon.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">CRM</a>
-                        <a href="services.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">All Services</a>
+                        <a href="services.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">All
+                            Services</a>
                     </div>
                 </div>
 
@@ -232,11 +264,17 @@
                         class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
                         <span>Careers</span>
                         <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
-                </a>
-                    <!-- <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-        <a href="#" class="block text-sm text-gray-600 hover:bg-gray-100 rounded px-2 py-1">Openings</a>
-        <a href="#" class="block text-sm text-gray-600 hover:bg-gray-100 rounded px-2 py-1">Internships</a>
-      </div> -->
+                    </a>
+                
+                </div>
+
+                 <div x-data="{ open: false }">
+                    <a @click="open = !open" href="partners.html"
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+                        <span>Our Partners</span>
+                        <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
+                    </a>
+                
                 </div>
 
                 <!-- Contact -->

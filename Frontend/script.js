@@ -252,3 +252,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   
+
+
+
+
+    // Partner logos (replace with your own as needed)
+ const carousel = document.getElementById('carousel');
+    const logos = carousel.children;
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let auto;
+
+    // Slide Function
+    function slideNext() {
+      carousel.appendChild(logos[0]);
+    }
+
+    function slidePrev() {
+      carousel.insertBefore(logos[logos.length - 1], logos[0]);
+    }
+
+    nextBtn.addEventListener('click', () => {
+      slideNext();
+      resetInterval();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      slidePrev();
+      resetInterval();
+    });
+
+    function startAutoSlide() {
+      auto = setInterval(slideNext, 3000);
+    }
+
+    function resetInterval() {
+      clearInterval(autoSlide);
+      startAutoSlide();
+    }
+
+    // Start autoplay
+    startAutoSlide();

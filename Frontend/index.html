@@ -1546,7 +1546,91 @@ compliance, or service delivery. We ensure that all data collection practices ar
         });
     </script>
 
+    <script>
+        const slides = [
+            {
+                img: "./assets/web.jpg",
+                title: "Web Development",
+                desc: "Web development is the bedrock of digital experiences, merging engineering, design, and innovation.  ",
+                link: "services.html",
+            },
+            {
+                img: "./assets/app.jpg",
+                title: "App Development",
+                desc: "App development encompasses native, cross-platform, and hybrid strategies, each with unique considerations in performance and user experience.",
+                link: "services.html",
+            },
+            {
+                img: "./assets/dataanalytics.webp",
+                title: "Data Analytics",
+                desc: " Data analytics is the backbone of digital transformation, transforming raw data into actionable insights that power decision-making, optimize operations, and drive innovation.",
+                link: "services.html",
+            },
+            {
+                img: "./assets/outsourcing.jpg",
+                title: "Project Outsourcing",
+                desc: "Project outsourcing is a strategic lever for innovation, enabling organizations to scale quickly and tap into specialized expertise.",
+                link: "services.html",
+            },
+            {
+                img: "./assets/erp.jpg",
+                title: "ERP & Customize Software",
+                desc: "ERP is a type of software that helps organizations manage their core business processes—such as finance, HR, manufacturing, supply chain, services, procurement.",
+                link: "services.html",
+            },
+            {
+                img: "./assets/crm.jpg",
+                title: "CRM",
+                desc: "CRM refers to systems or tools that help businesses manage interactions with current and potential customers.",
+                link: "services.html",
+            },
+        ];
 
+        let curr = 0;
+        let autoSlide;
+
+        function renderSlide(idx) {
+            const slide = slides[idx];
+            document.querySelector("#slide-content img").src = slide.img;
+            document.getElementById("slide-title").textContent = slide.title;
+            document.getElementById("slide-desc").textContent = slide.desc;
+            document.getElementById("slide-link").href = slide.link;
+        }
+
+        function showNext() {
+            curr = (curr + 1) % slides.length;
+            renderSlide(curr);
+        }
+
+        function showPrev() {
+            curr = (curr - 1 + slides.length) % slides.length;
+            renderSlide(curr);
+        }
+
+        function startAutoSlide() {
+            autoSlide = setInterval(showNext, 1500); // change speed as needed
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlide);
+            startAutoSlide();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            renderSlide(curr);
+            startAutoSlide();
+
+            document.getElementById("prevBtn").addEventListener("click", () => {
+                showPrev();
+                resetAutoSlide();
+            });
+
+            document.getElementById("nextBtn").addEventListener("click", () => {
+                showNext();
+                resetAutoSlide();
+            });
+        });
+    </script>
 
 
 </body>

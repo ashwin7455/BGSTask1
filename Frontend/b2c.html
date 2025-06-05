@@ -276,8 +276,8 @@
     <!-- Section 1: Content Left, Image Right -->
     <!-- Section 1: Content Left, Image Right -->
     <section class="py-16 px-4 md:px-20 bg-white">
-        <div class="grid md:grid-cols-2 items-center gap-12">
-            <!-- Content -->
+        <div class="flex flex-col-reverse md:grid md:grid-cols-2 items-center gap-12">
+            <!-- Content (shows below image on mobile, left on desktop) -->
             <div>
                 <h2 class="text-3xl md:text-5xl font-bold text-[#00076A] mb-6">
                     Reach Your Customers Directly
@@ -293,13 +293,15 @@
                     <li>Advanced Analytics & Tracking</li>
                 </ul>
             </div>
-            <!-- Image -->
+
+            <!-- Image (shows on top in mobile, right on desktop) -->
             <div>
                 <img src="assets/b2c1.avif" alt="Direct to Consumer"
                     class="w-full h-auto rounded-lg shadow-md object-cover" />
             </div>
         </div>
     </section>
+
 
     <!-- Section 2: Image Left, Content Right -->
     <section class="py-16 px-4 md:px-20 bg-gray-50">

@@ -1,13 +1,13 @@
 // Mobile Menu Toggle
-document.addEventListener('DOMContentLoaded', function () {
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const menuIcon = document.getElementById('menuIcon');
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuIcon = document.getElementById("menuIcon");
   let isMenuOpen = false;
 
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
-    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle("hidden");
 
     // Switch icon
     if (isMenuOpen) {
@@ -17,121 +17,115 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  mobileMenuBtn.addEventListener('click', toggleMenu);
+  mobileMenuBtn.addEventListener("click", toggleMenu);
 
   // Optional: Close menu on outside click
-  document.addEventListener('click', function (event) {
-    if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target) && isMenuOpen) {
+  document.addEventListener("click", function (event) {
+    if (
+      !mobileMenu.contains(event.target) &&
+      !mobileMenuBtn.contains(event.target) &&
+      isMenuOpen
+    ) {
       toggleMenu();
     }
   });
 
   // Optional: Close menu on window resize to desktop
-  window.addEventListener('resize', function () {
+  window.addEventListener("resize", function () {
     if (window.innerWidth >= 768 && isMenuOpen) {
       toggleMenu();
     }
   });
 });
 
-
-
-
-
 // Testimonials Data
-  const testimonials = [
-    {
-      image: "./assets/dummy.png",
-      text: "“Customer centric approach. Innovative solutions tailored as per the requirement of the customers. Great experience!”",
-      name: "Shubham Khampariya",
-      designation: "CTO, FutureTech",
-      stars: 5
-    },
-    {
-      image: "./assets/dummy.png",
-      text: "“Excellent service and support, they helped us scale seamlessly.”",
-      name: "Ayesha Malik",
-      designation: "Product Head, NovaApps",
-      stars: 4
-    },
-    {
-      image: "./assets/dummy.png",
-      text: "“Truly a partner in innovation, not just a service provider.”",
-      name: "Ankit Singh",
-      designation: "Founder, DevCraft",
-      stars: 5
-    }
-  ];
+const testimonials = [
+  {
+    image: "./assets/dummy.png",
+    text: "“Customer centric approach. Innovative solutions tailored as per the requirement of the customers. Great experience!”",
+    name: "Shubham Khampariya",
+    designation: "CTO, FutureTech",
+    stars: 5,
+  },
+  {
+    image: "./assets/dummy.png",
+    text: "“Excellent service and support, they helped us scale seamlessly.”",
+    name: "Ayesha Malik",
+    designation: "Product Head, NovaApps",
+    stars: 4,
+  },
+  {
+    image: "./assets/dummy.png",
+    text: "“Truly a partner in innovation, not just a service provider.”",
+    name: "Ankit Singh",
+    designation: "Founder, DevCraft",
+    stars: 5,
+  },
+];
 
-  function initTestimonials() {
-    let current = 0;
+function initTestimonials() {
+  let current = 0;
 
-    const image = document.getElementById("testimonialImage");
-    const text = document.getElementById("testimonialText");
-    const name = document.getElementById("testimonialName");
-    const designation = document.getElementById("testimonialDesignation");
-    const stars = document.getElementById("testimonialStars");
+  const image = document.getElementById("testimonialImage");
+  const text = document.getElementById("testimonialText");
+  const name = document.getElementById("testimonialName");
+  const designation = document.getElementById("testimonialDesignation");
+  const stars = document.getElementById("testimonialStars");
 
-    function updateTestimonial(index) {
-      const t = testimonials[index];
-      image.src = t.image;
-      text.textContent = t.text;
-      name.textContent = t.name;
-      designation.textContent = t.designation;
-      stars.textContent = "⭐".repeat(t.stars);
-    }
-
-    function showNext() {
-      current = (current + 1) % testimonials.length;
-      updateTestimonial(current);
-    }
-
-    function showPrev() {
-      current = (current - 1 + testimonials.length) % testimonials.length;
-      updateTestimonial(current);
-    }
-
-    document.getElementById("nextBtn").addEventListener("click", showNext);
-    document.getElementById("prevBtn").addEventListener("click", showPrev);
-
-    updateTestimonial(current);
-
-    // Auto play every 5 seconds
-    setInterval(showNext, 1500);
+  function updateTestimonial(index) {
+    const t = testimonials[index];
+    image.src = t.image;
+    text.textContent = t.text;
+    name.textContent = t.name;
+    designation.textContent = t.designation;
+    stars.textContent = "⭐".repeat(t.stars);
   }
 
-  document.addEventListener("DOMContentLoaded", initTestimonials);
+  function showNext() {
+    current = (current + 1) % testimonials.length;
+    updateTestimonial(current);
+  }
 
+  function showPrev() {
+    current = (current - 1 + testimonials.length) % testimonials.length;
+    updateTestimonial(current);
+  }
 
+  document.getElementById("nextBtn").addEventListener("click", showNext);
+  document.getElementById("prevBtn").addEventListener("click", showPrev);
 
+  updateTestimonial(current);
 
+  // Auto play every 5 seconds
+  setInterval(showNext, 1500);
+}
 
+document.addEventListener("DOMContentLoaded", initTestimonials);
 
 // Scroll to top button functionality
-const scrollBtn = document.getElementById('scrollToTopBtn');
+const scrollBtn = document.getElementById("scrollToTopBtn");
 
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
 
   if (scrollY > 100) {
     // Show button
-    scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
-    scrollBtn.classList.add('opacity-100');
+    scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+    scrollBtn.classList.add("opacity-100");
   } else {
     // Hide button
-    scrollBtn.classList.add('opacity-0', 'pointer-events-none');
-    scrollBtn.classList.remove('opacity-100');
+    scrollBtn.classList.add("opacity-0", "pointer-events-none");
+    scrollBtn.classList.remove("opacity-100");
   }
 });
-
 
 /*counter*/
 
 document.addEventListener("DOMContentLoaded", () => {
-  const counters = document.querySelectorAll('[data-target]');
+  const counters = document.querySelectorAll("[data-target]");
 
-  counters.forEach(counter => {
-    const target = +counter.getAttribute('data-target');
+  counters.forEach((counter) => {
+    const target = +counter.getAttribute("data-target");
     const duration = 8000; // total duration in ms
     const frameRate = 100; // frames per second
     const totalSteps = Math.round((duration / 1000) * frameRate); // e.g., 120 steps for 2s
@@ -154,142 +148,135 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 //  popup
 
-  window.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('crmModal').classList.remove('hidden');
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("crmModal").classList.remove("hidden");
+});
+
+function closeModal() {
+  document.getElementById("crmModal").classList.add("hidden");
+}
+
+// landing corosal
+
+// Example slides data
+const slides = [
+  {
+    img: "./assets/web.jpg",
+    title: "Web Development",
+    desc: "Web development is the bedrock of digital experiences, merging engineering, design, and innovation.  ",
+    link: "services.html",
+  },
+  {
+    img: "./assets/app.jpg",
+    title: "App Development",
+    desc: "App development encompasses native, cross-platform, and hybrid strategies, each with unique considerations in performance and user experience.",
+    link: "services.html",
+  },
+  {
+    img: "./assets/dataanalytics.webp",
+    title: "Data Analytics",
+    desc: " Data analytics is the backbone of digital transformation, transforming raw data into actionable insights that power decision-making, optimize operations, and drive innovation.",
+    link: "services.html",
+  },
+  {
+    img: "./assets/outsourcing.jpg",
+    title: "Project Outsourcing",
+    desc: "Project outsourcing is a strategic lever for innovation, enabling organizations to scale quickly and tap into specialized expertise.",
+    link: "services.html",
+  },
+  {
+    img: "./assets/erp.jpg",
+    title: "ERP & Customize Software",
+    desc: "ERP is a type of software that helps organizations manage their core business processes—such as finance, HR, manufacturing, supply chain, services, procurement.",
+    link: "services.html",
+  },
+  {
+    img: "./assets/crm.jpg",
+    title: "CRM",
+    desc: "CRM refers to systems or tools that help businesses manage interactions with current and potential customers.",
+    link: "services.html",
+  },
+];
+
+let curr = 0;
+let autoSlide;
+
+function renderSlide(idx) {
+  const slide = slides[idx];
+  document.querySelector("#slide-content img").src = slide.img;
+  document.getElementById("slide-title").textContent = slide.title;
+  document.getElementById("slide-desc").textContent = slide.desc;
+  document.getElementById("slide-link").href = slide.link;
+}
+
+function showNext() {
+  curr = (curr + 1) % slides.length;
+  renderSlide(curr);
+}
+
+function showPrev() {
+  curr = (curr - 1 + slides.length) % slides.length;
+  renderSlide(curr);
+}
+
+function startAutoSlide() {
+  autoSlide = setInterval(showNext, 3000); // change speed as needed
+}
+
+function resetAutoSlide() {
+  clearInterval(autoSlide);
+  startAutoSlide();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  renderSlide(curr);
+  startAutoSlide();
+
+  document.getElementById("prevBtn").addEventListener("click", () => {
+    showPrev();
+    resetAutoSlide();
   });
 
-  function closeModal() {
-    document.getElementById('crmModal').classList.add('hidden');
-  }
+  document.getElementById("nextBtn").addEventListener("click", () => {
+    showNext();
+    resetAutoSlide();
+  });
+});
 
+// Partner logos (replace with your own as needed)
+const carousel = document.getElementById("carousel");
+const logos = carousel.children;
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+let auto;
 
+// Slide Function
+function slideNext() {
+  carousel.appendChild(logos[0]);
+}
 
-  // landing corosal
+function slidePrev() {
+  carousel.insertBefore(logos[logos.length - 1], logos[0]);
+}
 
-        // Example slides data
-    const slides = [
-        {
-            img: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&w=800&q=80",
-            title: "Web Development",
-            desc: "Proactive Risk Solutions for a Safer Tomorrow.",
-            link: "services.html"
-        },
-        {
-            img: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&w=800&q=80",
-            title: "App Development",
-            desc: "Grow and manage your portfolio with expert guidance.",
-            link: "services.html"
-        },
-        {
-            img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
-            title: "Data Analytics",
-            desc: "Tailored software solutions for your business needs.",
-            link: "services.html"
-        },
-        {
-            img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
-            title: "Project Outsourcing",
-            desc: "Tailored software solutions for your business needs.",
-            link: "services.html"
-        },
-        {
-            img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
-            title: "ERP & Customize Software",
-            desc: "Tailored software solutions for your business needs.",
-            link: "services.html"
-        },
-        {
-            img: "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&w=800&q=80",
-            title: "CRM",
-            desc: "Tailored software solutions for your business needs.",
-            link: "services.html"
-        }
-    ];
+nextBtn.addEventListener("click", () => {
+  slideNext();
+  resetInterval();
+});
 
-    let curr = 0;
-    let autoSlide;
+prevBtn.addEventListener("click", () => {
+  slidePrev();
+  resetInterval();
+});
 
-    function renderSlide(idx) {
-        document.querySelector("#slide-content img").src = slides[idx].img;
-        document.getElementById("slide-title").textContent = slides[idx].title;
-        document.getElementById("slide-desc").textContent = slides[idx].desc;
-        document.getElementById("slide-link").href = slides[idx].link;
-    }
+function startAutoSlide() {
+  auto = setInterval(slideNext, 3000);
+}
 
-    function showNext() {
-        curr = (curr + 1) % slides.length;
-        renderSlide(curr);
-    }
+function resetInterval() {
+  clearInterval(autoSlide);
+  startAutoSlide();
+}
 
-    function showPrev() {
-        curr = (curr - 1 + slides.length) % slides.length;
-        renderSlide(curr);
-    }
-
-    document.getElementById("prevBtn").onclick = function () {
-        showPrev();
-        resetAutoSlide();
-    };
-
-    document.getElementById("nextBtn").onclick = function () {
-        showNext();
-        resetAutoSlide();
-    };
-
-    function startAutoSlide() {
-        autoSlide = setInterval(showNext, 1500); // change speed here
-    }
-
-    function resetAutoSlide() {
-        clearInterval(autoSlide);
-        startAutoSlide();
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        renderSlide(curr);
-        startAutoSlide();
-    });
-
-
-  
-
-
-
-
-    // Partner logos (replace with your own as needed)
- const carousel = document.getElementById('carousel');
-    const logos = carousel.children;
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    let auto;
-
-    // Slide Function
-    function slideNext() {
-      carousel.appendChild(logos[0]);
-    }
-
-    function slidePrev() {
-      carousel.insertBefore(logos[logos.length - 1], logos[0]);
-    }
-
-    nextBtn.addEventListener('click', () => {
-      slideNext();
-      resetInterval();
-    });
-
-    prevBtn.addEventListener('click', () => {
-      slidePrev();
-      resetInterval();
-    });
-
-    function startAutoSlide() {
-      auto = setInterval(slideNext, 3000);
-    }
-
-    function resetInterval() {
-      clearInterval(autoSlide);
-      startAutoSlide();
-    }
-
-    // Start autoplay
-    startAutoSlide();
+// Start autoplay
+startAutoSlide();

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B2B Sales</title>
-     <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="icon" type="image/png" href="./assets/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="./assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="./assets/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -47,15 +48,17 @@
                 padding-left: 1.5rem;
                 padding-right: 1.5rem;
             }
-             .animate-bulge-in-out {
-            animation: bulgeInOut 1.5s ease-in-out infinite;
-        }
+
+            .animate-bulge-in-out {
+                animation: bulgeInOut 1.5s ease-in-out infinite;
+            }
         }
     </style>
 </head>
+
 <body>
 
-        <div class="bg-[#1B9CE3] text-white text-sm">
+    <div class="bg-[#1B9CE3] text-white text-sm">
         <div
             class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm px-4 space-y-2 md:space-y-0">
             <div class="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-2 md:space-y-0">
@@ -92,29 +95,29 @@
     </div>
 
     <!-- Navbar -->
-     <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
+    <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
         <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-8 justify-between">
 
             <!-- Logo -->
-                <div class="flex items-center">
-                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
-                    <a href="index.html" class="ml-2 sm:ml-3">
-                        <h1
-                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
-                            BRIDGE GROUP
-                        </h1>
-                        <p
-                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
-                            SOLUTIONS
-                        </p>
-                    </a>
-                </div>
+            <div class="flex items-center">
+                <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
+                <a href="index.html" class="ml-2 sm:ml-3">
+                    <h1
+                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
+                        BRIDGE GROUP
+                    </h1>
+                    <p
+                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
+                        SOLUTIONS
+                    </p>
+                </a>
+            </div>
 
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-cente  sm:space-x-2  lg:space-x-4 xl:space-x-6">
                 <!-- Dropdowns -->
 
-                  <div class="relative group p-3 hover:bg-[#1B9CE3] ">
+                <div class="relative group p-3 hover:bg-[#1B9CE3] ">
                     <a class="flex items-center space-x-1 text-black  focus:outline-none">
                         <span class="text-lg">Sales</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -191,7 +194,7 @@
             <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
 
 
-                  <div x-data="{ open: false }">
+                <div x-data="{ open: false }">
                     <button @click="open = !open"
                         class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
                         <span>Sales</span>
@@ -200,9 +203,8 @@
                     </button>
                     <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
                         <a href="b2b.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2B Sales</a>
-                        <a href="b2c.html"
-                            class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2C Sales</a>
-                       
+                        <a href="b2c.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2C Sales</a>
+
                     </div>
                 </div>
                 <!-- About -->
@@ -244,16 +246,16 @@
                         <span>Careers</span>
                         <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
                     </a>
-                
+
                 </div>
 
-                 <div x-data="{ open: false }">
+                <div x-data="{ open: false }">
                     <a @click="open = !open" href="partners.html"
                         class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
                         <span>Our Partners</span>
                         <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
                     </a>
-                
+
                 </div>
 
                 <!-- Contact -->
@@ -271,60 +273,60 @@
         </div>
 
     </nav>
-  <!-- Section 1: Content Left, Image Right -->
-<!-- Section 1: Content Left, Image Right -->
-<section class="py-16 px-4 md:px-20 bg-white">
-  <div class="grid md:grid-cols-2 items-center gap-12">
-    <!-- Content -->
-    <div>
-      <h2 class="text-3xl md:text-5xl font-bold text-[#00076A] mb-6">
-        Reach Your Customers Directly
-      </h2>
-      <p class="text-gray-600 mb-4 text-lg">
-        With our B2C sales strategies, we help brands connect emotionally and directly with customers. Build loyalty, increase engagement, and grow your revenue with personalized experiences.
-      </p>
-      <ul class="list-disc ml-5 text-gray-700 space-y-2">
-        <li>Personalized Campaigns</li>
-        <li>Multi-Channel Selling</li>
-        <li>Customer Retention Tools</li>
-        <li>Advanced Analytics & Tracking</li>
-      </ul>
-    </div>
-    <!-- Image -->
-    <div>
-      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437d2?w=800" 
-           alt="Direct to Consumer" 
-           class="w-full h-auto rounded-lg shadow-md object-cover" />
-    </div>
-  </div>
-</section>
+    <!-- Section 1: Content Left, Image Right -->
+    <!-- Section 1: Content Left, Image Right -->
+    <section class="py-16 px-4 md:px-20 bg-white">
+        <div class="grid md:grid-cols-2 items-center gap-12">
+            <!-- Content -->
+            <div>
+                <h2 class="text-3xl md:text-5xl font-bold text-[#00076A] mb-6">
+                    Reach Your Customers Directly
+                </h2>
+                <p class="text-gray-600 mb-4 text-lg">
+                    With our B2C sales strategies, we help brands connect emotionally and directly with customers. Build
+                    loyalty, increase engagement, and grow your revenue with personalized experiences.
+                </p>
+                <ul class="list-disc ml-5 text-gray-700 space-y-2">
+                    <li>Personalized Campaigns</li>
+                    <li>Multi-Channel Selling</li>
+                    <li>Customer Retention Tools</li>
+                    <li>Advanced Analytics & Tracking</li>
+                </ul>
+            </div>
+            <!-- Image -->
+            <div>
+                <img src="assets/b2c1.avif" alt="Direct to Consumer"
+                    class="w-full h-auto rounded-lg shadow-md object-cover" />
+            </div>
+        </div>
+    </section>
 
-<!-- Section 2: Image Left, Content Right -->
-<section class="py-16 px-4 md:px-20 bg-gray-50">
-  <div class="grid md:grid-cols-2 items-center gap-12">
-    <!-- Image -->
-    <div>
-      <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?w=800"
-           alt="Customer Engagement" 
-           class="w-full h-auto rounded-lg shadow-md object-cover" />
-    </div>
-    <!-- Content -->
-    <div>
-      <h2 class="text-3xl md:text-5xl font-bold text-[#00076A] mb-6">
-        Boost Your Brand Visibility
-      </h2>
-      <p class="text-gray-600 mb-4 text-lg">
-        Our B2C platform empowers brands to stand out in a crowded marketplace. Whether it’s through influencer marketing or social commerce, we provide the tools to build lasting relationships.
-      </p>
-      <ul class="list-disc ml-5 text-gray-700 space-y-2">
-        <li>Omnichannel Presence</li>
-        <li>Influencer & Affiliate Tools</li>
-        <li>Targeted Promotions</li>
-        <li>Customer Insights Dashboard</li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <!-- Section 2: Image Left, Content Right -->
+    <section class="py-16 px-4 md:px-20 bg-gray-50">
+        <div class="grid md:grid-cols-2 items-center gap-12">
+            <!-- Image -->
+            <div>
+                <img src="assets/b2c2.jpg" alt="Customer Engagement"
+                    class="w-full h-auto rounded-lg shadow-md object-cover" />
+            </div>
+            <!-- Content -->
+            <div>
+                <h2 class="text-3xl md:text-5xl font-bold text-[#00076A] mb-6">
+                    Boost Your Brand Visibility
+                </h2>
+                <p class="text-gray-600 mb-4 text-lg">
+                    Our B2C platform empowers brands to stand out in a crowded marketplace. Whether it’s through
+                    influencer marketing or social commerce, we provide the tools to build lasting relationships.
+                </p>
+                <ul class="list-disc ml-5 text-gray-700 space-y-2">
+                    <li>Omnichannel Presence</li>
+                    <li>Influencer & Affiliate Tools</li>
+                    <li>Targeted Promotions</li>
+                    <li>Customer Insights Dashboard</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
 
     <footer class="bg-[#D2F0FF] py-10">
@@ -653,4 +655,5 @@ compliance, or service delivery. We ensure that all data collection practices ar
 
 
 </body>
+
 </html>

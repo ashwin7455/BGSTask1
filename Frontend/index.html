@@ -131,18 +131,19 @@
         }
 
         .animate-bulge-in-out {
-            animation: bulgeInOut 1.5s ease-in-out infinite;
+            animation: bulgeInOut 2s ease-in-out infinite;
         }
 
 
-           /* Hide scrollbar for slides */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+        /* Hide scrollbar for slides */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 
 </head>
@@ -187,29 +188,29 @@
     </div>
 
     <!-- Navbar -->
-     <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
+    <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
         <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-8 justify-between">
 
             <!-- Logo -->
-                <div class="flex items-center">
-                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
-                    <a href="index.html" class="ml-2 sm:ml-3">
-                        <h1
-                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
-                            BRIDGE GROUP
-                        </h1>
-                        <p
-                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
-                            SOLUTIONS
-                        </p>
-                    </a>
-                </div>
+            <div class="flex items-center">
+                <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
+                <a href="index.html" class="ml-2 sm:ml-3">
+                    <h1
+                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
+                        BRIDGE GROUP
+                    </h1>
+                    <p
+                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
+                        SOLUTIONS
+                    </p>
+                </a>
+            </div>
 
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-cente  sm:space-x-2  lg:space-x-4 xl:space-x-6">
                 <!-- Dropdowns -->
 
-                  <div class="relative group p-3 hover:bg-[#1B9CE3] ">
+                <div class="relative group p-3 hover:bg-[#1B9CE3] ">
                     <a class="flex items-center space-x-1 text-black  focus:outline-none">
                         <span class="text-lg">Sales</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -286,7 +287,7 @@
             <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
 
 
-                  <div x-data="{ open: false }">
+                <div x-data="{ open: false }">
                     <button @click="open = !open"
                         class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
                         <span>Sales</span>
@@ -295,9 +296,8 @@
                     </button>
                     <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
                         <a href="b2b.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2B Sales</a>
-                        <a href="b2c.html"
-                            class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2C Sales</a>
-                       
+                        <a href="b2c.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2C Sales</a>
+
                     </div>
                 </div>
                 <!-- About -->
@@ -339,16 +339,16 @@
                         <span>Careers</span>
                         <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
                     </a>
-                
+
                 </div>
 
-                 <div x-data="{ open: false }">
+                <div x-data="{ open: false }">
                     <a @click="open = !open" href="partners.html"
                         class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
                         <span>Our Partners</span>
                         <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
                     </a>
-                
+
                 </div>
 
                 <!-- Contact -->
@@ -659,19 +659,20 @@
                 </div>
 
                 <!-- Right Content - Services Box -->
-                <div class="relative flex sm:flex-col flex-col-reverse">
+                <div class="relative flex sm:flex-col flex-col-reverse ">
                     <!-- Services Box -->
                     <div id="carousel"
                         class="overflow-hidden relative h-[500px] flex flex-col rounded-3xl shadow-[0_12px_24px_-4px_rgba(255,165,0,0.4)]">
 
                         <!-- Slide Content -->
-                        <div id="slide-content" class="flex flex-col h-full">
+                        <div id="slide-content" class="flex flex-col h-full transition-opacity duration-500">
 
                             <!-- Image: Top Half -->
                             <div class="h-3/4 w-full rounded-t-3xl overflow-hidden">
-                                <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&w=800&q=80"
-                                    alt="Risk Management" class="w-full h-full object-cover rounded-t-3xl" />
+                                <img src="assets/webdev.jpg" alt="Risk Management"
+                                    class="w-full h-full object-cover rounded-t-3xl" />
                             </div>
+
 
                             <!-- Text Content: Bottom Half -->
                             <div
@@ -688,10 +689,13 @@
                                     </p>
                                     <div class="mt-2 md:mt-3">
                                         <a href="services.html" id="slide-link"
-                                            class="inline-block text-orange-500 bg-white border border-orange-500 shadow-md shadow-orange-300 px-4 py-1 rounded transition-all duration-300 text-sm
-                            hover:bg-orange-500 hover:text-white hover:scale-105 hover:shadow-orange-500 animate-bulge-in-out transition duration-150 active:scale-95">
+                                            class="inline-block text-orange-500 bg-white border border-orange-500 shadow-md shadow-orange-300 px-4 py-1 rounded 
+          transition-all duration-300 text-sm hover:bg-orange-500 hover:text-white hover:scale-105 
+          hover:shadow-orange-500 active:scale-95 active:shadow-sm transition-colors 
+          animate-bulge-in-out  transition duration-150 active:scale-95 active:shadow-sm transition-colors duration-300">
                                             Learn More
                                         </a>
+
                                     </div>
                                 </div>
 
@@ -912,9 +916,9 @@
 
                 <!-- Right Side - Stats -->
                 <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="space-y-8">
-                   <h2 class="text-3xl md:text-5xl font-Mulish font-semibold text-[#00076A] text-center md:text-left">
-  You Always Get the Best Guidance
-</h2>
+                    <h2 class="text-3xl md:text-5xl font-Mulish font-semibold text-[#00076A] text-center md:text-left">
+                        You Always Get the Best Guidance
+                    </h2>
 
                     <div class="grid grid-cols-2 gap-8 ml-3 text-center md:text-left ">
                         <!-- Stats Grid -->
@@ -954,39 +958,41 @@
 
 
     <!-- partners section -->
-  <section class="h-90 bg-[#D6F0FF] 200 py-16 px-4 sm:px-8 lg:px-20">
-    <div class="max-w-9xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-      <!-- Text Content -->
-      <div class="max-w-xl">
-        <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
-          class="text-sky-600 font-medium text-lg mb-1 border-b-2 border-sky-400 inline-block">Partners</p>
-        <h2 data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
-          class="text-3xl font-bold text-blue-900 mb-4">Stronger Together: Building the Future with Our Partners</h2>
-          <!-- <div>Innovation, trust, and scale — unlocked through powerful collaborations</div> -->
-        <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-gray-700 text-base">
-          At Bridge Group Solutions, we believe that meaningful change happens when expertise is shared. 
-          That’s why we’ve joined forces with industry leaders who share our passion for excellence and innovation.
-           These partnerships don’t just enhance our services — they amplify the outcomes we deliver.
-        </p>
-      </div>
+    <section class="h-90 bg-[#D6F0FF] 200 py-16 px-4 sm:px-8 lg:px-20">
+        <div class="max-w-9xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+            <!-- Text Content -->
+            <div class="max-w-xl">
+                <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class="text-sky-600 font-medium text-lg mb-1 border-b-2 border-sky-400 inline-block">Partners</p>
+                <h2 data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class="text-3xl font-bold text-blue-900 mb-4">Stronger Together: Building the Future with Our
+                    Partners</h2>
+                <!-- <div>Innovation, trust, and scale — unlocked through powerful collaborations</div> -->
+                <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-gray-700 text-base">
+                    At Bridge Group Solutions, we believe that meaningful change happens when expertise is shared.
+                    That’s why we’ve joined forces with industry leaders who share our passion for excellence and
+                    innovation.
+                    These partnerships don’t just enhance our services — they amplify the outcomes we deliver.
+                </p>
+            </div>
 
-      <!-- Logos -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-12 items-center justify-items-center">
-        <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/1_logo.png"
-          alt="Aditya Birla Capital" class="h-12 object-contain">
-        <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/2_logo.png" alt="Big Bazaar"
-          class="h-12 object-contain">
-        <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/3_logo.png" alt="IndiaFirst"
-          class="h-12 object-contain">
-        <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/4_logo.png" alt="Max Life"
-          class="h-12 object-contain">
-        <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/5_logo.png" alt="Drishti"
-          class="h-12 object-contain">
-      </div>
-    </div>
-  </section>        
-   
-  
+            <!-- Logos -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-12 items-center justify-items-center">
+                <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/1_logo.png"
+                    alt="Aditya Birla Capital" class="h-12 object-contain">
+                <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/2_logo.png"
+                    alt="Big Bazaar" class="h-12 object-contain">
+                <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/3_logo.png"
+                    alt="IndiaFirst" class="h-12 object-contain">
+                <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/4_logo.png"
+                    alt="Max Life" class="h-12 object-contain">
+                <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/5_logo.png"
+                    alt="Drishti" class="h-12 object-contain">
+            </div>
+        </div>
+    </section>
+
+
 
 
 

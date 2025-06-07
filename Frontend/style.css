@@ -1,0 +1,336 @@
+/* index.html css */
+/* --------------------------------------------------------------------------------------------------
+  --------------------------------------------------------------------------------------------------- */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #1e3a8a;
+  /* Tailwind blue-800 */
+}
+
+.swiper-pagination-bullet-active {
+  background: #1e40af;
+}
+
+.site-container {
+  width: 100%;
+  /* max-width: 1400px; */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  /* text-align: center; */
+}
+
+@media (min-width: 768px) {
+  .site-container {
+    width: 96%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-container {
+    width: 95%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.gradient-blue-to-white {
+  background: linear-gradient(180deg, #d6f0ff 0%, #ffffff 100%);
+}
+
+.gradient-white-to-blue {
+  background: linear-gradient(180deg, #ffffff 0%, #d6f0ff 100%);
+}
+
+.section-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.section-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* connect us button */
+@keyframes bulgeInOut {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-bulge-in-out {
+  animation: bulgeInOut 2s ease-in-out infinite;
+}
+
+/* Hide scrollbar for slides */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------------------------------
+/* --------------------------------------------------------------------------------------------------
+
+
+
+/* partners page css */
+/* -----------------------------------------------------------------------------------------
+  --------------------------------------------------------------------------------------- */
+.bg-primary-gradient {
+  background: linear-gradient(to right, #2563eb, #1e40af);
+  /* Example gradient */
+}
+
+.transition-transform {
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-container {
+  transition: transform 0.5s ease-in-out;
+}
+
+.card-equal-height {
+  height: 100%;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.hero-image-container {
+  margin-top: -100px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .hero-image-container {
+    margin-top: -50px;
+  }
+}
+
+.testimonial-slide {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  pointer-events: none;
+}
+
+.testimonial-slide.active {
+  opacity: 1;
+  display: flex;
+  pointer-events: auto;
+}
+
+.testimonial-container {
+  position: relative;
+  min-height: 350px;
+  text-align: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .testimonial-container {
+    min-height: 600px;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.testimonial-thumbnail {
+  transition: all 0.3s ease;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.testimonial-thumbnail.active {
+  transform: scale(1.2);
+  opacity: 1;
+  border-color: #0056b3;
+}
+
+.testimonial-circle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.testimonial-divider {
+  width: 1px;
+  background-color: #333;
+  opacity: 0.2;
+  align-self: stretch;
+  margin: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .testimonial-divider {
+    display: none;
+  }
+
+  .testimonial-slide.active {
+    flex-direction: column;
+  }
+
+  .testimonial-circle {
+    justify-content: center;
+  }
+}
+
+/* Mobile navigation for carousel */
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 780px) {
+  .mobile-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .carousel-card {
+    width: 100%;
+  }
+}
+
+/* Gradient backgrounds */
+.bg-primary-gradient {
+  background: linear-gradient(to bottom, #d6f0ff, #ffffff);
+}
+
+/* Fix for carousel card heights */
+.carousel-card-wrapper {
+  height: 100%;
+}
+
+.site-container {
+  width: 100%;
+  /* max-width: 1400px; */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  /* text-align: center; */
+}
+
+@media (min-width: 768px) {
+  .site-container {
+    width: 96%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-container {
+    width: 95%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @keyframes bulgeInOut {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  .animate-bulge-in-out {
+    animation: bulgeInOut 1.5s ease-in-out infinite;
+  }
+}
+
+/* 
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+
+comming soon css
+
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------ */
+
+.custom-orange-btn {
+  background-color: #f47c20;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.custom-orange-btn:hover {
+  background-color: #d96500;
+}
+
+.custom-orange-outline-btn {
+  background: #fff;
+  color: #f47c20;
+  border: 2px solid #f47c20;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.custom-orange-outline-btn:hover {
+  background: #ffe5cc;
+  color: #d96500;
+  border-color: #d96500;
+}
+
+/* 
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------ */

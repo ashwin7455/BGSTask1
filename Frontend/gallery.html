@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="https://cdn.tailwindcss.com"></script>
-      <link rel="icon" type="image/png" href="./assets/logo.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="./assets/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta name="google-adsense-account" content="ca-pub-4467563478630338">
@@ -16,42 +17,44 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <title>Gallery</title>
 </head>
+
 <body>
 
     <style>
-    .site-container {
-      width: 100%;
-      /* max-width: 1400px; */
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-    }
+        .site-container {
+            width: 100%;
+            /* max-width: 1400px; */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
 
-    @media (min-width: 768px) {
-      .site-container {
-        width: 96%;
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-    }
+        @media (min-width: 768px) {
+            .site-container {
+                width: 96%;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
 
-    @media (min-width: 1024px) {
-      .site-container {
-        width: 95%;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-      /* .style{
+        @media (min-width: 1024px) {
+            .site-container {
+                width: 95%;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            /* .style{
         @media (min-width: 1024px) {
           position: absolute;
            right:10rem
         }
       } */
-    }
-  </style>
+        }
+    </style>
 
-      <!-- Navbar starts -->
+    <!-- Navbar starts -->
     <!-- Top Bar -->
     <div class="bg-[#1B9CE3] text-white text-sm">
         <div
@@ -59,12 +62,13 @@
             <div class="flex items-center space-x-4">
                 <span class="flex items-center space-x-1">
                     <i class="fa-solid fa-phone"></i>
-                    <a href="tel:+91556735515" class="hover:underline">+91 55-673-5515</a>
+                    <a href="tel:+91556735515" class="hover:underline">+91 1244376971</a>
                 </span>
 
                 <span class="flex items-center space-x-1">
                     <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto: contact@bridgegroupsolutions.com" class="hover:underline"> contact@bridgegroupsolutions.com</a>
+                    <a href="mailto: contact@bridgegroupsolutions.com" class="hover:underline">
+                        contact@bridgegroupsolutions.com</a>
                 </span>
 
             </div>
@@ -88,30 +92,30 @@
     </div>
 
     <!-- Navbar -->
-  <!-- Navbar -->
-       <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
         <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-8 justify-between">
 
             <!-- Logo -->
-                <div class="flex items-center">
-                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
-                    <a href="index.html" class="ml-2 sm:ml-3">
-                        <h1
-                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
-                            BRIDGE GROUP
-                        </h1>
-                        <p
-                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
-                            SOLUTIONS
-                        </p>
-                    </a>
-                </div>
+            <div class="flex items-center">
+                <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
+                <a href="index.html" class="ml-2 sm:ml-3">
+                    <h1
+                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
+                        BRIDGE GROUP
+                    </h1>
+                    <p
+                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
+                        SOLUTIONS
+                    </p>
+                </a>
+            </div>
 
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-cente  sm:space-x-2  lg:space-x-4 xl:space-x-6">
                 <!-- Dropdowns -->
 
-                  <div class="relative group p-3 hover:bg-[#1B9CE3] ">
+                <div class="relative group p-3 hover:bg-[#1B9CE3] ">
                     <a class="flex items-center space-x-1 text-black  focus:outline-none">
                         <span class="text-lg">Sales</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -188,7 +192,7 @@
             <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
 
 
-                  <div x-data="{ open: false }">
+                <div x-data="{ open: false }">
                     <button @click="open = !open"
                         class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
                         <span>Sales</span>
@@ -197,9 +201,8 @@
                     </button>
                     <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
                         <a href="b2b.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2B Sales</a>
-                        <a href="b2c.html"
-                            class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2C Sales</a>
-                       
+                        <a href="b2c.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2C Sales</a>
+
                     </div>
                 </div>
                 <!-- About -->
@@ -241,16 +244,16 @@
                         <span>Careers</span>
                         <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
                     </a>
-                
+
                 </div>
 
-                 <div x-data="{ open: false }">
+                <div x-data="{ open: false }">
                     <a @click="open = !open" href="partners.html"
                         class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
                         <span>Our Partners</span>
                         <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
                     </a>
-                
+
                 </div>
 
                 <!-- Contact -->
@@ -271,57 +274,58 @@
 
 
 
-<section class="text-center bg-white py-10 px-4 sm:px-6 lg:px-8 bg-gray-50">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00076A] font-Mulish mb-4">
-        OUR GALLERY
-    </h2>
-    <p class="text-sm sm:text-base md:text-lg text-gray-700 max-w-3xl mx-auto">
-        Explore our visual journey through moments that define who we are and what we do. From team events to major project milestones, our gallery showcases the essence of Bridge Group Solutions.
-    </p>
-</section>
+    <section class="text-center bg-white py-10 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#00076A] font-Mulish mb-4">
+            OUR GALLERY
+        </h2>
+        <p class="text-sm sm:text-base md:text-lg text-gray-700 max-w-3xl mx-auto">
+            Explore our visual journey through moments that define who we are and what we do. From team events to major
+            project milestones, our gallery showcases the essence of Bridge Group Solutions.
+        </p>
+    </section>
 
 
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pb-16">
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="assets/teambgs.jpg" alt="">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pb-16">
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="assets/10.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="assets/2.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="assets/9.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="assets/11.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="assets/4.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="assets/5.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="assets/6.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="assets/7.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="assets/3.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="assets/8.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="assets/1.jpg" alt="">
+        </div>
+        <div>
+            <img class="h-auto max-w-full rounded-lg" src="assets/12.jpg" alt="">
+        </div>
     </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="assets/teambgs.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="assets/teambgs.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="assets/teambgs.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="assets/teambgs.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="assets/teambgs.jpg"alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="assets/teambgs.jpg"alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="assets/teambgs.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="assets/teambgs.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="assets/teambgs.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="assets/teambgs.jpg" alt="">
-    </div>
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="assets/teambgs.jpg" alt="">
-    </div>
-</div>
 
 
-<!-- footer -->
+    <!-- footer -->
 
 
     <footer class="bg-[#D2F0FF] py-10">
@@ -644,6 +648,7 @@ compliance, or service delivery. We ensure that all data collection practices ar
         closeModalBtn.addEventListener('click', closeModal);
         backdrop.addEventListener('click', closeModal);
     </script>
-    
+
 </body>
+
 </html>

@@ -1,1608 +1,1146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BGS Career</title>
-    <link rel="icon" type="image/png" href="./assets/logo.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <meta name="google-adsense-account" content="ca-pub-4467563478630338">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4467563478630338"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <script src="https://kit.fontawesome.com/4a2e3e6c8b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    <!-- Tailwind CSS via CDN -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: {
-                DEFAULT: "",
-                light: "#E8F7FF",
-              },
-              secondary: "#00076A",
-              accent: "#e53935",
-              custom: {
-                lightblue: "#f0f5fa",
-                mintgreen: "#f0faf5",
-                peach: "#faf5f0",
-              },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BGS Career</title>
+  <link rel="icon" type="image/png" href="./assets/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="google-adsense-account" content="ca-pub-4467563478630338">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4467563478630338"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://kit.fontawesome.com/4a2e3e6c8b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <!-- Tailwind CSS via CDN -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: "",
+              light: "#E8F7FF",
             },
-            fontFamily: {
-              sans: ["Poppins", "sans-serif"],
+            secondary: "#00076A",
+            accent: "#e53935",
+            custom: {
+              lightblue: "#f0f5fa",
+              mintgreen: "#f0faf5",
+              peach: "#faf5f0",
             },
           },
+          fontFamily: {
+            sans: ["Poppins", "sans-serif"],
+          },
         },
-      };
-    </script>
-    <!-- Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        color: #333;
-      }
+      },
+    };
+  </script>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #333;
+    }
 
-      .carousel-container {
-        transition: transform 0.5s ease-in-out;
-      }
+    .carousel-container {
+      transition: transform 0.5s ease-in-out;
+    }
 
-      .card-equal-height {
-        height: 100%;
-        min-height: 320px;
-        display: flex;
-        flex-direction: column;
-      }
+    .card-equal-height {
+      height: 100%;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+    }
 
-      .card-content {
-        flex-grow: 1;
-      }
+    .card-content {
+      flex-grow: 1;
+    }
 
+    .hero-image-container {
+      margin-top: -100px;
+      position: relative;
+      z-index: 10;
+    }
+
+    @media (max-width: 768px) {
       .hero-image-container {
-        margin-top: -100px;
-        position: relative;
-        z-index: 10;
+        margin-top: -50px;
       }
+    }
 
-      @media (max-width: 768px) {
-        .hero-image-container {
-          margin-top: -50px;
-        }
+    .testimonial-slide {
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      pointer-events: none;
+    }
+
+    .testimonial-slide.active {
+      opacity: 1;
+      display: flex;
+      pointer-events: auto;
+    }
+
+    .testimonial-container {
+      position: relative;
+      min-height: 450px;
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-container {
+        min-height: 650px;
       }
+    }
 
-      .testimonial-slide {
-        opacity: 0;
-        transition: opacity 0.8s ease-in-out;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    .testimonial-thumbnail {
+      transition: all 0.3s ease;
+      opacity: 0.6;
+      cursor: pointer;
+    }
+
+    .testimonial-thumbnail.active {
+      transform: scale(1.2);
+      opacity: 1;
+      border-color: #0056b3;
+    }
+
+    .testimonial-circle {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-divider {
+      width: 1px;
+      background-color: #333;
+      opacity: 0.2;
+      align-self: stretch;
+      margin: 0 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-divider {
         display: none;
-        pointer-events: none;
       }
 
       .testimonial-slide.active {
-        opacity: 1;
-        display: flex;
-        pointer-events: auto;
-      }
-
-      .testimonial-container {
-        position: relative;
-        min-height: 450px;
-      }
-
-      @media (max-width: 768px) {
-        .testimonial-container {
-          min-height: 650px;
-        }
-      }
-
-      .testimonial-thumbnail {
-        transition: all 0.3s ease;
-        opacity: 0.6;
-        cursor: pointer;
-      }
-
-      .testimonial-thumbnail.active {
-        transform: scale(1.2);
-        opacity: 1;
-        border-color: #0056b3;
+        flex-direction: column;
       }
 
       .testimonial-circle {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        margin-top: 1.5rem;
-        flex-wrap: wrap;
+        justify-content: center;
       }
+    }
 
-      .testimonial-divider {
-        width: 1px;
-        background-color: #333;
-        opacity: 0.2;
-        align-self: stretch;
-        margin: 0 2rem;
-      }
+    /* Mobile navigation for carousel */
+    .mobile-nav {
+      display: none;
+    }
 
-      @media (max-width: 768px) {
-        .testimonial-divider {
-          display: none;
-        }
-
-        .testimonial-slide.active {
-          flex-direction: column;
-        }
-
-        .testimonial-circle {
-          justify-content: center;
-        }
-      }
-
-      /* Mobile navigation for carousel */
+    @media (max-width: 780px) {
       .mobile-nav {
-        display: none;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
       }
 
-      @media (max-width: 780px) {
-        .mobile-nav {
-          display: flex;
-          justify-content: center;
-          margin-top: 1rem;
-        }
-
-        .carousel-card {
-          width: 100%;
-        }
+      .carousel-card {
+        width: 100%;
       }
+    }
 
-      /* Gradient backgrounds */
-      .bg-primary-gradient {
-        background: linear-gradient(to bottom, #d6f0ff, #ffffff);
-      }
+    /* Gradient backgrounds */
+    .bg-primary-gradient {
+      background: linear-gradient(to bottom, #d6f0ff, #ffffff);
+    }
 
-      /* Fix for carousel card heights */
-      .carousel-card-wrapper {
-        height: 100%;
-      }
+    /* Fix for carousel card heights */
+    .carousel-card-wrapper {
+      height: 100%;
+    }
 
+    .site-container {
+      width: 98%;
+      /* max-width: 1400px; */
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    @media (min-width: 768px) {
       .site-container {
-        width: 98%;
-        /* max-width: 1400px; */
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        width: 96%;
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
+    }
 
-      @media (min-width: 768px) {
-        .site-container {
-          width: 96%;
-          padding-left: 1rem;
-          padding-right: 1rem;
-        }
+    @media (min-width: 1024px) {
+      .site-container {
+        width: 100%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
       }
+    }
+  </style>
+</head>
 
-      @media (min-width: 1024px) {
-        .site-container {
-          width: 100%;
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <main class="">
-       <!-- Navbar starts -->
+<body>
+  <main class="">
+    <!-- Navbar starts -->
     <!-- Top Bar -->
     <div class="bg-[#1B9CE3] text-white text-sm">
-        <div
-            class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm px-4 py-1 space-y-2 md:space-y-0">
-            <div class="flex items-center space-x-4">
-                <span class="flex items-center space-x-1">
-                    <i class="fa-solid fa-phone"></i>
-                    <a href="tel:+91556735515" class="hover:underline">+91 55-673-5515</a>
-                </span>
+      <div
+        class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm px-4 py-1 space-y-2 md:space-y-0">
+        <div class="flex items-center space-x-4">
+          <span class="flex items-center space-x-1">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+91556735515" class="hover:underline">+91 1244376971</a>
+          </span>
 
-                <span class="flex items-center space-x-1">
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto: contact@bridgegroupsolutions.com" class="hover:underline"> contact@bridgegroupsolutions.com</a>
-                </span>
-
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="text-white p-2 hover:text-black hover:-translate-y-1 transition transform">
-                    <i class="fa-brands fa-twitter"></i>
-                </a>
-
-                <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-            </div>
+          <span class="flex items-center space-x-1">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto: contact@bridgegroupsolutions.com" class="hover:underline">
+              contact@bridgegroupsolutions.com</a>
+          </span>
 
         </div>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="text-white p-2 hover:text-black hover:-translate-y-1 transition transform">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+
+          <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+
+      </div>
     </div>
 
     <!-- Navbar -->
-    
-    
-      <!-- Navbar -->
-        <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
-        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-8 justify-between">
-
-            <!-- Logo -->
-                <div class="flex items-center">
-                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
-                    <a href="index.html" class="ml-2 sm:ml-3">
-                        <h1
-                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
-                            BRIDGE GROUP
-                        </h1>
-                        <p
-                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
-                            SOLUTIONS
-                        </p>
-                    </a>
-                </div>
-
-            <!-- Desktop Nav -->
-            <div class="hidden md:flex items-cente  sm:space-x-2  lg:space-x-4 xl:space-x-6">
-                <!-- Dropdowns -->
-
-                  <div class="relative group p-3 hover:bg-[#1B9CE3] ">
-                    <a class="flex items-center space-x-1 text-black  focus:outline-none">
-                        <span class="text-lg">Sales</span>
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </a>
-                    <div
-                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                        <a href="b2b.html" class="block px-4 py-2 hover:bg-gray-100">B2B Sales</a>
-                        <a href="b2c.html" class="block px-4 py-2 hover:bg-gray-100">B2C Sales</a>
-                    </div>
-                </div>
-
-                <div class="relative group p-3 hover:bg-[#1B9CE3] ">
-                    <a class="flex items-center space-x-1 text-black  focus:outline-none">
-                        <span class="text-lg">Company</span>
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </a>
-                    <div
-                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                        <a href="about.html" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
-                        <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
-                        <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
-                    </div>
-                </div>
-
-                <div class="relative group p-3 hover:bg-[#1B9CE3]">
-                    <a class="flex items-center space-x-1 text-black  focus:outline-none">
-                        <span class="text-lg">Services</span>
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </a>
-                    <div
-                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                        <a href="comingSoon.html" class="block px-4 py-2 hover:bg-gray-100">CRM</a>
-                        <a href="services.html" class="block px-4 py-2 hover:bg-gray-100">All Services</a>
-                    </div>
-                </div>
-
-                <div class="relative group p-3 hover:bg-[#1B9CE3]">
-                    <a href="carrerPage.html" class="flex items-center space-x-1 text-black  focus:outline-none">
-                        <span class="text-lg">Careers</span>
-                        <!-- <i class="fa-solid fa-chevron-down text-xs"></i> -->
-                    </a>
-                </div>
-
-                <div class="relative group p-3 hover:bg-[#1B9CE3]">
-                    <a href="partners.html" class="flex items-center space-x-1 text-black  focus:outline-none">
-                        <span class="text-lg">Our Partners</span>
-                        <!-- <i class="fa-solid fa-chevron-down text-xs"></i> -->
-                    </a>
-                </div>
-
-                <!-- Contact -->
-                <div class="flex justify-start items-center px-2 ">
-                    <button
-                        class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-2 rounded flex items-center hover:bg-blue-50 text-sm">
-                        LOGIN
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Hamburger (mobile only) -->
-            <div class="md:hidden">
-                <button @click="mobileMenu = !mobileMenu" class="text-gray-700 focus:outline-none">
-                    <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="md:hidden" x-show="mobileMenu" x-transition>
-            <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
 
 
-                  <div x-data="{ open: false }">
-                    <button @click="open = !open"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
-                        <span>Sales</span>
-                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
-                            class="fa-solid text-sm transition-transform"></i>
-                    </button>
-                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="b2b.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2B Sales</a>
-                        <a href="b2c.html"
-                            class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2C Sales</a>
-                       
-                    </div>
-                </div>
-                <!-- About -->
-                <div x-data="{ open: false }">
-                    <button @click="open = !open"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
-                        <span>Company</span>
-                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
-                            class="fa-solid text-sm transition-transform"></i>
-                    </button>
-                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="about.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">About Us</a>
-                        <a href="gallery.html"
-                            class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Gallery</a>
-                        <a href="contact.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Contact
-                            Us</a>
-                    </div>
-                </div>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
+      <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-8 justify-between">
 
-                <!-- Services -->
-                <div x-data="{ open: false }">
-                    <button @click="open = !open"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
-                        <span>Services</span>
-                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
-                            class="fa-solid text-sm transition-transform"></i>
-                    </button>
-                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="comingSoon.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">CRM</a>
-                        <a href="services.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">All
-                            Services</a>
-                    </div>
-                </div>
-
-                <!-- Careers -->
-                <div x-data="{ open: false }">
-                    <a @click="open = !open" href="carrerPage.html"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
-                        <span>Careers</span>
-                        <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
-                    </a>
-                
-                </div>
-
-                 <div x-data="{ open: false }">
-                    <a @click="open = !open" href="partners.html"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
-                        <span>Our Partners</span>
-                        <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
-                    </a>
-                
-                </div>
-
-                <!-- Contact -->
-                <div class="flex justify-start items-center space-x-4 px-2 pt-2 border-t">
-                    <button
-                        class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-1 rounded flex items-center hover:bg-blue-50 text-sm">
-                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                        LOGIN
-                    </button>
-                </div>
-            </div>
-        </div>
-
-    </nav>
-
-      <!-- Hero Section -->
-      <section
-        class="bg-primary-gradient text-secondary py-16 pb-32 md:py-24 md:pb-48 relative"
-      >
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="800"
-          data-aos-delay="200"
-          class="container mx-auto px-4 text-center"
-        >
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
-            Accelerate Your Career <br />
-            Empower the Future
-          </h1>
-          <div
-            data-aos="zoom-in"
-            data-aos-duration="800"
-            data-aos-delay="200"
-            class="w-12 h-1 bg-[#EC7620] mx-auto mb-6"
-          ></div>
-          <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10">
-            At Bridge Group Solutions, we’re not just building careers — we’re
-            cultivating future leaders. Our dynamic, collaborative environment
-            empowers passionate professionals to innovate, challenge
-            conventions, and drive meaningful impact on a global scale. Join us
-            and shape what’s next.
-          </p>
-          <a
-            href="career.html"
-            class="inline-flex items-center bg-[#EC7620] hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-md transition-colors"
-          >
-            FIND A JOB
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="ml-2 h-5 w-5"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
+          <a href="index.html" class="ml-2 sm:ml-3">
+            <h1
+              class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
+              BRIDGE GROUP
+            </h1>
+            <p
+              class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
+              SOLUTIONS
+            </p>
           </a>
         </div>
-      </section>
 
-      <!-- Hero Image (overlapping with section above) -->
-      <div class="container mx-auto px-4 hero-image-container">
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="800"
-          data-aos-delay="200"
-          class="max-w-7xl mx-auto rounded-lg overflow-hidden shadow-xl"
-        >
-          <img
-            src="./assets/carrer666.jpg"
-            alt="Business professionals discussing partnership opportunities at a BGS event"
-            class="max-w-full"
-          />
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-cente  sm:space-x-2  lg:space-x-4 xl:space-x-6">
+          <!-- Dropdowns -->
+
+          <div class="relative group p-3 hover:bg-[#1B9CE3] ">
+            <a class="flex items-center space-x-1 text-black  focus:outline-none">
+              <span class="text-lg">Sales</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </a>
+            <div
+              class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+              <a href="b2b.html" class="block px-4 py-2 hover:bg-gray-100">B2B Sales</a>
+              <a href="b2c.html" class="block px-4 py-2 hover:bg-gray-100">B2C Sales</a>
+            </div>
+          </div>
+
+          <div class="relative group p-3 hover:bg-[#1B9CE3] ">
+            <a class="flex items-center space-x-1 text-black  focus:outline-none">
+              <span class="text-lg">Company</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </a>
+            <div
+              class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+              <a href="about.html" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+              <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
+              <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
+            </div>
+          </div>
+
+          <div class="relative group p-3 hover:bg-[#1B9CE3]">
+            <a class="flex items-center space-x-1 text-black  focus:outline-none">
+              <span class="text-lg">Services</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </a>
+            <div
+              class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+              <a href="comingSoon.html" class="block px-4 py-2 hover:bg-gray-100">CRM</a>
+              <a href="services.html" class="block px-4 py-2 hover:bg-gray-100">All Services</a>
+            </div>
+          </div>
+
+          <div class="relative group p-3 hover:bg-[#1B9CE3]">
+            <a href="carrerPage.html" class="flex items-center space-x-1 text-black  focus:outline-none">
+              <span class="text-lg">Careers</span>
+              <!-- <i class="fa-solid fa-chevron-down text-xs"></i> -->
+            </a>
+          </div>
+
+          <div class="relative group p-3 hover:bg-[#1B9CE3]">
+            <a href="partners.html" class="flex items-center space-x-1 text-black  focus:outline-none">
+              <span class="text-lg">Our Partners</span>
+              <!-- <i class="fa-solid fa-chevron-down text-xs"></i> -->
+            </a>
+          </div>
+
+          <!-- Contact -->
+          <div class="flex justify-start items-center px-2 ">
+            <button
+              class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-2 rounded flex items-center hover:bg-blue-50 text-sm">
+              LOGIN
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Hamburger (mobile only) -->
+        <div class="md:hidden">
+          <button @click="mobileMenu = !mobileMenu" class="text-gray-700 focus:outline-none">
+            <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
+          </button>
         </div>
       </div>
 
-      <!-- Benefits Section -->
-      <section class="py-16 md:py-24 mt-16">
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="800"
-          data-aos-delay="200"
-          class="container mx-auto px-4 text-center"
-        >
-          <h2 class="text-3xl md:text-5xl font-bold mb-6 text-[#00076A]">
-            Benefits of working<br />with a BGS Partner
-          </h2>
-          <div class="w-12 h-1 bg-accent mx-auto mb-16"></div>
+      <!-- Mobile Menu -->
+      <div class="md:hidden" x-show="mobileMenu" x-transition>
+        <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
 
-          <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <!-- Benefit 1 -->
-            <div class="flex flex-col md:flex-row items-start text-left gap-4">
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-                class="flex-shrink-0 bg-yellow-50 p-3 rounded-full"
-              >
-                <img
-                  src="./assets/11.jpg.png"
-                  alt="Domain expertise icon"
-                  width="50"
-                  height="50"
-                />
-              </div>
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-              >
-                <h3 class="text-2xl font-bold mb-3 text-secondary">
-                  Domain expertise and guidance
-                </h3>
-                <p
-                  data-aos="zoom-in"
-                  data-aos-duration="800"
-                  data-aos-delay="200"
-                  class="text-gray-700"
-                >
-                  Since 2014, Bridge Group Solutions has been a trusted partner
-                  in project outsourcing, delivering value-driven solutions
-                  across finance, technology, and talent management. Our
-                  seasoned experts combine industry insight, standardized
-                  methodologies, and data-led research to provide tailored,
-                  high-impact outcomes. Committed to operational excellence and
-                  client success, we empower organizations to navigate industry
-                  complexities with confidence.
-                </p>
-              </div>
+
+          <div x-data="{ open: false }">
+            <button @click="open = !open"
+              class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+              <span>Sales</span>
+              <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i>
+            </button>
+            <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+              <a href="b2b.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2B Sales</a>
+              <a href="b2c.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2C Sales</a>
+
             </div>
-
-            <!-- Benefit 2 -->
-            <div class="flex flex-col md:flex-row items-start text-left gap-4">
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-                class="flex-shrink-0 bg-teal-50 p-3 rounded-full"
-              >
-                <img
-                  src="./assets/12.jpg.png"
-                  alt="Customized solutions icon"
-                  width="50"
-                  height="50"
-                />
-              </div>
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-              >
-                <h3 class="text-2xl font-bold mb-3 text-secondary">
-                  Customized solutions
-                </h3>
-                <p class="text-gray-700">
-                  At Bridge Group Solutions, we prioritize a client-centric
-                  approach, delivering bespoke solutions tailored to each
-                  organization’s operational and strategic objectives. From
-                  custom ERP and CRM applications to agile financial planning
-                  frameworks, our offerings are designed for relevance,
-                  scalability, and lasting business value. Every engagement is
-                  built on a deep understanding of the client’s environment,
-                  ensuring solutions are precisely aligned with their goals and
-                  future growth ambitions.
-                </p>
-              </div>
+          </div>
+          <!-- About -->
+          <div x-data="{ open: false }">
+            <button @click="open = !open"
+              class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+              <span>Company</span>
+              <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i>
+            </button>
+            <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+              <a href="about.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">About Us</a>
+              <a href="gallery.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Gallery</a>
+              <a href="contact.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Contact
+                Us</a>
             </div>
+          </div>
 
-            <!-- Benefit 3 -->
-            <div class="flex flex-col md:flex-row items-start text-left gap-4">
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-                class="flex-shrink-0 bg-red-50 p-3 rounded-full"
-              >
-                <img
-                  src="./assets/13.jpg.png"
-                  alt="Rapid implementation icon"
-                  width="50"
-                  height="50"
-                />
-              </div>
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-              >
-                <h3 class="text-2xl font-bold mb-3 text-secondary">
-                  Rapid implementation
-                </h3>
-                <p class="text-gray-700">
-                  Recognizing the critical need for agility in today’s dynamic
-                  business landscape, Bridge Group Solutions ensures accelerated
-                  service delivery through optimized processes and dedicated
-                  expert teams. Our commitment to rapid implementation empowers
-                  clients to swiftly capitalize on their investments, drive
-                  operational efficiency, and sustain a competitive advantage in
-                  evolving markets.
-                </p>
-              </div>
+          <!-- Services -->
+          <div x-data="{ open: false }">
+            <button @click="open = !open"
+              class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+              <span>Services</span>
+              <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i>
+            </button>
+            <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+              <a href="comingSoon.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">CRM</a>
+              <a href="services.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">All
+                Services</a>
             </div>
+          </div>
 
-            <!-- Benefit 4 -->
-            <div class="flex flex-col md:flex-row items-start text-left gap-4">
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-                class="flex-shrink-0 bg-yellow-50 p-3 rounded-full"
-              >
-                <img
-                  src="./assets/14.jpg.png"
-                  alt="Increased productivity icon"
-                  width="50"
-                  height="50"
-                />
-              </div>
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-              >
-                <h3 class="text-2xl font-bold mb-3 text-secondary">
-                  Increased productivity
-                </h3>
-                <p class="text-gray-700">
-                  Bridge Group Solutions empowers organizations to drive
-                  operational excellence by integrating advanced technologies
-                  with process optimization. Our intelligent ERP solutions
-                  streamline workflows, automate routine operations, and
-                  minimize manual errors, delivering real-time insights that
-                  enable faster, data-driven decision-making and measurable
-                  productivity gains across the enterprise.
-                </p>
-              </div>
+          <!-- Careers -->
+          <div x-data="{ open: false }">
+            <a @click="open = !open" href="carrerPage.html"
+              class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+              <span>Careers</span>
+              <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
+            </a>
+
+          </div>
+
+          <div x-data="{ open: false }">
+            <a @click="open = !open" href="partners.html"
+              class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+              <span>Our Partners</span>
+              <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
+            </a>
+
+          </div>
+
+          <!-- Contact -->
+          <div class="flex justify-start items-center space-x-4 px-2 pt-2 border-t">
+            <button
+              class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-1 rounded flex items-center hover:bg-blue-50 text-sm">
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+              LOGIN
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-primary-gradient text-secondary py-16 pb-32 md:py-24 md:pb-48 relative">
+      <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          Accelerate Your Career <br />
+          Empower the Future
+        </h1>
+        <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="w-12 h-1 bg-[#EC7620] mx-auto mb-6">
+        </div>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto mb-10">
+          At Bridge Group Solutions, we’re not just building careers — we’re
+          cultivating future leaders. Our dynamic, collaborative environment
+          empowers passionate professionals to innovate, challenge
+          conventions, and drive meaningful impact on a global scale. Join us
+          and shape what’s next.
+        </p>
+        <a href="career.html"
+          class="inline-flex items-center bg-[#EC7620] hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-md transition-colors">
+          FIND A JOB
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Hero Image (overlapping with section above) -->
+    <div class="container mx-auto px-4 hero-image-container">
+      <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+        class="max-w-7xl mx-auto rounded-lg overflow-hidden shadow-xl">
+        <img src="./assets/carrer666.jpg"
+          alt="Business professionals discussing partnership opportunities at a BGS event" class="max-w-full" />
+      </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <section class="py-16 md:py-24 mt-16">
+      <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-[#00076A]">
+          Benefits of working<br />with a BGS Partner
+        </h2>
+        <div class="w-12 h-1 bg-accent mx-auto mb-16"></div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <!-- Benefit 1 -->
+          <div class="flex flex-col md:flex-row items-start text-left gap-4">
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+              class="flex-shrink-0 bg-yellow-50 p-3 rounded-full">
+              <img src="./assets/11.jpg.png" alt="Domain expertise icon" width="50" height="50" />
             </div>
-
-            <!-- Benefit 5 -->
-            <div class="flex flex-col md:flex-row items-start text-left gap-4">
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-                class="flex-shrink-0 bg-primary-gradient p-3 rounded-full"
-              >
-                <img
-                  src="./assets/15.jpg.png"
-                  alt="Training and support icon"
-                  width="50"
-                  height="50"
-                />
-              </div>
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-              >
-                <h3 class="text-2xl font-bold mb-3 text-secondary">
-                  Training and Continued Support
-                </h3>
-                <p class="text-gray-700">
-                  At Bridge Group Solutions, we prioritize long-term client
-                  success by delivering comprehensive training and continuous
-                  support services. Our dedicated enablement programs ensure
-                  seamless adoption of new systems, equipping client teams with
-                  the skills and resources needed to maximize solution value and
-                  sustain peak operational performance in an evolving business
-                  landscape.
-                </p>
-              </div>
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+              <h3 class="text-2xl font-bold mb-3 text-secondary">
+                Domain expertise and guidance
+              </h3>
+              <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-gray-700">
+                Since 2014, Bridge Group Solutions has been a trusted partner
+                in project outsourcing, delivering value-driven solutions
+                across finance, technology, and talent management. Our
+                seasoned experts combine industry insight, standardized
+                methodologies, and data-led research to provide tailored,
+                high-impact outcomes. Committed to operational excellence and
+                client success, we empower organizations to navigate industry
+                complexities with confidence.
+              </p>
             </div>
+          </div>
 
-            <!-- Benefit 6 -->
-            <div class="flex flex-col md:flex-row items-start text-left gap-4">
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-                class="flex-shrink-0 bg-purple-50 p-3 rounded-full"
-              >
-                <img
-                  src="./assets/16.jpg.png"
-                  alt="Scalability icon"
-                  width="50"
-                  height="50"
-                />
-              </div>
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-              >
-                <h3 class="text-2xl font-bold mb-3 text-secondary">
-                  Scalability and adaptability
-                </h3>
-                <p class="text-gray-700">
-                  At Bridge Group Solutions, we engineer solutions with
-                  scalability and future-readiness at their core. Our adaptable
-                  frameworks are designed to evolve alongside your business,
-                  seamlessly supporting expansion, operational shifts, and
-                  emerging market demands. This strategic flexibility ensures
-                  sustained performance, operational resilience, and long-term
-                  business value without disruptive overhauls.
-                </p>
-              </div>
+          <!-- Benefit 2 -->
+          <div class="flex flex-col md:flex-row items-start text-left gap-4">
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+              class="flex-shrink-0 bg-teal-50 p-3 rounded-full">
+              <img src="./assets/12.jpg.png" alt="Customized solutions icon" width="50" height="50" />
+            </div>
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+              <h3 class="text-2xl font-bold mb-3 text-secondary">
+                Customized solutions
+              </h3>
+              <p class="text-gray-700">
+                At Bridge Group Solutions, we prioritize a client-centric
+                approach, delivering bespoke solutions tailored to each
+                organization’s operational and strategic objectives. From
+                custom ERP and CRM applications to agile financial planning
+                frameworks, our offerings are designed for relevance,
+                scalability, and lasting business value. Every engagement is
+                built on a deep understanding of the client’s environment,
+                ensuring solutions are precisely aligned with their goals and
+                future growth ambitions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div class="flex flex-col md:flex-row items-start text-left gap-4">
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+              class="flex-shrink-0 bg-red-50 p-3 rounded-full">
+              <img src="./assets/13.jpg.png" alt="Rapid implementation icon" width="50" height="50" />
+            </div>
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+              <h3 class="text-2xl font-bold mb-3 text-secondary">
+                Rapid implementation
+              </h3>
+              <p class="text-gray-700">
+                Recognizing the critical need for agility in today’s dynamic
+                business landscape, Bridge Group Solutions ensures accelerated
+                service delivery through optimized processes and dedicated
+                expert teams. Our commitment to rapid implementation empowers
+                clients to swiftly capitalize on their investments, drive
+                operational efficiency, and sustain a competitive advantage in
+                evolving markets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div class="flex flex-col md:flex-row items-start text-left gap-4">
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+              class="flex-shrink-0 bg-yellow-50 p-3 rounded-full">
+              <img src="./assets/14.jpg.png" alt="Increased productivity icon" width="50" height="50" />
+            </div>
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+              <h3 class="text-2xl font-bold mb-3 text-secondary">
+                Increased productivity
+              </h3>
+              <p class="text-gray-700">
+                Bridge Group Solutions empowers organizations to drive
+                operational excellence by integrating advanced technologies
+                with process optimization. Our intelligent ERP solutions
+                streamline workflows, automate routine operations, and
+                minimize manual errors, delivering real-time insights that
+                enable faster, data-driven decision-making and measurable
+                productivity gains across the enterprise.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit 5 -->
+          <div class="flex flex-col md:flex-row items-start text-left gap-4">
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+              class="flex-shrink-0 bg-primary-gradient p-3 rounded-full">
+              <img src="./assets/15.jpg.png" alt="Training and support icon" width="50" height="50" />
+            </div>
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+              <h3 class="text-2xl font-bold mb-3 text-secondary">
+                Training and Continued Support
+              </h3>
+              <p class="text-gray-700">
+                At Bridge Group Solutions, we prioritize long-term client
+                success by delivering comprehensive training and continuous
+                support services. Our dedicated enablement programs ensure
+                seamless adoption of new systems, equipping client teams with
+                the skills and resources needed to maximize solution value and
+                sustain peak operational performance in an evolving business
+                landscape.
+              </p>
+            </div>
+          </div>
+
+          <!-- Benefit 6 -->
+          <div class="flex flex-col md:flex-row items-start text-left gap-4">
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+              class="flex-shrink-0 bg-purple-50 p-3 rounded-full">
+              <img src="./assets/16.jpg.png" alt="Scalability icon" width="50" height="50" />
+            </div>
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+              <h3 class="text-2xl font-bold mb-3 text-secondary">
+                Scalability and adaptability
+              </h3>
+              <p class="text-gray-700">
+                At Bridge Group Solutions, we engineer solutions with
+                scalability and future-readiness at their core. Our adaptable
+                frameworks are designed to evolve alongside your business,
+                seamlessly supporting expansion, operational shifts, and
+                emerging market demands. This strategic flexibility ensures
+                sustained performance, operational resilience, and long-term
+                business value without disruptive overhauls.
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- How to Work Section -->
-      <section
-        class="bg-primary-gradient text-secondary py-16 md:py-24 relative"
-      >
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="800"
-          data-aos-delay="200"
-          class="container mx-auto px-4 text-center"
-        >
-          <h2 class="text-3xl md:text-5xl font-bold mb-6">
-            How to work<br />with a BGS Partner
-          </h2>
-          <div class="w-12 h-1 bg-secondary mx-auto mb-16"></div>
+    <!-- How to Work Section -->
+    <section class="bg-primary-gradient text-secondary py-16 md:py-24 relative">
+      <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          How to work<br />with a BGS Partner
+        </h2>
+        <div class="w-12 h-1 bg-secondary mx-auto mb-16"></div>
 
-          <div class="max-w-6xl mx-auto relative">
-            <!-- Carousel container -->
-            <div class="overflow-hidden">
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="800"
-                data-aos-delay="200"
-                id="carousel-container"
-                class="flex carousel-container"
-                style="transform: translateX(0%)"
-              >
-                <!-- Step 1 -->
+        <div class="max-w-6xl mx-auto relative">
+          <!-- Carousel container -->
+          <div class="overflow-hidden">
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" id="carousel-container"
+              class="flex carousel-container" style="transform: translateX(0%)">
+              <!-- Step 1 -->
+              <div class="carousel-card w-full md:w-1/3 flex-shrink-0 px-3 mb-6 md:mb-0">
                 <div
-                  class="carousel-card w-full md:w-1/3 flex-shrink-0 px-3 mb-6 md:mb-0"
-                >
-                  <div
-                    class="carousel-card-wrapper bg-custom-lightblue p-6 md:p-8 rounded-lg text-left card-equal-height border-4 border-white shadow-xl"
-                  >
-                    <div class="text-accent font-semibold mb-2">STEP 01</div>
-                    <h3
-                      class="text-xl md:text-2xl font-bold mb-4 text-secondary"
-                    >
-                      Discover Top Talent
-                    </h3>
-                    <div class="card-content">
-                      <p class="text-gray-700 text-base md:text-lg">
-                        Explore the Bridge Group Solutions Partner Network and
-                        connect with certified industry specialists. Access
-                        detailed partner profiles, verified credentials, success
-                        stories, and client testimonials — empowering you to
-                        select trusted expertise tailored to your business
-                        objectives.
-                      </p>
-                    </div>
+                  class="carousel-card-wrapper bg-custom-lightblue p-6 md:p-8 rounded-lg text-left card-equal-height border-4 border-white shadow-xl">
+                  <div class="text-accent font-semibold mb-2">STEP 01</div>
+                  <h3 class="text-xl md:text-2xl font-bold mb-4 text-secondary">
+                    Discover Top Talent
+                  </h3>
+                  <div class="card-content">
+                    <p class="text-gray-700 text-base md:text-lg">
+                      Explore the Bridge Group Solutions Partner Network and
+                      connect with certified industry specialists. Access
+                      detailed partner profiles, verified credentials, success
+                      stories, and client testimonials — empowering you to
+                      select trusted expertise tailored to your business
+                      objectives.
+                    </p>
                   </div>
                 </div>
+              </div>
 
-                <!-- Step 2 -->
+              <!-- Step 2 -->
+              <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                class="carousel-card w-full md:w-1/3 flex-shrink-0 px-3 mb-6 md:mb-0">
                 <div
-                  data-aos="zoom-in"
-                  data-aos-duration="800"
-                  data-aos-delay="200"
-                  class="carousel-card w-full md:w-1/3 flex-shrink-0 px-3 mb-6 md:mb-0"
-                >
-                  <div
-                    class="carousel-card-wrapper bg-custom-mintgreen p-6 md:p-8 rounded-lg text-left card-equal-height border-4 border-white shadow-xl"
-                  >
-                    <div class="text-accent font-semibold mb-2">STEP 02</div>
-                    <h3
-                      class="text-xl md:text-2xl font-bold mb-4 text-secondary"
-                    >
-                      Connect & Consult
-                    </h3>
-                    <div class="card-content">
-                      <p class="text-gray-700 text-base md:text-lg">
-                        Connect with us directly to share your vision, business
-                        objectives, and operational challenges. From the initial
-                        conversation, receive actionable guidance and tailored
-                        recommendations aligned with your goals.
-                      </p>
-                    </div>
+                  class="carousel-card-wrapper bg-custom-mintgreen p-6 md:p-8 rounded-lg text-left card-equal-height border-4 border-white shadow-xl">
+                  <div class="text-accent font-semibold mb-2">STEP 02</div>
+                  <h3 class="text-xl md:text-2xl font-bold mb-4 text-secondary">
+                    Connect & Consult
+                  </h3>
+                  <div class="card-content">
+                    <p class="text-gray-700 text-base md:text-lg">
+                      Connect with us directly to share your vision, business
+                      objectives, and operational challenges. From the initial
+                      conversation, receive actionable guidance and tailored
+                      recommendations aligned with your goals.
+                    </p>
                   </div>
                 </div>
+              </div>
 
-                <!-- Step 3 -->
+              <!-- Step 3 -->
+              <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                class="carousel-card w-full md:w-1/3 flex-shrink-0 px-3 mb-6 md:mb-0">
                 <div
-                  data-aos="zoom-in"
-                  data-aos-duration="800"
-                  data-aos-delay="200"
-                  class="carousel-card w-full md:w-1/3 flex-shrink-0 px-3 mb-6 md:mb-0"
-                >
-                  <div
-                    class="carousel-card-wrapper bg-custom-peach p-6 md:p-8 rounded-lg text-left card-equal-height border-4 border-white shadow-xl"
-                  >
-                    <div class="text-accent font-semibold mb-2">STEP 03</div>
-                    <h3
-                      class="text-xl md:text-2xl font-bold mb-4 text-secondary"
-                    >
-                      Evaluate Proposals
-                    </h3>
-                    <div class="card-content">
-                      <p class="text-gray-700 text-base md:text-lg">
-                        Evaluate solution frameworks, delivery timelines,
-                        technology stacks, and strategic alignment. Select the
-                        partner that delivers clarity, confidence, and
-                        measurable value to your business.
-                      </p>
-                    </div>
+                  class="carousel-card-wrapper bg-custom-peach p-6 md:p-8 rounded-lg text-left card-equal-height border-4 border-white shadow-xl">
+                  <div class="text-accent font-semibold mb-2">STEP 03</div>
+                  <h3 class="text-xl md:text-2xl font-bold mb-4 text-secondary">
+                    Evaluate Proposals
+                  </h3>
+                  <div class="card-content">
+                    <p class="text-gray-700 text-base md:text-lg">
+                      Evaluate solution frameworks, delivery timelines,
+                      technology stacks, and strategic alignment. Select the
+                      partner that delivers clarity, confidence, and
+                      measurable value to your business.
+                    </p>
                   </div>
                 </div>
+              </div>
 
-                <!-- Step 4 -->
+              <!-- Step 4 -->
+              <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                class="carousel-card w-full md:w-1/3 flex-shrink-0 px-3 mb-6 md:mb-0">
                 <div
-                  data-aos="zoom-in"
-                  data-aos-duration="800"
-                  data-aos-delay="200"
-                  class="carousel-card w-full md:w-1/3 flex-shrink-0 px-3 mb-6 md:mb-0"
-                >
-                  <div
-                    class="carousel-card-wrapper bg-custom-lightblue p-6 md:p-8 rounded-lg text-left card-equal-height border-4 border-white shadow-xl"
-                  >
-                    <div class="text-accent font-semibold mb-2">STEP 04</div>
-                    <h3
-                      class="text-xl md:text-2xl font-bold mb-4 text-secondary"
-                    >
-                      Align Expectations
-                    </h3>
-                    <div class="card-content">
-                      <p class="text-gray-700 text-base md:text-lg">
-                        Establish clear objectives, finalize deliverables, and
-                        define success metrics upfront to ensure complete
-                        alignment and eliminate surprises.
-                      </p>
-                    </div>
+                  class="carousel-card-wrapper bg-custom-lightblue p-6 md:p-8 rounded-lg text-left card-equal-height border-4 border-white shadow-xl">
+                  <div class="text-accent font-semibold mb-2">STEP 04</div>
+                  <h3 class="text-xl md:text-2xl font-bold mb-4 text-secondary">
+                    Align Expectations
+                  </h3>
+                  <div class="card-content">
+                    <p class="text-gray-700 text-base md:text-lg">
+                      Establish clear objectives, finalize deliverables, and
+                      define success metrics upfront to ensure complete
+                      alignment and eliminate surprises.
+                    </p>
                   </div>
                 </div>
+              </div>
 
-                <!-- Step 5 -->
+              <!-- Step 5 -->
+              <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                class="carousel-card w-full md:w-1/3 flex-shrink-0 px-3 mb-6 md:mb-0">
                 <div
-                  data-aos="zoom-in"
-                  data-aos-duration="800"
-                  data-aos-delay="200"
-                  class="carousel-card w-full md:w-1/3 flex-shrink-0 px-3 mb-6 md:mb-0"
-                >
-                  <div
-                    class="carousel-card-wrapper bg-custom-mintgreen p-6 md:p-8 rounded-lg text-left card-equal-height border-4 border-white shadow-xl"
-                  >
-                    <div class="text-accent font-semibold mb-2">STEP 05</div>
-                    <h3
-                      class="text-xl md:text-2xl font-bold mb-4 text-secondary"
-                    >
-                      Sign & Secure the Engagement
-                    </h3>
-                    <div class="card-content">
-                      <p class="text-gray-700 text-base md:text-lg">
-                        Finalize your partnership with a clear, transparent
-                        agreement that aligns objectives and expectations. This
-                        mutual commitment transforms your growth into our shared
-                        mission, laying the foundation for a trusted and
-                        enduring collaboration.
-                      </p>
-                    </div>
+                  class="carousel-card-wrapper bg-custom-mintgreen p-6 md:p-8 rounded-lg text-left card-equal-height border-4 border-white shadow-xl">
+                  <div class="text-accent font-semibold mb-2">STEP 05</div>
+                  <h3 class="text-xl md:text-2xl font-bold mb-4 text-secondary">
+                    Sign & Secure the Engagement
+                  </h3>
+                  <div class="card-content">
+                    <p class="text-gray-700 text-base md:text-lg">
+                      Finalize your partnership with a clear, transparent
+                      agreement that aligns objectives and expectations. This
+                      mutual commitment transforms your growth into our shared
+                      mission, laying the foundation for a trusted and
+                      enduring collaboration.
+                    </p>
                   </div>
                 </div>
+              </div>
 
-                <!-- Step 6 -->
+              <!-- Step 6 -->
+              <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                class="carousel-card w-full md:w-1/3 flex-shrink-0 px-3 mb-6 md:mb-0">
                 <div
-                  data-aos="zoom-in"
-                  data-aos-duration="800"
-                  data-aos-delay="200"
-                  class="carousel-card w-full md:w-1/3 flex-shrink-0 px-3 mb-6 md:mb-0"
-                >
-                  <div
-                    class="carousel-card-wrapper bg-custom-peach p-6 md:p-8 rounded-lg text-left card-equal-height border-4 border-white shadow-xl"
-                  >
-                    <div class="text-accent font-semibold mb-2">STEP 06</div>
-                    <h3
-                      class="text-xl md:text-2xl font-bold mb-4 text-secondary"
-                    >
-                      Execute & Grow
-                    </h3>
-                    <div class="card-content">
-                      <p class="text-gray-700 text-base md:text-lg">
-                        Kickstart your transformation with BGS Partners—experts
-                        who drive measurable impact swiftly and efficiently.
-                        Empower your business to reach new heights with a
-                        dedicated BGS Partner by your side.
-                      </p>
-                    </div>
+                  class="carousel-card-wrapper bg-custom-peach p-6 md:p-8 rounded-lg text-left card-equal-height border-4 border-white shadow-xl">
+                  <div class="text-accent font-semibold mb-2">STEP 06</div>
+                  <h3 class="text-xl md:text-2xl font-bold mb-4 text-secondary">
+                    Execute & Grow
+                  </h3>
+                  <div class="card-content">
+                    <p class="text-gray-700 text-base md:text-lg">
+                      Kickstart your transformation with BGS Partners—experts
+                      who drive measurable impact swiftly and efficiently.
+                      Empower your business to reach new heights with a
+                      dedicated BGS Partner by your side.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Navigation arrows -->
-            <button
-              id="prev-btn"
-              class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-secondary rounded-full p-2 -ml-8 hidden md:block z-10 shadow-md"
-              aria-label="Previous slide"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-              >
+          <!-- Navigation arrows -->
+          <button id="prev-btn"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-secondary rounded-full p-2 -ml-8 hidden md:block z-10 shadow-md"
+            aria-label="Previous slide">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button id="next-btn"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-secondary rounded-full p-2 -mr-8 hidden md:block z-10 shadow-md"
+            aria-label="Next slide">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Mobile navigation -->
+          <div class="mobile-nav">
+            <button id="mobile-prev-btn"
+              class="bg-white bg-opacity-20 hover:bg-opacity-30 text-secondary rounded-full p-2 mx-2 shadow-md"
+              aria-label="Previous slide">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
                 <polyline points="15 18 9 12 15 6"></polyline>
               </svg>
             </button>
-            <button
-              id="next-btn"
-              class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-secondary rounded-full p-2 -mr-8 hidden md:block z-10 shadow-md"
-              aria-label="Next slide"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-              >
+            <button id="mobile-next-btn"
+              class="bg-white bg-opacity-20 hover:bg-opacity-30 text-secondary rounded-full p-2 mx-2 shadow-md"
+              aria-label="Next slide">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
             </button>
+          </div>
 
-            <!-- Mobile navigation -->
-            <div class="mobile-nav">
-              <button
-                id="mobile-prev-btn"
-                class="bg-white bg-opacity-20 hover:bg-opacity-30 text-secondary rounded-full p-2 mx-2 shadow-md"
-                aria-label="Previous slide"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-6 w-6"
-                >
-                  <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-              </button>
-              <button
-                id="mobile-next-btn"
-                class="bg-white bg-opacity-20 hover:bg-opacity-30 text-secondary rounded-full p-2 mx-2 shadow-md"
-                aria-label="Next slide"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-6 w-6"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </button>
-            </div>
-
-            <!-- Dots indicator -->
-            <div
-              data-aos="zoom-in"
-              data-aos-duration="800"
-              data-aos-delay="200"
-              class="flex justify-center mt-8 space-x-2"
-              id="carousel-dots"
-            >
-              <button
-                class="w-3 h-3 rounded-full bg-secondary bg-opacity-100"
-                data-index="0"
-                aria-label="Go to slide 1"
-              ></button>
-              <button
-                class="w-3 h-3 rounded-full bg-secondary bg-opacity-50"
-                data-index="1"
-                aria-label="Go to slide 2"
-              ></button>
-              <button
-                class="w-3 h-3 rounded-full bg-secondary bg-opacity-50"
-                data-index="2"
-                aria-label="Go to slide 3"
-              ></button>
-              <button
-                class="w-3 h-3 rounded-full bg-secondary bg-opacity-50"
-                data-index="3"
-                aria-label="Go to slide 4"
-              ></button>
-              <button
-                class="w-3 h-3 rounded-full bg-secondary bg-opacity-50"
-                data-index="4"
-                aria-label="Go to slide 5"
-              ></button>
-              <button
-                class="w-3 h-3 rounded-full bg-secondary bg-opacity-50"
-                data-index="5"
-                aria-label="Go to slide 6"
-              ></button>
-            </div>
+          <!-- Dots indicator -->
+          <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+            class="flex justify-center mt-8 space-x-2" id="carousel-dots">
+            <button class="w-3 h-3 rounded-full bg-secondary bg-opacity-100" data-index="0"
+              aria-label="Go to slide 1"></button>
+            <button class="w-3 h-3 rounded-full bg-secondary bg-opacity-50" data-index="1"
+              aria-label="Go to slide 2"></button>
+            <button class="w-3 h-3 rounded-full bg-secondary bg-opacity-50" data-index="2"
+              aria-label="Go to slide 3"></button>
+            <button class="w-3 h-3 rounded-full bg-secondary bg-opacity-50" data-index="3"
+              aria-label="Go to slide 4"></button>
+            <button class="w-3 h-3 rounded-full bg-secondary bg-opacity-50" data-index="4"
+              aria-label="Go to slide 5"></button>
+            <button class="w-3 h-3 rounded-full bg-secondary bg-opacity-50" data-index="5"
+              aria-label="Go to slide 6"></button>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Testimonials Section -->
-      <section class="py-16 md:py-24">
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="800"
-          data-aos-delay="200"
-          class="container mx-auto px-4 text-center"
-        >
-          <h2 class="text-3xl md:text-5xl font-bold mb-6 text-secondary">
-            Hear from our Customers
-          </h2>
-          <div class="w-12 h-1 bg-accent mx-auto mb-16"></div>
+    <!-- Testimonials Section -->
+    <section class="py-16 md:py-24">
+      <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6 text-secondary">
+          Hear from our Customers
+        </h2>
+        <div class="w-12 h-1 bg-accent mx-auto mb-16"></div>
 
-          <div class="max-w-6xl mx-auto testimonial-container">
-            <!-- Testimonial 1 -->
-            <div class="testimonial-slide active">
-              <div class="flex flex-col md:flex-row w-full items-center">
-                <!-- Left side - Image -->
-                <div class="flex-shrink-0 mb-8 md:mb-0 mx-auto md:mx-0">
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-duration="800"
-                    data-aos-delay="200"
-                    class="relative w-48 h-48 md:w-64 md:h-64"
-                  >
-                    <img
-                      src="./assets/1.png"
-                      alt="Caroline Fortin"
-                      class="rounded-full w-full h-full object-cover shadow-lg"
-                    />
-                  </div>
+        <div class="max-w-6xl mx-auto testimonial-container">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-slide active">
+            <div class="flex flex-col md:flex-row w-full items-center">
+              <!-- Left side - Image -->
+              <div class="flex-shrink-0 mb-8 md:mb-0 mx-auto md:mx-0">
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                  class="relative w-48 h-48 md:w-64 md:h-64">
+                  <img src="./assets/1.png" alt="Caroline Fortin"
+                    class="rounded-full w-full h-full object-cover shadow-lg" />
+                </div>
+              </div>
+
+              <!-- Divider line -->
+              <div class="testimonial-divider"></div>
+
+              <!-- Right side - Description -->
+              <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-left flex-grow">
+                <blockquote class="text-lg md:text-xl italic mb-6 text-gray-700">
+                  "The challenges we were facing in the company were affecting
+                  our productivity. Cloud Lion helped us mitigate that,
+                  communicating with us and offering support throughout the
+                  process. BGS is a huge platform and you need to be well
+                  accompanied by someone who knows the products inside out."
+                </blockquote>
+                <div class="mb-4">
+                  <h4 class="text-xl font-bold text-secondary">
+                    Caroline Fortin, Owner
+                  </h4>
+                  <p class="text-gray-600">MACA Marketing Corporatif</p>
                 </div>
 
-                <!-- Divider line -->
-                <div class="testimonial-divider"></div>
-
-                <!-- Right side - Description -->
-                <div
-                  data-aos="zoom-in"
-                  data-aos-duration="800"
-                  data-aos-delay="200"
-                  class="text-left flex-grow"
-                >
-                  <blockquote
-                    class="text-lg md:text-xl italic mb-6 text-gray-700"
-                  >
-                    "The challenges we were facing in the company were affecting
-                    our productivity. Cloud Lion helped us mitigate that,
-                    communicating with us and offering support throughout the
-                    process. BGS is a huge platform and you need to be well
-                    accompanied by someone who knows the products inside out."
-                  </blockquote>
-                  <div class="mb-4">
-                    <h4 class="text-xl font-bold text-secondary">
-                      Caroline Fortin, Owner
-                    </h4>
-                    <p class="text-gray-600">MACA Marketing Corporatif</p>
-                  </div>
-
-                  <!-- Circular Thumbnails moved under the description -->
-                  <div class="testimonial-circle">
+                <!-- Circular Thumbnails moved under the description -->
+                <div class="testimonial-circle">
+                  <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class="flex flex-wrap justify-center md:justify-start items-center">
                     <div
-                      data-aos="zoom-in"
-                      data-aos-duration="800"
-                      data-aos-delay="200"
-                      class="flex flex-wrap justify-center md:justify-start items-center"
-                    >
-                      <div
-                        class="testimonial-thumbnail active w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="0"
-                      >
-                        <img
-                          src="./assets/1.png"
-                          alt="Caroline Fortin thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="1"
-                      >
-                        <img
-                          src="./assets/2.jpg.png"
-                          alt="John Smith thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="2"
-                      >
-                        <img
-                          src="./assets/3.jpg.png"
-                          alt="Sarah Johnson thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="3"
-                      >
-                        <img
-                          src="./assets/4.jpg.png"
-                          alt="Michael Chen thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="4"
-                      >
-                        <img
-                          src="./assets/5.jpg.png"
-                          alt="Priya Sharma thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
+                      class="testimonial-thumbnail active w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="0">
+                      <img src="./assets/1.png" alt="Caroline Fortin thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="1">
+                      <img src="./assets/2.jpg.png" alt="John Smith thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="2">
+                      <img src="./assets/3.jpg.png" alt="Sarah Johnson thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="3">
+                      <img src="./assets/4.jpg.png" alt="Michael Chen thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="4">
+                      <img src="./assets/5.jpg.png" alt="Priya Sharma thumbnail" class="w-full h-full object-cover" />
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <!-- Testimonial 2 -->
-            <div class="testimonial-slide">
-              <div class="flex flex-col md:flex-row w-full items-center">
-                <!-- Left side - Image -->
-                <div class="flex-shrink-0 mb-8 md:mb-0 mx-auto md:mx-0">
-                  <div class="relative w-48 h-48 md:w-64 md:h-64">
-                    <img
-                      src="./assets/2.jpg.png"
-                      alt="John Smith"
-                      class="rounded-full w-full h-full object-cover shadow-lg"
-                    />
-                  </div>
-                </div>
-
-                <!-- Divider line -->
-                <div class="testimonial-divider"></div>
-
-                <!-- Right side - Description -->
-                <div
-                  data-aos="zoom-in"
-                  data-aos-duration="800"
-                  data-aos-delay="200"
-                  class="text-left flex-grow"
-                >
-                  <blockquote
-                    class="text-lg md:text-xl italic mb-6 text-gray-700"
-                  >
-                    "With BGS, we transformed ideas into solutions that scaled.
-                    The collaboration was seamless, and the impact? Immediate."
-                  </blockquote>
-                  <div class="mb-4">
-                    <h4 class="text-xl font-bold text-secondary">
-                      Michael Chen, CTO
-                    </h4>
-                    <p class="text-gray-600">Orion Tech.</p>
-                  </div>
-
-                  <!-- Circular Thumbnails moved under the description -->
-                  <div class="testimonial-circle">
-                    <div
-                      data-aos="zoom-in"
-                      data-aos-duration="800"
-                      data-aos-delay="200"
-                      class="flex flex-wrap justify-center md:justify-start items-center"
-                    >
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="0"
-                      >
-                        <img
-                          src="./assets/1.png"
-                          alt="Caroline Fortin thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail active w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="1"
-                      >
-                        <img
-                          src="./assets/2.jpg.png"
-                          alt="John Smith thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="2"
-                      >
-                        <img
-                          src="./assets/3.jpg.png"
-                          alt="Sarah Johnson thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="3"
-                      >
-                        <img
-                          src="./assets/4.jpg.png"
-                          alt="Michael Chen thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="4"
-                      >
-                        <img
-                          src="./assets/5.jpg.png"
-                          alt="Priya Sharma thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="testimonial-slide">
-              <div class="flex flex-col md:flex-row w-full items-center">
-                <!-- Left side - Image -->
-                <div class="flex-shrink-0 mb-8 md:mb-0 mx-auto md:mx-0">
-                  <div class="relative w-48 h-48 md:w-64 md:h-64">
-                    <img
-                      src="./assets/3.jpg.png"
-                      alt="Sarah Johnson"
-                      class="rounded-full w-full h-full object-cover shadow-lg"
-                    />
-                  </div>
-                </div>
-
-                <!-- Divider line -->
-                <div class="testimonial-divider"></div>
-
-                <!-- Right side - Description -->
-                <div
-                  data-aos="zoom-in"
-                  data-aos-duration="800"
-                  data-aos-delay="200"
-                  class="text-left flex-grow"
-                >
-                  <blockquote
-                    class="text-lg md:text-xl italic mb-6 text-gray-700"
-                  >
-                    "The clarity and professionalism we experienced with BGS
-                    Partners made our transition smooth. We were live in
-                    weeks—not months"
-                  </blockquote>
-                  <div class="mb-4">
-                    <h4 class="text-xl font-bold text-secondary">
-                      Sarah Johnson, Product Head
-                    </h4>
-                    <p class="text-gray-600">Skylink Labs</p>
-                  </div>
-
-                  <!-- Circular Thumbnails moved under the description -->
-                  <div class="testimonial-circle">
-                    <div
-                      class="flex flex-wrap justify-center md:justify-start items-center"
-                    >
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="0"
-                      >
-                        <img
-                          src="./assets/1.png"
-                          alt="Caroline Fortin thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="1"
-                      >
-                        <img
-                          src="./assets/2.jpg.png"
-                          alt="John Smith thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail active w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="2"
-                      >
-                        <img
-                          src="./assets/3.jpg.png"
-                          alt="Sarah Johnson thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="3"
-                      >
-                        <img
-                          src="./assets/4.jpg.png"
-                          alt="Michael Chen thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="4"
-                      >
-                        <img
-                          src="./assets/5.jpg.png"
-                          alt="Priya Sharma thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial 4 -->
-            <div class="testimonial-slide">
-              <div class="flex flex-col md:flex-row w-full items-center">
-                <!-- Left side - Image -->
-                <div class="flex-shrink-0 mb-8 md:mb-0 mx-auto md:mx-0">
-                  <div class="relative w-48 h-48 md:w-64 md:h-64">
-                    <img
-                      src="./assets/4.jpg.png"
-                      alt="Michael Chen"
-                      class="rounded-full w-full h-full object-cover shadow-lg"
-                    />
-                  </div>
-                </div>
-
-                <!-- Divider line -->
-                <div class="testimonial-divider"></div>
-
-                <!-- Right side - Description -->
-                <div class="text-left flex-grow">
-                  <blockquote
-                    class="text-lg md:text-xl italic mb-6 text-gray-700"
-                  >
-                    "Choosing BGS was the smartest business decision we made. It
-                    felt like adding a strategy team to our business overnight."
-                  </blockquote>
-                  <div class="mb-4">
-                    <h4 class="text-xl font-bold text-secondary">
-                      John Smith, Co-founder
-                    </h4>
-                    <p class="text-gray-600">GreenStack</p>
-                  </div>
-
-                  <!-- Circular Thumbnails moved under the description -->
-                  <div class="testimonial-circle">
-                    <div
-                      class="flex flex-wrap justify-center md:justify-start items-center"
-                    >
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="0"
-                      >
-                        <img
-                          src="./assets/1.png"
-                          alt="Caroline Fortin thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="1"
-                      >
-                        <img
-                          src="./assets/2.jpg.png"
-                          alt="John Smith thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="2"
-                      >
-                        <img
-                          src="./assets/3.jpg.png"
-                          alt="Sarah Johnson thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail active w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="3"
-                      >
-                        <img
-                          src="./assets/4.jpg.png"
-                          alt="Michael Chen thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="4"
-                      >
-                        <img
-                          src="./assets/5.jpg.png"
-                          alt="Priya Sharma thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial 5 -->
-            <div class="testimonial-slide">
-              <div class="flex flex-col md:flex-row w-full items-center">
-                <!-- Left side - Image -->
-                <div class="flex-shrink-0 mb-8 md:mb-0 mx-auto md:mx-0">
-                  <div class="relative w-48 h-48 md:w-64 md:h-64">
-                    <img
-                      src="./assets/5.jpg.png"
-                      alt="Priya Sharma"
-                      class="rounded-full w-full h-full object-cover shadow-lg"
-                    />
-                  </div>
-                </div>
-
-                <!-- Divider line -->
-                <div class="testimonial-divider"></div>
-
-                <!-- Right side - Description -->
-                <div class="text-left flex-grow">
-                  <blockquote
-                    class="text-lg md:text-xl italic mb-6 text-gray-700"
-                  >
-                    "From the first call to delivery, BGS was proactive,
-                    responsive, and results-driven. I couldn’t ask for more."
-                  </blockquote>
-                  <div class="mb-4">
-                    <h4 class="text-xl font-bold text-secondary">
-                      Priya Sharma,Head of Growth
-                    </h4>
-                    <p class="text-gray-600">FinEdge</p>
-                  </div>
-
-                  <!-- Circular Thumbnails moved under the description -->
-                  <div class="testimonial-circle">
-                    <div
-                      class="flex flex-wrap justify-center md:justify-start items-center"
-                    >
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="0"
-                      >
-                        <img
-                          src="./assets/1.png"
-                          alt="Caroline Fortin thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="1"
-                      >
-                        <img
-                          src="./assets/2.jpg.png"
-                          alt="John Smith thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="2"
-                      >
-                        <img
-                          src="./assets/3.jpg.png"
-                          alt="Sarah Johnson thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="3"
-                      >
-                        <img
-                          src="./assets/4.jpg.png"
-                          alt="Michael Chen thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div
-                        class="testimonial-thumbnail active w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
-                        data-index="4"
-                      >
-                        <img
-                          src="./assets/5.jpg.png"
-                          alt="Priya Sharma thumbnail"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Mobile testimonial navigation -->
-            <div class="mobile-nav mt-4">
-              <button
-                id="testimonial-prev-btn"
-                class="bg-white hover:bg-gray-100 text-secondary rounded-full p-2 mx-2 shadow-md"
-                aria-label="Previous testimonial"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-6 w-6"
-                >
-                  <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-              </button>
-              <button
-                id="testimonial-next-btn"
-                class="bg-white hover:bg-gray-100 text-secondary rounded-full p-2 mx-2 shadow-md"
-                aria-label="Next testimonial"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-6 w-6"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </button>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- CTA Section -->
-      <!-- <section class="py-16 md:py-24 bg-primary-gradient">
+          <!-- Testimonial 2 -->
+          <div class="testimonial-slide">
+            <div class="flex flex-col md:flex-row w-full items-center">
+              <!-- Left side - Image -->
+              <div class="flex-shrink-0 mb-8 md:mb-0 mx-auto md:mx-0">
+                <div class="relative w-48 h-48 md:w-64 md:h-64">
+                  <img src="./assets/2.jpg.png" alt="John Smith"
+                    class="rounded-full w-full h-full object-cover shadow-lg" />
+                </div>
+              </div>
+
+              <!-- Divider line -->
+              <div class="testimonial-divider"></div>
+
+              <!-- Right side - Description -->
+              <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-left flex-grow">
+                <blockquote class="text-lg md:text-xl italic mb-6 text-gray-700">
+                  "With BGS, we transformed ideas into solutions that scaled.
+                  The collaboration was seamless, and the impact? Immediate."
+                </blockquote>
+                <div class="mb-4">
+                  <h4 class="text-xl font-bold text-secondary">
+                    Michael Chen, CTO
+                  </h4>
+                  <p class="text-gray-600">Orion Tech.</p>
+                </div>
+
+                <!-- Circular Thumbnails moved under the description -->
+                <div class="testimonial-circle">
+                  <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class="flex flex-wrap justify-center md:justify-start items-center">
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="0">
+                      <img src="./assets/1.png" alt="Caroline Fortin thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail active w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="1">
+                      <img src="./assets/2.jpg.png" alt="John Smith thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="2">
+                      <img src="./assets/3.jpg.png" alt="Sarah Johnson thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="3">
+                      <img src="./assets/4.jpg.png" alt="Michael Chen thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="4">
+                      <img src="./assets/5.jpg.png" alt="Priya Sharma thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-slide">
+            <div class="flex flex-col md:flex-row w-full items-center">
+              <!-- Left side - Image -->
+              <div class="flex-shrink-0 mb-8 md:mb-0 mx-auto md:mx-0">
+                <div class="relative w-48 h-48 md:w-64 md:h-64">
+                  <img src="./assets/3.jpg.png" alt="Sarah Johnson"
+                    class="rounded-full w-full h-full object-cover shadow-lg" />
+                </div>
+              </div>
+
+              <!-- Divider line -->
+              <div class="testimonial-divider"></div>
+
+              <!-- Right side - Description -->
+              <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-left flex-grow">
+                <blockquote class="text-lg md:text-xl italic mb-6 text-gray-700">
+                  "The clarity and professionalism we experienced with BGS
+                  Partners made our transition smooth. We were live in
+                  weeks—not months"
+                </blockquote>
+                <div class="mb-4">
+                  <h4 class="text-xl font-bold text-secondary">
+                    Sarah Johnson, Product Head
+                  </h4>
+                  <p class="text-gray-600">Skylink Labs</p>
+                </div>
+
+                <!-- Circular Thumbnails moved under the description -->
+                <div class="testimonial-circle">
+                  <div class="flex flex-wrap justify-center md:justify-start items-center">
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="0">
+                      <img src="./assets/1.png" alt="Caroline Fortin thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="1">
+                      <img src="./assets/2.jpg.png" alt="John Smith thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail active w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="2">
+                      <img src="./assets/3.jpg.png" alt="Sarah Johnson thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="3">
+                      <img src="./assets/4.jpg.png" alt="Michael Chen thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="4">
+                      <img src="./assets/5.jpg.png" alt="Priya Sharma thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="testimonial-slide">
+            <div class="flex flex-col md:flex-row w-full items-center">
+              <!-- Left side - Image -->
+              <div class="flex-shrink-0 mb-8 md:mb-0 mx-auto md:mx-0">
+                <div class="relative w-48 h-48 md:w-64 md:h-64">
+                  <img src="./assets/4.jpg.png" alt="Michael Chen"
+                    class="rounded-full w-full h-full object-cover shadow-lg" />
+                </div>
+              </div>
+
+              <!-- Divider line -->
+              <div class="testimonial-divider"></div>
+
+              <!-- Right side - Description -->
+              <div class="text-left flex-grow">
+                <blockquote class="text-lg md:text-xl italic mb-6 text-gray-700">
+                  "Choosing BGS was the smartest business decision we made. It
+                  felt like adding a strategy team to our business overnight."
+                </blockquote>
+                <div class="mb-4">
+                  <h4 class="text-xl font-bold text-secondary">
+                    John Smith, Co-founder
+                  </h4>
+                  <p class="text-gray-600">GreenStack</p>
+                </div>
+
+                <!-- Circular Thumbnails moved under the description -->
+                <div class="testimonial-circle">
+                  <div class="flex flex-wrap justify-center md:justify-start items-center">
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="0">
+                      <img src="./assets/1.png" alt="Caroline Fortin thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="1">
+                      <img src="./assets/2.jpg.png" alt="John Smith thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="2">
+                      <img src="./assets/3.jpg.png" alt="Sarah Johnson thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail active w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="3">
+                      <img src="./assets/4.jpg.png" alt="Michael Chen thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="4">
+                      <img src="./assets/5.jpg.png" alt="Priya Sharma thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="testimonial-slide">
+            <div class="flex flex-col md:flex-row w-full items-center">
+              <!-- Left side - Image -->
+              <div class="flex-shrink-0 mb-8 md:mb-0 mx-auto md:mx-0">
+                <div class="relative w-48 h-48 md:w-64 md:h-64">
+                  <img src="./assets/5.jpg.png" alt="Priya Sharma"
+                    class="rounded-full w-full h-full object-cover shadow-lg" />
+                </div>
+              </div>
+
+              <!-- Divider line -->
+              <div class="testimonial-divider"></div>
+
+              <!-- Right side - Description -->
+              <div class="text-left flex-grow">
+                <blockquote class="text-lg md:text-xl italic mb-6 text-gray-700">
+                  "From the first call to delivery, BGS was proactive,
+                  responsive, and results-driven. I couldn’t ask for more."
+                </blockquote>
+                <div class="mb-4">
+                  <h4 class="text-xl font-bold text-secondary">
+                    Priya Sharma,Head of Growth
+                  </h4>
+                  <p class="text-gray-600">FinEdge</p>
+                </div>
+
+                <!-- Circular Thumbnails moved under the description -->
+                <div class="testimonial-circle">
+                  <div class="flex flex-wrap justify-center md:justify-start items-center">
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="0">
+                      <img src="./assets/1.png" alt="Caroline Fortin thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="1">
+                      <img src="./assets/2.jpg.png" alt="John Smith thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="2">
+                      <img src="./assets/3.jpg.png" alt="Sarah Johnson thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="3">
+                      <img src="./assets/4.jpg.png" alt="Michael Chen thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                    <div
+                      class="testimonial-thumbnail active w-10 h-10 rounded-full overflow-hidden border-2 border-transparent mx-2 my-1"
+                      data-index="4">
+                      <img src="./assets/5.jpg.png" alt="Priya Sharma thumbnail" class="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile testimonial navigation -->
+          <div class="mobile-nav mt-4">
+            <button id="testimonial-prev-btn"
+              class="bg-white hover:bg-gray-100 text-secondary rounded-full p-2 mx-2 shadow-md"
+              aria-label="Previous testimonial">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button id="testimonial-next-btn"
+              class="bg-white hover:bg-gray-100 text-secondary rounded-full p-2 mx-2 shadow-md"
+              aria-label="Next testimonial">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <!-- <section class="py-16 md:py-24 bg-primary-gradient">
         <div
           data-aos="zoom-in"
           data-aos-duration="800"
@@ -1637,265 +1175,186 @@
           </a>
         </div>
       </section> -->
-      <!-- Footer -->
+    <!-- Footer -->
 
-      <footer class="bg-[#D2F0FF] py-10">
-        <div class="site-container">
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- Logo and Social Links -->
-            <div class="text-center md:text-left">
-              <div
-                class="flex justify-center md:justify-start items-center gap-4 mb-4"
-              >
-                <img
-                  src="./assets/logo.png"
-                  alt="Bridge Group Solutions"
-                  class="h-12"
-                />
-                <div>
-                  <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">
-                    BRIDGE GROUP
-                  </h1>
-                  <p class="text-[#00076A] font-Mulish font-semibold">
-                    SOLUTIONS
-                  </p>
-                </div>
-              </div>
-              <p
-                class="bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-transparent bg-clip-text font-small text-accent mb-4"
-              >
-                WE KNOT SPACE...
-              </p>
-              <div class="flex justify-center md:justify-start space-x-4">
-                <a
-                  href="#"
-                  class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                >
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a
-                  href="#"
-                  class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a
-                  href="#"
-                  class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                >
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a
-                  href=""
-                  class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                >
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
+    <footer class="bg-[#D2F0FF] py-10">
+      <div class="site-container">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Logo and Social Links -->
+          <div class="text-center md:text-left">
+            <div class="flex justify-center md:justify-start items-center gap-4 mb-4">
+              <img src="./assets/logo.png" alt="Bridge Group Solutions" class="h-12" />
+              <div>
+                <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">
+                  BRIDGE GROUP
+                </h1>
+                <p class="text-[#00076A] font-Mulish font-semibold">
+                  SOLUTIONS
+                </p>
               </div>
             </div>
-
-            <!-- Links -->
-            <div class="text-center md:text-left">
-              <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
-              <ul class="space-y-4">
-                <li>
-                  <a
-                    href="index.html"
-                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                    >Home</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="about.html"
-                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                    >About</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="carrerPage.html"
-                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                    >Careers</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    id="policyLink"
-                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                    >Privacy and Policy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="contact.html"
-                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                    >Contact Us</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    id="termsLink"
-                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                    >Terms and Conditions</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Services -->
-            <div class="text-center md:text-left">
-              <h3 class="text-xl font-semibold text-[#000000] mb-6">
-                Services
-              </h3>
-              <ul class="space-y-4">
-                <li>
-                  <a
-                    href="services.html"
-                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                    >Fontend Development</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="services.html"
-                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                    >Backend Development</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="services.html"
-                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                    >Data Analytics</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="services.html"
-                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                    >Web Secutity and Optimizations</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="services.html"
-                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                    >Erp & Customized Software</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="services.html"
-                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors"
-                    >Software Testing</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Subscribe Form -->
-            <div class="text-center md:text-left">
-              <h3 class="text-xl font-semibold text-[#000000] mb-6">
-                Subscribe Us!
-              </h3>
-              <form class="space-y-4">
-                <input
-                  type="email"
-                  placeholder="Enter Email Address"
-                  class="px-4 py-3 w-full rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white"
-                />
-                <button
-                  type="submit"
-                  class="px-3 py-3 w-full bg-[#1B9CE3] text-white rounded-lg shadow-lg transition duration-150 active:scale-95 active:shadow-sm transition-colors"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-
-          <div
-            class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600"
-          >
-            <p>
-              Copyright © 2025 All rights reserved | This template is made with
-              by Techbuddies@bgs
+            <p
+              class="bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-transparent bg-clip-text font-small text-accent mb-4">
+              WE KNOT SPACE...
             </p>
+            <div class="flex justify-center md:justify-start space-x-4">
+              <a href="#"
+                class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#"
+                class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#"
+                class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href=""
+                class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
+              </li>
+              <li>
+                <a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
+              </li>
+              <li>
+                <a href="carrerPage.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a>
+              </li>
+              <li>
+                <a href="#" id="policyLink" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Privacy and
+                  Policy</a>
+              </li>
+              <li>
+                <a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a>
+              </li>
+              <li>
+                <a href="#" id="termsLink" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Terms and
+                  Conditions</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-semibold text-[#000000] mb-6">
+              Services
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Fontend
+                  Development</a>
+              </li>
+              <li>
+                <a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Backend
+                  Development</a>
+              </li>
+              <li>
+                <a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Data Analytics</a>
+              </li>
+              <li>
+                <a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Web Secutity and
+                  Optimizations</a>
+              </li>
+              <li>
+                <a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp & Customized
+                  Software</a>
+              </li>
+              <li>
+                <a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software
+                  Testing</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Subscribe Form -->
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-semibold text-[#000000] mb-6">
+              Subscribe Us!
+            </h3>
+            <form class="space-y-4">
+              <input type="email" placeholder="Enter Email Address"
+                class="px-4 py-3 w-full rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white" />
+              <button type="submit"
+                class="px-3 py-3 w-full bg-[#1B9CE3] text-white rounded-lg shadow-lg transition duration-150 active:scale-95 active:shadow-sm transition-colors">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
 
-        <button
-          id="scrollToTopBtn"
-          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-          class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600"
-        >
-          <i class="fas fa-arrow-up"></i>
-        </button>
+        <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
+          <p>
+            Copyright © 2025 All rights reserved | This template is made with
+            by Techbuddies@bgs
+          </p>
+        </div>
+      </div>
 
-        <!-- scroller popup starts      -->
-        <!-- Modal Backdrop -->
-        <div
-          id="modalBackdrop"
-          class="fixed inset-0 bg-black bg-opacity-40 hidden z-40"
-        ></div>
-        <!-- Modal Backdrop -->
-        <div
-          id="modal"
-          class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-xl shadow-lg p-6 z-50 hidden max-h-[80vh] overflow-y-auto"
-        >
-          <div class="flex justify-between items-center mb-4">
-            <h2 id="modalTitle" class="text-xl font-semibold">Modal Title</h2>
-            <button
-              id="closeModalBtn"
-              class="text-gray-500 hover:text-gray-700 text-xl"
-            >
-              &times;
-            </button>
-          </div>
+      <button id="scrollToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600">
+        <i class="fas fa-arrow-up"></i>
+      </button>
 
-          <!-- Scrollable content -->
-          <div
-            id="modalContent"
-            class="space-y-4 text-sm text-gray-700 break-words"
-          >
-            <!-- Your long content goes here -->
-          </div>
+      <!-- scroller popup starts      -->
+      <!-- Modal Backdrop -->
+      <div id="modalBackdrop" class="fixed inset-0 bg-black bg-opacity-40 hidden z-40"></div>
+      <!-- Modal Backdrop -->
+      <div id="modal"
+        class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-xl shadow-lg p-6 z-50 hidden max-h-[80vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-4">
+          <h2 id="modalTitle" class="text-xl font-semibold">Modal Title</h2>
+          <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700 text-xl">
+            &times;
+          </button>
         </div>
 
-        <!-- Scroll to Top Button -->
-      </footer>
+        <!-- Scrollable content -->
+        <div id="modalContent" class="space-y-4 text-sm text-gray-700 break-words">
+          <!-- Your long content goes here -->
+        </div>
+      </div>
 
-      <!-- scrollerpopup -->
+      <!-- Scroll to Top Button -->
+    </footer>
 
-      <script>
-        const modal = document.getElementById('modal');
-        const backdrop = document.getElementById('modalBackdrop');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-        const policyLink = document.getElementById('policyLink');
-        const termsLink = document.getElementById('termsLink');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalContent = document.getElementById('modalContent');
+    <!-- scrollerpopup -->
 
-        function openModal(title, contentHTML) {
-            modalTitle.textContent = title;
-            modalContent.innerHTML = contentHTML;
-            modal.classList.remove('hidden');
-            backdrop.classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-        }
+    <script>
+      const modal = document.getElementById('modal');
+      const backdrop = document.getElementById('modalBackdrop');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const policyLink = document.getElementById('policyLink');
+      const termsLink = document.getElementById('termsLink');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalContent = document.getElementById('modalContent');
 
-        function closeModal() {
-            modal.classList.add('hidden');
-            backdrop.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        }
+      function openModal(title, contentHTML) {
+        modalTitle.textContent = title;
+        modalContent.innerHTML = contentHTML;
+        modal.classList.remove('hidden');
+        backdrop.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
 
-        policyLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            openModal("Privacy and Policy", `
+      function closeModal() {
+        modal.classList.add('hidden');
+        backdrop.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+
+      policyLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal("Privacy and Policy", `
 
      <p>  Bridge Group Solutions (BGS) enforces strict controls on the handling of all personal and sensitive information. This Privacy & Data Protection Policy outlines our commitment to safeguarding information and defines the
          responsibilities of all individuals interacting with our systems and services.</p>
@@ -1996,11 +1455,11 @@ compliance, or service delivery. We ensure that all data collection practices ar
 
 
     `);
-        });
+      });
 
-        termsLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            openModal("Terms and Conditions", `
+      termsLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal("Terms and Conditions", `
      <p>By accessing and using the services, platforms, and content provided by 
         Bridge Group Solutions (“BGS”), you agree to comply with the following Terms & Conditions. 
         These rules are designed to protect the integrity, reputation, and digital assets of BGS and its users.</p>
@@ -2058,299 +1517,300 @@ compliance, or service delivery. We ensure that all data collection practices ar
 
 
     `);
-        });
+      });
 
-        closeModalBtn.addEventListener('click', closeModal);
-        backdrop.addEventListener('click', closeModal);
+      closeModalBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
     </script>
-    </main>
+  </main>
 
-    <!-- JavaScript for Carousels -->
-    <script>
-      // Mobile Menu Toggle
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-        const mobileMenu = document.getElementById("mobileMenu");
-        const menuIcon = document.getElementById("menuIcon");
-        let isMenuOpen = false;
+  <!-- JavaScript for Carousels -->
+  <script>
+    // Mobile Menu Toggle
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuIcon = document.getElementById("menuIcon");
+      let isMenuOpen = false;
 
-        function toggleMenu() {
-          isMenuOpen = !isMenuOpen;
-          mobileMenu.classList.toggle("hidden");
+      function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        mobileMenu.classList.toggle("hidden");
 
-          // Switch icon
-          if (isMenuOpen) {
-            menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`;
-          } else {
-            menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
-          }
-        }
-
-        mobileMenuBtn.addEventListener("click", toggleMenu);
-
-        // Optional: Close menu on outside click
-        document.addEventListener("click", function (event) {
-          if (
-            !mobileMenu.contains(event.target) &&
-            !mobileMenuBtn.contains(event.target) &&
-            isMenuOpen
-          ) {
-            toggleMenu();
-          }
-        });
-
-        // Optional: Close menu on window resize to desktop
-        window.addEventListener("resize", function () {
-          if (window.innerWidth >= 780 && isMenuOpen) {
-            toggleMenu();
-          }
-        });
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // Steps Carousel
-        const container = document.getElementById("carousel-container");
-        const prevBtn = document.getElementById("prev-btn");
-        const nextBtn = document.getElementById("next-btn");
-        const mobilePrevBtn = document.getElementById("mobile-prev-btn");
-        const mobileNextBtn = document.getElementById("mobile-next-btn");
-        const carouselDots = document.querySelectorAll("#carousel-dots button");
-        const carouselCards = document.querySelectorAll(".carousel-card");
-
-        let currentSlide = 0;
-        let totalSlides = carouselCards.length;
-        let autoPlayInterval;
-        let isMobile = window.innerWidth < 780;
-
-        // Ensure all carousel cards have equal height
-        function equalizeCardHeights() {
-          // Reset heights first
-          document
-            .querySelectorAll(".carousel-card-wrapper")
-            .forEach((card) => {
-              card.style.height = "auto";
-            });
-
-          // Get the tallest card height
-          let maxHeight = 0;
-          document
-            .querySelectorAll(".carousel-card-wrapper")
-            .forEach((card) => {
-              const height = card.offsetHeight;
-              maxHeight = Math.max(maxHeight, height);
-            });
-
-          // Set all cards to the tallest height
-          document
-            .querySelectorAll(".carousel-card-wrapper")
-            .forEach((card) => {
-              card.style.height = maxHeight + "px";
-            });
-        }
-
-        function updateCarousel() {
-          if (isMobile) {
-            // On mobile, show one card at a time
-            const translateValue = currentSlide * 100;
-            container.style.transform = `translateX(-${translateValue}%)`;
-          } else {
-            // On desktop, show 3 cards at a time
-            const slidesPerView = 3;
-            const totalGroups = Math.ceil(totalSlides / slidesPerView);
-            const currentGroup = Math.floor(currentSlide / slidesPerView);
-            const translateValue = currentGroup * 100;
-            container.style.transform = `translateX(-${translateValue}%)`;
-          }
-
-          // Update dots
-          carouselDots.forEach((dot, index) => {
-            if (index === currentSlide) {
-              dot.classList.remove("bg-opacity-50");
-              dot.classList.add("bg-opacity-100");
-            } else {
-              dot.classList.remove("bg-opacity-100");
-              dot.classList.add("bg-opacity-50");
-            }
-          });
-        }
-
-        function nextSlide() {
-          currentSlide = (currentSlide + 1) % totalSlides;
-          updateCarousel();
-        }
-
-        function prevSlide() {
-          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-          updateCarousel();
-        }
-
-        function startAutoPlay() {
-          // Clear any existing interval
-          clearInterval(autoPlayInterval);
-
-          // Set new interval for auto-play
-          autoPlayInterval = setInterval(function () {
-            nextSlide();
-          }, 4000); // Change slide every 4 seconds
-        }
-
-        // Add event listeners
-        prevBtn.addEventListener("click", function () {
-          prevSlide();
-          startAutoPlay(); // Reset timer after manual navigation
-        });
-
-        nextBtn.addEventListener("click", function () {
-          nextSlide();
-          startAutoPlay(); // Reset timer after manual navigation
-        });
-
-        // Mobile navigation
-        mobilePrevBtn.addEventListener("click", function () {
-          prevSlide();
-          startAutoPlay(); // Reset timer after manual navigation
-        });
-
-        mobileNextBtn.addEventListener("click", function () {
-          nextSlide();
-          startAutoPlay(); // Reset timer after manual navigation
-        });
-
-        // Add click events to dots
-        carouselDots.forEach((dot, index) => {
-          dot.addEventListener("click", function () {
-            currentSlide = index;
-            updateCarousel();
-            startAutoPlay(); // Reset timer after manual navigation
-          });
-        });
-
-        // Testimonials Carousel
-        const testimonialSlides =
-          document.querySelectorAll(".testimonial-slide");
-        const testimonialThumbnails = document.querySelectorAll(
-          ".testimonial-thumbnail"
-        );
-        const testimonialPrevBtn = document.getElementById(
-          "testimonial-prev-btn"
-        );
-        const testimonialNextBtn = document.getElementById(
-          "testimonial-next-btn"
-        );
-
-        let currentTestimonial = 0;
-        const totalTestimonials = testimonialSlides.length;
-        let testimonialInterval;
-
-        function showTestimonial(index) {
-          // Hide all testimonials
-          testimonialSlides.forEach((slide) => {
-            slide.classList.remove("active");
-          });
-
-          // Show the selected testimonial
-          testimonialSlides[index].classList.add("active");
-
-          // Update thumbnails
-          testimonialThumbnails.forEach((thumb, i) => {
-            if (i === index) {
-              thumb.classList.add("active");
-            } else {
-              thumb.classList.remove("active");
-            }
-          });
-        }
-
-        function nextTestimonial() {
-          currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-          showTestimonial(currentTestimonial);
-        }
-
-        function prevTestimonial() {
-          currentTestimonial =
-            (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
-          showTestimonial(currentTestimonial);
-        }
-
-        function startTestimonialAutoPlay() {
-          // Clear any existing interval
-          clearInterval(testimonialInterval);
-
-          // Set new interval for auto-play
-          testimonialInterval = setInterval(function () {
-            nextTestimonial();
-          }, 4000); // Change testimonial every 4 seconds
-        }
-
-        // Add click events to testimonial thumbnails
-        testimonialThumbnails.forEach((thumb, index) => {
-          thumb.addEventListener("click", function () {
-            currentTestimonial = index;
-            showTestimonial(currentTestimonial);
-            startTestimonialAutoPlay(); // Reset timer after manual navigation
-          });
-        });
-
-        // Add click events to testimonial navigation buttons
-        if (testimonialPrevBtn) {
-          testimonialPrevBtn.addEventListener("click", function () {
-            prevTestimonial();
-            startTestimonialAutoPlay();
-          });
-        }
-
-        if (testimonialNextBtn) {
-          testimonialNextBtn.addEventListener("click", function () {
-            nextTestimonial();
-            startTestimonialAutoPlay();
-          });
-        }
-
-        // Make carousel responsive
-        function handleResize() {
-          const wasDesktop = !isMobile;
-          isMobile = window.innerWidth < 768;
-
-          // If we switched between mobile and desktop view, update the carousel
-          if (wasDesktop !== !isMobile) {
-            updateCarousel();
-          }
-
-          // Equalize card heights after resize
-          equalizeCardHeights();
-        }
-
-        // Listen for window resize
-        window.addEventListener("resize", handleResize);
-
-        // Initial setup
-        equalizeCardHeights();
-        handleResize();
-        updateCarousel();
-        startAutoPlay();
-        startTestimonialAutoPlay();
-      });
-
-      // Scroll to top button functionality
-      const scrollBtn = document.getElementById("scrollToTopBtn");
-
-      window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY;
-
-        if (scrollY > 100) {
-          // Show button
-          scrollBtn.classList.remove("opacity-0", "pointer-events-none");
-          scrollBtn.classList.add("opacity-100");
+        // Switch icon
+        if (isMenuOpen) {
+          menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`;
         } else {
-          // Hide button
-          scrollBtn.classList.add("opacity-0", "pointer-events-none");
-          scrollBtn.classList.remove("opacity-100");
+          menuIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+        }
+      }
+
+      mobileMenuBtn.addEventListener("click", toggleMenu);
+
+      // Optional: Close menu on outside click
+      document.addEventListener("click", function (event) {
+        if (
+          !mobileMenu.contains(event.target) &&
+          !mobileMenuBtn.contains(event.target) &&
+          isMenuOpen
+        ) {
+          toggleMenu();
         }
       });
-    </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-  </body>
+
+      // Optional: Close menu on window resize to desktop
+      window.addEventListener("resize", function () {
+        if (window.innerWidth >= 780 && isMenuOpen) {
+          toggleMenu();
+        }
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Steps Carousel
+      const container = document.getElementById("carousel-container");
+      const prevBtn = document.getElementById("prev-btn");
+      const nextBtn = document.getElementById("next-btn");
+      const mobilePrevBtn = document.getElementById("mobile-prev-btn");
+      const mobileNextBtn = document.getElementById("mobile-next-btn");
+      const carouselDots = document.querySelectorAll("#carousel-dots button");
+      const carouselCards = document.querySelectorAll(".carousel-card");
+
+      let currentSlide = 0;
+      let totalSlides = carouselCards.length;
+      let autoPlayInterval;
+      let isMobile = window.innerWidth < 780;
+
+      // Ensure all carousel cards have equal height
+      function equalizeCardHeights() {
+        // Reset heights first
+        document
+          .querySelectorAll(".carousel-card-wrapper")
+          .forEach((card) => {
+            card.style.height = "auto";
+          });
+
+        // Get the tallest card height
+        let maxHeight = 0;
+        document
+          .querySelectorAll(".carousel-card-wrapper")
+          .forEach((card) => {
+            const height = card.offsetHeight;
+            maxHeight = Math.max(maxHeight, height);
+          });
+
+        // Set all cards to the tallest height
+        document
+          .querySelectorAll(".carousel-card-wrapper")
+          .forEach((card) => {
+            card.style.height = maxHeight + "px";
+          });
+      }
+
+      function updateCarousel() {
+        if (isMobile) {
+          // On mobile, show one card at a time
+          const translateValue = currentSlide * 100;
+          container.style.transform = `translateX(-${translateValue}%)`;
+        } else {
+          // On desktop, show 3 cards at a time
+          const slidesPerView = 3;
+          const totalGroups = Math.ceil(totalSlides / slidesPerView);
+          const currentGroup = Math.floor(currentSlide / slidesPerView);
+          const translateValue = currentGroup * 100;
+          container.style.transform = `translateX(-${translateValue}%)`;
+        }
+
+        // Update dots
+        carouselDots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.remove("bg-opacity-50");
+            dot.classList.add("bg-opacity-100");
+          } else {
+            dot.classList.remove("bg-opacity-100");
+            dot.classList.add("bg-opacity-50");
+          }
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      }
+
+      function startAutoPlay() {
+        // Clear any existing interval
+        clearInterval(autoPlayInterval);
+
+        // Set new interval for auto-play
+        autoPlayInterval = setInterval(function () {
+          nextSlide();
+        }, 4000); // Change slide every 4 seconds
+      }
+
+      // Add event listeners
+      prevBtn.addEventListener("click", function () {
+        prevSlide();
+        startAutoPlay(); // Reset timer after manual navigation
+      });
+
+      nextBtn.addEventListener("click", function () {
+        nextSlide();
+        startAutoPlay(); // Reset timer after manual navigation
+      });
+
+      // Mobile navigation
+      mobilePrevBtn.addEventListener("click", function () {
+        prevSlide();
+        startAutoPlay(); // Reset timer after manual navigation
+      });
+
+      mobileNextBtn.addEventListener("click", function () {
+        nextSlide();
+        startAutoPlay(); // Reset timer after manual navigation
+      });
+
+      // Add click events to dots
+      carouselDots.forEach((dot, index) => {
+        dot.addEventListener("click", function () {
+          currentSlide = index;
+          updateCarousel();
+          startAutoPlay(); // Reset timer after manual navigation
+        });
+      });
+
+      // Testimonials Carousel
+      const testimonialSlides =
+        document.querySelectorAll(".testimonial-slide");
+      const testimonialThumbnails = document.querySelectorAll(
+        ".testimonial-thumbnail"
+      );
+      const testimonialPrevBtn = document.getElementById(
+        "testimonial-prev-btn"
+      );
+      const testimonialNextBtn = document.getElementById(
+        "testimonial-next-btn"
+      );
+
+      let currentTestimonial = 0;
+      const totalTestimonials = testimonialSlides.length;
+      let testimonialInterval;
+
+      function showTestimonial(index) {
+        // Hide all testimonials
+        testimonialSlides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        // Show the selected testimonial
+        testimonialSlides[index].classList.add("active");
+
+        // Update thumbnails
+        testimonialThumbnails.forEach((thumb, i) => {
+          if (i === index) {
+            thumb.classList.add("active");
+          } else {
+            thumb.classList.remove("active");
+          }
+        });
+      }
+
+      function nextTestimonial() {
+        currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+        showTestimonial(currentTestimonial);
+      }
+
+      function prevTestimonial() {
+        currentTestimonial =
+          (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+        showTestimonial(currentTestimonial);
+      }
+
+      function startTestimonialAutoPlay() {
+        // Clear any existing interval
+        clearInterval(testimonialInterval);
+
+        // Set new interval for auto-play
+        testimonialInterval = setInterval(function () {
+          nextTestimonial();
+        }, 4000); // Change testimonial every 4 seconds
+      }
+
+      // Add click events to testimonial thumbnails
+      testimonialThumbnails.forEach((thumb, index) => {
+        thumb.addEventListener("click", function () {
+          currentTestimonial = index;
+          showTestimonial(currentTestimonial);
+          startTestimonialAutoPlay(); // Reset timer after manual navigation
+        });
+      });
+
+      // Add click events to testimonial navigation buttons
+      if (testimonialPrevBtn) {
+        testimonialPrevBtn.addEventListener("click", function () {
+          prevTestimonial();
+          startTestimonialAutoPlay();
+        });
+      }
+
+      if (testimonialNextBtn) {
+        testimonialNextBtn.addEventListener("click", function () {
+          nextTestimonial();
+          startTestimonialAutoPlay();
+        });
+      }
+
+      // Make carousel responsive
+      function handleResize() {
+        const wasDesktop = !isMobile;
+        isMobile = window.innerWidth < 768;
+
+        // If we switched between mobile and desktop view, update the carousel
+        if (wasDesktop !== !isMobile) {
+          updateCarousel();
+        }
+
+        // Equalize card heights after resize
+        equalizeCardHeights();
+      }
+
+      // Listen for window resize
+      window.addEventListener("resize", handleResize);
+
+      // Initial setup
+      equalizeCardHeights();
+      handleResize();
+      updateCarousel();
+      startAutoPlay();
+      startTestimonialAutoPlay();
+    });
+
+    // Scroll to top button functionality
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+
+      if (scrollY > 100) {
+        // Show button
+        scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+        scrollBtn.classList.add("opacity-100");
+      } else {
+        // Hide button
+        scrollBtn.classList.add("opacity-0", "pointer-events-none");
+        scrollBtn.classList.remove("opacity-100");
+      }
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
 </html>

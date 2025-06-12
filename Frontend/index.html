@@ -49,47 +49,6 @@
         }
     </script>
 
-    <style>
-        /* Updated hover effect for navbar with light orange color */
-        .nav-hover-effect {
-            position: relative;
-            transition: all 0.3s ease;
-            z-index: 1;
-        }
-
-        .nav-hover-effect::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #FFCC99;
-            /* Light orange color */
-            opacity: 0;
-            transform: scale(0.9);
-            z-index: -1;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-        }
-
-        .nav-hover-effect:hover {
-            color: #00076A;
-            /* Dark blue text on hover */
-        }
-
-        .nav-hover-effect:hover::before {
-            opacity: 0.7;
-            transform: scale(1);
-        }
-
-        /* Mobile menu hover effect */
-        .mobile-nav-hover:hover {
-            background-color: #FFCC99 !important;
-            color: #00076A !important;
-            transition: all 0.3s ease;
-        }
-    </style>
 </head>
 
 <body class=" ">
@@ -744,270 +703,258 @@
                     </div>
 
                     <!-- Innovation Card -->
-                    </head>
-
-                    <body class=" ">
-                        <!-- Navbar starts -->
-                        <!-- Top Bar -->
-                        <div class="bg-[#1B9CE3] text-white text-sm">
-                            <div
-                                class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm px-4 space-y-2 md:space-y-0">
-                                <div
-                                    class="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-2 md:space-y-0">
-                                    <span class="flex items-center space-x-1">
-                                        <i class="fa-solid fa-phone"></i>
-                                        <a href="tel:+91556735515" class="hover:underline">+91 1244376971</a>
-                                    </span>
-
-                                    <span class="flex items-center space-x-1">
-                                        <i class="fa-solid fa-envelope"></i>
-                                        <a href="mailto:contact@bridgegroupsolutions.com" class="hover:underline">
-                                            contact@bridgegroupsolutions.com
-                                        </a>
-                                    </span>
-                                </div>
-
-                                <div class="flex items-center space-x-4">
-                                    <a href="#"
-                                        class="text-white p-2 hover:text-black hover:-translate-y-1 transition transform">
-                                        <i class="fa-brands fa-twitter"></i>
-                                    </a>
-
-                                    <a href="#"
-                                        class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
-                                        <i class="fa-brands fa-facebook-f"></i>
-                                    </a>
-                                    <a href="#"
-                                        class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
-                                        <i class="fa-brands fa-instagram"></i>
-                                    </a>
-                                    <a href="#"
-                                        class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
-                                        <i class="fa-brands fa-linkedin-in"></i>
-                                    </a>
-                                </div>
-
-                            </div>
+                    <div
+                        class="bg-white border-2 border-[#1B9CE3] rounded-lg transition-all duration-500 transform hover:-translate-y-[10px] hover:scale-105 hover:border-orange-500 shadow-lg p-4 relative ease-in-out overflow-hidden group">
+                        <!-- <div class="absolute bottom-0 right-0 w-32 h-32 bg-[#1B9CE3] opacity-100 rounded-tl-full"></div> -->
+                        <div class="text-[#1B9CE3] transition-colors duration-500 group-hover:text-orange-500">
+                            <i class="fas fa-lightbulb text-3xl"></i>
                         </div>
+                        <h3 class="text-xl font-semibold font-Mulish mb-3 text-[#00076A]">Innovation with Real
+                            Implementations
+                        </h3>
+                        <p class="text-black">We turn ideas into action with proven tools and hands-on execution that
+                            fuels your growth—no fluff, just results.
+                            “Innovation you can count on.”
+                        </p>
+                    </div>
+                </div>
 
-                        <!-- Navbar -->
-                        <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
-                            <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-x-8">
+                <!-- Right Side Illustration -->
+                <div class="md:col-span-5 ">
+                    <div class="bg-white border-2 border-orange-500 rounded-lg shadow-lg p-4">
+                        <img src="assets/Shared workspace-amico 1.png" alt="Team Collaboration" class="w-50 mx-auto">
 
+                        <h3 class="text-xl font-semibold font-Mulish mb-3 text-[#00076A] mt-4">
+                            Be a part of success story we're building
+                        </h3>
 
-                                <!-- Logo -->
-                                <div class="flex items-center">
-                                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
-                                    <a href="index.html" class="ml-2 sm:ml-3">
-                                        <h1
-                                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
-                                            BRIDGE GROUP
-                                        </h1>
-                                        <p
-                                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
-                                            SOLUTIONS
-                                        </p>
-                                    </a>
-                                </div>
+                        <p class="text-black mt-2">
+                            We’re growing fast and looking for driven people—whether you’re a pro or just starting out,
+                            there’s a place for you to make an impact.
+                            “Join us. Build your future.”
+                            We believe in nurturing talent and empowering individuals to lead with creativity and
+                            confidence.
+                            Be part of a collaborative environment where your ideas shape real-world solutions.
+                            Together, we turn ambition into action and potential into progress.
 
-                                <!-- Desktop Nav -->
-                                <div class="hidden md:flex items-center sm:space-x-2 lg:space-x-4 xl:space-x-6">
-                                    <!-- Dropdowns -->
+                        </p>
+                    </div>
+                </div>
 
-                                    <div class="relative group p-3 nav-hover-effect">
-                                        <a class="flex items-center space-x-1 text-black focus:outline-none">
-                                            <span class="text-lg">Sales</span>
-                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                        </a>
-                                        <div
-                                            class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                                            <a href="b2b.html" class="block px-4 py-2 hover:bg-gray-100">B2B Sales</a>
-                                            <a href="b2c.html" class="block px-4 py-2 hover:bg-gray-100">B2C Sales</a>
-                                        </div>
-                                    </div>
+            </div>
 
-                                    <div class="relative group p-3 nav-hover-effect">
-                                        <a class="flex items-center space-x-1 text-black focus:outline-none">
-                                            <span class="text-lg">Company</span>
-                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                        </a>
-                                        <div
-                                            class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                                            <a href="about.html" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
-                                            <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
-                                            <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact
-                                                Us</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="relative group p-3 nav-hover-effect">
-                                        <a class="flex items-center space-x-1 text-black focus:outline-none">
-                                            <span class="text-lg">Services</span>
-                                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                                        </a>
-                                        <div
-                                            class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                                            <a href="comingSoon.html" class="block px-4 py-2 hover:bg-gray-100">CRM</a>
-                                            <a href="services.html" class="block px-4 py-2 hover:bg-gray-100">All
-                                                Services</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="relative group p-3 nav-hover-effect">
-                                        <a href="carrerPage.html"
-                                            class="flex items-center space-x-1 text-black focus:outline-none">
-                                            <span class="text-lg">Careers</span>
-                                        </a>
-                                    </div>
-
-                                    <div class="relative group p-3 nav-hover-effect">
-                                        <a href="partners.html"
-                                            class="flex items-center space-x-1 text-black focus:outline-none">
-                                            <span class="text-lg">Our Partners</span>
-                                        </a>
-                                    </div>
-
-                                    <!-- Contact -->
-                                    <div class="flex justify-start items-center px-2 ">
-                                        <button
-                                            class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-2 rounded flex items-center hover:bg-blue-50 text-sm">
-                                            LOGIN
-                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2"
-                                                viewBox="0 0 24 24">
-                                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- Hamburger (mobile only) -->
-                                <div class="md:hidden">
-                                    <button @click="mobileMenu = !mobileMenu" class="text-gray-700 focus:outline-none">
-                                        <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <!-- Mobile Menu -->
-                            <div class="md:hidden" x-show="mobileMenu" x-transition>
-                                <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
-                                    <div x-data="{ open: false }">
-                                        <button @click="open = !open"
-                                            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
-                                            <span>Sales</span>
-                                            <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
-                                                class="fa-solid text-sm transition-transform"></i>
-                                        </button>
-                                        <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                                            <a href="b2b.html"
-                                                class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">B2B
-                                                Sales</a>
-                                            <a href="b2c.html"
-                                                class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">B2C
-                                                Sales</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- About -->
-                                    <div x-data="{ open: false }">
-                                        <button @click="open = !open"
-                                            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
-                                            <span>Company</span>
-                                            <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
-                                                class="fa-solid text-sm transition-transform"></i>
-                                        </button>
-                                        <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                                            <a href="about.html"
-                                                class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">About
-                                                Us</a>
-                                            <a href="gallery.html"
-                                                class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">Gallery</a>
-                                            <a href="contact.html"
-                                                class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">Contact
-                                                Us</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Services -->
-                                    <div x-data="{ open: false }">
-                                        <button @click="open = !open"
-                                            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
-                                            <span>Services</span>
-                                            <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
-                                                class="fa-solid text-sm transition-transform"></i>
-                                        </button>
-                                        <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                                            <a href="comingSoon.html"
-                                                class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">CRM</a>
-                                            <a href="services.html"
-                                                class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">All
-                                                Services</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Careers -->
-                                    <div x-data="{ open: false }">
-                                        <a href="carrerPage.html"
-                                            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
-                                            <span>Careers</span>
-                                        </a>
-                                    </div>
-
-                                    <!-- Partners -->
-                                    <div x-data="{ open: false }">
-                                        <a href="partners.html"
-                                            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
-                                            <span>Our Partners</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </nav>
-
-                        <!-- popup -->
-
-                        <div id="crmModal"
-                            class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
-                            <!-- Modal Box -->
-                            <div
-                                class="bg-orange-100 bg-opacity-60 backdrop-blur-md rounded-xl p-6 sm:p-8 w-[90%] sm:max-w-md mx-auto shadow-[0_8px_32px_rgba(255,165,0,0.3)] relative text-center">
-                                <h1 class="text-3xl font-bold mb-2 text-[#00076A] font-Mulish">
-                                    <span class="inline-block animate-bounce">🚀</span> Our CRM is Coming Soon!
-                                </h1>
-                                <h2 class="text-gray-700 mb-4">
-                                    We're thrilled to introduce our brand-new CRM, designed to revolutionize how you
-                                    manage your customers
-                                    and
-                                    business operations.
-                                </h2>
-                                <h1 class="text-3xl font-bold mb-2 text-[#00076A] font-Mulish">
-                                    <span class="inline-block animate-bounce">🗓️</span> Launching Soon!
-                                </h1>
-                                <p class="text-gray-700 mb-4">
-                                    Get ready to experience the future of CRM. Stay tuned for updates, and be the first
-                                    to try it out!
-                                </p>
-
-                                <button onclick="closeModal()"
-                                    class="absolute top-2 right-4 text-gray-500 hover:text-red-500 text-xl">
-                                    &times;
-                                </button>
-                            </div>
-                        </div>
-
-
-                        <!-- Loader -->
-                        <!-- <section class="bg-white overflow-hidden">
-        <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
-            <img src="assets/logo.png" alt="Company Logo"
-                class="h-16 w-16 sm:h-16 sm:w-16 md:h-20 md:w-20 animate-ping" />
         </div>
+        <div class="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#D2EFFF] to-transparent z-0"></div>
+    </section>
+
+
+    <!-- certificates -->
+
+    <section class="w-full max-w-8xl mx-auto py-10 px-6 md:px-12    bg-[#D6F0FF]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+            <!-- Left Side (Text) -->
+            <div class="w-full h-full flex items-center lg:items-cente  md:py-8 px-6 md:px-6 " data-aos="zoom-in"
+                data-aos-duration="800" data-aos-delay="200">
+                <div class="">
+                    <h2
+                        class="text-4xl sm:text-3xl lg:text-6xl md:text-5xl font-bold font-Mulish text-[#00076A] leading-tight">
+                        Awards &<br class="hidden md:block" /> Certifications
+                    </h2>
+                    <p class="mt-6 text-gray-600 text-base md:text-lg">
+                        We take pride in our collective achievements in the tech domain and leadership initiatives.
+                        These
+                        accomplishments reflect our commitment to innovation, collaboration, and continuous learning...
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Side (Carousel) -->
+            <div class="w-full h-full flex flex-grow  ">
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class=" swiper mySwiper rounded-xl shadow-lg overflow-hidden h-64 md:h-80 lg:h-96 bg-white flex items-center justify-center">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide flex items-center justify-center bg-white">
+                            <img src="assets/certificates/1.jpg" alt="Certificate 1"
+                                class="w-full h-full sm:object-fit lg:object-contain" />
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide flex items-center justify-center bg-white">
+                            <img src="assets/certificates/2.jpg" alt="Certificate 2"
+                                class="w-full h-full sm:object-fit  lg:object-contain" />
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide flex items-center justify-center bg-white">
+                            <img src="assets/certificates/3.jpg" alt="Award 1"
+                                class="w-full h-full  sm:object-fit  lg:object-contain" />
+                        </div>
+                    </div>
+
+                    <!-- Swiper Controls -->
+                    <div class="swiper-pagination mt-2"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-[#D6F0FF] section-overlay">
+        <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="section-content site-container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8   items-center">
+                <!-- Left Side - Illustration -->
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+                    <img src="assets/Marriage counseling-bro 1.png" alt="Team Meeting">
+                </div>
+
+                <!-- Right Side - Stats -->
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="space-y-8">
+                    <h2 class="text-3xl md:text-5xl font-Mulish font-semibold text-[#00076A] text-center md:text-left">
+                        You Always Get the Best Guidance
+                    </h2>
+
+                    <div class="grid grid-cols-2 gap-8 ml-3 text-center md:text-left ">
+                        <!-- Stats Grid -->
+                        <div class="space-y-2">
+                            <h3 class="text-4xl font-semibold text-[#00076A] " data-target="10000">0</h3>
+                            <p class="text-gray-600 text-lg">Satisfied<br />Customers</p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h3 class="text-4xl font-semibold text-[#00076A]" data-target="259">0</h3>
+                            <p class="text-gray-600 text-lg">Minimum Projects<br />Completed</p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h3 class="text-4xl font-semibold text-[#00076A]" data-target="32">0</h3>
+                            <p class="text-gray-600 text-lg">Awards<br />Received</p>
+                        </div>
+
+                        <div class="space-y-2">
+                            <h3 class="text-4xl font-semibold text-[#00076A]" data-target="10">0</h3>
+                            <p class="text-gray-600 text-lg">Years of<br />Experience</p>
+                        </div>
+                    </div>
+
+                    <div class="block md:inline-block text-center md:text-left">
+                        <a href="about.html" class="inline-block px-6 py-2 text-lg bg-[#1B9CE3] text-white rounded-lg shadow-lg
+            transition duration-150 active:scale-95 active:shadow-sm transition-colors duration-300
+            animate-bulge-in-out">
+                            More About Us
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- partners section -->
+    <section class="h-90 bg-[#D6F0FF] 200 py-16 px-4 sm:px-8 lg:px-20">
+        <div class="max-w-9xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+            <!-- Text Content -->
+            <div class="max-w-xl">
+                <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class="text-sky-600 font-medium text-lg mb-1 border-b-2 border-sky-400 inline-block">Partners</p>
+                <h2 data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class="text-3xl font-bold text-blue-900 mb-4">Stronger Together: Building the Future with Our
+                    Partners</h2>
+                <!-- <div>Innovation, trust, and scale — unlocked through powerful collaborations</div> -->
+                <p data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" class="text-gray-700 text-base">
+                    At Bridge Group Solutions, we believe that meaningful change happens when expertise is shared.
+                    That’s why we’ve joined forces with industry leaders who share our passion for excellence and
+                    innovation.
+                    These partnerships don’t just enhance our services — they amplify the outcomes we deliver.
+                </p>
+            </div>
+
+            <!-- Logos -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-12 items-center justify-items-center">
+                <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/1_logo.png"
+                    alt="Aditya Birla Capital" class="h-12 object-contain">
+                <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/2_logo.png"
+                    alt="Big Bazaar" class="h-12 object-contain">
+                <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/3_logo.png"
+                    alt="IndiaFirst" class="h-12 object-contain">
+                <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/4_logo.png"
+                    alt="Max Life" class="h-12 object-contain">
+                <img data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" src="./assets/5_logo.png"
+                    alt="Drishti" class="h-12 object-contain">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Services Section -->
+    <section class="py-16 bg-white section-overlay max-w-full">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-10 2xl:px-16 text-center">
+            <!-- <div class="absolute top-0 left-0 right-0 h-[40px] bg-gradient-to-b from-[#D2EFFF] to-transparent ">
+            </div> -->
+            <!-- Section Heading -->
+            <h2 class="text-3xl sm:text-4xl font-semibold font-Mulish text-[#00076A] mb-2">Our Best Services</h2>
+            <p class="text-gray-500 mb-12">
+                Driving Real Business Impact Through Technology and Innovation. At Bridge Group Solution, we build
+                solutions that solve real problems, boost efficiency, and fuel growth—whether you're a startup or an
+                established enterprise.
+            </p>
+
+            <!-- Service Cards Grid -->
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Card 1 -->
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class="bg-white border-2 border-[#1B9CE3] rounded-b-3xl shadow-xl ease-in-out overflow-hidden  p-6 relative transition-all transition-transform duration-300 hover:-translate-y-4">
+                    <div class="text-[#1B9CE3] text-3xl mb-4">
+                        <i class="fas fa-laptop-code inline-block animate-bounce"></i>
+                    </div>
+                    <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Web Development</h3>
+                    <p class="text-gray-600 text-sm">
+                        We build fast, secure, and user-friendly websites that convert visitors into customers and scale
+                        with your business. Every site is crafted for performance and seamless experience.
+                        Responsive design, SEO-ready, fast loading, and easy content management.
+
+                    </p>
+                    <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
+                </div>
+
+                <!-- Card 2 -->
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class="bg-white border-2 border-[#1B9CE3] rounded-b-3xl  shadow-xl ease-in-out overflow-hidden  p-6 relative transition-transform duration-300 hover:-translate-y-4">
+                    <div class="text-[#1B9CE3] text-3xl mb-4">
+                        <i class="fas fa-cogs inline-block animate-bounce"></i>
+                    </div>
+                    <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">ERP & Customized Software</h3>
+                    <p class="text-gray-600 text-sm">
+                        Our ERP and custom software unify your operations, automate repetitive tasks, and provide
+                        real-time insights—saving you time and cutting costs. Built to grow as you do.
+                        What you get: Streamlined workflows, accurate data, and scalable solutions tailored to your
+                        business.
+
+                    </p>
+                    <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
+                </div>
+
+                <!-- Card 3 -->
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class="bg-white  shadow-md border-2 border-[#1B9CE3] rounded-b-3xl shadow-xl ease-in-out overflow-hidden p-6 relative transition-transform duration-300 hover:-translate-y-4">
+                    <div class="text-[#1B9CE3] text-3xl mb-4">
+                        <i class="fas fa-chart-line inline-block animate-bounce"></i>
+                    </div>
+                    <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Data Analytics & Business
                         Intelligence</h3>
                     <p class="text-gray-600 text-sm">
                         Turn your data into clear insights and smarter decisions. We deliver easy-to-understand
-                        dashboards and predictive analytics that help you spot opportunities and fix issues before
-                        they
+                        dashboards and predictive analytics that help you spot opportunities and fix issues before they
                         arise.
                         What you get: Real-time reporting, trend analysis, and actionable intelligence.
 
@@ -1016,65 +963,58 @@
                 </div>
 
                 <!-- Card 4 -->
-                        <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
-                            class="bg-white  shadow-md border-2 border-[#1B9CE3] shadow-xl ease-in-out overflow-hidden rounded-b-3xl p-6 relative transition-transform duration-300 hover:-translate-y-4">
-                            <div class="text-[#1B9CE3] text-3xl mb-4">
-                                <i class="fas fa-project-diagram inline-block animate-bounce"></i>
-                            </div>
-                            <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Project Outsourcing</h3>
-                            <p class="text-gray-600 text-sm">
-                                Expand your team without the overhead. Our experienced professionals integrate
-                                seamlessly
-                                with
-                                your projects, delivering quality work on time and within budget.
-                                What you get: Flexible teams, faster delivery, and accountability you can trust.
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class="bg-white  shadow-md border-2 border-[#1B9CE3] shadow-xl ease-in-out overflow-hidden rounded-b-3xl p-6 relative transition-transform duration-300 hover:-translate-y-4">
+                    <div class="text-[#1B9CE3] text-3xl mb-4">
+                        <i class="fas fa-project-diagram inline-block animate-bounce"></i>
+                    </div>
+                    <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Project Outsourcing</h3>
+                    <p class="text-gray-600 text-sm">
+                        Expand your team without the overhead. Our experienced professionals integrate seamlessly with
+                        your projects, delivering quality work on time and within budget.
+                        What you get: Flexible teams, faster delivery, and accountability you can trust.
 
-                            </p>
-                            <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
-                        </div>
+                    </p>
+                    <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
+                </div>
 
-                        <!-- Card 5 -->
-                        <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
-                            class="bg-white shadow-md border-2 border-[#1B9CE3] shadow-xl ease-in-out overflow-hidden rounded-b-3xl p-6 relative transition-transform duration-300 hover:-translate-y-4">
-                            <div class="text-[#1B9CE3] text-3xl mb-4">
-                                <i class="fas fa-mobile-alt inline-block animate-bounce"></i>
-                            </div>
-                            <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Application Development
-                            </h3>
-                            <p class="text-gray-600 text-sm">
-                                We create mobile and web apps designed for performance and growth—engaging your users
-                                and
-                                optimizing your operations with reliable, scalable solutions.
-                                What you get: Native and cross-platform apps, cloud-ready architecture, and ongoing
-                                support.
+                <!-- Card 5 -->
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class="bg-white shadow-md border-2 border-[#1B9CE3] shadow-xl ease-in-out overflow-hidden rounded-b-3xl p-6 relative transition-transform duration-300 hover:-translate-y-4">
+                    <div class="text-[#1B9CE3] text-3xl mb-4">
+                        <i class="fas fa-mobile-alt inline-block animate-bounce"></i>
+                    </div>
+                    <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">Application Development</h3>
+                    <p class="text-gray-600 text-sm">
+                        We create mobile and web apps designed for performance and growth—engaging your users and
+                        optimizing your operations with reliable, scalable solutions.
+                        What you get: Native and cross-platform apps, cloud-ready architecture, and ongoing support.
 
-                            </p>
-                            <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
-                        </div>
+                    </p>
+                    <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
+                </div>
 
-                        <!-- Card 6 -->
-                        <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
-                            class="bg-white shadow-md border-2 border-[#1B9CE3] shadow-xl ease-in-out overflow-hidden rounded-b-3xl p-6 relative transition-transform duration-300 hover:-translate-y-4">
-                            <div class="text-[#1B9CE3] text-3xl mb-4">
-                                <i class="fas fa-user-cog inline-block animate-bounce"></i>
+                <!-- Card 6 -->
+                <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+                    class="bg-white shadow-md border-2 border-[#1B9CE3] shadow-xl ease-in-out overflow-hidden rounded-b-3xl p-6 relative transition-transform duration-300 hover:-translate-y-4">
+                    <div class="text-[#1B9CE3] text-3xl mb-4">
+                        <i class="fas fa-user-cog inline-block animate-bounce"></i>
 
-                            </div>
-                            <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">CRM</h3>
-                            <p class="text-gray-600 text-sm">
-                                We build powerful CRM solutions designed to enhance customer engagement and streamline
-                                your
-                                business processes—empowering your teams and driving long-term growth.
-                                What you get: Custom CRM development, integration with existing tools, automation of
-                                workflows,
-                                real-time analytics, and continuous support.
+                    </div>
+                    <h3 class="text-[#00076A] font-semibold font-Mulish text-lg mb-2">CRM</h3>
+                    <p class="text-gray-600 text-sm">
+                        We build powerful CRM solutions designed to enhance customer engagement and streamline your
+                        business processes—empowering your teams and driving long-term growth.
+                        What you get: Custom CRM development, integration with existing tools, automation of workflows,
+                        real-time analytics, and continuous support.
 
-                            </p>
-                            <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
-                        </div>
-                        <!-- Optional gradient background at bottom -->
-                        <div
-                            class="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#D2EFFF] to-transparent z-0">
-                        </div>
+                    </p>
+                    <div class="absolute bottom-0 left-1 right-1 h-2.5 bg-[#1B9CE3] rounded-b-3xl"></div>
+                </div>
+                <!-- Optional gradient background at bottom -->
+                <div
+                    class="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#D2EFFF] to-transparent z-0">
+                </div>
 
     </section>
 
@@ -1116,8 +1056,7 @@
 
                 <!-- Text Content -->
                 <div class="text-center md:text-left">
-                    <p id="testimonialText" class="text-gray-700 mb-3">"BGS is solving problems for us we didn't
-                        even
+                    <p id="testimonialText" class="text-gray-700 mb-3">"BGS is solving problems for us we didn't even
                         know we had."</p>
                     <p class="font-bold text-gray-800" id="testimonialName">Name,</p>
                     <p class="text-gray-600 text-sm mb-2" id="testimonialDesignation">Designation, organization</p>
@@ -1135,13 +1074,11 @@
 
     <!-- Let's Build Something Section -->
     <section class="py-20 bg-white section-overlay">
-        <div class="absolute top-0 left-0 right-0 h-[40px] bg-gradient-to-b from-[#D2EFFF] to-transparent z-0">
-        </div>
+        <div class="absolute top-0 left-0 right-0 h-[40px] bg-gradient-to-b from-[#D2EFFF] to-transparent z-0"></div>
 
         <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
             class="section-content site-container text-center">
-            <h2 class="text-5xl font-semibold font-Mulish text-[#00076A] mb-6 font-Mulish">Let's build something
-                great
+            <h2 class="text-5xl font-semibold font-Mulish text-[#00076A] mb-6 font-Mulish">Let's build something great
                 together</h2>
             <p class="text-lg text-gray-700 mb-10 max-w-3xl mx-auto">Get in touch to explore how we can help your
                 business reach its full potential.</p>
@@ -1151,8 +1088,7 @@
                 Get Started Today
             </a>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#D2EFFF] to-transparent z-0">
-        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-[40px] bg-gradient-to-t from-[#D2EFFF] to-transparent z-0"></div>
     </section>
 
     <!-- Footer -->
@@ -1205,13 +1141,11 @@
                         <li><a href="carrerPage.html"
                                 class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a></li>
                         <li><a href="#" id="policyLink"
-                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Privacy and Policy</a>
-                        </li>
+                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Privacy and Policy</a></li>
                         <li><a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact
                                 Us</a></li>
                         <li><a href="#" id="termsLink"
-                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Terms and
-                                Conditions</a>
+                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Terms and Conditions</a>
                         </li>
                     </ul>
 
@@ -1229,12 +1163,10 @@
                                 Analytics</a></li>
                         <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Web
                                 Secutity and Optimizations</a></li>
-                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp
-                                &
+                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp &
                                 Customized Software</a></li>
                         <li><a href="services.html"
-                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software Testing</a>
-                        </li>
+                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software Testing</a></li>
                     </ul>
                 </div>
 

@@ -1,550 +1,530 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - Bridge Group Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <meta name="google-adsense-account" content="ca-pub-4467563478630338">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4467563478630338"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <script src="https://kit.fontawesome.com/4a2e3e6c8b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              boli: ['"MV Boli"', "cursive"],
-              mulish: ["Mulish", "sans-serif"],
-            },
-            colors: {
-              primary: "#1B9CE3",
-              // secondary: '#F97316',
-            },
-            container: {
-              padding: {
-                DEFAULT: "2rem",
-                sm: "4rem",
-                lg: "6rem",
-                xl: "8rem",
-                "2xl": "10rem",
-              },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Bridge Group Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="google-adsense-account" content="ca-pub-4467563478630338">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4467563478630338"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://kit.fontawesome.com/4a2e3e6c8b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            boli: ['"MV Boli"', "cursive"],
+            mulish: ["Mulish", "sans-serif"],
+          },
+          colors: {
+            primary: "#1B9CE3",
+            // secondary: '#F97316',
+          },
+          container: {
+            padding: {
+              DEFAULT: "2rem",
+              sm: "4rem",
+              lg: "6rem",
+              xl: "8rem",
+              "2xl": "10rem",
             },
           },
         },
-      };
-    </script>
-    <style>
+      },
+    };
+  </script>
+  <style>
+    .site-container {
+      width: 100%;
+      /* max-width: 1400px; */
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    @media (min-width: 768px) {
       .site-container {
-        width: 100%;
-        /* max-width: 1400px; */
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        width: 96%;
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
-      @media (min-width: 768px) {
-        .site-container {
-          width: 96%;
-          padding-left: 1rem;
-          padding-right: 1rem;
-        }
+    }
+
+    @media (min-width: 1024px) {
+      .site-container {
+        width: 95%;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
       }
+    }
+  </style>
+  <style>
+    /* Navbar hover effects */
+    .nav-hover-effect {
+      position: relative;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
 
-      @media (min-width: 1024px) {
-        .site-container {
-          width: 95%;
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
-        }
-      }
-    </style>
-  </head>
-  <body class="bg-gradient-to-br from-blue-50 to-white">
-    <!-- Navbar -->
-    <!-- Navbar starts -->
-    <!-- Top Bar -->
-    <div class="bg-[#1B9CE3] text-white text-sm">
-        <div
-            class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm px-4 py-1 space-y-2 md:space-y-0">
-            <div class="flex items-center space-x-4">
-                <span class="flex items-center space-x-1">
-                    <i class="fa-solid fa-phone"></i>
-                    <a href="tel:+91556735515" class="hover:underline">+91 1244376971</a>
-                </span>
+    .nav-hover-effect::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #FFCC99;
+      /* Light orange color */
+      opacity: 0;
+      transform: scale(0.9);
+      z-index: -1;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
 
-                <span class="flex items-center space-x-1">
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto: contact@bridgegroupsolutions.com" class="hover:underline"> contact@bridgegroupsolutions.com</a>
-                </span>
+    .nav-hover-effect:hover {
+      color: #00076A;
+      /* Dark blue text on hover */
+    }
 
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="text-white p-2 hover:text-black hover:-translate-y-1 transition transform">
-                    <i class="fa-brands fa-twitter"></i>
-                </a>
+    .nav-hover-effect:hover::before {
+      opacity: 0.7;
+      transform: scale(1);
+    }
 
-                <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-            </div>
+    /* Mobile menu hover effect */
+    .mobile-nav-hover:hover {
+      background-color: #FFCC99 !important;
+      color: #00076A !important;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
 
-        </div>
+<body class="bg-gradient-to-br from-blue-50 to-white">
+  <!-- Navbar -->
+  <!-- Navbar starts -->
+  <!-- Top Bar -->
+  <div class="bg-[#1B9CE3] text-white text-sm">
+    <div
+      class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm px-4 py-1 space-y-2 md:space-y-0">
+      <div class="flex items-center space-x-4">
+        <span class="flex items-center space-x-1">
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+91556735515" class="hover:underline">+91 1244376971</a>
+        </span>
+
+        <span class="flex items-center space-x-1">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto: contact@bridgegroupsolutions.com" class="hover:underline">
+            contact@bridgegroupsolutions.com</a>
+        </span>
+
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="#" class="text-white p-2 hover:text-black hover:-translate-y-1 transition transform">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+
+        <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+      </div>
+
     </div>
+  </div>
 
-    <!-- Navbar -->
-    <!-- Navbar -->
-     <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
-        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-8 justify-between">
-
-            <!-- Logo -->
-                <div class="flex items-center">
-                    <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
-                    <a href="index.html" class="ml-2 sm:ml-3">
-                        <h1
-                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
-                            BRIDGE GROUP
-                        </h1>
-                        <p
-                            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
-                            SOLUTIONS
-                        </p>
-                    </a>
-                </div>
-
-            <!-- Desktop Nav -->
-            <div class="hidden md:flex items-cente  sm:space-x-2  lg:space-x-4 xl:space-x-6">
-                <!-- Dropdowns -->
-
-                  <div class="relative group p-3 hover:bg-[#1B9CE3] ">
-                    <a class="flex items-center space-x-1 text-black  focus:outline-none">
-                        <span class="text-lg">Sales</span>
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </a>
-                    <div
-                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                        <a href="b2b.html" class="block px-4 py-2 hover:bg-gray-100">B2B Sales</a>
-                        <a href="b2c.html" class="block px-4 py-2 hover:bg-gray-100">B2C Sales</a>
-                    </div>
-                </div>
-
-                <div class="relative group p-3 hover:bg-[#1B9CE3] ">
-                    <a class="flex items-center space-x-1 text-black  focus:outline-none">
-                        <span class="text-lg">Company</span>
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </a>
-                    <div
-                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                        <a href="about.html" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
-                        <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
-                        <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
-                    </div>
-                </div>
-
-                <div class="relative group p-3 hover:bg-[#1B9CE3]">
-                    <a class="flex items-center space-x-1 text-black  focus:outline-none">
-                        <span class="text-lg">Services</span>
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </a>
-                    <div
-                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                        <a href="comingSoon.html" class="block px-4 py-2 hover:bg-gray-100">CRM</a>
-                        <a href="services.html" class="block px-4 py-2 hover:bg-gray-100">All Services</a>
-                    </div>
-                </div>
-
-                <div class="relative group p-3 hover:bg-[#1B9CE3]">
-                    <a href="carrerPage.html" class="flex items-center space-x-1 text-black  focus:outline-none">
-                        <span class="text-lg">Careers</span>
-                        <!-- <i class="fa-solid fa-chevron-down text-xs"></i> -->
-                    </a>
-                </div>
-
-                <div class="relative group p-3 hover:bg-[#1B9CE3]">
-                    <a href="partners.html" class="flex items-center space-x-1 text-black  focus:outline-none">
-                        <span class="text-lg">Our Partners</span>
-                        <!-- <i class="fa-solid fa-chevron-down text-xs"></i> -->
-                    </a>
-                </div>
-
-                <!-- Contact -->
-                <div class="flex justify-start items-center px-2 ">
-                    <button
-                        class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-2 rounded flex items-center hover:bg-blue-50 text-sm">
-                        LOGIN
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Hamburger (mobile only) -->
-            <div class="md:hidden">
-                <button @click="mobileMenu = !mobileMenu" class="text-gray-700 focus:outline-none">
-                    <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="md:hidden" x-show="mobileMenu" x-transition>
-            <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
+  <!-- Navbar -->
+  <!-- Navbar -->
+  <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-x-8">
 
 
-                  <div x-data="{ open: false }">
-                    <button @click="open = !open"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
-                        <span>Sales</span>
-                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
-                            class="fa-solid text-sm transition-transform"></i>
-                    </button>
-                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="b2b.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2B Sales</a>
-                        <a href="b2c.html"
-                            class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2C Sales</a>
-                       
-                    </div>
-                </div>
-                <!-- About -->
-                <div x-data="{ open: false }">
-                    <button @click="open = !open"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
-                        <span>Company</span>
-                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
-                            class="fa-solid text-sm transition-transform"></i>
-                    </button>
-                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="about.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">About Us</a>
-                        <a href="gallery.html"
-                            class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Gallery</a>
-                        <a href="contact.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Contact
-                            Us</a>
-                    </div>
-                </div>
-
-                <!-- Services -->
-                <div x-data="{ open: false }">
-                    <button @click="open = !open"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
-                        <span>Services</span>
-                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
-                            class="fa-solid text-sm transition-transform"></i>
-                    </button>
-                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="comingSoon.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">CRM</a>
-                        <a href="services.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">All
-                            Services</a>
-                    </div>
-                </div>
-
-                <!-- Careers -->
-                <div x-data="{ open: false }">
-                    <a @click="open = !open" href="carrerPage.html"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
-                        <span>Careers</span>
-                        <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
-                    </a>
-                
-                </div>
-
-                 <div x-data="{ open: false }">
-                    <a @click="open = !open" href="partners.html"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
-                        <span>Our Partners</span>
-                        <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
-                    </a>
-                
-                </div>
-
-                <!-- Contact -->
-                <div class="flex justify-start items-center space-x-4 px-2 pt-2 border-t">
-                    <button
-                        class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-1 rounded flex items-center hover:bg-blue-50 text-sm">
-                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                        LOGIN
-                    </button>
-                </div>
-            </div>
-        </div>
-
-    </nav>
-
-    <!-- Contact Form Section -->
-    <div class="max-w-9xl mx-auto px-4 md:px-6 :px-8 py-16">
-      <div
-        data-aos="zoom-in"
-        data-aos-duration="800"
-        data-aos-delay="200"
-        class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
-      >
-        <!-- Left Side - Text and Image -->
-        <div class="space-y-6">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
+        <a href="index.html" class="ml-2 sm:ml-3">
           <h1
-            class="text-4xl md:text-5xl font-semibold font-Mulish text-[#00076A]"
-          >
-            Finding your way around Bridge Group Solution?
+            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
+            BRIDGE GROUP
           </h1>
           <p
-            style="font-family: 'MV Boli', cursive"
-            class="text-3xl font-medium text-[#000000]"
-          >
-            Let us help!
+            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
+            SOLUTIONS
           </p>
-          <img
-            src="./assets/Fill out-bro 1.png"
-            alt="Contact Illustration"
-            class="w-full max-w-md mx-auto"
-          />
+        </a>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center sm:space-x-2 lg:space-x-4 xl:space-x-6">
+        <!-- Dropdowns -->
+
+        <div class="relative group p-3 nav-hover-effect">
+          <a class="flex items-center space-x-1 text-black focus:outline-none">
+            <span class="text-lg">Sales</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+          </a>
+          <div
+            class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+            <a href="b2b.html" class="block px-4 py-2 hover:bg-gray-100">B2B Sales</a>
+            <a href="b2c.html" class="block px-4 py-2 hover:bg-gray-100">B2C Sales</a>
+          </div>
         </div>
 
-        <!-- Right Side - Form -->
-        <div
-          data-aos="zoom-in"
-          data-aos-duration="800"
-          data-aos-delay="200"
-          class="bg-white rounded-lg shadow-md shadow-[#1B9CE3] p-8"
-        >
-          <h2 class="text-3xl font-semibold text-[#1B9CE3] mb-6">
-            Send us a message
-          </h2>
-          <form
-            data-aos="zoom-in"
-            data-aos-duration="800"
-            data-aos-delay="200"
-            id="contactForm"
-            class="space-y-6"
-            action="https://api.web3forms.com/submit"
-            method="POST"
-          >
-            <input
-              type="hidden"
-              name="access_key"
-              value="6e178480-bc43-4d6c-8186-be4b232fc770"
-              id="form"
-            />
-            <input
-              type="hidden"
-              name="subject"
-              value="New Submission from your Website"
-            />
+        <div class="relative group p-3 nav-hover-effect">
+          <a class="flex items-center space-x-1 text-black focus:outline-none">
+            <span class="text-lg">Company</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+          </a>
+          <div
+            class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+            <a href="about.html" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+            <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
+            <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
+          </div>
+        </div>
 
-            <div>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Name*"
-                class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-0 focus:outline-none transition-colors"
-              />
-              <p class="text-red-500 text-sm mt-1 hidden" id="nameError"></p>
-            </div>
+        <div class="relative group p-3 nav-hover-effect">
+          <a class="flex items-center space-x-1 text-black focus:outline-none">
+            <span class="text-lg">Services</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+          </a>
+          <div
+            class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+            <a href="comingSoon.html" class="block px-4 py-2 hover:bg-gray-100">CRM</a>
+            <a href="services.html" class="block px-4 py-2 hover:bg-gray-100">All Services</a>
+          </div>
+        </div>
 
-            <div>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Email*"
-                class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors"
-              />
-              <p class="text-red-500 text-sm mt-1 hidden" id="emailError"></p>
-            </div>
+        <div class="relative group p-3 nav-hover-effect">
+          <a href="carrerPage.html" class="flex items-center space-x-1 text-black focus:outline-none">
+            <span class="text-lg">Careers</span>
+          </a>
+        </div>
 
-            <div>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Phone*"
-                class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors"
-              />
-              <p class="text-red-500 text-sm mt-1 hidden" id="phoneError"></p>
-            </div>
+        <div class="relative group p-3 nav-hover-effect">
+          <a href="partners.html" class="flex items-center space-x-1 text-black focus:outline-none">
+            <span class="text-lg">Our Partners</span>
+          </a>
+        </div>
 
-            <div>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="Subject*"
-                class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors"
-              />
-              <p class="text-red-500 text-sm mt-1 hidden" id="subjectError"></p>
-            </div>
+        <!-- Contact -->
+        <div class="flex justify-start items-center px-2 ">
+          <button
+            class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-2 rounded flex items-center hover:bg-blue-50 text-sm">
+            LOGIN
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
 
-            <div>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                placeholder="Message*"
-                class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors resize-none"
-              ></textarea>
-              <p class="text-red-500 text-sm mt-1 hidden" id="messageError"></p>
-            </div>
+      <!-- Hamburger (mobile only) -->
+      <div class="md:hidden">
+        <button @click="mobileMenu = !mobileMenu" class="text-gray-700 focus:outline-none">
+          <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
+        </button>
+      </div>
+    </div>
 
-            <button
-              type="submit"
-              class="bg-[#1B9CE3] text-2xl text-white py-3 px-6 rounded-md shadow-lg transition duration-150 active:scale-95 active:shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            >
-              Send Message
-            </button>
-            <p class="text-base text-center text-gray-500" id="result"></p>
-          </form>
+    <!-- Mobile Menu -->
+    <div class="md:hidden" x-show="mobileMenu" x-transition>
+      <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
+        <div x-data="{ open: false }">
+          <button @click="open = !open"
+            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+            <span>Sales</span>
+            <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i>
+          </button>
+          <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+            <a href="b2b.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">B2B
+              Sales</a>
+            <a href="b2c.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">B2C
+              Sales</a>
+          </div>
+        </div>
+
+        <!-- About -->
+        <div x-data="{ open: false }">
+          <button @click="open = !open"
+            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+            <span>Company</span>
+            <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i>
+          </button>
+          <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+            <a href="about.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">About
+              Us</a>
+            <a href="gallery.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">Gallery</a>
+            <a href="contact.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div x-data="{ open: false }">
+          <button @click="open = !open"
+            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+            <span>Services</span>
+            <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i>
+          </button>
+          <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+            <a href="comingSoon.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">CRM</a>
+            <a href="services.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">All
+              Services</a>
+          </div>
+        </div>
+
+        <!-- Careers -->
+        <div x-data="{ open: false }">
+          <a href="carrerPage.html"
+            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+            <span>Careers</span>
+          </a>
+        </div>
+
+        <!-- Partners -->
+        <div x-data="{ open: false }">
+          <a href="partners.html"
+            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+            <span>Our Partners</span>
+          </a>
         </div>
       </div>
     </div>
 
-      <!-- Footer -->
+  </nav>
 
-    <footer class="bg-[#D2F0FF] py-10">
-        <div class="site-container">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Logo and Social Links -->
-                <div class="text-center md:text-left">
-                    <div class="flex justify-center md:justify-start items-center gap-4 mb-4">
-                        <img src="./assets/logo.png" alt="Bridge Group Solutions" class="h-12">
-                        <div>
-                            <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">BRIDGE GROUP</h1>
-                            <p class="text-[#00076A] font-Mulish font-semibold">SOLUTIONS</p>
-                        </div>
-                    </div>
-                    <p class="bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-transparent bg-clip-text font-small text-accent mb-4">
-                        WE KNOT SPACE...
-                    </p>
-                    <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="" class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-    
-                <!-- Links -->
-                <div class="text-center md:text-left">
-                    <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
-                 <ul class="space-y-4">
-  <li><a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a></li>
-  <li><a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a></li>
-  <li><a href="carrerPage.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a></li>
-  <li><a href="#" id="policyLink" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Privacy and Policy</a></li>
-  <li><a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a></li>
-  <li><a href="#" id="termsLink" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Terms and Conditions</a></li>
-</ul>
+  <!-- Contact Form Section -->
+  <div class="max-w-9xl mx-auto px-4 md:px-6 :px-8 py-16">
+    <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+      class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- Left Side - Text and Image -->
+      <div class="space-y-6">
+        <h1 class="text-4xl md:text-5xl font-semibold font-Mulish text-[#00076A]">
+          Finding your way around Bridge Group Solution?
+        </h1>
+        <p style="font-family: 'MV Boli', cursive" class="text-3xl font-medium text-[#000000]">
+          Let us help!
+        </p>
+        <img src="./assets/Fill out-bro 1.png" alt="Contact Illustration" class="w-full max-w-md mx-auto" />
+      </div>
 
-                </div>
-    
-                <!-- Services -->
-                <div class="text-center md:text-left">
-                    <h3 class="text-xl font-semibold text-[#000000] mb-6">Services</h3>
-                    <ul class="space-y-4">
-                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Fontend Development</a></li>
-                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Backend Development</a></li>
-                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Data Analytics</a></li>
-                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Web Secutity and Optimizations</a></li>
-                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp & Customized Software</a></li>
-                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software Testing</a></li>
-                    </ul>
-                </div>
-    
-                <!-- Subscribe Form -->
-                <div class="text-center md:text-left">
-                    <h3 class="text-xl font-semibold text-[#000000] mb-6">Subscribe Us!</h3>
-                    <form class="space-y-4">
-                        <input type="email" placeholder="Enter Email Address" class="px-4 py-3 w-full rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
-                        <button type="submit" class="px-3 py-3 w-full bg-[#1B9CE3] text-white rounded-lg shadow-lg transition duration-150 active:scale-95 active:shadow-sm transition-colors">
-                            Subscribe
-                        </button>
-                    </form>
-                </div>
+      <!-- Right Side - Form -->
+      <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200"
+        class="bg-white rounded-lg shadow-md shadow-[#1B9CE3] p-8">
+        <h2 class="text-3xl font-semibold text-[#1B9CE3] mb-6">
+          Send us a message
+        </h2>
+        <form data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200" id="contactForm" class="space-y-6"
+          action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="6e178480-bc43-4d6c-8186-be4b232fc770" id="form" />
+          <input type="hidden" name="subject" value="New Submission from your Website" />
+
+          <div>
+            <input type="text" id="name" name="name" placeholder="Name*"
+              class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-0 focus:outline-none transition-colors" />
+            <p class="text-red-500 text-sm mt-1 hidden" id="nameError"></p>
+          </div>
+
+          <div>
+            <input type="email" id="email" name="email" placeholder="Email*"
+              class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors" />
+            <p class="text-red-500 text-sm mt-1 hidden" id="emailError"></p>
+          </div>
+
+          <div>
+            <input type="tel" id="phone" name="phone" placeholder="Phone*"
+              class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors" />
+            <p class="text-red-500 text-sm mt-1 hidden" id="phoneError"></p>
+          </div>
+
+          <div>
+            <input type="text" id="subject" name="subject" placeholder="Subject*"
+              class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors" />
+            <p class="text-red-500 text-sm mt-1 hidden" id="subjectError"></p>
+          </div>
+
+          <div>
+            <textarea id="message" name="message" rows="4" placeholder="Message*"
+              class="w-full px-4 py-3 border-b-2 border-[#1B9CE3] focus:border-[#1B9CE3] focus:ring-1 focus:ring-[#1B9CE3] outline-none transition-colors resize-none"></textarea>
+            <p class="text-red-500 text-sm mt-1 hidden" id="messageError"></p>
+          </div>
+
+          <button type="submit"
+            class="bg-[#1B9CE3] text-2xl text-white py-3 px-6 rounded-md shadow-lg transition duration-150 active:scale-95 active:shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+            Send Message
+          </button>
+          <p class="text-base text-center text-gray-500" id="result"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+  <footer class="bg-[#D2F0FF] py-10">
+    <div class="site-container">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Logo and Social Links -->
+        <div class="text-center md:text-left">
+          <div class="flex justify-center md:justify-start items-center gap-4 mb-4">
+            <img src="./assets/logo.png" alt="Bridge Group Solutions" class="h-12">
+            <div>
+              <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">BRIDGE GROUP</h1>
+              <p class="text-[#00076A] font-Mulish font-semibold">SOLUTIONS</p>
             </div>
-    
-            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
-                <p>Copyright © 2025 All rights reserved | This template is made with by Techbuddies@bgs</p>
-            </div>
+          </div>
+          <p
+            class="bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-transparent bg-clip-text font-small text-accent mb-4">
+            WE KNOT SPACE...
+          </p>
+          <div class="flex justify-center md:justify-start space-x-4">
+            <a href="#"
+              class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#"
+              class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#"
+              class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href=""
+              class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
         </div>
-    
-        <button id="scrollToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600">
-            <i class="fas fa-arrow-up"></i>
-        </button>
+
+        <!-- Links -->
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
+          <ul class="space-y-4">
+            <li><a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a></li>
+            <li><a href="carrerPage.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a></li>
+            <li><a href="#" id="policyLink" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Privacy and
+                Policy</a></li>
+            <li><a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a></li>
+            <li><a href="#" id="termsLink" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Terms and
+                Conditions</a></li>
+          </ul>
+
+        </div>
+
+        <!-- Services -->
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold text-[#000000] mb-6">Services</h3>
+          <ul class="space-y-4">
+            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Fontend
+                Development</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Backend
+                Development</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Data Analytics</a>
+            </li>
+            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Web Secutity and
+                Optimizations</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp & Customized
+                Software</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software
+                Testing</a></li>
+          </ul>
+        </div>
+
+        <!-- Subscribe Form -->
+        <div class="text-center md:text-left">
+          <h3 class="text-xl font-semibold text-[#000000] mb-6">Subscribe Us!</h3>
+          <form class="space-y-4">
+            <input type="email" placeholder="Enter Email Address"
+              class="px-4 py-3 w-full rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
+            <button type="submit"
+              class="px-3 py-3 w-full bg-[#1B9CE3] text-white rounded-lg shadow-lg transition duration-150 active:scale-95 active:shadow-sm transition-colors">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
+        <p>Copyright © 2025 All rights reserved | This template is made with by Techbuddies@bgs</p>
+      </div>
+    </div>
+
+    <button id="scrollToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
 
 
     <!-- scroller popup starts      -->
-        <!-- Modal Backdrop -->
-        <div id="modalBackdrop" class="fixed inset-0 bg-black bg-opacity-40 hidden z-40"></div>
-<!-- Modal Backdrop -->
-<div id="modal" class=" fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-xl shadow-lg p-6 z-50 hidden max-h-[80vh] overflow-y-auto">
-  <div class="flex justify-between items-center mb-4">
-    <h2 id="modalTitle" class="text-xl font-semibold">Modal Title</h2>
-    <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700 text-xl">&times;</button>
-  </div>
+    <!-- Modal Backdrop -->
+    <div id="modalBackdrop" class="fixed inset-0 bg-black bg-opacity-40 hidden z-40"></div>
+    <!-- Modal Backdrop -->
+    <div id="modal"
+      class=" fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-xl shadow-lg p-6 z-50 hidden max-h-[80vh] overflow-y-auto">
+      <div class="flex justify-between items-center mb-4">
+        <h2 id="modalTitle" class="text-xl font-semibold">Modal Title</h2>
+        <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700 text-xl">&times;</button>
+      </div>
 
-  <!-- Scrollable content -->
-  <div id="modalContent" class="space-y-4 text-sm text-gray-700 break-words">
-    <!-- Your long content goes here -->
-  </div>
-</div>
-
-
-<!-- Scroll to Top Button -->
+      <!-- Scrollable content -->
+      <div id="modalContent" class="space-y-4 text-sm text-gray-700 break-words">
+        <!-- Your long content goes here -->
+      </div>
+    </div>
 
 
-    </footer>
-    
- <!-- scrollerpopup -->
+    <!-- Scroll to Top Button -->
 
-<script>
-  const modal = document.getElementById('modal');
-  const backdrop = document.getElementById('modalBackdrop');
-  const closeModalBtn = document.getElementById('closeModalBtn');
-  const policyLink = document.getElementById('policyLink');
-  const termsLink = document.getElementById('termsLink');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalContent = document.getElementById('modalContent');
 
-  function openModal(title, contentHTML) {
-    modalTitle.textContent = title;
-    modalContent.innerHTML = contentHTML;
-    modal.classList.remove('hidden');
-    backdrop.classList.remove('hidden');
-    document.body.classList.add('overflow-hidden');
-  }
+  </footer>
 
-  function closeModal() {
-    modal.classList.add('hidden');
-    backdrop.classList.add('hidden');
-    document.body.classList.remove('overflow-hidden');
-  }
+  <!-- scrollerpopup -->
 
-  policyLink.addEventListener('click', function (e) {
-    e.preventDefault();
-    openModal("Privacy and Policy", `
+  <script>
+    const modal = document.getElementById('modal');
+    const backdrop = document.getElementById('modalBackdrop');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const policyLink = document.getElementById('policyLink');
+    const termsLink = document.getElementById('termsLink');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalContent = document.getElementById('modalContent');
+
+    function openModal(title, contentHTML) {
+      modalTitle.textContent = title;
+      modalContent.innerHTML = contentHTML;
+      modal.classList.remove('hidden');
+      backdrop.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      backdrop.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    policyLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal("Privacy and Policy", `
        <p>These are the terms and conditions for using this serviceMore legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.</p>
       <p>By using the website, you agree to the following terms..More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.</p>
       <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
@@ -553,11 +533,11 @@
         <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
          <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
     `);
-  });
+    });
 
-  termsLink.addEventListener('click', function (e) {
-    e.preventDefault();
-    openModal("Terms and Conditions", `
+    termsLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      openModal("Terms and Conditions", `
       <p>These are the terms and conditions for using this serviceMore legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.</p>
       <p>By using the website, you agree to the following terms..More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.</p>
       <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
@@ -566,17 +546,18 @@
         <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
          <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
     `);
-  });
+    });
 
-  closeModalBtn.addEventListener('click', closeModal);
-  backdrop.addEventListener('click', closeModal);
-</script>
+    closeModalBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+  </script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-     <script src="script.js"></script>
-    <script src="form.js"></script>
-  </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="script.js"></script>
+  <script src="form.js"></script>
+</body>
+
 </html>

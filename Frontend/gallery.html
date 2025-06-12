@@ -44,13 +44,58 @@
                 padding-left: 1.5rem;
                 padding-right: 1.5rem;
             }
-
-            /* .style{
-        @media (min-width: 1024px) {
-          position: absolute;
-           right:10rem
         }
-      } */
+
+        /* Updated hover effect for navbar with light orange color */
+        .nav-hover-effect {
+            position: relative;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .nav-hover-effect::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #FFCC99;
+            /* Light orange color */
+            opacity: 0;
+            transform: scale(0.9);
+            z-index: -1;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .nav-hover-effect:hover {
+            color: #00076A;
+            /* Dark blue text on hover */
+        }
+
+        .nav-hover-effect:hover::before {
+            opacity: 0.7;
+            transform: scale(1);
+        }
+
+        /* Gallery item hover effect - matching dropdown style */
+        .gallery-item {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            transition: transform 0.5s ease;
         }
     </style>
 
@@ -94,7 +139,8 @@
     <!-- Navbar -->
     <!-- Navbar -->
     <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
-        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-8 justify-between">
+        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-x-8">
+
 
             <!-- Logo -->
             <div class="flex items-center">
@@ -112,11 +158,11 @@
             </div>
 
             <!-- Desktop Nav -->
-            <div class="hidden md:flex items-cente  sm:space-x-2  lg:space-x-4 xl:space-x-6">
+            <div class="hidden md:flex items-center sm:space-x-2 lg:space-x-4 xl:space-x-6">
                 <!-- Dropdowns -->
 
-                <div class="relative group p-3 hover:bg-[#1B9CE3] ">
-                    <a class="flex items-center space-x-1 text-black  focus:outline-none">
+                <div class="relative group p-3 nav-hover-effect">
+                    <a class="flex items-center space-x-1 text-black focus:outline-none">
                         <span class="text-lg">Sales</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
                     </a>
@@ -127,8 +173,8 @@
                     </div>
                 </div>
 
-                <div class="relative group p-3 hover:bg-[#1B9CE3] ">
-                    <a class="flex items-center space-x-1 text-black  focus:outline-none">
+                <div class="relative group p-3 nav-hover-effect">
+                    <a class="flex items-center space-x-1 text-black focus:outline-none">
                         <span class="text-lg">Company</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
                     </a>
@@ -140,8 +186,8 @@
                     </div>
                 </div>
 
-                <div class="relative group p-3 hover:bg-[#1B9CE3]">
-                    <a class="flex items-center space-x-1 text-black  focus:outline-none">
+                <div class="relative group p-3 nav-hover-effect">
+                    <a class="flex items-center space-x-1 text-black focus:outline-none">
                         <span class="text-lg">Services</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
                     </a>
@@ -152,17 +198,15 @@
                     </div>
                 </div>
 
-                <div class="relative group p-3 hover:bg-[#1B9CE3]">
-                    <a href="carrerPage.html" class="flex items-center space-x-1 text-black  focus:outline-none">
+                <div class="relative group p-3 nav-hover-effect">
+                    <a href="carrerPage.html" class="flex items-center space-x-1 text-black focus:outline-none">
                         <span class="text-lg">Careers</span>
-                        <!-- <i class="fa-solid fa-chevron-down text-xs"></i> -->
                     </a>
                 </div>
 
-                <div class="relative group p-3 hover:bg-[#1B9CE3]">
-                    <a href="partners.html" class="flex items-center space-x-1 text-black  focus:outline-none">
+                <div class="relative group p-3 nav-hover-effect">
+                    <a href="partners.html" class="flex items-center space-x-1 text-black focus:outline-none">
                         <span class="text-lg">Our Partners</span>
-                        <!-- <i class="fa-solid fa-chevron-down text-xs"></i> -->
                     </a>
                 </div>
 
@@ -190,82 +234,69 @@
         <!-- Mobile Menu -->
         <div class="md:hidden" x-show="mobileMenu" x-transition>
             <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
-
-
                 <div x-data="{ open: false }">
                     <button @click="open = !open"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
                         <span>Sales</span>
                         <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
                             class="fa-solid text-sm transition-transform"></i>
                     </button>
                     <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="b2b.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2B Sales</a>
-                        <a href="b2c.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">B2C Sales</a>
-
+                        <a href="b2b.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">B2B
+                            Sales</a>
+                        <a href="b2c.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">B2C
+                            Sales</a>
                     </div>
                 </div>
+
                 <!-- About -->
                 <div x-data="{ open: false }">
                     <button @click="open = !open"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
                         <span>Company</span>
                         <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
                             class="fa-solid text-sm transition-transform"></i>
                     </button>
                     <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="about.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">About Us</a>
-                        <a href="gallery.html"
-                            class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Gallery</a>
-                        <a href="contact.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">Contact
+                        <a href="about.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">About
                             Us</a>
+                        <a href="gallery.html"
+                            class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">Gallery</a>
+                        <a href="contact.html"
+                            class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">Contact Us</a>
                     </div>
                 </div>
 
                 <!-- Services -->
                 <div x-data="{ open: false }">
                     <button @click="open = !open"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
                         <span>Services</span>
                         <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
                             class="fa-solid text-sm transition-transform"></i>
                     </button>
                     <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="comingSoon.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">CRM</a>
-                        <a href="services.html" class="block text-sm text-black hover:bg-[#1B9CE3]  px-2 py-1">All
+                        <a href="comingSoon.html"
+                            class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">CRM</a>
+                        <a href="services.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">All
                             Services</a>
                     </div>
                 </div>
 
                 <!-- Careers -->
                 <div x-data="{ open: false }">
-                    <a @click="open = !open" href="carrerPage.html"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+                    <a href="carrerPage.html"
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
                         <span>Careers</span>
-                        <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
                     </a>
-
                 </div>
 
+                <!-- Partners -->
                 <div x-data="{ open: false }">
-                    <a @click="open = !open" href="partners.html"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none">
+                    <a href="partners.html"
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
                         <span>Our Partners</span>
-                        <!-- <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i> -->
                     </a>
-
-                </div>
-
-                <!-- Contact -->
-                <div class="flex justify-start items-center space-x-4 px-2 pt-2 border-t">
-                    <button
-                        class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-1 rounded flex items-center hover:bg-blue-50 text-sm">
-                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                        LOGIN
-                    </button>
                 </div>
             </div>
         </div>
@@ -286,40 +317,40 @@
 
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pb-16">
-        <div>
+        <div class="gallery-item">
             <img class="h-auto max-w-full rounded-lg" src="assets/10.jpg" alt="">
         </div>
-        <div>
+        <div class="gallery-item">
             <img class="h-auto max-w-full rounded-lg" src="assets/2.jpg" alt="">
         </div>
-        <div>
+        <div class="gallery-item">
             <img class="h-auto max-w-full rounded-lg" src="assets/9.jpg" alt="">
         </div>
-        <div>
+        <div class="gallery-item">
             <img class="h-auto max-w-full rounded-lg" src="assets/11.jpg" alt="">
         </div>
-        <div>
+        <div class="gallery-item">
             <img class="h-auto max-w-full rounded-lg" src="assets/4.jpg" alt="">
         </div>
-        <div>
+        <div class="gallery-item">
             <img class="h-auto max-w-full rounded-lg" src="assets/5.jpg" alt="">
         </div>
-        <!-- <div>
+        <!-- <div class="gallery-item">
             <img class="h-auto max-w-full rounded-lg" src="assets/6.jpg" alt="">
         </div> -->
-        <!-- <div>
+        <!-- <div class="gallery-item">
             <img class="h-auto max-w-full rounded-lg" src="assets/7.jpg" alt="">
         </div> -->
-        <div>
+        <div class="gallery-item">
             <img class="h-auto max-w-full rounded-lg" src="assets/3.jpg" alt="">
         </div>
-        <div>
+        <div class="gallery-item">
             <img class="h-auto max-w-full rounded-lg" src="assets/8.jpg" alt="">
         </div>
-        <!-- <div>
+        <!-- <div class="gallery-item">
             <img class="h-auto max-w-full rounded-lg" src="assets/1.jpg" alt="">
         </div> -->
-        <div>
+        <div class="gallery-item">
             <img class="h-auto max-w-full rounded-lg" src="assets/12.jpg" alt="">
         </div>
     </div>

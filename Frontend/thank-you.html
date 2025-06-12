@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Bridge Group Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <style>
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            position: relative;
+            animation: checkmark 0.5s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+        }
+        
+        .success-checkmark .check-icon {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            border-radius: 50%;
+            box-sizing: content-box;
+            border: 4px solid #4CAF50;
+        }
+        
+        .success-checkmark .check-icon::before {
+            top: 43px;
+            left: 19px;
+            width: 20px;
+            transform: rotate(45deg);
+            position: absolute;
+            content: '';
+            height: 4px;
+            background-color: #4CAF50;
+            animation: checkmark-check-before 0.3s ease-in-out 0.5s forwards;
+            opacity: 0;
+        }
+        
+        .success-checkmark .check-icon::after {
+            top: 38px;
+            left: 26px;
+            width: 40px;
+            transform: rotate(135deg);
+            position: absolute;
+            content: '';
+            height: 4px;
+            background-color: #4CAF50;
+            animation: checkmark-check-after 0.3s ease-in-out 0.5s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes checkmark {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes checkmark-check-before {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes checkmark-check-after {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="site-container py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="./assets/logo.png" alt="Bridge Group Solutions" class="h-10">
+                <div>
+                    <h1 class="text-[#00076A] font-Mulish font-semibold text-xl">BRIDGE GROUP</h1>
+                    <p class="text-[#00076A] font-Mulish font-semibold text-xs">SOLUTIONS</p>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
+                <a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Services</a>
+                <a href="career.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                <a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact</a>
+            </div>
+            <button id="mobileMenuBtn" class="md:hidden text-gray-600 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full z-50">
+            <div class="flex flex-col p-4 space-y-4">
+                <a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
+                <a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
+                <a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Services</a>
+                <a href="career.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                <a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Thank You Content -->
+    <div class="min-h-screen flex items-center justify-center px-4 py-12">
+        <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
+            <div class="success-checkmark">
+                <div class="check-icon"></div>
+            </div>
+            
+            <h1 class="mt-6 text-3xl font-bold text-[#1B9CE3]">Thank You!</h1>
+            
+            <p class="mt-4 text-lg text-gray-700">
+                Your application has been submitted successfully.
+            </p>
+            
+            <p class="mt-2 text-gray-600">
+                We appreciate your interest in joining Bridge Group Solutions. Our team will review your application and get back to you soon.
+            </p>
+            
+            <div class="mt-8 flex flex-col space-y-4">
+                <a href="career.html" class="px-6 py-3 bg-orange-500 text-white rounded-lg shadow-md hover:bg-orange-600 transition-colors">
+                    View More Jobs
+                </a>
+                
+                <a href="index.html" class="px-6 py-3 border border-[#1B9CE3] text-[#1B9CE3] rounded-lg hover:bg-blue-50 transition-colors">
+                    Return to Homepage
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#D2F0FF] py-10">
+        <div class="site-container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo and Social Links -->
+                <div class="text-center md:text-left">
+                    <div class="flex justify-center md:justify-start items-center gap-4 mb-4">
+                        <img src="./assets/logo.png" alt="Bridge Group Solutions" class="h-12">
+                        <div>
+                            <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">BRIDGE GROUP</h1>
+                            <p class="text-[#00076A] font-Mulish font-semibold">SOLUTIONS</p>
+                        </div>
+                    </div>
+                    <p class="bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-transparent bg-clip-text font-small text-accent mb-4">
+                        WE KNOT SPACE...
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" class="text-[#1B9CE3] hover:text-blue-700 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-[#1B9CE3] hover:text-blue-700 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-[#1B9CE3] hover:text-blue-700 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-[#1B9CE3] hover:text-blue-700 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-semibold text-[#000000] mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a></li>
+                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Services</a></li>
+                        <li><a href="career.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-semibold text-[#000000] mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Web Development</a></li>
+                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Mobile App Development</a></li>
+                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">UI/UX Design</a></li>
+                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Digital Marketing</a></li>
+                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software Testing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Subscribe Form -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-semibold text-[#000000] mb-6">Subscribe Us!</h3>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Enter Email Address" class="px-4 py-3 w-full rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
+                        <button type="submit" class="px-3 py-3 w-full bg-[#1B9CE3] text-white rounded-lg shadow-lg transition duration-150 active:scale-95 active:shadow-sm transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
+                <p>Copyright © 2025 All rights reserved | This template is made with by Techbuddies@bgs</p>
+            </div>
+        </div>
+
+        <button id="scrollToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Modal for Terms and Privacy Policy -->
+    <div id="modalBackdrop" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+    <div id="modal" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-xl z-50 w-11/12 max-w-2xl max-h-[90vh] overflow-hidden">
+        <div class="flex justify-between items-center border-b p-4">
+            <h2 id="modalTitle" class="text-xl font-semibold text-gray-800"></h2>
+            <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="modalContent" class="p-6 overflow-y-auto max-h-[70vh]"></div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('modal');
+        const backdrop = document.getElementById('modalBackdrop');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        function openModal(title, contentHTML) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalContent').innerHTML = contentHTML;
+            modal.classList.remove('hidden');
+            backdrop.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            backdrop.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+        backdrop.addEventListener('click', closeModal);
+
+        // Show scroll to top button when scrolling down
+        window.addEventListener('scroll', function() {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.remove('hidden');
+            } else {
+                scrollToTopBtn.classList.add('hidden');
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

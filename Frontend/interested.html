@@ -152,6 +152,14 @@
       }
     }
   </style>
+  <!-- Add EmailJS script in the head section -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function () {
+        // Replace with your EmailJS user ID
+        emailjs.init("YOUR_USER_ID_HERE");
+      })();
+  </script>
 </head>
 
 <body>
@@ -374,7 +382,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
-          Back
+          Back  
       </a> -->
         <div class="text-sm font-medium text-gray-500">BGS</div>
         <div class="vertical-divider"></div>
@@ -390,89 +398,68 @@
       <div class="p-6 border-b">
         <h2 class="text-orange-500 font-medium mb-4">Personal Details</h2>
 
-        <form id="interestForm">
+        <form id="interestForm" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+          <!-- Use the correct access key -->
+          <input type="hidden" name="access_key" value="eee33a9a-5ca3-49a6-9711-a83f35a284f2">
+
+          <!-- Add a basic subject line -->
+          <input type="hidden" name="subject" value="New Job Application from Website">
+
+          <!-- Add a redirect URL -->
+          <input type="hidden" name="redirect" value="thank-you.html">
+
+          <!-- Add a hidden field for the job title -->
+          <input type="hidden" id="jobTitle" name="jobTitle" value="">
+
           <div class="form-group">
             <label class="form-label" for="firstName">First Name*</label>
             <input type="text" id="firstName" name="firstName" class="form-input" required>
+            <p id="firstNameError" class="text-red-500 text-xs mt-1 hidden"></p>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="lastName">Last Name*</label>
             <input type="text" id="lastName" name="lastName" class="form-input" required>
+            <p id="lastNameError" class="text-red-500 text-xs mt-1 hidden"></p>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="contact">Contact*</label>
-            <input type="text" id="contact" name="contact" class="form-input" required>
+            <label class="form-label" for="email">Email*</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+            <p id="emailError" class="text-red-500 text-xs mt-1 hidden"></p>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="yearOfGraduation">Year of Graduation*</label>
-            <input type="text" id="yearOfGraduation" name="yearOfGraduation" class="form-input" required>
+            <label class="form-label" for="phone">Phone*</label>
+            <input type="tel" id="phone" name="phone" class="form-input" required>
+            <p id="phoneError" class="text-red-500 text-xs mt-1 hidden"></p>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="gender">Gender*</label>
-            <input type="text" id="gender" name="gender" class="form-input" required>
+            <label class="form-label" for="message">Cover Letter / Additional Information*</label>
+            <textarea id="message" name="message" class="form-input" rows="4" required></textarea>
+            <p id="messageError" class="text-red-500 text-xs mt-1 hidden"></p>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="experienceInYears">Experience In Years*</label>
-            <input type="text" id="experienceInYears" name="experienceInYears" class="form-input" required>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="currentEmployer">Current Employer*</label>
-            <input type="text" id="currentEmployer" name="currentEmployer" class="form-input" required>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="currentCTC">Current CTC (in Lakhs Per Annum)*</label>
-            <input type="text" id="currentCTC" name="currentCTC" class="form-input" required>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="expectedCTC">Expected CTC (in Lakhs Per Annum)*</label>
-            <input type="text" id="expectedCTC" name="expectedCTC" class="form-input" required>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="noticePeriod">Notice Period*</label>
-            <input type="text" id="noticePeriod" name="noticePeriod" class="form-input" required>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="skillSet">Skill Set*</label>
-            <input type="text" id="skillSet" name="skillSet" class="form-input" required>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="howDidYouCome">How did you come across this vacancy?*</label>
-            <input type="text" id="howDidYouCome" name="howDidYouCome" class="form-input" required>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="currentLocation">Current Location*</label>
-            <input type="text" id="currentLocation" name="currentLocation" class="form-input" required>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="preferredLocation">Preferred Location*</label>
-            <input type="text" id="preferredLocation" name="preferredLocation" class="form-input" required>
-          </div>
-
-          <!-- Resume Upload Section - Exactly as in the image -->
+          <!-- Resume Information Section -->
           <div class="mt-6">
-            <h3 class="text-orange-500 font-medium mb-2">Upload Your Resume</h3>
+            <h3 class="text-orange-500 font-medium mb-2">Resume Information</h3>
             <div class="form-group">
-              <label class="form-label" for="resume">Resume*</label>
-              <input type="file" id="resume" name="resume" class="form-input border-orange-300" required>
+              <label class="form-label" for="resumeInfo">Resume Information*</label>
+              <textarea id="resumeInfo" name="resumeInfo" class="form-input" rows="3" required
+                placeholder="Please provide a link to your resume (Google Drive, Dropbox, etc.) or mention your LinkedIn profile URL."></textarea>
+              <p id="resumeInfoError" class="text-red-500 text-xs mt-1 hidden"></p>
+              <p class="text-xs text-gray-500 mt-1">You can also email your resume directly to
+                careers@bridgegroupsolutions.com with the subject line "Resume for [Position Name]"</p>
             </div>
           </div>
+
+          <!-- Result message area -->
+          <div id="result" class="mt-4 text-center"></div>
         </form>
       </div>
 
-      <!-- Buttons - Exactly as in the image -->
+      <!-- Buttons -->
       <div class="p-4 flex justify-center gap-4">
         <button type="button" id="cancelBtn"
           class="px-6 py-2 border border-blue-400 text-blue-500 rounded">Cancel</button>
@@ -823,6 +810,23 @@ compliance, or service delivery. We ensure that all data collection practices ar
     backdrop.addEventListener('click', closeModal);
   </script>
 
+
+  <script src="jobForm.js"></script>
+
+
+  <script>
+    const form = document.getElementById("interestForm");
+    form.addEventListener("submit", function (e) {
+      // Optionally show a loading spinner or validation
+      const fileInput = document.getElementById("resume");
+      const file = fileInput.files[0];
+
+      if (file && file.size > 5 * 1024 * 1024) {
+        e.preventDefault();
+        alert("File size should be less than 5MB.");
+      }
+    });
+  </script>
   <!-- JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {

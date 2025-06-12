@@ -354,7 +354,7 @@
       <div class="flex justify-center gap-4 mb-8">
         <a href="#"
           class="border border-blue-400 text-blue-500 px-6 py-2 rounded text-sm font-medium flex items-center">
-          SHARE JOB VIA EMAIL
+          SHARE JOB
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd"
               d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
@@ -948,6 +948,133 @@ compliance, or service delivery. We ensure that all data collection practices ar
     });
   </script>
   <script src="script.js"></script>
+</body>
+
+<div id="shareModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-lg font-semibold text-gray-900">Share Job</h3>
+      <button id="closeShareModal" class="text-gray-500 hover:text-gray-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <p class="text-gray-600 mb-4">Copy the link below to share this job opportunity:</p>
+
+    <div class="flex items-center mb-4">
+      <input id="shareUrl" type="text"
+        class="flex-1 p-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        readonly>
+      <button id="copyShareUrl"
+        class="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+        Copy
+      </button>
+    </div>
+
+    <div class="flex justify-end">
+      <button id="closeShareBtn"
+        class="px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Share job functionality
+    const shareJobBtn = document.querySelector('a.border.border-blue-400.text-blue-500');
+    const shareModal = document.getElementById('shareModal');
+    const closeShareModal = document.getElementById('closeShareModal');
+    const closeShareBtn = document.getElementById('closeShareBtn');
+    const shareUrl = document.getElementById('shareUrl');
+    const copyShareUrl = document.getElementById('copyShareUrl');
+
+    if (shareJobBtn && shareModal) {
+      // Open share modal when clicking "SHARE JOB" button
+      shareJobBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Get current URL
+        const currentUrl = window.location.href;
+
+        // Set URL in input field
+        if (shareUrl) {
+          shareUrl.value = currentUrl;
+        }
+
+        // Show modal
+        shareModal.classList.remove('hidden');
+      });
+
+      // Close modal when clicking the X button
+      if (closeShareModal) {
+        closeShareModal.addEventListener('click', function () {
+          shareModal.classList.add('hidden');
+        });
+      }
+
+      // Close modal when clicking the Close button
+      if (closeShareBtn) {
+        closeShareBtn.addEventListener('click', function () {
+          shareModal.classList.add('hidden');
+        });
+      }
+
+      // Copy URL to clipboard when clicking Copy button
+      if (copyShareUrl && shareUrl) {
+        copyShareUrl.addEventListener('click', function () {
+          // Select the text
+          shareUrl.select();
+          shareUrl.setSelectionRange(0, 99999); // For mobile devices
+
+          // Copy to clipboard
+          try {
+            navigator.clipboard.writeText(shareUrl.value).then(() => {
+              // Change button text temporarily
+              const originalText = copyShareUrl.textContent;
+              copyShareUrl.textContent = 'Copied!';
+              copyShareUrl.classList.remove('bg-blue-500');
+              copyShareUrl.classList.add('bg-green-500');
+
+              // Revert button text after 2 seconds
+              setTimeout(() => {
+                copyShareUrl.textContent = originalText;
+                copyShareUrl.classList.remove('bg-green-500');
+                copyShareUrl.classList.add('bg-blue-500');
+              }, 2000);
+            });
+          } catch (err) {
+            // Fallback for older browsers
+            document.execCommand('copy');
+
+            // Change button text temporarily
+            const originalText = copyShareUrl.textContent;
+            copyShareUrl.textContent = 'Copied!';
+            copyShareUrl.classList.remove('bg-blue-500');
+            copyShareUrl.classList.add('bg-green-500');
+
+            // Revert button text after 2 seconds
+            setTimeout(() => {
+              copyShareUrl.textContent = originalText;
+              copyShareUrl.classList.remove('bg-green-500');
+              copyShareUrl.classList.add('bg-blue-500');
+            }, 2000);
+          }
+        });
+      }
+
+      // Close modal when clicking outside
+      window.addEventListener('click', function (e) {
+        if (e.target === shareModal) {
+          shareModal.classList.add('hidden');
+        }
+      });
+    }
+  });
+</script>
 </body>
 
 </html>

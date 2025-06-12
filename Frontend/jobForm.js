@@ -273,7 +273,9 @@ document.addEventListener("DOMContentLoaded", function () {
         
         <div class="mt-8 pt-6 border-t border-gray-200">
           <p class="text-sm text-gray-500">
-            If you have any questions, please contact us at <a href="mailto:careers@bridgegroupsolutions.com" class="text-[#1B9CE3] hover:underline">careers@bridgegroupsolutions.com</a>
+            If you have any questions, please contact us at <a href="mailto:
+contact@bridgegroupsolutions.com" class="text-[#1B9CE3] hover:underline">
+contact@bridgegroupsolutions.com</a>
           </p>
         </div>
       </div>
@@ -364,8 +366,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
-`;
-      document.head.appendChild(styleElement);
-    }
-  }
-})`;

@@ -305,11 +305,7 @@
           </div>
         </div>
 
-        <div class="relative group p-3 nav-hover-effect">
-          <a href="carrerPage.html" class="flex items-center space-x-1 text-black focus:outline-none">
-            <span class="text-lg">Careers</span>
-          </a>
-        </div>
+
 
         <div class="relative group p-3 nav-hover-effect">
           <a href="partners.html" class="flex items-center space-x-1 text-black focus:outline-none">
@@ -317,16 +313,15 @@
           </a>
         </div>
 
-        <!-- Contact -->
-        <div class="flex justify-start items-center px-2 ">
-          <button
-            class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-2 rounded flex items-center hover:bg-blue-50 text-sm">
-            LOGIN
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
+        <div class="relative group p-3 nav-hover-effect">
+          <a href="carrerPage.html"
+            class="inline-flex items-center bg-[#EC7620] hover:bg-orange-600 text-white text-xl py-2 px-6 rounded-md transition-colors">
+            Carrers
+          </a>
         </div>
+
+        <!-- Contact -->
+
       </div>
 
       <!-- Hamburger (mobile only) -->
@@ -384,12 +379,7 @@
         </div>
 
         <!-- Careers -->
-        <div x-data="{ open: false }">
-          <a href="carrerPage.html"
-            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
-            <span>Careers</span>
-          </a>
-        </div>
+
 
         <!-- Partners -->
         <div x-data="{ open: false }">
@@ -398,6 +388,14 @@
             <span>Our Partners</span>
           </a>
         </div>
+
+        <div x-data="{ open: false }">
+          <a href="carrerPage.html"
+            class="inline-flex items-center bg-[#EC7620] hover:bg-orange-600 text-white text-xl py-2 px-6 rounded-md transition-colors">
+            Carrers
+          </a>
+        </div>
+
       </div>
     </div>
 
@@ -566,14 +564,19 @@
         <div class="text-center md:text-left">
           <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
           <ul class="space-y-4">
-            <li><a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a></li>
-            <li><a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a></li>
+            <li><a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
+            </li>
+            <li><a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
+            </li>
+
             <li><a href="carrerPage.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a></li>
-            <li><a href="#" id="policyLink" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Privacy and
+            <li><a href="privacy-policy.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Privacy and
                 Policy</a></li>
-            <li><a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a></li>
-            <li><a href="#" id="termsLink" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Terms and
-                Conditions</a></li>
+            <li><a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact
+                Us</a></li>
+            <li><a href="terms.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Terms and
+                Conditions</a>
+            </li>
           </ul>
 
         </div>
@@ -586,12 +589,12 @@
                 Development</a></li>
             <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Backend
                 Development</a></li>
-            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Data Analytics</a>
-            </li>
-            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Web Secutity and
-                Optimizations</a></li>
-            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp & Customized
-                Software</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Data
+                Analytics</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Web
+                Secutity and Optimizations</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp &
+                Customized Software</a></li>
             <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software
                 Testing</a></li>
           </ul>
@@ -625,222 +628,13 @@
 
     <!-- scroller popup starts      -->
     <!-- Modal Backdrop -->
-    <div id="modalBackdrop" class="fixed inset-0 bg-black bg-opacity-40 hidden z-40"></div>
-    <!-- Modal Backdrop -->
-    <div id="modal"
-      class=" fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-xl shadow-lg p-6 z-50 hidden max-h-[80vh] overflow-y-auto">
-      <div class="flex justify-between items-center mb-4">
-        <h2 id="modalTitle" class="text-xl font-semibold">Modal Title</h2>
-        <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700 text-xl">&times;</button>
-      </div>
 
-      <!-- Scrollable content -->
-      <div id="modalContent" class="space-y-4 text-sm text-gray-700 break-words">
-        <!-- Your long content goes here -->
-      </div>
-    </div>
 
 
     <!-- Scroll to Top Button -->
 
 
   </footer>
-
-  <!-- scrollerpopup -->
-
-  <script>
-    const modal = document.getElementById('modal');
-    const backdrop = document.getElementById('modalBackdrop');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const policyLink = document.getElementById('policyLink');
-    const termsLink = document.getElementById('termsLink');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalContent = document.getElementById('modalContent');
-
-    function openModal(title, contentHTML) {
-      modalTitle.textContent = title;
-      modalContent.innerHTML = contentHTML;
-      modal.classList.remove('hidden');
-      backdrop.classList.remove('hidden');
-      document.body.classList.add('overflow-hidden');
-    }
-
-    function closeModal() {
-      modal.classList.add('hidden');
-      backdrop.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-    }
-
-    policyLink.addEventListener('click', function (e) {
-      e.preventDefault();
-      openModal("Privacy and Policy", `
-
-     <p>  Bridge Group Solutions (BGS) enforces strict controls on the handling of all personal and sensitive information. This Privacy & Data Protection Policy outlines our commitment to safeguarding information and defines the
-         responsibilities of all individuals interacting with our systems and services.</p>
-<h2><b>1. Purpose and Scope of the Policy</b></h2>
-<p>This Privacy & Data Protection Policy reflects Bridge Group Solutions' (BGS) unwavering commitment to safeguarding the personal and 
-sensitive information entrusted to us. The policy applies to all individuals whose data is collected, processed, or stored by BGS. 
-This includes employees, clients, contractors, service providers, and users of our websites and digital services. 
-It defines the principles, responsibilities, and measures we adhere to in order to ensure the privacy, security, and 
-ethical handling of personal data throughout its lifecycle.</p>
-
-<h2><b>2. Principles of Data Collection</b></h2>
-<p>BGS adheres to a data minimization approach, collecting only the data that is essential for legitimate business function, legal 
-compliance, or service delivery. We ensure that all data collection practices are transparent, lawful, and fair.
- Our goal is to respect the privacy rights of individuals by informing them about the purpose and use of their data and ensuring 
- their consent wherever applicable.</p>
-
-<h2><b>3. Categories of Personal Data Collected</b></h2>
-<p>Depending on your relationship and interaction with BGS, we may collect various types of personal data. 
-    This includes your full name, contact details (such as phone number, email address, and postal address , Bank details), 
-    and government-issued identification documents like PAN or Aadhaar. We may also collect financial details for 
-    payment and billing purposes, professional or academic background for recruitment, and technical data like IP address and
-     browser type when interacting with our digital platforms. All data is collected with a specific purpose and used responsibly.</p>
-
-<h2><b>4. Legal and Regulatory Compliance</b></h2>
-<p>BGS conducts all data-related activities in accordance with applicable Indian laws, including the Information Technology Act, 
-    2000 and the Digital Personal Data Protection (DPDP) Act, 2023. We also comply with any other regional or sector-specific 
-    regulatory obligations that apply to our operations. Compliance is central to our data handling framework, ensuring lawful 
-    processing and upholding individual rights.</p>
-
-<h2><b>5. Data Security and Protection Measures</b></h2>
-<p>The security of personal and sensitive data is of utmost importance to BGS. We implement industry-leading data protection 
-    measures such as end-to-end encryption, secure authentication protocols, access control systems, regular security audits, 
-    and advanced firewalls. Our systems are designed to prevent unauthorized access, data leaks, or 
-    tampering, ensuring that all data is protected throughout its lifecycle, whether in transit or at rest.</p>
-
-<h2><b>6. Employee Roles and Responsibilities</b></h2>
-<p>All employees and contractors at BGS are trained in data privacy and protection best practices. 
-    They are expected to handle personal information with care, confidentiality, and integrity. 
-    Failure to comply with data protection standards may lead to disciplinary actions, including suspension, termination,
-     or legal consequences. Every member of our organization plays a critical role in upholding our privacy commitments.<p>
-
-<h2><b>7. Access Management and Data Confidentiality</b></h2>
-<p>Access to personal data within BGS is granted based strictly on the principle of least privilege. 
-    Only authorized personnel, whose roles require access to specific data, are permitted to view or process that information. 
-    Access controls are regularly reviewed, and confidentiality agreements are enforced to maintain trust and integrity in all 
-    data-handling operations.</p>
-
-<h2><b>8. Third-Party Data Sharing and Disclosure</b></h2>
-<p>BGS does not share personal data with third parties unless such disclosure is legally required, or
-     the individual has given explicit, informed consent. In certain cases, we may work with trusted service providers
-      or partners who support our operations. These third parties are bound by stringent confidentiality and data protection 
-      agreements, ensuring that the personal information they handle on our behalf is protected to the same standard as within BGS.</p>
-
-<h2><b>9. Monitoring, Breach Detection, and Incident Response</b></h2>
-<p>We continuously monitor our digital infrastructure to detect and respond to unauthorized access, data leaks, or 
-    suspicious activity. In the event of a data breach, our incident response team initiates immediate containment and 
-    investigation procedures. All affected systems are isolated, impact is assessed, and appropriate measures are taken to 
-    mitigate risks and restore data security.</p>
-
-<h2><b>10. Consequences of Data Misuse</b></h2>
-<p>BGS maintains a zero-tolerance policy toward the misuse or mishandling of personal information. Any such actions by employees, 
-    contractors, or third parties may result in severe consequences, including internal disciplinary action, termination of contracts, 
-    and legal prosecution. We are committed to enforcing accountability and protecting the trust placed in us.</p>
-
-<h2><b>11. Individual Rights and Data Access Requests</b></h2>
-<p>Individuals whose data is collected by BGS have the right to access their personal information, request corrections or
-     updates to inaccurate data, and request deletion where legally permissible. To exercise these rights, individuals may 
-     contact our HR department. BGS ensures that all data access and modification requests are handled promptly, transparently,
-      and in compliance with the law.</p>
-
-<h2><b>12. Data Retention and Secure Disposal</b></h2>
-<p>BGS retains personal data only for as long as necessary to fulfil its intended business or legal purpose. 
-    Once the data is no longer required, it is securely deleted or destroyed using industry-standard disposal practices. 
-    This ensures that no residual data remains accessible or recoverable, thereby protecting individuals’ privacy even after the 
-    data has served its purpose.</p>
-
-<h2><b>13. Data Breach Notification Procedures</b></h2>
-<p>In the event of a significant data breach involving personal information, 
-    BGS will notify the affected individuals in a timely and transparent manner. 
-    The notification will include the nature of the breach, potential consequences, and 
-    the actions being taken to address and mitigate the risks. We believe in open communication and prompt resolution 
-    to maintain trust and confidence.</p>
-
-<h2><b>14. Ongoing Audits and Policy Compliance</b></h2>
-<p>To ensure the effectiveness of this policy, BGS conducts regular audits and compliance checks of its data protection practices. 
-    These reviews help us identify areas of improvement, maintain alignment with legal standards, and 
-    adapt to changes in regulatory frameworks. Any updates to this policy are communicated clearly to all relevant parties.</p>
-
-<h2><b>15. Use of Cookies and Tracking Technologies</b></h2>
-<p>BGS uses cookies and similar technologies on its digital platforms to enhance user experience, enable core site functionality, 
-    and gather analytical insights. These technologies are not used for profiling or behavioural tracking. Users have full control 
-    over cookie preferences through their browser settings and may choose to disable non-essential cookies at any time.</p>
-
-<h2><b>16. Contact Information for Data Protection Inquiries</b></h2>
-<p>For any questions, concerns, or requests regarding your personal data or this policy, please reach out to our dedicated team at:
- </p>
- Email: hrteam@bridgegroupsolutions.com
-
-
-    `);
-    });
-
-    termsLink.addEventListener('click', function (e) {
-      e.preventDefault();
-      openModal("Terms and Conditions", `
-     <p>By accessing and using the services, platforms, and content provided by 
-        Bridge Group Solutions (“BGS”), you agree to comply with the following Terms & Conditions. 
-        These rules are designed to protect the integrity, reputation, and digital assets of BGS and its users.</p>
-
-       <h2> <b> 1. Authorized Use </b></h2>
-      <p>You are permitted to use BGS systems and websites only for lawful, authorized, 
-        and ethical business activities. Any misuse will result in immediate revocation of access and possible legal action.</p>
-
-         <h2> <b> 2. Intellectual Property </b></h2>
-      <p>All designs, code, documents, text, and brand assets appearing on BGS platforms are the 
-        exclusive intellectual property of Bridge Group Solutions. Unauthorized use is forbidden</p>
-
-         <h2> <b> 3. Content Usage </b></h2>
-      <p>Copying, reproducing, modifying, or redistributing company content or internal documents without prior written 
-      authorization is strictly prohibited.</p>
-
-          <h2> <b> 4. Platform Misuse </b></h2>
-      <p>Misuse of BGS digital platforms—whether through automation, scraping, abuse of access, or
-         exploiting vulnerabilities—is grounds for immediate suspension and legal action.</p>
-
-         <h2> <b> 5. Prohibited Communications </b></h2>
-      <p>Users may not use BGS platforms to send spam, phishing messages, unsolicited offers, or misrepresent their identity or intentions.</p>
-
-         <h2> <b>6. False Identity </b></h2>
-      <p>Impersonating BGS employees, clients, or third-party affiliates for any reason is a breach of trust and will trigger disciplinary and legal consequences.</p>
-
-         <h2> <b> 7. Site Updates </b></h2>
-      <p>Content on BGS digital platforms is subject to change without prior notice. We do not guarantee uninterrupted access, accuracy, or real-time availability.</p>
-
-         <h2> <b> 8. No Guarantees </b></h2>
-      <p>All services are provided “as is” without warranties of any kind. We disclaim responsibility for any damages arising from use or reliance on our systems.</p>
-
-        <h2><b>9. Liability Disclaimer</b></h2>
-        <p>Bridge Group Solutions is not liable for direct, indirect, incidental, or consequential damages resulting from site use, 
-        including loss of data or service interruptions.</p>
-
-       <h2><b>10. Consent to Terms</b><h2>
-       <p> By continuing to use any BGS digital or internal platform, you consent to these Terms & Conditions and acknowledge
-         responsibility for regularly reviewing them.</p>
-
-        <h2><b>11. Governing Law</b></h2>
-       <p>These Terms and Conditions shall be governed by and construed in accordance with the applicable laws of the Republic of India, including but not limited to the Indian Contract Act, 1872, and the Information Technology Act, 2000, along with any rules, regulations, or amendments made thereunder.
-       Any disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of 
-       the competent courts located in  India.</p>
-
-        <h2><b>12. Enforcement</b> <h2>
-       <p>Violations of these terms will lead to strict consequences including access termination, employee disciplinary 
-        action, and civil or criminal prosecution, as applicable.</p>
-
-
-       <h2> <b> 13. Unauthorized Project Listing </b></h2>
-     <p>Any unauthorized use, claim, or display of Bridge Group Solutions projects on personal platforms 
-    (LinkedIn, portfolios, resumes, or any other medium) without explicit prior written consent is a serious breach of company policy. Offenders will face immediate termination, aggressive legal prosecution, 
-    and will be held fully liable for all damages. This misconduct will be dealt with severely and without exception.</p>
-
-
-    `);
-    });
-
-    closeModalBtn.addEventListener('click', closeModal);
-    backdrop.addEventListener('click', closeModal);
-  </script>
 
 
   <script src="jobForm.js"></script>

@@ -4,56 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2B Sales</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Terms and Conditions - Bridge Group Solutions</title>
     <link rel="icon" type="image/png" href="./assets/logo.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="./assets/logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <meta name="google-adsense-account" content="ca-pub-4467563478630338">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4467563478630338"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <script src="https://kit.fontawesome.com/4a2e3e6c8b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-    <link rel="icon" type="image/png" href="./assets/logo.png">
-    <style>
-        .site-container {
-            width: 100%;
-            /* max-width: 1400px; */
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-            /* text-align: center; */
-        }
-
-        @media (min-width: 768px) {
-            .site-container {
-                width: 96%;
-                padding-left: 1rem;
-                padding-right: 1rem;
-
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .site-container {
-                width: 95%;
-                padding-left: 1.5rem;
-                padding-right: 1.5rem;
-            }
-
-            .animate-bulge-in-out {
-                animation: bulgeInOut 1.5s ease-in-out infinite;
-            }
-        }
-    </style>
+    <!-- Navbar hover effects -->
     <style>
         /* Navbar hover effects */
         .nav-hover-effect {
@@ -97,8 +62,8 @@
     </style>
 </head>
 
-<body>
-
+<body class="font-[Muli] bg-gray-50">
+    <!-- Navbar -->
     <div class="bg-[#1B9CE3] text-white text-sm">
         <div
             class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm px-4 space-y-2 md:space-y-0">
@@ -135,30 +100,32 @@
         </div>
     </div>
 
-    <!-- Navbar -->
     <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
-        <div class="navbar-container flex items-center justify-between py-2">
+        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-x-8">
+
+
             <!-- Logo -->
             <div class="flex items-center">
-                <img src="assets/logo.png" alt="Bridge Group Solutions" class="navbar-logo">
+                <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
                 <a href="index.html" class="ml-2 sm:ml-3">
                     <h1
-                        class="navbar-title bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold">
+                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
                         BRIDGE GROUP
                     </h1>
                     <p
-                        class="navbar-subtitle bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold">
+                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
                         SOLUTIONS
                     </p>
                 </a>
             </div>
 
             <!-- Desktop Nav -->
-            <div class="hidden md:flex navbar-menu items-center">
+            <div class="hidden md:flex items-center sm:space-x-2 lg:space-x-4 xl:space-x-6">
                 <!-- Dropdowns -->
+
                 <div class="relative group p-3 nav-hover-effect">
                     <a class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-base lg:text-lg">Sales</span>
+                        <span class="text-lg">Sales</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
                     </a>
                     <div
@@ -170,7 +137,7 @@
 
                 <div class="relative group p-3 nav-hover-effect">
                     <a class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-base lg:text-lg">Company</span>
+                        <span class="text-lg">Company</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
                     </a>
                     <div
@@ -183,7 +150,7 @@
 
                 <div class="relative group p-3 nav-hover-effect">
                     <a class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-base lg:text-lg">Services</span>
+                        <span class="text-lg">Services</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
                     </a>
                     <div
@@ -193,11 +160,14 @@
                     </div>
                 </div>
 
+
+
                 <div class="relative group p-3 nav-hover-effect">
                     <a href="partners.html" class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-base lg:text-lg">Our Partners</span>
+                        <span class="text-lg">Our Partners</span>
                     </a>
                 </div>
+
 
                 <div class="relative group p-3 nav-hover-effect">
                     <a href="carrerPage.html"
@@ -205,13 +175,12 @@
                         Carrers
                     </a>
                 </div>
-
                 <!-- Contact -->
 
             </div>
 
             <!-- Hamburger (mobile only) -->
-            <div class="mobile-menu-button md:hidden">
+            <div class="md:hidden">
                 <button @click="mobileMenu = !mobileMenu" class="text-gray-700 focus:outline-none">
                     <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
                 </button>
@@ -270,8 +239,10 @@
                     </div>
                 </div>
 
+
+
                 <!-- Partners -->
-                <div>
+                <div x-data="{ open: false }">
                     <a href="partners.html"
                         class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
                         <span>Our Partners</span>
@@ -279,75 +250,127 @@
                 </div>
 
                 <!-- Careers -->
-                <div>
+                <div x-data="{ open: false }">
                     <a href="carrerPage.html"
-                        class="inline-flex items-center bg-[#EC7620] hover:bg-orange-600 text-white text-lg py-2 px-6 rounded-md transition-colors">
+                        class="inline-flex items-center bg-[#EC7620] hover:bg-orange-600 text-white text-xl py-2 px-6 rounded-md transition-colors">
                         Carrers
                     </a>
                 </div>
 
             </div>
         </div>
+
     </nav>
 
-    <!-- Section 1: Content Left, Image Right -->
-    <!-- Section 1: Content Left, Image Right -->
-    <section class="py-16 px-4 md:px-20 bg-white">
-        <div class="flex flex-col-reverse md:grid md:grid-cols-2 items-center gap-12">
-            <!-- Content (shows below image on mobile, left on desktop) -->
-            <div>
-                <h2 class="text-3xl md:text-5xl font-bold text-[#00076A] mb-6">
-                    Reach Your Customers Directly
-                </h2>
-                <p class="text-gray-600 mb-4 text-lg">
-                    With our B2C sales strategies, we help brands connect emotionally and directly with customers. Build
-                    loyalty, increase engagement, and grow your revenue with personalized experiences.
-                </p>
-                <ul class="list-disc ml-5 text-gray-700 space-y-2">
-                    <li>Personalized Campaigns</li>
-                    <li>Multi-Channel Selling</li>
-                    <li>Customer Retention Tools</li>
-                    <li>Advanced Analytics & Tracking</li>
-                </ul>
-            </div>
+    <!-- Main Content -->
+    <main class="py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="bg-white shadow-md rounded-lg p-6 sm:p-8 md:p-10">
+            <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Terms and Conditions</h1>
 
-            <!-- Image (shows on top in mobile, right on desktop) -->
-            <div>
-                <img src="assets/b2c1.avif" alt="Direct to Consumer"
-                    class="w-full h-auto rounded-lg shadow-md object-cover" />
+            <div class="space-y-8">
+                <div>
+                    <p class="mb-4">By accessing and using the services, platforms, and content provided by
+                        Bridge Group Solutions ("BGS"), you agree to comply with the following Terms & Conditions.
+                        These rules are designed to protect the integrity, reputation, and digital assets of BGS and its
+                        users.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">1. Authorized Use</h2>
+                    <p>You are permitted to use BGS systems and websites only for lawful, authorized,
+                        and ethical business activities. Any misuse will result in immediate revocation of access and
+                        possible legal action.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">2. Intellectual Property</h2>
+                    <p>All designs, code, documents, text, and brand assets appearing on BGS platforms are the
+                        exclusive intellectual property of Bridge Group Solutions. Unauthorized use is forbidden.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">3. Content Usage</h2>
+                    <p>Copying, reproducing, modifying, or redistributing company content or internal documents without
+                        prior written
+                        authorization is strictly prohibited.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">4. Platform Misuse</h2>
+                    <p>Misuse of BGS digital platforms—whether through automation, scraping, abuse of access, or
+                        exploiting vulnerabilities—is grounds for immediate suspension and legal action.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">5. Prohibited Communications</h2>
+                    <p>Users may not use BGS platforms to send spam, phishing messages, unsolicited offers, or
+                        misrepresent their identity or intentions.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">6. False Identity</h2>
+                    <p>Impersonating BGS employees, clients, or third-party affiliates for any reason is a breach of
+                        trust and will trigger disciplinary and legal consequences.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">7. Site Updates</h2>
+                    <p>Content on BGS digital platforms is subject to change without prior notice. We do not guarantee
+                        uninterrupted access, accuracy, or real-time availability.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">8. No Guarantees</h2>
+                    <p>All services are provided "as is" without warranties of any kind. We disclaim responsibility for
+                        any damages arising from use or reliance on our systems.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">9. Liability Disclaimer</h2>
+                    <p>Bridge Group Solutions is not liable for direct, indirect, incidental, or consequential damages
+                        resulting from site use,
+                        including loss of data or service interruptions.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">10. Consent to Terms</h2>
+                    <p>By continuing to use any BGS digital or internal platform, you consent to these Terms &
+                        Conditions and acknowledge
+                        responsibility for regularly reviewing them.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">11. Governing Law</h2>
+                    <p>These Terms and Conditions shall be governed by and construed in accordance with the applicable
+                        laws of the Republic of India, including but not limited to the Indian Contract Act, 1872, and
+                        the Information Technology Act, 2000, along with any rules, regulations, or amendments made
+                        thereunder.
+                        Any disputes arising out of or in connection with these Terms shall be subject to the exclusive
+                        jurisdiction of
+                        the competent courts located in India.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">12. Enforcement</h2>
+                    <p>Violations of these terms will lead to strict consequences including access termination, employee
+                        disciplinary
+                        action, and civil or criminal prosecution, as applicable.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">13. Unauthorized Project Listing</h2>
+                    <p>Any unauthorized use, claim, or display of Bridge Group Solutions projects on personal platforms
+                        (LinkedIn, portfolios, resumes, or any other medium) without explicit prior written consent is a
+                        serious breach of company policy. Offenders will face immediate termination, aggressive legal
+                        prosecution,
+                        and will be held fully liable for all damages. This misconduct will be dealt with severely and
+                        without exception.</p>
+                </div>
             </div>
         </div>
-    </section>
+    </main>
 
-
-    <!-- Section 2: Image Left, Content Right -->
-    <section class="py-16 px-4 md:px-20 bg-gray-50">
-        <div class="grid md:grid-cols-2 items-center gap-12">
-            <!-- Image -->
-            <div>
-                <img src="assets/b2c2.jpg" alt="Customer Engagement"
-                    class="w-full h-auto rounded-lg shadow-md object-cover" />
-            </div>
-            <!-- Content -->
-            <div>
-                <h2 class="text-3xl md:text-5xl font-bold text-[#00076A] mb-6">
-                    Boost Your Brand Visibility
-                </h2>
-                <p class="text-gray-600 mb-4 text-lg">
-                    Our B2C platform empowers brands to stand out in a crowded marketplace. Whether it’s through
-                    influencer marketing or social commerce, we provide the tools to build lasting relationships.
-                </p>
-                <ul class="list-disc ml-5 text-gray-700 space-y-2">
-                    <li>Omnichannel Presence</li>
-                    <li>Influencer & Affiliate Tools</li>
-                    <li>Targeted Promotions</li>
-                    <li>Customer Insights Dashboard</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-
+    <!-- Footer -->
     <footer class="bg-[#D2F0FF] py-10">
         <div class="site-container">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -394,12 +417,15 @@
                         </li>
 
                         <li><a href="carrerPage.html"
-                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a></li>
+                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                        </li>
                         <li><a href="privacy-policy.html"
-                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Privacy and Policy</a></li>
+                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Privacy and
+                                Policy</a></li>
                         <li><a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact
                                 Us</a></li>
-                        <li><a href="terms.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Terms and
+                        <li><a href="terms.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Terms
+                                and
                                 Conditions</a>
                         </li>
                     </ul>
@@ -418,10 +444,12 @@
                                 Analytics</a></li>
                         <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Web
                                 Secutity and Optimizations</a></li>
-                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp &
+                        <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp
+                                &
                                 Customized Software</a></li>
                         <li><a href="services.html"
-                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software Testing</a></li>
+                                class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software
+                                Testing</a></li>
                     </ul>
                 </div>
 
@@ -460,10 +488,6 @@
 
 
     </footer>
-
-    <script src="script.js"></script>
-
-
 </body>
 
 </html>

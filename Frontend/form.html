@@ -152,31 +152,28 @@
   <!-- Navbar -->
   <!-- Navbar -->
   <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-x-8">
-
-
+    <div class="navbar-container flex items-center justify-between py-2">
       <!-- Logo -->
       <div class="flex items-center">
-        <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
+        <img src="assets/logo.png" alt="Bridge Group Solutions" class="navbar-logo">
         <a href="index.html" class="ml-2 sm:ml-3">
           <h1
-            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
+            class="navbar-title bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold">
             BRIDGE GROUP
           </h1>
           <p
-            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
+            class="navbar-subtitle bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold">
             SOLUTIONS
           </p>
         </a>
       </div>
 
       <!-- Desktop Nav -->
-      <div class="hidden md:flex items-center sm:space-x-2 lg:space-x-4 xl:space-x-6">
+      <div class="hidden md:flex navbar-menu items-center">
         <!-- Dropdowns -->
-
         <div class="relative group p-3 nav-hover-effect">
           <a class="flex items-center space-x-1 text-black focus:outline-none">
-            <span class="text-lg">Sales</span>
+            <span class="text-base lg:text-lg">Sales</span>
             <i class="fa-solid fa-chevron-down text-xs"></i>
           </a>
           <div
@@ -188,7 +185,7 @@
 
         <div class="relative group p-3 nav-hover-effect">
           <a class="flex items-center space-x-1 text-black focus:outline-none">
-            <span class="text-lg">Company</span>
+            <span class="text-base lg:text-lg">Company</span>
             <i class="fa-solid fa-chevron-down text-xs"></i>
           </a>
           <div
@@ -201,7 +198,7 @@
 
         <div class="relative group p-3 nav-hover-effect">
           <a class="flex items-center space-x-1 text-black focus:outline-none">
-            <span class="text-lg">Services</span>
+            <span class="text-base lg:text-lg">Services</span>
             <i class="fa-solid fa-chevron-down text-xs"></i>
           </a>
           <div
@@ -212,31 +209,24 @@
         </div>
 
         <div class="relative group p-3 nav-hover-effect">
-          <a href="carrerPage.html" class="flex items-center space-x-1 text-black focus:outline-none">
-            <span class="text-lg">Careers</span>
+          <a href="partners.html" class="flex items-center space-x-1 text-black focus:outline-none">
+            <span class="text-base lg:text-lg">Our Partners</span>
           </a>
         </div>
 
         <div class="relative group p-3 nav-hover-effect">
-          <a href="partners.html" class="flex items-center space-x-1 text-black focus:outline-none">
-            <span class="text-lg">Our Partners</span>
+          <a href="carrerPage.html"
+            class="inline-flex items-center bg-[#EC7620] hover:bg-orange-600 text-white text-xl py-2 px-6 rounded-md transition-colors">
+            Carrers
           </a>
         </div>
 
         <!-- Contact -->
-        <div class="flex justify-start items-center px-2 ">
-          <button
-            class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-2 rounded flex items-center hover:bg-blue-50 text-sm">
-            LOGIN
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
+
       </div>
 
       <!-- Hamburger (mobile only) -->
-      <div class="md:hidden">
+      <div class="mobile-menu-button md:hidden">
         <button @click="mobileMenu = !mobileMenu" class="text-gray-700 focus:outline-none">
           <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
         </button>
@@ -289,24 +279,24 @@
           </div>
         </div>
 
-        <!-- Careers -->
-        <div x-data="{ open: false }">
-          <a href="carrerPage.html"
-            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
-            <span>Careers</span>
-          </a>
-        </div>
-
         <!-- Partners -->
-        <div x-data="{ open: false }">
+        <div>
           <a href="partners.html"
             class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
             <span>Our Partners</span>
           </a>
         </div>
+
+        <!-- Careers -->
+        <div>
+          <a href="carrerPage.html"
+            class="inline-flex items-center bg-[#EC7620] hover:bg-orange-600 text-white text-lg py-2 px-6 rounded-md transition-colors">
+            Carrers
+          </a>
+        </div>
+
       </div>
     </div>
-
   </nav>
 
   <!-- Contact Form Section -->
@@ -417,14 +407,19 @@
         <div class="text-center md:text-left">
           <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
           <ul class="space-y-4">
-            <li><a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a></li>
-            <li><a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a></li>
+            <li><a href="index.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
+            </li>
+            <li><a href="about.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
+            </li>
+
             <li><a href="carrerPage.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a></li>
-            <li><a href="#" id="policyLink" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Privacy and
+            <li><a href="privacy-policy.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Privacy and
                 Policy</a></li>
-            <li><a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact Us</a></li>
-            <li><a href="#" id="termsLink" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Terms and
-                Conditions</a></li>
+            <li><a href="contact.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact
+                Us</a></li>
+            <li><a href="terms.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Terms and
+                Conditions</a>
+            </li>
           </ul>
 
         </div>
@@ -437,12 +432,12 @@
                 Development</a></li>
             <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Backend
                 Development</a></li>
-            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Data Analytics</a>
-            </li>
-            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Web Secutity and
-                Optimizations</a></li>
-            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp & Customized
-                Software</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Data
+                Analytics</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Web
+                Secutity and Optimizations</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp &
+                Customized Software</a></li>
             <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software
                 Testing</a></li>
           </ul>
@@ -476,81 +471,13 @@
 
     <!-- scroller popup starts      -->
     <!-- Modal Backdrop -->
-    <div id="modalBackdrop" class="fixed inset-0 bg-black bg-opacity-40 hidden z-40"></div>
-    <!-- Modal Backdrop -->
-    <div id="modal"
-      class=" fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-xl shadow-lg p-6 z-50 hidden max-h-[80vh] overflow-y-auto">
-      <div class="flex justify-between items-center mb-4">
-        <h2 id="modalTitle" class="text-xl font-semibold">Modal Title</h2>
-        <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700 text-xl">&times;</button>
-      </div>
 
-      <!-- Scrollable content -->
-      <div id="modalContent" class="space-y-4 text-sm text-gray-700 break-words">
-        <!-- Your long content goes here -->
-      </div>
-    </div>
 
 
     <!-- Scroll to Top Button -->
 
 
   </footer>
-
-  <!-- scrollerpopup -->
-
-  <script>
-    const modal = document.getElementById('modal');
-    const backdrop = document.getElementById('modalBackdrop');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const policyLink = document.getElementById('policyLink');
-    const termsLink = document.getElementById('termsLink');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalContent = document.getElementById('modalContent');
-
-    function openModal(title, contentHTML) {
-      modalTitle.textContent = title;
-      modalContent.innerHTML = contentHTML;
-      modal.classList.remove('hidden');
-      backdrop.classList.remove('hidden');
-      document.body.classList.add('overflow-hidden');
-    }
-
-    function closeModal() {
-      modal.classList.add('hidden');
-      backdrop.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-    }
-
-    policyLink.addEventListener('click', function (e) {
-      e.preventDefault();
-      openModal("Privacy and Policy", `
-       <p>These are the terms and conditions for using this serviceMore legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.</p>
-      <p>By using the website, you agree to the following terms..More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.</p>
-      <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-      <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p> <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-       <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-        <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-         <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-    `);
-    });
-
-    termsLink.addEventListener('click', function (e) {
-      e.preventDefault();
-      openModal("Terms and Conditions", `
-      <p>These are the terms and conditions for using this serviceMore legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.</p>
-      <p>By using the website, you agree to the following terms..More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.</p>
-      <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-      <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p> <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-       <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-        <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-         <p>More legal text and scrollable content goes here... lorem3rfdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-    `);
-    });
-
-    closeModalBtn.addEventListener('click', closeModal);
-    backdrop.addEventListener('click', closeModal);
-  </script>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>

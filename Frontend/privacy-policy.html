@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Bridge Group Solutions</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png">
+    <meta name="google-adsense-account" content="ca-pub-4467563478630338">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4467563478630338"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/4a2e3e6c8b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Navbar hover effects -->
+    <style>
+        /* Navbar hover effects */
+        .nav-hover-effect {
+            position: relative;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .nav-hover-effect::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #FFCC99;
+            /* Light orange color */
+            opacity: 0;
+            transform: scale(0.9);
+            z-index: -1;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .nav-hover-effect:hover {
+            color: #00076A;
+            /* Dark blue text on hover */
+        }
+
+        .nav-hover-effect:hover::before {
+            opacity: 0.7;
+            transform: scale(1);
+        }
+
+        /* Mobile menu hover effect */
+        .mobile-nav-hover:hover {
+            background-color: #FFCC99 !important;
+            color: #00076A !important;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="font-[Muli] bg-gray-50">
+    <div class="bg-[#1B9CE3] text-white text-sm">
+        <div
+            class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm px-4 space-y-2 md:space-y-0">
+            <div class="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-2 md:space-y-0">
+                <span class="flex items-center space-x-1">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+91556735515" class="hover:underline">+91 1244376971</a>
+                </span>
+
+                <span class="flex items-center space-x-1">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:contact@bridgegroupsolutions.com" class="hover:underline">
+                        contact@bridgegroupsolutions.com
+                    </a>
+                </span>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-white p-2 hover:text-black hover:-translate-y-1 transition transform">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+
+                <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class=" text-white p-2  hover:text-black hover:-translate-y-1 transition transform">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
+        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-x-8">
+
+
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
+                <a href="index.html" class="ml-2 sm:ml-3">
+                    <h1
+                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
+                        BRIDGE GROUP
+                    </h1>
+                    <p
+                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
+                        SOLUTIONS
+                    </p>
+                </a>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center sm:space-x-2 lg:space-x-4 xl:space-x-6">
+                <!-- Dropdowns -->
+
+                <div class="relative group p-3 nav-hover-effect">
+                    <a class="flex items-center space-x-1 text-black focus:outline-none">
+                        <span class="text-lg">Sales</span>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+                        <a href="b2b.html" class="block px-4 py-2 hover:bg-gray-100">B2B Sales</a>
+                        <a href="b2c.html" class="block px-4 py-2 hover:bg-gray-100">B2C Sales</a>
+                    </div>
+                </div>
+
+                <div class="relative group p-3 nav-hover-effect">
+                    <a class="flex items-center space-x-1 text-black focus:outline-none">
+                        <span class="text-lg">Company</span>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+                        <a href="about.html" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+                        <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
+                        <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
+                    </div>
+                </div>
+
+                <div class="relative group p-3 nav-hover-effect">
+                    <a class="flex items-center space-x-1 text-black focus:outline-none">
+                        <span class="text-lg">Services</span>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </a>
+                    <div
+                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+                        <a href="comingSoon.html" class="block px-4 py-2 hover:bg-gray-100">CRM</a>
+                        <a href="services.html" class="block px-4 py-2 hover:bg-gray-100">All Services</a>
+                    </div>
+                </div>
+
+
+
+                <div class="relative group p-3 nav-hover-effect">
+                    <a href="partners.html" class="flex items-center space-x-1 text-black focus:outline-none">
+                        <span class="text-lg">Our Partners</span>
+                    </a>
+                </div>
+
+
+                <div class="relative group p-3 nav-hover-effect">
+                    <a href="carrerPage.html"
+                        class="inline-flex items-center bg-[#EC7620] hover:bg-orange-600 text-white text-xl py-2 px-6 rounded-md transition-colors">
+                        Carrers
+                    </a>
+                </div>
+                <!-- Contact -->
+
+            </div>
+
+            <!-- Hamburger (mobile only) -->
+            <div class="md:hidden">
+                <button @click="mobileMenu = !mobileMenu" class="text-gray-700 focus:outline-none">
+                    <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden" x-show="mobileMenu" x-transition>
+            <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
+                <div x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+                        <span>Sales</span>
+                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
+                            class="fa-solid text-sm transition-transform"></i>
+                    </button>
+                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+                        <a href="b2b.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">B2B
+                            Sales</a>
+                        <a href="b2c.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">B2C
+                            Sales</a>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+                        <span>Company</span>
+                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
+                            class="fa-solid text-sm transition-transform"></i>
+                    </button>
+                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+                        <a href="about.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">About
+                            Us</a>
+                        <a href="gallery.html"
+                            class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">Gallery</a>
+                        <a href="contact.html"
+                            class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div x-data="{ open: false }">
+                    <button @click="open = !open"
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+                        <span>Services</span>
+                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
+                            class="fa-solid text-sm transition-transform"></i>
+                    </button>
+                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+                        <a href="comingSoon.html"
+                            class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">CRM</a>
+                        <a href="services.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">All
+                            Services</a>
+                    </div>
+                </div>
+
+
+
+                <!-- Partners -->
+                <div x-data="{ open: false }">
+                    <a href="partners.html"
+                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+                        <span>Our Partners</span>
+                    </a>
+                </div>
+
+                <!-- Careers -->
+                <div x-data="{ open: false }">
+                    <a href="carrerPage.html"
+                        class="inline-flex items-center bg-[#EC7620] hover:bg-orange-600 text-white text-xl py-2 px-6 rounded-md transition-colors">
+                        Carrers
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+    <!-- Main Content -->
+
+    <body>
+        <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="bg-white shadow-md rounded-lg p-6 sm:p-8 md:p-10">
+                <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Privacy Policy</h1>
+
+                <div class="space-y-8">
+                    <div>
+                        <p class="mb-4">Bridge Group Solutions (BGS) enforces strict controls on the handling of all
+                            personal and sensitive information. This Privacy & Data Protection Policy outlines our
+                            commitment to safeguarding information and defines the responsibilities of all individuals
+                            interacting with our systems and services.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">1. Purpose and Scope of the Policy</h2>
+                        <p>This Privacy & Data Protection Policy reflects Bridge Group Solutions' (BGS) unwavering
+                            commitment to safeguarding the personal and sensitive information entrusted to us. The
+                            policy
+                            applies to all individuals whose data is collected, processed, or stored by BGS. This
+                            includes
+                            employees, clients, contractors, service providers, and users of our websites and digital
+                            services. It defines the principles, responsibilities, and measures we adhere to in order to
+                            ensure the privacy, security, and ethical handling of personal data throughout its
+                            lifecycle.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">2. Principles of Data Collection</h2>
+                        <p>BGS adheres to a data minimization approach, collecting only the data that is essential for
+                            legitimate business function, legal compliance, or service delivery. We ensure that all data
+                            collection practices are transparent, lawful, and fair. Our goal is to respect the privacy
+                            rights of individuals by informing them about the purpose and use of their data and ensuring
+                            their consent wherever applicable.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">3. Data Security Measures</h2>
+                        <p>We implement robust technical and organizational security measures to protect personal data
+                            from
+                            unauthorized access, alteration, disclosure, or destruction. These measures include
+                            encryption,
+                            access controls, regular security assessments, and employee training on data protection best
+                            practices. Our security framework is designed to be proportionate to the sensitivity of the
+                            data
+                            we handle.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">4. Legal and Regulatory Compliance</h2>
+                        <p>BGS conducts all data-related activities in accordance with applicable Indian laws, including
+                            the
+                            Information Technology Act, 2000 and the Digital Personal Data Protection (DPDP) Act, 2023.
+                            We
+                            also comply with any other regional or sector-specific regulatory obligations that apply to
+                            our
+                            operations. Compliance is central to our data handling framework, ensuring lawful processing
+                            and
+                            upholding individual rights.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">5. Data Retention and Disposal</h2>
+                        <p>We retain personal data only for as long as necessary to fulfill the purposes for which it
+                            was
+                            collected, or to meet legal, regulatory, or business requirements. Once the retention period
+                            expires, we ensure that data is securely deleted or anonymized according to our data
+                            disposal
+                            procedures, preventing unauthorized access or recovery.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">6. Third-Party Data Sharing</h2>
+                        <p>When business needs require us to share personal data with third parties, we do so only with
+                            trusted partners who demonstrate compliance with data protection standards. All third-party
+                            relationships involving data sharing are governed by formal agreements that specify data
+                            protection requirements, limitations on use, and confidentiality obligations.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">7. Individual Rights and Access Requests</h2>
+                        <p>We respect and uphold the rights of individuals regarding their personal data, including the
+                            right to access, correct, delete, or restrict processing of their information. BGS has
+                            established clear procedures for individuals to exercise these rights, and we respond to
+                            such
+                            requests in a timely and transparent manner, in accordance with applicable laws.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">8. Data Breach Response</h2>
+                        <p>In the event of a data breach, BGS follows a comprehensive incident response plan that
+                            includes
+                            prompt investigation, containment, and notification procedures. We notify affected
+                            individuals
+                            and relevant authorities as required by law, and take corrective actions to prevent similar
+                            incidents in the future.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">9. Employee Responsibilities</h2>
+                        <p>All BGS employees are responsible for protecting personal data they handle in the course of
+                            their
+                            duties. We provide regular training and awareness programs to ensure that staff understand
+                            their
+                            data protection obligations and the procedures they must follow. Violations of this policy
+                            may
+                            result in disciplinary action.</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">10. Data Protection in Project Development</h2>
+                        <p>We integrate privacy considerations into our project development processes through Privacy by
+                            Design principles. This means that data protection requirements are identified and addressed
+                            at
+                            the earliest stages of product or service development, ensuring that privacy safeguards are
+                            built into our solutions from the ground up.</p>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">11. Individual Rights and Data Access
+                            Requests</b></h2>
+                        <p>Individuals whose data is collected by BGS have the right to access their personal
+                            information,
+                            request corrections or
+                            updates to inaccurate data, and request deletion where legally permissible. To exercise
+                            these
+                            rights, individuals may
+                            contact our HR department. BGS ensures that all data access and modification requests are
+                            handled promptly, transparently,
+                            and in compliance with the law.</p>
+                    </div>
+
+                    <div>
+
+
+
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">12. Data Retention and Secure Disposal</b></h2>
+                        <p>BGS retains personal data only for as long as necessary to fulfil its intended business or
+                            legal
+                            purpose.
+                            Once the data is no longer required, it is securely deleted or destroyed using
+                            industry-standard
+                            disposal practices.
+                            This ensures that no residual data remains accessible or recoverable, thereby protecting
+                            individuals’ privacy even after the
+                            data has served its purpose.</p>
+
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">13. Data Breach Notification Procedures</b>
+                        </h2>
+                        <p>In the event of a significant data breach involving personal information,
+                            BGS will notify the affected individuals in a timely and transparent manner.
+                            The notification will include the nature of the breach, potential consequences, and
+                            the actions being taken to address and mitigate the risks. We believe in open communication
+                            and
+                            prompt resolution
+                            to maintain trust and confidence.</p>
+
+                    </div>
+
+                    <div>
+
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">14. Ongoing Audits and Policy Compliance</b>
+                        </h2>
+                        <p>To ensure the effectiveness of this policy, BGS conducts regular audits and compliance checks
+                            of
+                            its data protection practices.
+                            These reviews help us identify areas of improvement, maintain alignment with legal
+                            standards,
+                            and
+                            adapt to changes in regulatory frameworks. Any updates to this policy are communicated
+                            clearly
+                            to all relevant parties.</p>
+
+                    </div>
+
+                    <div>
+
+
+
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">15. Use of Cookies and Tracking
+                            Technologies</b></h2>
+                        <p>BGS uses cookies and similar technologies on its digital platforms to enhance user
+                            experience,
+                            enable core site functionality,
+                            and gather analytical insights. These technologies are not used for profiling or behavioural
+                            tracking. Users have full control
+                            over cookie preferences through their browser settings and may choose to disable
+                            non-essential
+                            cookies at any time.</p>
+
+                    </div>
+
+                    <div>
+
+
+
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">16. Contact Information for Data Protection
+                            Inquiries</b></h2>
+                        <p>For any questions, concerns, or requests regarding your personal data or this policy, please
+                            reach out to our dedicated team at:
+                        </p>
+                        Email: hrteam@bridgegroupsolutions.com
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <footer class="bg-[#D2F0FF] py-10">
+            <div class="site-container">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Logo and Social Links -->
+                    <div class="text-center md:text-left">
+                        <div class="flex justify-center md:justify-start items-center gap-4 mb-4">
+                            <img src="./assets/logo.png" alt="Bridge Group Solutions" class="h-12">
+                            <div>
+                                <h1 class="text-[#00076A] font-Mulish font-semibold text-2xl">BRIDGE GROUP</h1>
+                                <p class="text-[#00076A] font-Mulish font-semibold">SOLUTIONS</p>
+                            </div>
+                        </div>
+                        <p
+                            class="bg-gradient-to-r from-[#EC7620] via-[#717781] to-[#4977A0] text-transparent bg-clip-text font-small text-accent mb-4">
+                            WE KNOT SPACE...
+                        </p>
+                        <div class="flex justify-center md:justify-start space-x-4">
+                            <a href="#"
+                                class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href=""
+                                class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-600 hover:text-[#1B9CE3] transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-xl font-semibold text-[#000000] mb-6">Links</h3>
+                        <ul class="space-y-4">
+                            <li><a href="index.html"
+                                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Home</a>
+                            </li>
+                            <li><a href="about.html"
+                                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors">About</a>
+                            </li>
+
+                            <li><a href="carrerPage.html"
+                                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Careers</a>
+                            </li>
+                            <li><a href="privacy-policy.html"
+                                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Privacy and
+                                    Policy</a></li>
+                            <li><a href="contact.html"
+                                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Contact
+                                    Us</a></li>
+                            <li><a href="terms.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Terms
+                                    and
+                                    Conditions</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <!-- Services -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-xl font-semibold text-[#000000] mb-6">Services</h3>
+                        <ul class="space-y-4">
+                            <li><a href="services.html"
+                                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Fontend
+                                    Development</a></li>
+                            <li><a href="services.html"
+                                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Backend
+                                    Development</a></li>
+                            <li><a href="services.html"
+                                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Data
+                                    Analytics</a></li>
+                            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Web
+                                    Secutity and Optimizations</a></li>
+                            <li><a href="services.html" class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Erp
+                                    &
+                                    Customized Software</a></li>
+                            <li><a href="services.html"
+                                    class="text-gray-600 hover:text-[#1B9CE3] transition-colors">Software
+                                    Testing</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Subscribe Form -->
+                    <div class="text-center md:text-left">
+                        <h3 class="text-xl font-semibold text-[#000000] mb-6">Subscribe Us!</h3>
+                        <form class="space-y-4">
+                            <input type="email" placeholder="Enter Email Address"
+                                class="px-4 py-3 w-full rounded-lg text-[#1B9CE3] border border-[#1B9CE3] focus:outline-none focus:border-[#1B9CE3] bg-white">
+                            <button type="submit"
+                                class="px-3 py-3 w-full bg-[#1B9CE3] text-white rounded-lg shadow-lg transition duration-150 active:scale-95 active:shadow-sm transition-colors">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
+                    <p>Copyright © 2025 All rights reserved | This template is made with by Techbuddies@bgs</p>
+                </div>
+            </div>
+
+            <button id="scrollToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+                class="fixed bottom-8 right-8 bg-[#F97316] text-white w-10 h-10 rounded-lg flex items-center justify-center hover:bg-orange-600">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+
+
+
+            <!-- scroller popup starts      -->
+            <!-- Modal Backdrop -->
+
+
+
+            <!-- Scroll to Top Button -->
+
+
+        </footer>
+
+    </body>
+
+
+    <script src="script.js"></script>

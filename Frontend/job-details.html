@@ -208,169 +208,162 @@
   <!-- Navbar -->
   <!-- Navbar -->
   <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
-        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-x-8">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-x-8">
 
 
-            <!-- Logo -->
-            <div class="flex items-center">
-                <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
-                <a href="index.html" class="ml-2 sm:ml-3">
-                    <h1
-                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
-                        BRIDGE GROUP
-                    </h1>
-                    <p
-                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
-                        SOLUTIONS
-                    </p>
-                </a>
-            </div>
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
+        <a href="index.html" class="ml-2 sm:ml-3">
+          <h1
+            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
+            BRIDGE GROUP
+          </h1>
+          <p
+            class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
+            SOLUTIONS
+          </p>
+        </a>
+      </div>
 
-            <!-- Desktop Nav -->
-            <div class="hidden md:flex items-center sm:space-x-2 lg:space-x-4 xl:space-x-6">
-                <!-- Dropdowns -->
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center sm:space-x-2 lg:space-x-4 xl:space-x-6">
+        <!-- Dropdowns -->
 
-                <div class="relative group p-3 nav-hover-effect">
-                    <a class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-lg">Sales</span>
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </a>
-                    <div
-                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                        <a href="b2b.html" class="block px-4 py-2 hover:bg-gray-100">B2B Sales</a>
-                        <a href="b2c.html" class="block px-4 py-2 hover:bg-gray-100">B2C Sales</a>
-                    </div>
-                </div>
-
-                <div class="relative group p-3 nav-hover-effect">
-                    <a class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-lg">Company</span>
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </a>
-                    <div
-                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                        <a href="about.html" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
-                        <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
-                        <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
-                    </div>
-                </div>
-
-                <div class="relative group p-3 nav-hover-effect">
-                    <a class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-lg">Services</span>
-                        <i class="fa-solid fa-chevron-down text-xs"></i>
-                    </a>
-                    <div
-                        class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
-                        <a href="comingSoon.html" class="block px-4 py-2 hover:bg-gray-100">CRM</a>
-                        <a href="services.html" class="block px-4 py-2 hover:bg-gray-100">All Services</a>
-                    </div>
-                </div>
-
-                <div class="relative group p-3 nav-hover-effect">
-                    <a href="carrerPage.html" class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-lg">Careers</span>
-                    </a>
-                </div>
-
-                <div class="relative group p-3 nav-hover-effect">
-                    <a href="partners.html" class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-lg">Our Partners</span>
-                    </a>
-                </div>
-
-                <!-- Contact -->
-                <div class="flex justify-start items-center px-2 ">
-                    <button
-                        class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-2 rounded flex items-center hover:bg-blue-50 text-sm">
-                        LOGIN
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2"
-                            viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Hamburger (mobile only) -->
-            <div class="md:hidden">
-                <button @click="mobileMenu = !mobileMenu" class="text-gray-700 focus:outline-none">
-                    <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
-                </button>
-            </div>
+        <div class="relative group p-3 nav-hover-effect">
+          <a class="flex items-center space-x-1 text-black focus:outline-none">
+            <span class="text-lg">Sales</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+          </a>
+          <div
+            class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+            <a href="b2b.html" class="block px-4 py-2 hover:bg-gray-100">B2B Sales</a>
+            <a href="b2c.html" class="block px-4 py-2 hover:bg-gray-100">B2C Sales</a>
+          </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div class="md:hidden" x-show="mobileMenu" x-transition>
-            <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
-                <div x-data="{ open: false }">
-                    <button @click="open = !open"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
-                        <span>Sales</span>
-                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
-                            class="fa-solid text-sm transition-transform"></i>
-                    </button>
-                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="b2b.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">B2B
-                            Sales</a>
-                        <a href="b2c.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">B2C
-                            Sales</a>
-                    </div>
-                </div>
-
-                <!-- About -->
-                <div x-data="{ open: false }">
-                    <button @click="open = !open"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
-                        <span>Company</span>
-                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
-                            class="fa-solid text-sm transition-transform"></i>
-                    </button>
-                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="about.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">About
-                            Us</a>
-                        <a href="gallery.html"
-                            class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">Gallery</a>
-                        <a href="contact.html"
-                            class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">Contact Us</a>
-                    </div>
-                </div>
-
-                <!-- Services -->
-                <div x-data="{ open: false }">
-                    <button @click="open = !open"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
-                        <span>Services</span>
-                        <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"
-                            class="fa-solid text-sm transition-transform"></i>
-                    </button>
-                    <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
-                        <a href="comingSoon.html"
-                            class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">CRM</a>
-                        <a href="services.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">All
-                            Services</a>
-                    </div>
-                </div>
-
-                <!-- Careers -->
-                <div x-data="{ open: false }">
-                    <a href="carrerPage.html"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
-                        <span>Careers</span>
-                    </a>
-                </div>
-
-                <!-- Partners -->
-                <div x-data="{ open: false }">
-                    <a href="partners.html"
-                        class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
-                        <span>Our Partners</span>
-                    </a>
-                </div>
-            </div>
+        <div class="relative group p-3 nav-hover-effect">
+          <a class="flex items-center space-x-1 text-black focus:outline-none">
+            <span class="text-lg">Company</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+          </a>
+          <div
+            class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+            <a href="about.html" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+            <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-100">Gallery</a>
+            <a href="contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
+          </div>
         </div>
 
-    </nav>
+        <div class="relative group p-3 nav-hover-effect">
+          <a class="flex items-center space-x-1 text-black focus:outline-none">
+            <span class="text-lg">Services</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+          </a>
+          <div
+            class="absolute left-0 mt-2 w-40 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+            <a href="comingSoon.html" class="block px-4 py-2 hover:bg-gray-100">CRM</a>
+            <a href="services.html" class="block px-4 py-2 hover:bg-gray-100">All Services</a>
+          </div>
+        </div>
+
+        <div class="relative group p-3 nav-hover-effect">
+          <a href="carrerPage.html" class="flex items-center space-x-1 text-black focus:outline-none">
+            <span class="text-lg">Careers</span>
+          </a>
+        </div>
+
+        <div class="relative group p-3 nav-hover-effect">
+          <a href="partners.html" class="flex items-center space-x-1 text-black focus:outline-none">
+            <span class="text-lg">Our Partners</span>
+          </a>
+        </div>
+
+        <!-- Contact -->
+        <div class="flex justify-start items-center px-2 ">
+          <button
+            class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-2 rounded flex items-center hover:bg-blue-50 text-sm">
+            LOGIN
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hamburger (mobile only) -->
+      <div class="md:hidden">
+        <button @click="mobileMenu = !mobileMenu" class="text-gray-700 focus:outline-none">
+          <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden" x-show="mobileMenu" x-transition>
+      <div class="px-4 py-2 space-y-2 bg-white shadow-md border-t border-gray-200">
+        <div x-data="{ open: false }">
+          <button @click="open = !open"
+            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+            <span>Sales</span>
+            <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i>
+          </button>
+          <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+            <a href="b2b.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">B2B
+              Sales</a>
+            <a href="b2c.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">B2C
+              Sales</a>
+          </div>
+        </div>
+
+        <!-- About -->
+        <div x-data="{ open: false }">
+          <button @click="open = !open"
+            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+            <span>Company</span>
+            <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i>
+          </button>
+          <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+            <a href="about.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">About
+              Us</a>
+            <a href="gallery.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">Gallery</a>
+            <a href="contact.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div x-data="{ open: false }">
+          <button @click="open = !open"
+            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+            <span>Services</span>
+            <i :class="open ? 'fa-chevron-up' : 'fa-chevron-down'" class="fa-solid text-sm transition-transform"></i>
+          </button>
+          <div x-show="open" x-collapse class="pl-4 mt-1 space-y-1">
+            <a href="comingSoon.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">CRM</a>
+            <a href="services.html" class="block text-sm text-black mobile-nav-hover px-2 py-1 rounded">All
+              Services</a>
+          </div>
+        </div>
+
+        <!-- Careers -->
+        <div x-data="{ open: false }">
+          <a href="carrerPage.html"
+            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+            <span>Careers</span>
+          </a>
+        </div>
+
+        <!-- Partners -->
+        <div x-data="{ open: false }">
+          <a href="partners.html"
+            class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
+            <span>Our Partners</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </nav>
 
 
   <!-- White background for the entire page -->

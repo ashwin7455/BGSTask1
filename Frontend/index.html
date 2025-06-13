@@ -92,31 +92,28 @@
 
     <!-- Navbar -->
     <nav class="bg-white shadow-xl sticky top-0 z-50" x-data="{ mobileMenu: false }">
-        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-x-8">
-
-
+        <div class="navbar-container flex items-center justify-between py-2">
             <!-- Logo -->
             <div class="flex items-center">
-                <img src="assets/logo.png" alt="Bridge Group Solutions" class="h-10 sm:h-14">
+                <img src="assets/logo.png" alt="Bridge Group Solutions" class="navbar-logo">
                 <a href="index.html" class="ml-2 sm:ml-3">
                     <h1
-                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-xl sm:text-2xl">
+                        class="navbar-title bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold">
                         BRIDGE GROUP
                     </h1>
                     <p
-                        class="bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold text-sm sm:text-lg">
+                        class="navbar-subtitle bg-gradient-to-r from-[#00076A] to-[#000ED0] bg-clip-text text-transparent font-Mulish font-semibold">
                         SOLUTIONS
                     </p>
                 </a>
             </div>
 
             <!-- Desktop Nav -->
-            <div class="hidden md:flex items-center sm:space-x-2 lg:space-x-4 xl:space-x-6">
+            <div class="hidden md:flex navbar-menu items-center">
                 <!-- Dropdowns -->
-
                 <div class="relative group p-3 nav-hover-effect">
                     <a class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-lg">Sales</span>
+                        <span class="text-base lg:text-lg">Sales</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
                     </a>
                     <div
@@ -128,7 +125,7 @@
 
                 <div class="relative group p-3 nav-hover-effect">
                     <a class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-lg">Company</span>
+                        <span class="text-base lg:text-lg">Company</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
                     </a>
                     <div
@@ -141,7 +138,7 @@
 
                 <div class="relative group p-3 nav-hover-effect">
                     <a class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-lg">Services</span>
+                        <span class="text-base lg:text-lg">Services</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
                     </a>
                     <div
@@ -153,18 +150,18 @@
 
                 <div class="relative group p-3 nav-hover-effect">
                     <a href="carrerPage.html" class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-lg">Careers</span>
+                        <span class="text-base lg:text-lg">Careers</span>
                     </a>
                 </div>
 
                 <div class="relative group p-3 nav-hover-effect">
                     <a href="partners.html" class="flex items-center space-x-1 text-black focus:outline-none">
-                        <span class="text-lg">Our Partners</span>
+                        <span class="text-base lg:text-lg">Our Partners</span>
                     </a>
                 </div>
 
                 <!-- Contact -->
-                <div class="flex justify-start items-center px-2 ">
+                <div class="flex justify-start items-center px-2">
                     <button
                         class="border border-[#1B9CE3] text-[#1B9CE3] px-3 py-2 rounded flex items-center hover:bg-blue-50 text-sm">
                         LOGIN
@@ -177,7 +174,7 @@
             </div>
 
             <!-- Hamburger (mobile only) -->
-            <div class="md:hidden">
+            <div class="mobile-menu-button md:hidden">
                 <button @click="mobileMenu = !mobileMenu" class="text-gray-700 focus:outline-none">
                     <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
                 </button>
@@ -237,7 +234,7 @@
                 </div>
 
                 <!-- Careers -->
-                <div x-data="{ open: false }">
+                <div>
                     <a href="carrerPage.html"
                         class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
                         <span>Careers</span>
@@ -245,15 +242,26 @@
                 </div>
 
                 <!-- Partners -->
-                <div x-data="{ open: false }">
+                <div>
                     <a href="partners.html"
                         class="flex justify-between w-full items-center text-gray-700 font-semibold focus:outline-none mobile-nav-hover px-2 py-1 rounded">
                         <span>Our Partners</span>
                     </a>
                 </div>
+
+                <!-- Login button for mobile -->
+                <div class="pt-2">
+                    <button
+                        class="w-full border border-[#1B9CE3] text-[#1B9CE3] px-3 py-2 rounded flex items-center justify-center hover:bg-blue-50 text-sm">
+                        LOGIN
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-
     </nav>
 
     <!-- popup -->

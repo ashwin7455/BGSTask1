@@ -372,3 +372,108 @@ comming soon css
   color: #00076a !important;
   transition: all 0.3s ease;
 }
+
+/* Responsive navbar styles */
+.navbar-container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .navbar-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Navbar logo sizing */
+.navbar-logo {
+  height: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .navbar-logo {
+    height: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-logo {
+    height: 3.5rem;
+  }
+}
+
+/* Navbar text sizing */
+.navbar-title {
+  font-size: 1.25rem;
+}
+
+.navbar-subtitle {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .navbar-title {
+    font-size: 1.5rem;
+  }
+
+  .navbar-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Navbar menu spacing */
+.navbar-menu {
+  gap: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .navbar-menu {
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .navbar-menu {
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile menu breakpoint */
+@media (max-width: 767px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+  }
+
+  .mobile-menu-button {
+    display: none;
+  }
+}
